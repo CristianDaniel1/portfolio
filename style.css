@@ -15,7 +15,7 @@ body {
 
 ::-webkit-scrollbar {
   width: 10px;
-  background-color: rgb(24, 24, 24);
+  background-color: rgb(10, 10, 10);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -233,14 +233,14 @@ span {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  gap: 1px 6rem;
+  gap: 0px 6rem;
 }
 
 .texto {
   padding: 20px;
   margin: 2rem;
   line-height: 1.7rem;
-  background-color: rgb(24, 24, 24);
+  background-color: rgb(20, 20, 20);
   border-radius: 10px;
 }
 
@@ -479,6 +479,60 @@ span {
 .imagem-projeto:hover {
   transform: scale(1.05);
   transition: 0.3s all;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-contato {
+  margin: 2rem auto 2rem auto;
+  padding: 2.5rem;
+  width: 50%;
+}
+
+.container-contato form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.estilo-contato {
+  border: 0;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 0.5rem;
+  outline: none;
+  height: 2.4rem;
+  color: inherit;
+  background-color: rgb(32, 32, 32);
+}
+
+.mensagem {
+  height: 10rem;
+  margin-bottom: 2rem;
+}
+
+form button {
+  font-size: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+  background-color: transparent;
+  border: 2px solid rgb(119, 119, 119);
+  border-radius: 3px;
+  color: inherit;
+  width: 60%;
+  align-self: center;
+}
+
+form button:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: 2px solid rgb(0, 0, 0);
+  transition: 0.4s all;
 }
 
 .estilo-cabeçalho.rodape {
