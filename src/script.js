@@ -1,7 +1,4 @@
 'use strict';
-
-///////////////////////////////////////////////////////////
-
 ///////////////////////////////////////////////////////////
 // Movimento - Elementos aparecendo pelo Scroll
 const allSections = document.querySelectorAll('.section');
@@ -13,7 +10,7 @@ const callbackSec = function (entries, observer) {
   if (!entry.isIntersecting) return;
 
   entry.target.classList.remove('esconder');
-  entry.target.classList.add('section-aparição');
+  // entry.target.classList.add('section-aparição');
 
   observer.unobserve(entry.target);
 };
@@ -27,6 +24,19 @@ allSections.forEach(function (section) {
   observer.observe(section);
   section.classList.add('esconder');
 });
+
+// Scrool Smooth
+document
+  .querySelector('.cabecalho__menu')
+  .addEventListener('click', function (e) {
+    e.preventDefault();
+
+    // Matching strategy
+    if (e.target.classList.contains('cabecalho__link')) {
+      const id = e.target.getAttribute('href');
+      document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+    }
+  });
 
 // Animação do conteúdo
 const callbackConteúdo = function (entries, observer) {
@@ -56,12 +66,18 @@ animar.forEach(function (animação) {
 //////////////////////////////////////////////////////////
 // Click - Habilidades
 const infoHabilidades = document.querySelectorAll('.texto-habilidades');
-const habilidadesContainer = document.querySelector('.container-habilidades');
+const habilidadesContainer = document.querySelector('.habilidades__container');
 
 habilidadesContainer.addEventListener('click', function (e) {
-  const clicked = e.target.closest('.informações-habilidades');
+  const clicked = e.target.closest('.habilidades__informacao');
   if (!clicked) return;
 
-  // infoHabilidades.forEach(txt => txt.classList.add('txt-escondido'));
-  clicked.lastElementChild.classList.toggle('txt-escondido');
+  clicked.lastElementChild.classList.toggle('animacao__descer');
+});
+
+/////////////////// Modo Claro/Escuro ////////////////////
+
+const btnTheme = document.querySelector('.sol-toggle');
+btnTheme.addEventListener('click', function () {
+  document.body.classList.toggle('modo-claro');
 });

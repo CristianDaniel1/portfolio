@@ -4,204 +4,236 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfólio Cristian</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-
   </head>
-  <body>
-    <div class="background">
-      <section>
-        <header class="estilo-cabeçalho">
-          <h1 class="animação-opacidade">Cristian Daniel</h1>
-          <nav>
-            <ul>
-              <li><a href="#inicio">Início</a></li>
-              <li><a href="#sobre-mim">Sobre Mim</a></li>
-              <li><a href="#habilidades">Habilidades</a></li>
-              <li><a href="#projetos">Projetos</a></li>
-              <li><a href="#contato">Contato</a></li>
-            </ul>
-          </nav>
-        </header>
-      </section>
+  <body class="modo-claro">
+    <header class="cabecalho">
+      <h1 class="cabecalho__nome">Cristian Daniel</h1>
+      <nav>
+        <ul class="cabecalho__menu animação-opacidade">
+          <li><a class="cabecalho__link" href="#inicio">Início</a></li>
+          <li><a class="cabecalho__link" href="#sobre-mim">Sobre Mim</a></li>
+          <li>
+            <a class="cabecalho__link" href="#habilidades">Habilidades</a>
+          </li>
+          <li><a class="cabecalho__link" href="#projetos">Projetos</a></li>
+          <li><a class="cabecalho__link" href="#contato">Contato</a></li>
+          <li class="cabecalho__linha"></li>
+          <li>
+            <button class="sol-toggle cabecalho__sol">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-6 h-6 sol"
+              >
+                <path
+                  d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"
+                />
+              </svg>
+
+              <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z" clip-rule="evenodd" />
+              </svg> -->
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
       <section id="inicio">
-        <div class="apresentação-inicial animação-opacidade">
-          <h2>Olá, eu sou <span>Cristian Daniel</span></h2>
-          <h1 class="desenvolvedor">Desenvolvedor Front-End</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et est
-            pretium, condimentum augue vel, varius massa. Nam feugiat ipsum
-            mauris. Maecenas ac ultrices nisi. Aliquam porta neque ut urna
-            vestibulum blandit. Proin ut nisi vulputate, accumsan dui nec,
-            mattis tellus. In a lorem nec urna venenatis semper.
-          </p>
-          <div class="redes">
-            <a
-              class="linkedin"
-              href="https://www.linkedin.com/in/cristiandaniel1/"
-              target="_blank"
-              ><i class="fa-brands fa-linkedin"></i> Linkedin</a
-            >
-            <a class="github" href="https://github.com/CristianDaniel1"
-              target="_blank"
-              ><i class="fa-brands fa-square-github"></i> Github</a
-            >  
-          </div>
-        </div>
+        <h2 class="inicio__nome">Olá, eu sou <span>Cristian Daniel</span></h2>
+        <h1 class="inicio__titulo">Desenvolvedor Front-End</h1>
+        <p class="inicio__descricao">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et est
+          pretium, condimentum augue vel, varius massa. Nam feugiat ipsum
+          mauris. Maecenas ac ultrices nisi. Aliquam porta neque ut urna
+          vestibulum blandit.
+        </p>
+        <div class="inicio__redes">
+          <a
+            class="links inicio__redes-linkedin"
+            href="https://www.linkedin.com/in/cristiandaniel1/"
+            target="_blank"
+            ><i class="fa-brands fa-linkedin"></i> Linkedin</a
+          >
+          <a
+            class="links inicio__redes-github"
+            href="https://github.com/CristianDaniel1"
+            target="_blank"
+            ><i class="fa-brands fa-square-github"></i> Github</a
+          >
+          <a
+            class="links inicio__redes-email"
+            href="https://github.com/CristianDaniel1"
+            target="_blank"
+            ><i class="fa-regular fa-envelope"></i> Email</a
+          >
         </div>
       </section>
-    </div>
-    <div class="background-sobremim">
-      <section class="section" id="sobre-mim">
-        <h2 class="titulo">Sobre Mim</h2>
-        <div class="row">
-          <div class="texto texto-sobre-mim animar animar-direita">
-            <h2 class="meu-nome"><span>Cristian</span> Daniel</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-              vel venenatis ex. Vestibulum ante ipsum primis in faucibus orci
-              luctus et ultrices posuere cubilia curae.
-            </p>
-            <p>
+      <section class="section sobre-mim" id="sobre-mim">
+        <h2 class="section__titulo">Sobre Mim</h2>
+        <div class="sobre-mim__container row">
+          <div class="sobre-mim__texto animar animar-direita">
+            <h2 class="sobre-mim__meu-nome"><span>Cristian</span> Daniel</h2>
+            <p class="sobre-mim__paragrafo">
               Aliquam iaculis lectus molestie turpis tempus, et lacinia libero
               mollis. Integer pharetra ornare nunc faucibus interdum. Vestibulum
-              lacinia sem vel sagittis posuere. Nunc ut sem sit amet nisi
-              tincidunt scelerisque sit amet vulputate sem. Duis blandit
-              convallis neque, quis dictum neque tristique vitae.
+              lacinia sem vel sagittis posuere.
+            </p>
+            <p class="sobre-mim__paragrafo">
+              Nunc ut sem sit amet nisi tincidunt scelerisque sit amet vulputate
+              sem. Duis blandit convallis neque, quis dictum neque tristique
+              vitae.
             </p>
           </div>
-          <div class="animação-opacidade" id="minha-foto">
-            <img src="Images/Cris.jpg" alt="Foto Cristian Daniel" width="300" />
+          <div class="sobre-mim__foto">
+            <img src="img/Cris.jpg" alt="Foto Cristian Daniel" width="300" />
           </div>
-          <div class="row formação">
-            <h2 class="titulo formação">Formação Acadêmica</h2>
+          <div class="sobre-mim__formacao">
+            <h2 class="titulo-formacao">Formação Acadêmica</h2>
+            <div class="formacao-atual">
+              <h3 class="titulo-formacao-atual">Faculdade de Tecnologia</h3>
+              <p class="sobre-mim__paragrafo-faculdade">
+                Aliquam bibendum dictum nisi, at sagittis velit blandit sed. Nam
+                pellentesque, nibh. Integer pharetra ornare nunc faucibus
+                interdum. Vestibulum lacinia sem vel sagittis posuere.
+              </p>
+            </div>
 
-            <div class="formação-conteiner animação-opacidade">
-              <h3 class="formação-atual">Faculdade de Tecnologia</h3>
-              <div class="texto sobre-formação">
-                <p>
-                  Aliquam bibendum dictum nisi, at sagittis velit blandit sed.
-                  Nam pellentesque, nibh. Integer pharetra ornare nunc faucibus
-                  interdum. Vestibulum lacinia sem vel sagittis posuere.
-                </p>
+            <div class="sobre-mim__cursos animação-opacidade">
+              <div class="formacao-cursos">
+                <h3 class="cursos__titulo">JavaScript 68h</h3>
+                <span class="cursos__info">Jonas Schmedtmann, Udemy</span>
               </div>
-              <div class="formação-cursos">
-                <h3>JavaScript 68h</h3>
-                Jonas Schmedtmann, Udemy
+              <div class="formacao-cursos">
+                <h3 class="cursos__titulo">React - The Complete Guide 74h</h3>
+                <span class="cursos__info">Academind - Maximilian S.</span>
               </div>
-              <div class="formação-cursos">
-                <h3>Python 120h</h3>
-                Gustavo Guanabara, Curso em Video
+              <div class="formacao-cursos">
+                <h3 class="cursos__titulo">Ciência de Dados com Python 80h</h3>
+                <span class="cursos__info">Santander, DIO</span>
               </div>
-              <div class="formação-cursos">
-                <h3>Bootcamp Ciência de Dados com Python 80h</h3>
-                Santander, DIO
+              <div class="formacao-cursos">
+                <h3 class="cursos__titulo">
+                  Desenvolvimento de Jogos com JS 77h
+                </h3>
+                <span class="cursos__info">iFood, DIO</span>
               </div>
             </div>
           </div>
         </div>
       </section>
-    </div>
-    <div class="background background-habilidades">
-      <section class="section" id="habilidades">
-        <h2 class="titulo">Habilidades</h2>
-        <div class="row habilidades">
-          <div class="container-habilidades">
-            <div class="informações-habilidades">
-              <button>
+      <section class="section habilidades" id="habilidades">
+        <h2 class="section__titulo">Habilidades</h2>
+        <div class="row">
+          <div class="habilidades__container">
+            <div class="habilidades__informacao">
+              <button class="habilidades__btn">
                 <img
-                  class="habilidades-icones"
-                  src="icons/html icon.png"
+                  class="habilidades__icone"
+                  src="img/icons/html icon.png"
                   alt="html icone"
                 />
               </button>
-              <h3 class="nome-habilidades">HTML</h3>
-              <p class="texto-habilidades txt-escondido">
+              <h3 class="habilidades__nome">HTML</h3>
+              <p class="habilidades__texto">
                 Sed urna urna, bibendum sit amet tortor id, bibendum mollis
                 quam. Nulla viverra semper massa ut vestibulum.
               </p>
             </div>
-            <div class="informações-habilidades">
-              <button>
+            <div class="habilidades__informacao">
+              <button class="habilidades__btn">
                 <img
-                  class="habilidades-icones"
-                  src="icons/css icon.png"
+                  class="habilidades__icone"
+                  src="img/icons/css icon.png"
                   alt="css icone"
                 />
               </button>
-              <h3 class="nome-habilidades">CSS</h3>
-              <p class="texto-habilidades txt-escondido css">
+              <h3 class="habilidades__nome">CSS</h3>
+              <p class="habilidades__texto css">
                 Sed urna urna, bibendum sit amet tortor id, bibendum mollis
                 quam. Nulla viverra semper massa ut vestibulum.
               </p>
             </div>
-            <div class="informações-habilidades">
-              <button>
+            <div class="habilidades__informacao">
+              <button class="habilidades__btn">
                 <img
-                  class="habilidades-icones"
-                  src="icons/js icon.png"
+                  class="habilidades__icone"
+                  src="img/icons/js icon.png"
                   alt="javascript icone"
                 />
               </button>
-              <h3 class="nome-habilidades">JavaScript</h3>
-              <p class="texto-habilidades txt-escondido javascript">
+              <h3 class="habilidades__nome">JavaScript</h3>
+              <p class="habilidades__texto javascript">
                 Sed urna urna, bibendum sit amet tortor id, bibendum mollis
                 quam. Nulla viverra semper massa ut vestibulum.
               </p>
             </div>
-            <div class="informações-habilidades">
-              <button>
+            <div class="habilidades__informacao">
+              <button class="habilidades__btn">
                 <img
-                  class="habilidades-icones"
-                  src="icons/react icon.jpg"
+                  class="habilidades__icone"
+                  src="img/icons/react icon.jpg"
                   alt="react icone"
                 />
               </button>
-              <h3 class="nome-habilidades">React</h3>
-              <p class="texto-habilidades txt-escondido react">
+              <h3 class="habilidades__nome">React</h3>
+              <p class="habilidades__texto react">
                 Sed urna urna, bibendum sit amet tortor id, bibendum mollis
                 quam. Nulla viverra semper massa ut vestibulum.
               </p>
             </div>
-            <div class="informações-habilidades">
-              <img
-                class="habilidades-icones"
-                src="icons/python icon.png"
-                alt="python icone"
-              />
-              <h3 class="nome-habilidades">Python</h3>
-              <p class="texto-habilidades txt-escondido react">
-                Sed urna urna, bibendum sit amet tortor id, bibendum mollis
-                quam. Nulla viverra semper massa ut vestibulum.
-              </p>
-            </div>
-            <div class="informações-habilidades">
-              <button>
+            <div class="habilidades__informacao">
+              <button class="habilidades__btn">
                 <img
-                  class="habilidades-icones"
-                  src="icons/c icon.png"
+                  class="habilidades__icone"
+                  src="img/icons/python icon.png"
+                  alt="python icone"
+                />
+              </button>
+              <h3 class="habilidades__nome">Python</h3>
+              <p class="habilidades__texto react">
+                Sed urna urna, bibendum sit amet tortor id, bibendum mollis
+                quam. Nulla viverra semper massa ut vestibulum.
+              </p>
+            </div>
+            <div class="habilidades__informacao">
+              <button class="habilidades__btn">
+                <img
+                  class="habilidades__icone"
+                  src="img/icons/c icon.png"
                   alt="c icone"
                 />
               </button>
-              <h3 class="nome-habilidades">C</h3>
-              <p class="texto-habilidades txt-escondido">
+              <h3 class="habilidades__nome">C</h3>
+              <p class="habilidades__texto css">
                 Sed urna urna, bibendum sit amet tortor id, bibendum mollis
                 quam. Nulla viverra semper massa ut vestibulum.
               </p>
             </div>
-            <div class="informações-habilidades">
-              <button>
+            <div class="habilidades__informacao">
+              <button class="habilidades__btn">
                 <img
-                  class="habilidades-icones"
-                  src="icons/git icon.png"
+                  class="habilidades__icone"
+                  src="img/icons/git icon.png"
                   alt="git icone"
                 />
               </button>
-              <h3 class="nome-habilidades">Git</h3>
-              <p class="texto-habilidades txt-escondido">
+              <h3 class="habilidades__nome">Git</h3>
+              <p class="habilidades__texto">
                 Sed urna urna, bibendum sit amet tortor id, bibendum mollis
                 quam. Nulla viverra semper massa ut vestibulum.
               </p>
@@ -209,74 +241,76 @@
           </div>
         </div>
       </section>
-    </div>
-    <div class="background-projetos">
-      <section class="section" id="projetos">
-        <h2 class="titulo">Projetos</h2>
-        <div class="row">
-          <div class="bloco-projetos animar animar-direita row-reverso">
-            <div class="informações-projeto">
-              <h3 class="titulo-projeto">Pig Game</h3>
-              <p>
+      <section class="section projetos" id="projetos">
+        <h2 class="section__titulo">Projetos</h2>
+        <div class="projetos__coluna">
+          <div class="projetos__container animar animar-direita row-reverso">
+            <div class="projetos__informacao">
+              <h3 class="projetos__titulo">Mr. Dice</h3>
+              <p class="projetos__texto">
                 Sed urna urna, bibendum sit amet tortor id, bibendum mollis
                 quam.Aliquam bibendum dictum nisi, at sagittis velit blandit
                 sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Cras et est pretium, condimentum augue vel, varius massa.
               </p>
-              <h4 class="titulo-projeto titulo-tecnologias">Tecnologias</h4>
-              <div class="lista-tecnologias">
+              <h4 class="projetos__titulo projetos__titulo-tecnologias">
+                Tecnologias
+              </h4>
+              <div class="projetos__tecnologias">
                 <img
                   class="tecnologias"
-                  src="icons/html icon.png"
+                  src="img/icons/html icon.png"
                   alt="html icone"
                 />
                 <img
                   class="tecnologias"
-                  src="icons/css icon.png"
+                  src="img/icons/css icon.png"
                   alt="css icone"
                 />
                 <img
                   class="tecnologias"
-                  src="icons/js icon.png"
+                  src="img/icons/js icon.png"
                   alt="javascript icone"
                 />
               </div>
             </div>
             <img
-              class="imagem-projeto"
-              src="Images/Pig Game.png"
-              alt="jogo de dados rosa, Pig Game"
+              class="projetos__imagem mr-dice"
+              src="img/mr-dice.png"
+              alt="projeto de jogo de dados"
             />
           </div>
-          <div class="bloco-projetos animar animar-esquerda">
+          <div class="projetos__container animar animar-esquerda">
             <img
-              class="imagem-projeto"
-              src="Images/Guess My Number.png"
+              class="projetos__imagem"
+              src="Img/Guess My Number.png"
               alt="jogo de adivinhar o número, preto e branco"
             />
-            <div class="informações-projeto">
-              <h3 class="titulo-projeto">Guess My Number</h3>
-              <p>
+            <div class="projetos__informacao">
+              <h3 class="projetos__titulo">Guess My Number</h3>
+              <p class="projetos__texto">
                 Sed urna urna, bibendum sit amet tortor id, bibendum mollis
                 quam.Aliquam bibendum dictum nisi, at sagittis velit blandit
                 sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Cras et est pretium, condimentum augue vel, varius massa.
               </p>
-              <h4 class="titulo-projeto titulo-tecnologias">Tecnologias</h4>
-              <div class="lista-tecnologias">
+              <h4 class="projetos__titulo projetos__titulo-tecnologias">
+                Tecnologias
+              </h4>
+              <div class="projetos__tecnologias">
                 <img
                   class="tecnologias"
-                  src="icons/html icon.png"
+                  src="img/icons/html icon.png"
                   alt="html icone"
                 />
                 <img
                   class="tecnologias"
-                  src="icons/css icon.png"
+                  src="img/icons/css icon.png"
                   alt="css icone"
                 />
                 <img
                   class="tecnologias"
-                  src="icons/js icon.png"
+                  src="img/icons/js icon.png"
                   alt="javascript icone"
                 />
               </div>
@@ -284,29 +318,42 @@
           </div>
         </div>
       </section>
-    </div>
-    <div class="background-projetos">
-      <section class="section" id="contato">
-        <h2 class="titulo">Contato</h2>
-        <div class="container-contato texto">
-          <form action="">
-            <label>Nome</label>
-            <input class="estilo-contato" type="text" name="name" placeholder="Digite seu nome">
-            <label>Email</label>
-            <input class="estilo-contato" type="email" name="email" placeholder="Digite seu email">
-            <label>Mensagem</label>
-            <textarea class="estilo-contato mensagem" name="message" cols="30" rows="10" placeholder="Escreva sua mensagem"></textarea>
-            <button type="submit">Enviar</button>
+      <section class="section contato" id="contato">
+        <h2 class="section__titulo">Contato</h2>
+        <div class="contato__container">
+          <form action="" class="contato__form">
+            <label class="contato__label">Nome</label>
+            <input
+              class="contato__input"
+              type="text"
+              name="name"
+              placeholder="Digite seu nome"
+            />
+            <label class="contato__label">Email</label>
+            <input
+              class="contato__input"
+              type="email"
+              name="email"
+              placeholder="Digite seu email"
+            />
+            <label class="contato__label">Mensagem</label>
+            <textarea
+              class="contato__input mensagem"
+              name="message"
+              cols="30"
+              rows="10"
+              placeholder="Escreva sua mensagem"
+            ></textarea>
+            <button type="submit" class="contato__btn">Enviar</button>
           </form>
         </div>
       </section>
-    </div>
-    <footer class="estilo-cabeçalho rodape">
+    </main>
+    <footer class="rodape">
       <div>
         <h2 class="creditos">Desenvolvido por <span>Cristian Daniel</span></h2>
       </div>
     </footer>
-    <script src="script.js"></script>
-
+    <script src="src/script.js"></script>
   </body>
 </html>
