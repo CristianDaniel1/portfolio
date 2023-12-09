@@ -5,19 +5,17 @@ const allSections = document.querySelectorAll('.section');
 const animar = document.querySelectorAll('.animar');
 
 const callbackSec = function (entries, observer) {
-  const [entry] = entries;
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
 
-  if (!entry.isIntersecting) return;
-
-  entry.target.classList.remove('esconder');
-  // entry.target.classList.add('section-aparição');
-
-  observer.unobserve(entry.target);
+    entry.target.classList.remove('esconder');
+    observer.unobserve(entry.target);
+  });
 };
 
 const observer = new IntersectionObserver(callbackSec, {
   root: null,
-  threshold: 0.1,
+  threshold: 0.05,
 });
 
 allSections.forEach(function (section) {
@@ -40,17 +38,17 @@ document
 
 // Animação do conteúdo
 const callbackConteúdo = function (entries, observer) {
-  const [entry] = entries;
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
 
-  if (!entry.isIntersecting) return;
+    entry.target.classList.remove('esconder');
 
-  entry.target.classList.remove('esconder');
+    if (entry.target.classList.contains('animar-direita')) {
+      entry.target.classList.add('animação-para-direita');
+    } else entry.target.classList.add('animação-para-esquerda');
 
-  if (entry.target.classList.contains('animar-direita')) {
-    entry.target.classList.add('animação-para-direita');
-  } else entry.target.classList.add('animação-para-esquerda');
-
-  observer.unobserve(entry.target);
+    observer.unobserve(entry.target);
+  });
 };
 
 const observadorConteúdo = new IntersectionObserver(callbackConteúdo, {
@@ -68,12 +66,12 @@ animar.forEach(function (animação) {
 const infoHabilidades = document.querySelectorAll('.texto-habilidades');
 const habilidadesContainer = document.querySelector('.habilidades__container');
 
-habilidadesContainer.addEventListener('click', function (e) {
-  const clicked = e.target.closest('.habilidades__informacao');
-  if (!clicked) return;
+// habilidadesContainer.addEventListener('click', function (e) {
+//   const clicked = e.target.closest('.habilidades__informacao');
+//   if (!clicked) return;
 
-  clicked.lastElementChild.classList.toggle('animacao__descer');
-});
+//   clicked.lastElementChild.classList.toggle('animacao__descer');
+// });
 
 /////////////////// Modo Claro/Escuro ////////////////////
 

@@ -1,14 +1,20 @@
 :root {
-  --color-primary: #fff;
-  --color-primary-darker: #acacac;
-  --color-secundary: #ff4545;
-  --color-secundary-darker: #aa0000;
-  --color-tertiary: rgb(14, 14, 14);
+  --color-primary: #ff4545;
+  --color-secundary: #fff;
+  --color-secundary-dark: #acacac;
+  --color-tertiary: rgb(12, 12, 12);
+  --color-tertiary-2: #3b000046;
 
-  --color-shadow: rgb(8, 8, 8);
+  --color-border: rgb(17, 17, 17);
+  --color-border-2: rgb(68, 0, 0);
+  /* --color-border-2: #613a0086; */
+  --color-shadow: rgb(0, 0, 0);
 
-  --color-background-1: linear-gradient(45deg, rgb(44, 0, 0), rgb(15, 0, 0));
-  --color-background-2: linear-gradient(135deg, rgb(15, 0, 0), rgb(44, 0, 0));
+  /* --color-background-1: linear-gradient(45deg, rgb(44, 0, 0), rgb(15, 0, 0));
+  --color-background-2: linear-gradient(135deg, rgb(15, 0, 0), rgb(44, 0, 0)); */
+  /* --color-background-1: rgb(24, 0, 0); */
+  --color-background-1: linear-gradient(to top, rgb(27, 0, 0), rgb(17, 0, 0));
+  --color-background-2: linear-gradient(135deg, rgb(15, 0, 0), rgb(39, 0, 0));
 }
 
 *,
@@ -27,20 +33,22 @@ html {
 }
 
 .modo-claro {
-  --color-background-1: linear-gradient(45deg, #fff7f7 40%, #f7f7f7);
-  --color-background-2: linear-gradient(135deg, #fffbfb 60%, #fff7f7);
+  --color-secundary: #1f1f1f;
+  --color-secundary-dark: #494949;
+  --color-tertiary: #ffffff;
+  --color-tertiary-2: #fff9f4;
 
+  --color-border: rgba(31, 31, 31, 0.336);
+  --color-border-2: #ffd644d5;
   --color-shadow: rgb(194, 194, 194);
 
-  --color-primary: #1f1f1f;
-  --color-primary-darker: #494949;
-
-  --color-tertiary: rgb(255, 255, 255);
+  --color-background-1: linear-gradient(45deg, #fff7f7 40%, #f7f7f7);
+  --color-background-2: linear-gradient(135deg, #fffbfb 60%, #fff7f7);
 }
 
 body {
   font-family: 'Poppins', sans-serif;
-  color: var(--color-primary);
+  color: var(--color-secundary);
   width: 100%;
   overflow-x: hidden;
   background: var(--color-background-1);
@@ -48,6 +56,7 @@ body {
 
 main {
   overflow: hidden;
+  background: var(--color-background-1);
 }
 
 ::-webkit-scrollbar {
@@ -56,7 +65,7 @@ main {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--color-secundary);
+  background-color: var(--color-primary);
   border-radius: 3rem;
 }
 
@@ -70,13 +79,13 @@ main {
   padding: 0 7rem;
   background-color: var(--color-tertiary);
   z-index: 100;
-  color: var(--color-primary);
+  color: var(--color-secundary);
   /* box-shadow: 1px 1px 5px black; */
   /* position: fixed; */
 }
 
 .cabecalho > * {
-  color: var(--color-primary-darker);
+  color: var(--color-secundary-dark);
 }
 
 .cabecalho__nome {
@@ -88,6 +97,10 @@ main {
   animation: AnimaOpacidade 1s;
 }
 
+.cabecalho__nome:hover {
+  color: var(--color-primary);
+}
+
 .cabecalho__menu {
   display: flex;
   gap: 2rem;
@@ -97,7 +110,7 @@ main {
 }
 
 .cabecalho__menu *:focus {
-  color: var(--color-secundary);
+  color: var(--color-primary);
 }
 
 .cabecalho__link {
@@ -109,8 +122,8 @@ main {
 }
 
 .cabecalho__link:hover {
-  color: var(--color-secundary);
-  border-bottom: 2px solid var(--color-secundary-darker);
+  color: var(--color-primary);
+  border-bottom: 2px solid #aa0000;
 }
 
 .cabecalho__linha {
@@ -123,7 +136,7 @@ main {
   display: block;
   background-color: transparent;
   border: none;
-  color: var(--color-primary-darker);
+  color: var(--color-secundary-dark);
   width: 4rem;
   height: 4rem;
   padding: 0.7rem;
@@ -132,20 +145,20 @@ main {
 }
 
 .cabecalho__sol:hover {
-  color: var(--color-secundary);
+  color: var(--color-primary);
   background-color: var(--color-tertiary);
   border-radius: 5px;
 }
 
 .cabecalho__sol:focus {
-  border: 2px solid var(--color-secundary);
+  border: 2px solid var(--color-primary);
   border-radius: 5px;
 }
 
 /********************* INICIO ***********************/
-
 #inicio {
   height: calc(100vh - 10rem);
+  height: calc(100svh - 10rem);
   background: var(--color-background-1);
 
   display: flex;
@@ -156,7 +169,8 @@ main {
 }
 
 span {
-  color: var(--color-secundary);
+  color: var(--color-primary);
+  display: inline-block;
 }
 
 .inicio__nome {
@@ -175,7 +189,7 @@ span {
 }
 
 .inicio__descricao {
-  color: var(--color-primary-darker);
+  color: var(--color-secundary-dark);
   letter-spacing: 0.1rem;
   text-align: center;
   font-size: 1.8rem;
@@ -192,7 +206,7 @@ span {
 }
 
 .links {
-  color: var(--color-primary);
+  color: var(--color-secundary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -213,7 +227,7 @@ span {
 
 .links:hover:active {
   transform: translateY(-1px);
-  color: var(--color-primary);
+  color: var(--color-secundary);
 }
 
 .fa-brands,
@@ -245,13 +259,13 @@ span {
 
 .inicio__redes-email {
   color: #ff6767;
-  border: 2px solid var(--color-secundary);
+  border: 2px solid var(--color-primary);
   animation: moverAcima 1s ease-out 0.9s backwards;
 }
 
 .inicio__redes-email:hover {
   color: #ff8080;
-  border: 2px solid var(--color-secundary);
+  border: 2px solid var(--color-primary);
 }
 
 /********************* SOBRE MIM ************************/
@@ -268,13 +282,12 @@ span {
 
 .esconder {
   opacity: 0;
-  transform: translateY(9rem);
+  transform: translateY(5rem);
 }
 
 .section__titulo {
-  display: flex;
   letter-spacing: 0.1rem;
-  justify-content: center;
+  text-align: center;
   padding: 4rem;
   font-size: 4.5rem;
   font-weight: 500;
@@ -294,10 +307,10 @@ span {
 
 .sobre-mim__texto,
 .formacao-atual {
-  color: var(--color-primary-darker);
+  color: var(--color-secundary-dark);
   font-size: 1.8rem;
   letter-spacing: 0.1rem;
-  padding: 3rem 2rem;
+  padding: 3rem 2.8rem;
   margin: 3rem 2rem;
   background-color: var(--color-tertiary);
   border-radius: 10px;
@@ -311,25 +324,25 @@ span {
 
 .sobre-mim__meu-nome,
 .titulo-formacao-atual {
-  color: var(--color-primary);
+  color: var(--color-secundary);
   font-size: 2rem;
   font-weight: 500;
   text-align: center;
   margin: 0 auto 2rem auto;
   padding-bottom: 1rem;
-  border-bottom: 3px solid var(--color-secundary);
+  border-bottom: 3px solid var(--color-primary);
 }
 
 .sobre-mim__foto {
   margin-top: 3rem;
   padding: 1rem;
   width: 40rem;
-  animation: AnimaOpacidade 1s ease-out 1s backwards;
+  animation: AnimaOpacidade 1s ease-out backwards;
 }
 
 .sobre-mim img {
   border-radius: 50px 0 0 50px;
-  /* border-right: 5px solid var(--color-secundary-darker); */
+  border: 4px solid rgba(167, 0, 0, 0.562);
   box-shadow: 0.4rem 1rem 2rem var(--color-shadow);
   width: 100%;
 }
@@ -347,7 +360,7 @@ span {
   font-size: 3rem;
   font-weight: 500;
   text-align: center;
-  color: var(--color-primary);
+  color: var(--color-secundary);
   width: 100%;
   margin-top: 1.5rem;
 }
@@ -361,9 +374,9 @@ span {
   border: none;
 }
 
-.sobre-mim__paragrafo-faculdade {
+/* .sobre-mim__paragrafo-faculdade {
   text-align: center;
-}
+} */
 
 .sobre-mim__cursos {
   margin-top: 3rem;
@@ -386,8 +399,8 @@ span {
 }
 
 .formacao-cursos {
-  color: var(--color-primary-darker);
-  border: 2px solid var(--color-shadow);
+  color: var(--color-secundary-dark);
+  border: 2px solid var(--color-border);
   border-radius: 0.5rem;
   padding: 1.5rem;
   width: 30rem;
@@ -395,12 +408,11 @@ span {
 }
 
 .formacao-cursos:hover {
-  border: 2px solid var(--color-primary-darker);
-  color: var(--color-primary);
+  border: 2px solid var(--color-secundary-dark);
+  color: var(--color-secundary);
 }
 
 /*********************  HABILIDADES  ************************/
-
 .habilidades {
   background: var(--color-background-2);
 }
@@ -411,7 +423,7 @@ span {
   justify-content: space-evenly;
   width: 130rem;
   margin-bottom: 8rem;
-  box-shadow: 0 1rem 2rem var(--color-shadow);
+  box-shadow: 0 0.7rem 1.5rem var(--color-shadow);
 }
 
 .habilidades__informacao {
@@ -419,7 +431,6 @@ span {
   flex-flow: column;
   align-items: center;
   width: 27rem;
-  padding-top: 1.5rem;
   margin: 3rem 1.5rem;
   border-radius: 1rem;
   cursor: pointer;
@@ -428,67 +439,76 @@ span {
 
 .habilidades__informacao:hover {
   box-shadow: 0px 0.3rem 2.2rem rgba(1, 1, 78, 0.6);
-  background-color: rgba(3, 0, 49, 0.05);
-}
-
-.habilidades__informacao:active {
-  opacity: 0.5;
-}
-
-.habilidades__nome {
-  font-size: 2rem;
-  margin: 1.2rem;
-  font-weight: 500;
-  color: var(--color-primary-darker);
-}
-
-.habilidades__icone {
-  display: block;
-  width: 12rem;
-  height: 12.5rem;
-  transition: 0.3s all;
-}
-
-.habilidades__icone:hover {
-  width: 12.5rem;
-  height: 13.2rem;
+  /* background-color: rgba(3, 0, 49, 0.05); */
+  background-color: var(--color-tertiary-2);
 }
 
 .habilidades__btn {
   background-color: transparent;
   cursor: pointer;
   border: none;
+  height: 19.9rem;
+  padding-top: 1.5rem;
+  overflow: hidden;
+  transition: 0.5s all;
+  border-radius: inherit;
+}
+
+.habilidades__btn:focus {
+  height: 31.5rem;
+  background-color: var(--color-tertiary-2);
+  border: 1px solid rgba(1, 1, 78, 0.2);
+}
+
+.habilidades__nome {
+  font-size: 2rem;
+  margin: 1.2rem;
+  font-weight: 500;
+  color: var(--color-secundary-dark);
+}
+
+.habilidades__icone {
+  display: inline-block;
+  width: 12rem;
+  height: 12.5rem;
+  transition: 0.3s all;
 }
 
 .habilidades__texto {
   font-size: 1.5rem;
-  color: var(--color-primary-darker);
+  color: var(--color-secundary-dark);
   text-align: center;
   line-height: 1.5;
   padding: 1.5rem;
   background-color: var(--color-tertiary);
-  border-top: 3px solid var(--color-secundary);
+  border-top: 4px solid var(--color-primary);
   border-radius: 10px;
   box-shadow: 0 0.1rem 0.5rem var(--color-shadow);
-  display: none;
 }
 
 .css {
-  border-top: 3px solid rgb(94, 164, 245);
+  border-top: 4px solid rgb(94, 164, 245);
+}
+
+.sass {
+  border-top: 4px solid rgba(255, 68, 171, 0.795);
 }
 
 .javascript {
-  border-top: 3px solid rgb(218, 190, 32);
+  border-top: 4px solid #ffd644d5;
 }
 
 .react {
-  border-top: 3px solid rgb(10, 192, 238);
+  border-top: 4px solid rgb(10, 192, 238);
 }
 
 /********************* PROJETOS ***********************/
-
 .projetos {
   background: var(--color-background-1);
+}
+
+.span-projetos {
+  color: #ffd22ed5;
 }
 
 .projetos__coluna {
@@ -510,10 +530,11 @@ span {
   padding: 3rem 1.5rem;
   margin: 1rem;
   margin-bottom: 6rem;
-  border: 2px solid var(--color-shadow);
+  border-top: 2px solid var(--color-border-2);
+  border-bottom: 2px solid var(--color-border-2);
+  /* border: 2px solid var(--color-border); */
 
-  /* background-color: #f7f7f7; */
-  /* background-color: #f9f7f6; */
+  background-color: var(--color-tertiary-2);
 }
 
 .row-reverso {
@@ -533,7 +554,7 @@ span {
 }
 
 .projetos__texto {
-  color: var(--color-primary-darker);
+  color: var(--color-secundary-dark);
   font-size: 1.8rem;
   line-height: 1.5;
   text-align: center;
@@ -576,8 +597,11 @@ span {
   transform: scale(1.05);
 }
 
-/********************* CONTATO ************************/
+.projetos__imagem-order {
+  order: 2;
+}
 
+/********************* CONTATO ************************/
 .contato {
   background: var(--color-background-1);
   display: flex;
@@ -601,7 +625,7 @@ span {
 }
 
 .contato__label {
-  color: var(--color-primary-darker);
+  color: var(--color-secundary-dark);
   font-size: 1.8rem;
   font-weight: 400;
 }
@@ -612,7 +636,7 @@ span {
   padding: 1rem;
   font-size: 1.8rem;
   outline: none;
-  color: var(--color-primary-darker);
+  color: var(--color-secundary-dark);
   background-color: var(--color-tertiary);
 }
 
@@ -625,25 +649,24 @@ span {
   font-size: 2rem;
   padding: 1rem;
   cursor: pointer;
-  background-color: transparent;
+  background: linear-gradient(to right top, rgb(221, 0, 0), rgb(238, 130, 130));
+
   border: 3px solid rgb(90, 0, 0);
   border-radius: 4px;
-  color: var(--color-primary);
+  color: #fff;
   width: 20rem;
   align-self: center;
   transition: 0.4s all;
 }
 
 .contato__btn:hover {
-  background-color: white;
-  color: var(--color-secundary-darker);
+  background: linear-gradient(to right top, rgb(255, 95, 95), rgb(255, 0, 0));
   border: 3px solid rgb(0, 0, 0);
   transform: translateY(-0.5rem);
-  box-shadow: var(--color-shadow);
+  box-shadow: 0 0.5rem 1rem var(--color-shadow);
 }
 
 /******************** RODAPÉ ************************/
-
 .rodape {
   display: flex;
   flex-flow: column;
@@ -654,13 +677,12 @@ span {
 }
 
 .creditos {
-  color: var(--color-primary-darker);
+  color: var(--color-secundary-dark);
   font-size: 2rem;
   font-weight: 500;
 }
 
 /****************  MEDIA QUERIES  *********************/
-
 @media screen and (max-width: 1536px) {
   .sobre-mim__foto {
     width: 35rem;
@@ -715,7 +737,8 @@ span {
   }
 
   .habilidades__container,
-  .projetos__container {
+  .projetos__container,
+  .contato__container {
     width: 85rem;
   }
 
@@ -752,7 +775,8 @@ span {
   }
 
   .habilidades__container,
-  .projetos__container {
+  .projetos__container,
+  .contato__container {
     width: 80rem;
   }
 }
@@ -775,6 +799,10 @@ span {
   .formacao-cursos {
     width: 25rem;
     padding: 1rem;
+  }
+
+  .contato__container {
+    width: 85%;
   }
 }
 
@@ -843,7 +871,7 @@ span {
 }
 
 .animação-para-direita {
-  animation: slideParaDireita 0.5s ease-out;
+  animation: slideParaDireita 0.5s ease-out backwards;
 }
 
 /* Animações - Esquerda */
@@ -864,17 +892,13 @@ span {
 
 @keyframes habilidadeAnimacao {
   0% {
-    transform: translateY(-2rem);
+    transform: translateY(0rem);
   }
 
   100% {
-    transform: translateY(0);
+    transform: translateY(10rem);
+    visibility: visible;
   }
-}
-
-.animacao__descer {
-  display: block;
-  animation: habilidadeAnimacao 0.3s ease-out forwards;
 }
 
 @keyframes moverAcima {
