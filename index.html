@@ -37,21 +37,29 @@
           <li><a class="cabecalho__link" href="#contato">Contato</a></li>
           <li class="cabecalho__linha"></li>
           <li>
-            <button class="sol-toggle cabecalho__sol">
+            <button class="toggle-modo">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                class="w-6 h-6 sol"
+                class="w-6 h-6 sol hidden"
               >
                 <path
                   d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"
                 />
               </svg>
-
-              <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z" clip-rule="evenodd" />
-              </svg> -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-6 h-6 lua"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"
+                  clip-rule="evenodd"
+                />
+              </svg>
             </button>
           </li>
         </ul>
@@ -70,40 +78,48 @@
             class="links inicio__redes-linkedin"
             href="https://www.linkedin.com/in/cristiandaniel1/"
             target="_blank"
-            ><i class="fa-brands fa-linkedin"></i> Linkedin</a
+            ><i class="inicio__icon fa-brands fa-linkedin"></i> Linkedin</a
           >
           <a
             class="links inicio__redes-github"
             href="https://github.com/CristianDaniel1"
             target="_blank"
-            ><i class="fa-brands fa-square-github"></i> Github</a
+            ><i class="inicio__icon fa-brands fa-square-github"></i> Github</a
           >
           <a
             class="links inicio__redes-email"
             href="https://github.com/CristianDaniel1"
             target="_blank"
-            ><i class="fa-regular fa-envelope"></i> Email</a
+            ><i class="inicio__icon fa-regular fa-envelope"></i> Email</a
           >
         </div>
       </section>
       <section class="section sobre-mim" id="sobre-mim">
         <h2 class="section__titulo">Sobre <span>Mim</span></h2>
-        <div class="sobre-mim__container row">
+        <div class="sobre-mim__container container">
           <div class="sobre-mim__texto animar animar-direita">
             <h2 class="sobre-mim__meu-nome"><span>Cristian</span> Daniel</h2>
             <p class="sobre-mim__paragrafo">
               Para mim, a razão principal de eu ter decidido me tornar um
               desenvolvedor foi a ideia da criação. Acho incrível desenvolver a
-              capacidade de aplicar uma ideia que eu tive.
+              capacidade de aplicar uma ideia que eu tive no computador.
             </p>
             <p class="sobre-mim__paragrafo">
-              No momento, estou focado no desenvolvimento Front-End, porém
-              pretendo conhecer mais da parte Back-End no futuro.
+              No momento, estou focado no
+              <span>desenvolvimento Front-End</span> com as tecnologias abaixo,
+              porém no futuro pretendo conhecer mais da parte Back-End.
             </p>
+            <ul class="sobre-mim__lista">
+              <li><i class="sobre-mim__icon fa-brands fa-html5"></i></li>
+              <li><i class="sobre-mim__icon fa-brands fa-css3-alt"></i></li>
+              <li><i class="sobre-mim__icon fa-brands fa-js"></i></li>
+              <li><i class="sobre-mim__icon fa-brands fa-react"></i></li>
+            </ul>
           </div>
           <div class="sobre-mim__foto">
-            <img src="img/Cris.jpg" alt="Foto Cristian Daniel" width="300" />
+            <img src="img/Cris.jpg" alt="Foto de Cristian Daniel" width="300" />
           </div>
+
           <div class="sobre-mim__formacao">
             <h2 class="titulo-formacao">Formação Acadêmica</h2>
             <div class="formacao-atual">
@@ -111,8 +127,7 @@
               <p class="sobre-mim__paragrafo-faculdade">
                 Atualmente estou cursando o 2º semestre em Análise e
                 Desenvolvimento de Sistemas na Fatec Ipiranga. Além disso,
-                também faço cursos a parte, como o de React e outros
-                apresentados abaixo.
+                também fiz alguns cursos a parte e estou estudando React.
               </p>
             </div>
 
@@ -141,107 +156,107 @@
       </section>
       <section class="section habilidades" id="habilidades">
         <h2 class="section__titulo">Habilidades</h2>
-        <div class="row">
-          <div class="habilidades__container">
-            <div class="habilidades__informacao">
-              <button class="habilidades__btn">
-                <img
-                  class="habilidades__icone"
-                  src="img/icons/html icon.png"
-                  alt="html icone"
-                />
-                <h3 class="habilidades__nome">HTML</h3>
-                <p class="habilidades__texto">
-                  Sed urna urna, bibendum sit amet tortor id, bibendum mollis
-                  quam. Nulla viverra semper massa ut vestibulum.
-                </p>
-              </button>
-            </div>
-            <div class="habilidades__informacao">
-              <button class="habilidades__btn">
-                <img
-                  class="habilidades__icone"
-                  src="img/icons/css icon.png"
-                  alt="css icone"
-                />
-                <h3 class="habilidades__nome">CSS</h3>
-                <p class="habilidades__texto css">
-                  Sed urna urna, bibendum sit amet tortor id, bibendum mollis
-                  quam. Nulla viverra semper massa ut vestibulum.
-                </p>
-              </button>
-            </div>
-
-            <div class="habilidades__informacao">
-              <button class="habilidades__btn">
-                <img
-                  class="habilidades__icone"
-                  src="img/icons/js icon.png"
-                  alt="javascript icone"
-                />
-                <h3 class="habilidades__nome">JavaScript</h3>
-                <p class="habilidades__texto javascript">
-                  Sed urna urna, bibendum sit amet tortor id, bibendum mollis
-                  quam. Nulla viverra semper massa ut vestibulum.
-                </p>
-              </button>
-            </div>
-            <div class="habilidades__informacao">
-              <button class="habilidades__btn">
-                <img
-                  class="habilidades__icone"
-                  src="img/icons/sass icon.png"
-                  alt="sass icone"
-                />
-                <h3 class="habilidades__nome">Sass</h3>
-                <p class="habilidades__texto sass">
-                  Sed urna urna, bibendum sit amet tortor id, bibendum mollis
-                  quam. Nulla viverra semper massa ut vestibulum.
-                </p>
-              </button>
-            </div>
-            <div class="habilidades__informacao">
-              <button class="habilidades__btn">
-                <img
-                  class="habilidades__icone"
-                  src="img/icons/react icon.png"
-                  alt="react icone"
-                />
-                <h3 class="habilidades__nome">React</h3>
-                <p class="habilidades__texto react">
-                  Sed urna urna, bibendum sit amet tortor id, bibendum mollis
-                  quam. Nulla viverra semper massa ut vestibulum.
-                </p>
-              </button>
-            </div>
-            <div class="habilidades__informacao">
-              <button class="habilidades__btn">
-                <img
-                  class="habilidades__icone"
-                  src="img/icons/python icon.png"
-                  alt="python icone"
-                />
-                <h3 class="habilidades__nome">Python</h3>
-                <p class="habilidades__texto react">
-                  Sed urna urna, bibendum sit amet tortor id, bibendum mollis
-                  quam. Nulla viverra semper massa ut vestibulum.
-                </p>
-              </button>
-            </div>
-            <div class="habilidades__informacao">
-              <button class="habilidades__btn">
-                <img
-                  class="habilidades__icone"
-                  src="img/icons/git icon.png"
-                  alt="git icone"
-                />
-                <h3 class="habilidades__nome">Git</h3>
-                <p class="habilidades__texto">
-                  Sed urna urna, bibendum sit amet tortor id, bibendum mollis
-                  quam. Nulla viverra semper massa ut vestibulum.
-                </p>
-              </button>
-            </div>
+        <div class="habilidades__container container">
+          <div class="habilidades__informacao">
+            <button class="habilidades__btn">
+              <img
+                class="habilidades__icone"
+                src="img/icons/html icon.png"
+                alt="html icone"
+              />
+              <h3 class="habilidades__nome">HTML</h3>
+              <p class="habilidades__texto">
+                É uma linguagem de marcação utilizada na construção de páginas
+                na Web.
+              </p>
+            </button>
+          </div>
+          <div class="habilidades__informacao">
+            <button class="habilidades__btn">
+              <img
+                class="habilidades__icone"
+                src="img/icons/css icon.png"
+                alt="css icone"
+              />
+              <h3 class="habilidades__nome">CSS</h3>
+              <p class="habilidades__texto css">
+                Cascading Style Sheets é uma linguagem de estilo usada para
+                descrever a apresentação de um documento HTML ou XML.
+              </p>
+            </button>
+          </div>
+          <div class="habilidades__informacao">
+            <button class="habilidades__btn">
+              <img
+                class="habilidades__icone"
+                src="img/icons/js icon.png"
+                alt="javascript icone"
+              />
+              <h3 class="habilidades__nome">JavaScript</h3>
+              <p class="habilidades__texto javascript">
+                Linguagem de programação interpretada estruturada, de script em
+                alto nível com tipagem dinâmica fraca e multiparadigma.
+              </p>
+            </button>
+          </div>
+          <div class="habilidades__informacao">
+            <button class="habilidades__btn">
+              <img
+                class="habilidades__icone"
+                src="img/icons/sass icon.png"
+                alt="sass icone"
+              />
+              <h3 class="habilidades__nome">Sass</h3>
+              <p class="habilidades__texto sass">
+                Syntactically awesome style sheets é um pré-processador de CSS
+                que permite escrever estilos usando uma sintaxe mais fácil e
+                intuitiva.
+              </p>
+            </button>
+          </div>
+          <div class="habilidades__informacao">
+            <button class="habilidades__btn">
+              <img
+                class="habilidades__icone"
+                src="img/icons/react icon.png"
+                alt="react icone"
+              />
+              <h3 class="habilidades__nome">React</h3>
+              <p class="habilidades__texto react">
+                O React é uma biblioteca front-end JavaScript de código aberto
+                com foco em criar interfaces de usuário.
+              </p>
+            </button>
+          </div>
+          <div class="habilidades__informacao">
+            <button class="habilidades__btn">
+              <img
+                class="habilidades__icone"
+                src="img/icons/python icon.png"
+                alt="python icone"
+              />
+              <h3 class="habilidades__nome">Python</h3>
+              <p class="habilidades__texto react">
+                Linguagem de programação de alto nível, interpretada de script,
+                imperativa, orientada a objetos, funcional, de tipagem dinâmica
+                e forte.
+              </p>
+            </button>
+          </div>
+          <div class="habilidades__informacao">
+            <button class="habilidades__btn">
+              <img
+                class="habilidades__icone"
+                src="img/icons/git icon.png"
+                alt="git icone"
+              />
+              <h3 class="habilidades__nome">Git</h3>
+              <p class="habilidades__texto">
+                Git é um sistema de controle de versão distribuído e de código
+                aberto, projetado para lidar com tudo, desde projetos pequenos a
+                muito grandes.
+              </p>
+            </button>
           </div>
         </div>
       </section>
@@ -249,14 +264,13 @@
         <h2 class="section__titulo">
           Meus <span class="span-projetos">Projetos</span>
         </h2>
-        <div class="projetos__coluna">
-          <div class="projetos__container animar animar-direita row-reverso">
+        <div class="projetos__container container">
+          <div class="projeto__container animar animar-direita row-reverso">
             <a
               href="https://cristiandaniel1.github.io/mr-dice/"
               class="projetos__imagem-order"
               target="_blank"
-            >
-              <img
+              ><img
                 class="projetos__imagem"
                 src="img/mr-dice.png"
                 alt="projeto de jogo de dados"
@@ -295,7 +309,7 @@
               </div>
             </div>
           </div>
-          <div class="projetos__container animar animar-esquerda">
+          <div class="projeto__container animar animar-esquerda">
             <img
               class="projetos__imagem"
               src="img/Guess My Number.png"
@@ -335,7 +349,7 @@
       </section>
       <section class="section contato" id="contato">
         <h2 class="section__titulo">Entre em <span>Contato!</span></h2>
-        <div class="contato__container">
+        <div class="contato__container container">
           <form action="" class="contato__form">
             <label class="contato__label">Nome</label>
             <input

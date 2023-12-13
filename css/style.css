@@ -6,14 +6,14 @@
   --color-tertiary-2: #3b000046;
 
   --color-border: rgb(17, 17, 17);
-  --color-border-2: rgb(68, 0, 0);
+  --color-border-2: rgb(70, 0, 0);
   /* --color-border-2: #613a0086; */
   --color-shadow: rgb(0, 0, 0);
 
   /* --color-background-1: linear-gradient(45deg, rgb(44, 0, 0), rgb(15, 0, 0));
   --color-background-2: linear-gradient(135deg, rgb(15, 0, 0), rgb(44, 0, 0)); */
   /* --color-background-1: rgb(24, 0, 0); */
-  --color-background-1: linear-gradient(to top, rgb(27, 0, 0), rgb(17, 0, 0));
+  --color-background-1: linear-gradient(to top, rgb(27, 0, 0), rgb(20, 0, 0));
   --color-background-2: linear-gradient(135deg, rgb(15, 0, 0), rgb(39, 0, 0));
 }
 
@@ -69,6 +69,11 @@ main {
   border-radius: 3rem;
 }
 
+.container {
+  max-width: 130rem;
+  margin: 0 auto;
+}
+
 .cabecalho {
   font-size: 1.6rem;
   display: flex;
@@ -80,7 +85,6 @@ main {
   background-color: var(--color-tertiary);
   z-index: 100;
   color: var(--color-secundary);
-  /* box-shadow: 1px 1px 5px black; */
   /* position: fixed; */
 }
 
@@ -92,7 +96,6 @@ main {
   font-size: 2rem;
   font-weight: 500;
   letter-spacing: 0.1rem;
-  /* border: 2px solid red; */
   transition: all 0.2s;
   animation: AnimaOpacidade 1s;
 }
@@ -132,10 +135,10 @@ main {
   margin-left: 0.5rem;
 }
 
-.cabecalho__sol {
+.toggle-modo {
   display: block;
   background-color: transparent;
-  border: none;
+  border: 2px solid transparent;
   color: var(--color-secundary-dark);
   width: 4rem;
   height: 4rem;
@@ -144,21 +147,25 @@ main {
   cursor: pointer;
 }
 
-.cabecalho__sol:hover {
+.toggle-modo:hover {
   color: var(--color-primary);
   background-color: var(--color-tertiary);
   border-radius: 5px;
 }
 
-.cabecalho__sol:focus {
+.toggle-modo:focus {
   border: 2px solid var(--color-primary);
   border-radius: 5px;
 }
 
+.hidden {
+  display: none;
+}
+
 /********************* INICIO ***********************/
 #inicio {
-  height: calc(100vh - 10rem);
-  height: calc(100svh - 10rem);
+  min-height: calc(100vh - 10rem);
+  min-height: calc(100svh - 10rem);
   background: var(--color-background-1);
 
   display: flex;
@@ -202,7 +209,7 @@ span {
   justify-content: center;
   flex-flow: row wrap;
   gap: 1.5em;
-  padding: 0rem 0.5rem;
+  padding: 0rem 0.5rem 1rem;
 }
 
 .links {
@@ -230,8 +237,7 @@ span {
   color: var(--color-secundary);
 }
 
-.fa-brands,
-.fa-regular {
+.inicio__icon {
   font-size: 2.5rem;
 }
 
@@ -271,6 +277,7 @@ span {
 /********************* SOBRE MIM ************************/
 
 .section {
+  border-top: 1px solid rgba(29, 0, 0, 0.05);
   padding-top: 5rem;
   width: 100%;
   transition: transform 1s, opacity 1s;
@@ -293,16 +300,11 @@ span {
   font-weight: 500;
 }
 
-.row {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-}
-
 .sobre-mim__container {
-  gap: 3rem 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .sobre-mim__texto,
@@ -315,7 +317,7 @@ span {
   background-color: var(--color-tertiary);
   border-radius: 10px;
   width: 80rem;
-  box-shadow: 0 0.5rem 1rem var(--color-shadow);
+  /* box-shadow: 0 0.5rem 1rem var(--color-shadow); */
 }
 
 .sobre-mim__paragrafo:not(:last-child) {
@@ -324,13 +326,37 @@ span {
 
 .sobre-mim__meu-nome,
 .titulo-formacao-atual {
+  position: relative;
   color: var(--color-secundary);
   font-size: 2rem;
   font-weight: 500;
-  text-align: center;
   margin: 0 auto 2rem auto;
   padding-bottom: 1rem;
-  border-bottom: 3px solid var(--color-primary);
+}
+
+.sobre-mim__meu-nome::before {
+  content: '';
+  position: absolute;
+  top: 3rem;
+  border: 0.2rem solid var(--color-primary);
+  width: 20rem;
+}
+
+.sobre-mim__lista {
+  display: flex;
+  margin: 0.5rem;
+  gap: 2rem;
+  list-style: none;
+}
+
+.sobre-mim__icon {
+  font-size: 5rem;
+  width: 5rem;
+  transition: all 0.5s;
+}
+
+.sobre-mim__icon:hover {
+  color: var(--color-primary);
 }
 
 .sobre-mim__foto {
@@ -353,10 +379,14 @@ span {
   flex-flow: column wrap;
   align-items: center;
   justify-content: center;
-  margin: 6rem 1.5rem;
+  width: 100%;
+  margin: 6rem 0;
+  padding: 1rem;
+  border-top: 1px dashed var(--color-border);
 }
 
 .titulo-formacao {
+  position: relative;
   font-size: 3rem;
   font-weight: 500;
   text-align: center;
@@ -367,16 +397,13 @@ span {
 
 .formacao-atual {
   margin-top: 6rem;
+  width: 80%;
 }
 
 .titulo-formacao-atual {
   color: goldenrod;
   border: none;
 }
-
-/* .sobre-mim__paragrafo-faculdade {
-  text-align: center;
-} */
 
 .sobre-mim__cursos {
   margin-top: 3rem;
@@ -415,26 +442,29 @@ span {
 /*********************  HABILIDADES  ************************/
 .habilidades {
   background: var(--color-background-2);
+  padding-bottom: 8rem;
 }
 
 .habilidades__container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  width: 130rem;
-  margin-bottom: 8rem;
-  box-shadow: 0 0.7rem 1.5rem var(--color-shadow);
+  padding: 3rem 1rem;
+  margin: 1rem auto;
+  gap: 2rem 1.5rem;
+  box-shadow: 0 0.5rem 1rem var(--color-shadow);
 }
 
 .habilidades__informacao {
   display: flex;
   flex-flow: column;
   align-items: center;
-  width: 27rem;
-  margin: 3rem 1.5rem;
+  width: 25rem;
+  margin: 2rem;
   border-radius: 1rem;
   cursor: pointer;
   transition: 0.5s all;
+  height: auto;
 }
 
 .habilidades__informacao:hover {
@@ -454,10 +484,9 @@ span {
   border-radius: inherit;
 }
 
-.habilidades__btn:focus {
+.habilidades__btn-active {
   height: 31.5rem;
   background-color: var(--color-tertiary-2);
-  border: 1px solid rgba(1, 1, 78, 0.2);
 }
 
 .habilidades__nome {
@@ -478,8 +507,9 @@ span {
   font-size: 1.5rem;
   color: var(--color-secundary-dark);
   text-align: center;
-  line-height: 1.5;
-  padding: 1.5rem;
+  line-height: 1.4;
+  height: 12rem;
+  padding: 1rem;
   background-color: var(--color-tertiary);
   border-top: 4px solid var(--color-primary);
   border-radius: 10px;
@@ -511,21 +541,20 @@ span {
   color: #ffd22ed5;
 }
 
-.projetos__coluna {
+.projetos__container {
   display: flex;
-  flex-flow: column wrap;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   padding: 1rem 0;
 }
 
-.projetos__container {
+.projeto__container {
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
   justify-content: space-around;
   align-items: center;
-  /* width: 70%; */
-  width: 130rem;
   border-radius: 10px;
   padding: 3rem 1.5rem;
   margin: 1rem;
@@ -557,7 +586,6 @@ span {
   color: var(--color-secundary-dark);
   font-size: 1.8rem;
   line-height: 1.5;
-  text-align: center;
 }
 
 .projetos__titulo-tecnologias {
@@ -598,22 +626,20 @@ span {
 }
 
 .projetos__imagem-order {
+  display: flex;
+  justify-content: center;
   order: 2;
 }
 
 /********************* CONTATO ************************/
 .contato {
   background: var(--color-background-1);
-  display: flex;
-  flex-flow: column;
-  align-items: center;
 }
 
 .contato__container {
   display: flex;
   justify-content: center;
   padding: 2.5rem;
-  width: 130rem;
   margin-bottom: 6rem;
 }
 
@@ -684,10 +710,6 @@ span {
 
 /****************  MEDIA QUERIES  *********************/
 @media screen and (max-width: 1536px) {
-  .sobre-mim__foto {
-    width: 35rem;
-  }
-
   .sobre-mim__texto {
     width: 75rem;
   }
@@ -698,21 +720,17 @@ span {
     font-size: 56.25%;
   }
 
-  .habilidades__container,
-  .projetos__container {
-    width: 125rem;
-  }
-
-  .projetos__coluna {
-    flex-flow: row wrap;
+  .container {
+    max-width: 120rem;
   }
 
   .sobre-mim__foto {
     padding: 0;
+    width: 35rem;
   }
 
   .sobre-mim__container {
-    gap: 3rem 1.5rem;
+    gap: 2.5rem 1.5rem;
   }
 
   .sobre-mim__texto,
@@ -731,15 +749,22 @@ span {
     margin-top: 2rem;
   }
 
+  .sobre-mim__texto,
+  .formacao-atual {
+    width: 86%;
+  }
+
+  .container {
+    max-width: 90rem;
+  }
+
   .projetos__informacao,
   .projetos__imagem {
     width: 76.5rem;
   }
 
-  .habilidades__container,
-  .projetos__container,
-  .contato__container {
-    width: 85rem;
+  .projetos__texto {
+    text-align: center;
   }
 
   .inicio__descricao {
@@ -748,6 +773,7 @@ span {
 
   .sobre-mim img {
     border-radius: 50%;
+    margin-right: 1rem;
   }
 }
 
@@ -769,22 +795,36 @@ span {
     margin: 2rem 1rem;
   }
 
+  .projetos__container,
+  .habilidades__container {
+    max-width: 83rem;
+  }
+
   .projetos__informacao,
   .projetos__imagem {
     width: 70rem;
   }
-
-  .habilidades__container,
-  .projetos__container,
-  .contato__container {
-    width: 80rem;
-  }
 }
 
 @media screen and (max-width: 640px) {
+  .inicio__titulo {
+    width: 80%;
+  }
+
+  .habilidades__container {
+    margin-left: 1.2rem;
+    margin-right: 1.2rem;
+  }
+
   .projetos__informacao,
   .projetos__imagem {
     width: 95%;
+  }
+
+  .projetos__imagem-order {
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
 
   .sobre-mim__formacao {
@@ -812,6 +852,7 @@ span {
   }
 
   .inicio__titulo {
+    width: 100%;
     font-size: 5rem;
     letter-spacing: 0;
   }
@@ -835,7 +876,7 @@ span {
     width: 30rem;
   }
 
-  .projetos__container {
+  .projeto__container {
     padding: 2rem 1rem;
     margin: 1rem;
     margin-bottom: 5rem;

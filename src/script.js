@@ -63,19 +63,24 @@ animar.forEach(function (animação) {
 
 //////////////////////////////////////////////////////////
 // Click - Habilidades
-const infoHabilidades = document.querySelectorAll('.texto-habilidades');
+const infoHabilidades = document.querySelectorAll('.habilidades__btn');
 const habilidadesContainer = document.querySelector('.habilidades__container');
 
-// habilidadesContainer.addEventListener('click', function (e) {
-//   const clicked = e.target.closest('.habilidades__informacao');
-//   if (!clicked) return;
+habilidadesContainer.addEventListener('click', function (e) {
+  const clicked = e.target.closest('.habilidades__btn');
+  if (!clicked) return;
 
-//   clicked.lastElementChild.classList.toggle('animacao__descer');
-// });
+  clicked.classList.toggle('habilidades__btn-active');
+});
 
 /////////////////// Modo Claro/Escuro ////////////////////
+const btnTheme = document.querySelector('.toggle-modo');
+const lua = document.querySelector('.lua');
+const sol = document.querySelector('.sol');
 
-const btnTheme = document.querySelector('.sol-toggle');
 btnTheme.addEventListener('click', function () {
   document.body.classList.toggle('modo-claro');
+
+  lua.classList.toggle('hidden');
+  sol.classList.toggle('hidden');
 });
