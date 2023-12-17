@@ -9,6 +9,7 @@
   --color-border-2: #7f1d1d;
   --color-shadow: #000000;
 
+  --color-background-body: #020617;
   --color-background-1: linear-gradient(45deg, #060d1f, #020617);
   --color-background-2: linear-gradient(135deg, #020617, #060d1f);
 }
@@ -25,8 +26,6 @@
 html {
   font-size: 62.5%;
   overflow-x: hidden;
-  background: linear-gradient(45deg, #0f172a, #020617);
-  /* scroll-behavior: smooth; */
 }
 
 .modo-claro {
@@ -39,6 +38,7 @@ html {
   --color-border-2: #fcd34d;
   --color-shadow: #d1d5db;
 
+  --color-background-body: #ffffff;
   --color-background-1: linear-gradient(45deg, #fff7f7 40%, #f7f7f7);
   --color-background-2: linear-gradient(135deg, #fffbfb 60%, #fff7f7);
 }
@@ -47,7 +47,7 @@ body {
   font-family: 'Poppins', sans-serif;
   color: var(--color-secundary);
   overflow-x: hidden;
-  background: var(--color-background-1);
+  background-color: var(--color-background-body);
 }
 
 ::-webkit-scrollbar {
