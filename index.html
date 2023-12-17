@@ -23,16 +23,13 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
   </head>
-  <body class="modo-claro">
+  <body>
     <header class="cabecalho">
       <h1 class="cabecalho__nome">Cristian Daniel</h1>
       <nav>
         <ul class="cabecalho__menu animação-opacidade">
           <li><a class="cabecalho__link" href="#inicio">Início</a></li>
           <li><a class="cabecalho__link" href="#sobre-mim">Sobre Mim</a></li>
-          <li>
-            <a class="cabecalho__link" href="#habilidades">Habilidades</a>
-          </li>
           <li><a class="cabecalho__link" href="#projetos">Projetos</a></li>
           <li><a class="cabecalho__link" href="#contato">Contato</a></li>
           <li class="cabecalho__linha"></li>
@@ -67,13 +64,13 @@
     </header>
     <main>
       <section id="inicio">
-        <h2 class="inicio__nome">Olá, eu sou <span>Cristian Daniel</span></h2>
+        <h2 class="inicio__nome"><span>Cristian Daniel</span></h2>
         <h1 class="inicio__titulo">Desenvolvedor Front-End</h1>
         <p class="inicio__descricao">
-          Bem-vind@! Aqui, eu apresento os meus projetos, habilidades e a minha
+          Bem-vind@! Aqui, apresento os meus projetos, habilidades e a minha
           história até o presente momento. Deixo abaixo alguns links
         </p>
-        <div class="inicio__redes">
+        <div class="inicio__redes wrap">
           <a
             class="links inicio__redes-linkedin"
             href="https://www.linkedin.com/in/cristiandaniel1/"
@@ -116,10 +113,13 @@
               <li><i class="sobre-mim__icon fa-brands fa-react"></i></li>
             </ul>
           </div>
-          <div class="sobre-mim__foto">
-            <img src="img/Cris.jpg" alt="Foto de Cristian Daniel" width="400" />
-          </div>
-
+          <img
+            class="sobre-mim__foto"
+            src="img/Cris.jpg"
+            alt="Foto de Cristian Daniel"
+            width="400"
+            height="400"
+          />
           <div class="sobre-mim__formacao">
             <h2 class="titulo-formacao">Formação Acadêmica</h2>
             <div class="formacao-atual">
@@ -130,8 +130,7 @@
                 também fiz alguns cursos a parte e estou estudando React.
               </p>
             </div>
-
-            <div class="sobre-mim__cursos animação-opacidade">
+            <div class="sobre-mim__cursos">
               <div class="formacao-cursos">
                 <h3 class="cursos__titulo">JavaScript 68h</h3>
                 <span class="cursos__info">Jonas Schmedtmann, Udemy</span>
@@ -152,111 +151,83 @@
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      <section class="section habilidades" id="habilidades">
-        <h2 class="section__titulo">Habilidades</h2>
-        <div class="habilidades__container container">
-          <div class="habilidades__informacao">
-            <button class="habilidades__btn">
-              <img
-                class="habilidades__icone"
-                src="img/icons/html icon.png"
-                alt="html icone"
-              />
-              <h3 class="habilidades__nome">HTML</h3>
-              <p class="habilidades__texto">
-                É uma linguagem de marcação utilizada na construção de páginas
-                na Web.
-              </p>
-            </button>
-          </div>
-          <div class="habilidades__informacao">
-            <button class="habilidades__btn">
-              <img
-                class="habilidades__icone"
-                src="img/icons/css icon.png"
-                alt="css icone"
-              />
-              <h3 class="habilidades__nome">CSS</h3>
-              <p class="habilidades__texto css">
-                Cascading Style Sheets é uma linguagem de estilo usada para
-                descrever a apresentação de um documento HTML ou XML.
-              </p>
-            </button>
-          </div>
-          <div class="habilidades__informacao">
-            <button class="habilidades__btn">
-              <img
-                class="habilidades__icone"
-                src="img/icons/js icon.png"
-                alt="javascript icone"
-              />
-              <h3 class="habilidades__nome">JavaScript</h3>
-              <p class="habilidades__texto javascript">
-                Linguagem de programação interpretada estruturada, de script em
-                alto nível com tipagem dinâmica fraca e multiparadigma.
-              </p>
-            </button>
-          </div>
-          <div class="habilidades__informacao">
-            <button class="habilidades__btn">
-              <img
-                class="habilidades__icone"
-                src="img/icons/sass icon.png"
-                alt="sass icone"
-              />
-              <h3 class="habilidades__nome">Sass</h3>
-              <p class="habilidades__texto sass">
-                Syntactically awesome style sheets é um pré-processador de CSS
-                que permite escrever estilos usando uma sintaxe mais fácil e
-                intuitiva.
-              </p>
-            </button>
-          </div>
-          <div class="habilidades__informacao">
-            <button class="habilidades__btn">
-              <img
-                class="habilidades__icone"
-                src="img/icons/react icon.png"
-                alt="react icone"
-              />
-              <h3 class="habilidades__nome">React</h3>
-              <p class="habilidades__texto react">
-                O React é uma biblioteca front-end JavaScript de código aberto
-                com foco em criar interfaces de usuário.
-              </p>
-            </button>
-          </div>
-          <div class="habilidades__informacao">
-            <button class="habilidades__btn">
-              <img
-                class="habilidades__icone"
-                src="img/icons/python icon.png"
-                alt="python icone"
-              />
-              <h3 class="habilidades__nome">Python</h3>
-              <p class="habilidades__texto react">
-                Linguagem de programação de alto nível, interpretada de script,
-                imperativa, orientada a objetos, funcional, de tipagem dinâmica
-                e forte.
-              </p>
-            </button>
-          </div>
-          <div class="habilidades__informacao">
-            <button class="habilidades__btn">
-              <img
-                class="habilidades__icone"
-                src="img/icons/git icon.png"
-                alt="git icone"
-              />
-              <h3 class="habilidades__nome">Git</h3>
-              <p class="habilidades__texto">
-                Git é um sistema de controle de versão distribuído e de código
-                aberto, projetado para lidar com tudo, desde projetos pequenos a
-                muito grandes.
-              </p>
-            </button>
+          <div class="habilidades__container">
+            <h2 class="habilidades-titulo">Habilidades</h2>
+            <p class="habilidades-paragrafo">
+              Tecnologias que já utilizei até o momento
+            </p>
+            <div class="habilidades wrap">
+              <div class="habilidades-info">
+                <img
+                  src="img/icons/html-icon.png"
+                  alt="icone do html"
+                  width="60"
+                  height="60"
+                  class="habilidades-icone"
+                />
+                <h4 class="habilidades-nome">HTML</h4>
+              </div>
+              <div class="habilidades-info">
+                <img
+                  src="img/icons/css-icon.png"
+                  alt="icone do css"
+                  width="60"
+                  height="60"
+                  class="habilidades-icone"
+                />
+                <h4 class="habilidades-nome">CSS</h4>
+              </div>
+              <div class="habilidades-info">
+                <img
+                  src="img/icons/js-icon.png"
+                  alt="icone do javascript"
+                  width="60"
+                  height="60"
+                  class="habilidades-icone"
+                />
+                <h4 class="habilidades-nome">JavaScript</h4>
+              </div>
+              <div class="habilidades-info">
+                <img
+                  src="img/icons/react-icon.png"
+                  alt="icone do framework react"
+                  width="60"
+                  height="60"
+                  class="habilidades-icone"
+                />
+                <h4 class="habilidades-nome">React</h4>
+              </div>
+              <div class="habilidades-info">
+                <img
+                  src="img/icons/sass-icon.png"
+                  alt="icone do sass"
+                  width="60"
+                  height="60"
+                  class="habilidades-icone"
+                />
+                <h4 class="habilidades-nome">Sass</h4>
+              </div>
+              <div class="habilidades-info">
+                <img
+                  src="img/icons/python-icon.png"
+                  alt="icone do python"
+                  width="60"
+                  height="60"
+                  class="habilidades-icone"
+                />
+                <h4 class="habilidades-nome">Python</h4>
+              </div>
+              <div class="habilidades-info">
+                <img
+                  src="img/icons/git-icon.png"
+                  alt="icone do git"
+                  width="60"
+                  height="60"
+                  class="habilidades-icone"
+                />
+                <h4 class="habilidades-nome">Git</h4>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -294,18 +265,24 @@
               <div class="projetos__tecnologias">
                 <img
                   class="tecnologias"
-                  src="img/icons/html icon.png"
+                  src="img/icons/html-icon.png"
                   alt="html icone"
+                  width="40"
+                  height="40"
                 />
                 <img
                   class="tecnologias"
-                  src="img/icons/css icon.png"
+                  src="img/icons/css-icon.png"
                   alt="css icone"
+                  width="40"
+                  height="40"
                 />
                 <img
                   class="tecnologias"
-                  src="img/icons/js icon.png"
+                  src="img/icons/js-icon.png"
                   alt="javascript icone"
+                  width="40"
+                  height="40"
                 />
               </div>
             </div>
@@ -317,10 +294,9 @@
               class="img-link"
               ><img
                 class="projetos__imagem"
-                src="img/memory-witcher-2.png"
+                src="img/memory-witcher.png"
                 alt="imagem de um jogo de memória estilo the witcher"
             /></a>
-
             <div class="projetos__informacao">
               <h3 class="projetos__titulo">Jogo da Memória</h3>
               <p class="projetos__texto">
@@ -334,18 +310,24 @@
               <div class="projetos__tecnologias">
                 <img
                   class="tecnologias"
-                  src="img/icons/html icon.png"
+                  src="img/icons/html-icon.png"
                   alt="html icone"
+                  width="40"
+                  height="40"
                 />
                 <img
                   class="tecnologias"
-                  src="img/icons/css icon.png"
+                  src="img/icons/css-icon.png"
                   alt="css icone"
+                  width="40"
+                  height="40"
                 />
                 <img
                   class="tecnologias"
-                  src="img/icons/js icon.png"
+                  src="img/icons/js-icon.png"
                   alt="javascript icone"
+                  width="40"
+                  height="40"
                 />
               </div>
             </div>

@@ -1,20 +1,16 @@
 :root {
-  --color-primary: #ff4545;
+  --color-primary: #ef4444;
   --color-secundary: #fff;
-  --color-secundary-dark: #acacac;
-  --color-tertiary: rgb(12, 12, 12);
-  --color-tertiary-2: #3b000046;
+  --color-secundary-dark: #d4d4d4;
+  --color-tertiary: #0f172a;
+  --color-tertiary-2: #450a0a42;
 
-  --color-border: rgb(17, 17, 17);
-  --color-border-2: rgb(70, 0, 0);
-  /* --color-border-2: #613a0086; */
-  --color-shadow: rgb(0, 0, 0);
+  --color-border: #020617;
+  --color-border-2: #7f1d1d;
+  --color-shadow: #000000;
 
-  /* --color-background-1: linear-gradient(45deg, rgb(44, 0, 0), rgb(15, 0, 0));
-  --color-background-2: linear-gradient(135deg, rgb(15, 0, 0), rgb(44, 0, 0)); */
-  /* --color-background-1: rgb(24, 0, 0); */
-  --color-background-1: linear-gradient(to top, rgb(27, 0, 0), rgb(20, 0, 0));
-  --color-background-2: linear-gradient(135deg, rgb(15, 0, 0), rgb(39, 0, 0));
+  --color-background-1: linear-gradient(45deg, #060d1f, #020617);
+  --color-background-2: linear-gradient(135deg, #020617, #060d1f);
 }
 
 *,
@@ -29,18 +25,19 @@
 html {
   font-size: 62.5%;
   overflow-x: hidden;
+  background: linear-gradient(45deg, #0f172a, #020617);
   /* scroll-behavior: smooth; */
 }
 
 .modo-claro {
-  --color-secundary: #1f1f1f;
-  --color-secundary-dark: #494949;
+  --color-secundary: #334155;
+  --color-secundary-dark: #0f172a;
   --color-tertiary: #ffffff;
   --color-tertiary-2: #fff9f4;
 
-  --color-border: rgba(31, 31, 31, 0.336);
-  --color-border-2: #ffd644d5;
-  --color-shadow: rgb(194, 194, 194);
+  --color-border: #1f1f1f4d;
+  --color-border-2: #fcd34d;
+  --color-shadow: #d1d5db;
 
   --color-background-1: linear-gradient(45deg, #fff7f7 40%, #f7f7f7);
   --color-background-2: linear-gradient(135deg, #fffbfb 60%, #fff7f7);
@@ -66,6 +63,13 @@ body {
 .container {
   max-width: 130rem;
   margin: 0 auto;
+}
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .cabecalho {
@@ -123,7 +127,7 @@ body {
 }
 
 .cabecalho__linha {
-  border: 1px solid rgb(66, 66, 66);
+  border: 1px solid var(--color-secundary-dark);
   padding-top: 1.6em;
   margin-left: 0.5rem;
 }
@@ -198,19 +202,13 @@ span {
 }
 
 .inicio__redes {
-  display: flex;
-  justify-content: center;
-  flex-flow: row wrap;
   gap: 1.5em;
   padding: 0rem 1rem 0.5rem;
 }
 
 .links {
+  text-align: center;
   color: var(--color-secundary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
   font-size: 2rem;
   letter-spacing: 0.1rem;
   text-decoration: none;
@@ -355,33 +353,24 @@ span {
 }
 
 .sobre-mim__foto {
-  max-width: 40rem;
-  padding: 1rem;
-  margin-top: 2rem;
-
-  animation: AnimaOpacidade 1s ease-out backwards;
-}
-
-.sobre-mim img {
+  max-width: 38rem;
+  height: auto;
+  margin: 2.5rem 0;
+  display: block;
   border-radius: 50px 0 0 50px;
-  border: 4px solid rgba(167, 0, 0, 0.562);
+  border: 4px solid #991b1b;
   box-shadow: 0.4rem 1rem 2rem var(--color-shadow);
-  width: 100%;
+  animation: AnimaOpacidade 1s ease-out backwards;
 }
 
 /******************* FORMAÇÃO ACADÊMICA ***********************/
 .sobre-mim__formacao {
-  display: flex;
-  flex-flow: column wrap;
-  align-items: center;
-  justify-content: center;
-  margin: 3rem 0 6rem;
+  margin: 3rem 0 3rem;
   padding: 1rem;
   border-top: 1px dashed var(--color-border);
 }
 
 .titulo-formacao {
-  position: relative;
   font-size: 3rem;
   font-weight: 500;
   text-align: center;
@@ -391,11 +380,11 @@ span {
 }
 
 .formacao-atual {
-  margin: 6rem 2rem 1.5rem;
+  margin: 6rem 3rem 4rem;
 }
 
 .titulo-formacao-atual {
-  color: goldenrod;
+  color: #fbbf24;
   border: none;
 }
 
@@ -434,96 +423,55 @@ span {
 }
 
 /*********************  HABILIDADES  ************************/
-.habilidades {
-  background: var(--color-background-2);
-  padding-bottom: 8rem;
-}
-
 .habilidades__container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  padding: 3rem 1rem;
-  margin: 1rem auto;
-  gap: 2rem 1.5rem;
-  box-shadow: 0 0.5rem 1rem var(--color-shadow);
+  padding: 2rem;
+  width: 100%;
+  margin-bottom: 6rem;
 }
 
-.habilidades__informacao {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  width: 25rem;
-  margin: 2rem;
-  border-radius: 1rem;
-  cursor: pointer;
-  transition: 0.5s all;
-  height: auto;
-}
-
-.habilidades__informacao:hover {
-  box-shadow: 0px 0.3rem 2.2rem rgba(1, 1, 78, 0.6);
-  /* background-color: rgba(3, 0, 49, 0.05); */
-  background-color: var(--color-tertiary-2);
-}
-
-.habilidades__btn {
-  background-color: transparent;
-  cursor: pointer;
-  border: none;
-  height: 19.9rem;
-  padding-top: 1.5rem;
-  overflow: hidden;
-  transition: 0.5s all;
-  border-radius: inherit;
-}
-
-.habilidades__btn-active {
-  height: 31.5rem;
-  background-color: var(--color-tertiary-2);
-}
-
-.habilidades__nome {
-  font-size: 2rem;
-  margin: 1.2rem;
-  font-weight: 500;
-  color: var(--color-secundary-dark);
-}
-
-.habilidades__icone {
-  display: inline-block;
-  width: 12rem;
-  height: 12.5rem;
-  transition: 0.3s all;
-}
-
-.habilidades__texto {
-  font-size: 1.5rem;
-  color: var(--color-secundary-dark);
+.habilidades-titulo {
   text-align: center;
-  line-height: 1.4;
-  height: 12rem;
-  padding: 1rem;
-  background-color: var(--color-tertiary);
-  border-top: 4px solid var(--color-primary);
-  border-radius: 10px;
-  box-shadow: 0 0.1rem 0.5rem var(--color-shadow);
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: #0284c7;
+  margin-bottom: 2rem;
 }
 
-.css {
-  border-top: 4px solid rgb(94, 164, 245);
+.habilidades-paragrafo {
+  margin: 3rem;
+  font-size: 1.8rem;
+  text-align: center;
+  color: var(--color-secundary-dark);
 }
 
-.sass {
-  border-top: 4px solid rgba(255, 68, 171, 0.795);
+.habilidades {
+  gap: 5rem;
+  box-shadow: 0 0.5rem 1rem var(--color-shadow);
+  padding: 1.5rem;
+  border-radius: 1rem;
 }
 
-.javascript {
-  border-top: 4px solid #ffd644d5;
+.habilidades-info {
+  text-align: center;
 }
 
-.react {
-  border-top: 4px solid rgb(10, 192, 238);
+.habilidades-nome {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--color-secundary-dark);
+}
+
+.habilidades-icone {
+  width: 10rem;
+  height: auto;
+  margin: 1rem;
+  border-radius: 3rem;
+  transition: 0.3s;
+}
+
+.habilidades-icone:hover {
+  transform: scale(1.1);
+  background-color: #1e40af25;
 }
 
 /********************* PROJETOS ***********************/
@@ -532,14 +480,10 @@ span {
 }
 
 .span-projetos {
-  color: #ffd22ed5;
+  color: #fcd34d;
 }
 
 .projetos__container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
   padding: 1rem 0;
 }
 
@@ -578,10 +522,11 @@ span {
   color: var(--color-secundary-dark);
   font-size: 1.8rem;
   line-height: 1.5;
+  padding: 1rem;
 }
 
 .projetos__titulo-tecnologias {
-  color: rgb(151, 197, 214);
+  color: #0284c7;
   padding-bottom: 1rem;
   font-size: 1.8rem;
   margin-top: 1rem;
@@ -589,7 +534,6 @@ span {
 
 .projetos__tecnologias {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   padding: 1rem;
 }
@@ -628,14 +572,13 @@ span {
 
 /********************* CONTATO ************************/
 .contato {
-  background: var(--color-background-1);
+  background: var(--color-background-2);
 }
 
 .contato__container {
   display: flex;
   justify-content: center;
   padding: 2.5rem;
-  margin-bottom: 6rem;
 }
 
 .contato__form {
@@ -643,6 +586,7 @@ span {
   flex-direction: column;
   width: 100rem;
   gap: 1rem;
+  margin-bottom: 6rem;
 }
 
 .contato__label {
@@ -755,9 +699,8 @@ span {
     width: 80%;
   }
 
-  .sobre-mim img {
+  .sobre-mim__foto {
     border-radius: 2rem;
-    margin-right: 1rem;
   }
 }
 
@@ -775,12 +718,7 @@ span {
     width: 95%;
   }
 
-  .habilidades__informacao {
-    margin: 2rem 1rem;
-  }
-
-  .projetos__container,
-  .habilidades__container {
+  .projetos__container {
     max-width: 83rem;
   }
 
@@ -793,11 +731,6 @@ span {
 @media screen and (max-width: 640px) {
   .inicio__titulo {
     width: 80%;
-  }
-
-  .habilidades__container {
-    margin-left: 1.2rem;
-    margin-right: 1.2rem;
   }
 
   .projetos__informacao,
@@ -856,18 +789,7 @@ span {
   }
 }
 
-/*  Animações - Opacidade */
-@keyframes AnimaOpacidade {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-/* Animações - Direita */
+/*************** ANIMAÇÕES ********************/
 @keyframes slideParaDireita {
   from {
     transform: translateX(-100px);
@@ -880,10 +802,9 @@ span {
 }
 
 .animação-para-direita {
-  animation: slideParaDireita 0.5s ease-out backwards;
+  animation: slideParaDireita 0.5s ease-out;
 }
 
-/* Animações - Esquerda */
 @keyframes slideParaEsquerda {
   from {
     transform: translateX(100px);
@@ -896,18 +817,7 @@ span {
 }
 
 .animação-para-esquerda {
-  animation: slideParaEsquerda 0.5s ease-out backwards;
-}
-
-@keyframes habilidadeAnimacao {
-  0% {
-    transform: translateY(0rem);
-  }
-
-  100% {
-    transform: translateY(10rem);
-    visibility: visible;
-  }
+  animation: slideParaEsquerda 0.5s ease-out;
 }
 
 @keyframes moverAcima {

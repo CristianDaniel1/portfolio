@@ -29,7 +29,6 @@ document
   .addEventListener('click', function (e) {
     e.preventDefault();
 
-    // Matching strategy
     if (e.target.classList.contains('cabecalho__link')) {
       const id = e.target.getAttribute('href');
       document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
@@ -59,18 +58,6 @@ const observadorConteúdo = new IntersectionObserver(callbackConteúdo, {
 animar.forEach(function (animação) {
   observadorConteúdo.observe(animação);
   animação.classList.add('esconder');
-});
-
-//////////////////////////////////////////////////////////
-// Click - Habilidades
-const infoHabilidades = document.querySelectorAll('.habilidades__btn');
-const habilidadesContainer = document.querySelector('.habilidades__container');
-
-habilidadesContainer.addEventListener('click', function (e) {
-  const clicked = e.target.closest('.habilidades__btn');
-  if (!clicked) return;
-
-  clicked.classList.toggle('habilidades__btn-active');
 });
 
 /////////////////// Modo Claro/Escuro ////////////////////
