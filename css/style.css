@@ -78,11 +78,12 @@ body {
   align-items: center;
   justify-content: space-between;
   height: 10rem;
+  width: 100%;
   padding: 0 7rem;
   background-color: var(--color-tertiary);
   z-index: 100;
   color: var(--color-secundary);
-  /* position: fixed; */
+  position: relative;
 }
 
 .cabecalho > * {
@@ -132,16 +133,21 @@ body {
   margin-left: 0.5rem;
 }
 
+.cabecalho__menu-mobile,
+.toggle-modo {
+  background-color: transparent;
+  color: var(--color-secundary-dark);
+  cursor: pointer;
+  border: none;
+}
+
 .toggle-modo {
   display: block;
-  background-color: transparent;
-  border: 2px solid transparent;
-  color: var(--color-secundary-dark);
   width: 4rem;
   height: 4rem;
+  border: 2px solid transparent;
   padding: 0.7rem;
   transition: color 0.3s, background-color 0.3s;
-  cursor: pointer;
 }
 
 .toggle-modo:hover {
@@ -157,6 +163,17 @@ body {
 
 .hidden {
   display: none;
+}
+
+.cabecalho__menu-mobile {
+  display: none;
+  width: 5rem;
+  height: 5rem;
+  color: var(--color-secundary-dark);
+}
+
+.cabecalho__menu-mobile:focus {
+  color: var(--color-primary);
 }
 
 /********************* INICIO ***********************/
@@ -489,7 +506,6 @@ span {
 
 .projeto__container {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   border-radius: 10px;
@@ -502,12 +518,8 @@ span {
   gap: 2rem;
 }
 
-.row-reverso {
-  flex-wrap: wrap-reverse;
-}
-
 .projetos__informacao {
-  width: 55rem;
+  max-width: 55rem;
   padding: 1rem;
 }
 
@@ -552,7 +564,7 @@ span {
 
 .projetos__imagem {
   display: block;
-  width: 55rem;
+  max-width: 55rem;
   border-radius: 10px 10px;
   transition: 0.3s all;
 }
@@ -686,9 +698,17 @@ span {
     max-width: 90rem;
   }
 
+  .projeto__container {
+    flex-wrap: wrap;
+  }
+
   .projetos__informacao,
   .projetos__imagem {
-    width: 76.5rem;
+    max-width: 76.5rem;
+  }
+
+  .row-reverso {
+    flex-wrap: wrap-reverse;
   }
 
   .projetos__texto {
@@ -705,8 +725,50 @@ span {
 }
 
 @media screen and (max-width: 768px) {
-  .cabecalho__link {
+  .cabecalho {
+    padding: 0 4rem;
+  }
+
+  .cabecalho__menu {
+    font-size: 2rem;
+    padding: 3rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    transform: translateX(100%);
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-tertiary);
+    gap: 4rem;
+    justify-content: center;
+    transition: all 0.4s ease-in;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
+
+  .toggle-modo {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .cabecalho__linha {
     display: none;
+  }
+
+  .mobile-abrir {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+  }
+
+  .cabecalho__menu-mobile {
+    display: block;
+    position: relative;
+    z-index: 5;
   }
 
   .inicio__nome,
@@ -724,7 +786,7 @@ span {
 
   .projetos__informacao,
   .projetos__imagem {
-    width: 70rem;
+    max-width: 70rem;
   }
 }
 

@@ -23,7 +23,7 @@ allSections.forEach(function (section) {
   section.classList.add('esconder');
 });
 
-// Scrool Smooth
+////////////////////// Scrool Smooth ///////////////////////
 document
   .querySelector('.cabecalho__menu')
   .addEventListener('click', function (e) {
@@ -35,7 +35,7 @@ document
     }
   });
 
-// Animação do conteúdo
+////////////////// Animação do conteúdo ////////////////////
 const callbackConteúdo = function (entries, observer) {
   entries.forEach(entry => {
     if (!entry.isIntersecting) return;
@@ -60,6 +60,13 @@ animar.forEach(function (animação) {
   animação.classList.add('esconder');
 });
 
+// Toggle (add/remove) class 'hidden'
+const toggleHideMarkup = function (hideMarkup) {
+  const markup = hideMarkup;
+
+  markup.classList.toggle('hidden');
+};
+
 /////////////////// Modo Claro/Escuro ////////////////////
 const btnTheme = document.querySelector('.toggle-modo');
 const lua = document.querySelector('.lua');
@@ -68,6 +75,19 @@ const sol = document.querySelector('.sol');
 btnTheme.addEventListener('click', function () {
   document.body.classList.toggle('modo-claro');
 
-  lua.classList.toggle('hidden');
-  sol.classList.toggle('hidden');
+  toggleHideMarkup(lua);
+  toggleHideMarkup(sol);
+});
+
+///////////////////// Navbar Mobile //////////////////////
+const mobileNav = document.querySelector('.cabecalho__menu');
+const btnOpenMobileNav = document.querySelector('.cabecalho__menu-mobile');
+const svgOpen = document.querySelector('.abrir-menu');
+const svgClose = document.querySelector('.fechar-menu');
+
+btnOpenMobileNav.addEventListener('click', function () {
+  mobileNav.classList.toggle('mobile-abrir');
+
+  toggleHideMarkup(svgOpen);
+  toggleHideMarkup(svgClose);
 });
