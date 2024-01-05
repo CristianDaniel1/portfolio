@@ -5,7 +5,7 @@
   --color-tertiary: #0f172a;
   --color-tertiary-2: #450a0a42;
 
-  --color-border: #020617;
+  --color-border: #172554;
   --color-border-2: #7f1d1d;
   --color-shadow: #000000;
 
@@ -34,7 +34,7 @@ html {
   --color-tertiary: #ffffff;
   --color-tertiary-2: #fff9f4;
 
-  --color-border: #1f1f1f4d;
+  --color-border: #5064a7;
   --color-border-2: #fcd34d;
   --color-shadow: #d1d5db;
 
@@ -58,6 +58,15 @@ body {
 ::-webkit-scrollbar-thumb {
   background-color: var(--color-primary);
   border-radius: 3rem;
+}
+
+/* Palavras de outra cor*/
+.red {
+  color: var(--color-primary);
+}
+
+.blue {
+  color: #0284c7;
 }
 
 .container {
@@ -86,6 +95,12 @@ body {
   position: relative;
 }
 
+.fixed .cabecalho {
+  position: fixed;
+  height: 9rem;
+  opacity: 0.9;
+}
+
 .cabecalho > * {
   color: var(--color-secundary-dark);
 }
@@ -95,7 +110,6 @@ body {
   font-weight: 500;
   letter-spacing: 0.1rem;
   transition: all 0.2s;
-  animation: AnimaOpacidade 1s;
 }
 
 .cabecalho__nome:hover {
@@ -107,7 +121,6 @@ body {
   gap: 2rem;
   align-items: center;
   list-style: none;
-  animation: AnimaOpacidade 1s;
 }
 
 .cabecalho__menu *:focus {
@@ -189,9 +202,9 @@ body {
   gap: 1.4rem;
 }
 
-span {
-  color: var(--color-primary);
-  display: inline-block;
+.fixed #inicio {
+  min-height: 100vh;
+  min-height: 100svh;
 }
 
 .inicio__nome {
@@ -206,7 +219,6 @@ span {
   letter-spacing: 0.2rem;
   margin-bottom: 2rem;
   font-weight: 600;
-  animation: AnimaOpacidade 0.5s;
 }
 
 .inicio__descricao {
@@ -377,7 +389,6 @@ span {
   border-radius: 50px 0 0 50px;
   border: 4px solid #991b1b;
   box-shadow: 0.4rem 1rem 2rem var(--color-shadow);
-  animation: AnimaOpacidade 1s ease-out backwards;
 }
 
 /******************* FORMAÇÃO ACADÊMICA ***********************/
@@ -450,7 +461,6 @@ span {
   text-align: center;
   font-size: 2.5rem;
   font-weight: 500;
-  color: #0284c7;
   margin-bottom: 2rem;
 }
 
@@ -553,6 +563,7 @@ span {
 .tecnologias {
   display: block;
   width: 4rem;
+  height: auto;
   margin: 0 0.5rem;
   transition: 0.4s all;
 }
@@ -730,7 +741,7 @@ span {
   }
 
   .cabecalho__menu {
-    font-size: 2rem;
+    font-size: 2.5rem;
     padding: 3rem;
     position: absolute;
     top: 0;
@@ -741,7 +752,7 @@ span {
     display: flex;
     flex-direction: column;
     background-color: var(--color-tertiary);
-    gap: 4rem;
+    gap: 5rem;
     justify-content: center;
     transition: all 0.4s ease-in;
     opacity: 0;
@@ -863,7 +874,7 @@ span {
   }
 }
 
-.animação-para-direita {
+.animar-direita {
   animation: slideParaDireita 0.5s ease-out;
 }
 
@@ -878,7 +889,7 @@ span {
   }
 }
 
-.animação-para-esquerda {
+.animar-esquerda {
   animation: slideParaEsquerda 0.5s ease-out;
 }
 

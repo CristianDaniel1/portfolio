@@ -1,10 +1,9 @@
 'use strict';
 ///////////////////////////////////////////////////////////
-// Movimento - Elementos aparecendo pelo Scroll
+// Movimento - Sections aparecendo pelo Scroll
 const allSections = document.querySelectorAll('.section');
-const animar = document.querySelectorAll('.animar');
 
-const callbackSec = function (entries, observer) {
+const callbackSections = function (entries, observer) {
   entries.forEach(entry => {
     if (!entry.isIntersecting) return;
 
@@ -13,7 +12,7 @@ const callbackSec = function (entries, observer) {
   });
 };
 
-const observer = new IntersectionObserver(callbackSec, {
+const observer = new IntersectionObserver(callbackSections, {
   root: null,
   threshold: 0.05,
 });
@@ -23,41 +22,47 @@ allSections.forEach(function (section) {
   section.classList.add('esconder');
 });
 
-////////////////////// Scrool Smooth ///////////////////////
+////////////////////// Scroll Smooth ///////////////////////
+const handleScrollSmooth = event => {
+  event.preventDefault();
+
+  if (event.target.classList.contains('cabecalho__link')) {
+    const id = event.target.getAttribute('href');
+    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
 document
   .querySelector('.cabecalho__menu')
-  .addEventListener('click', function (e) {
-    e.preventDefault();
+  .addEventListener('click', handleScrollSmooth);
 
-    if (e.target.classList.contains('cabecalho__link')) {
-      const id = e.target.getAttribute('href');
-      document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
-    }
-  });
+////////////////// Animação dos Projetos ////////////////////
+const projects = document.querySelectorAll('.projeto__container');
 
-////////////////// Animação do conteúdo ////////////////////
-const callbackConteúdo = function (entries, observer) {
+const callbackProjectsObserver = function (entries, observer) {
   entries.forEach(entry => {
     if (!entry.isIntersecting) return;
 
-    entry.target.classList.remove('esconder');
+    const elementClasses = entry.target.classList;
 
-    if (entry.target.classList.contains('animar-direita')) {
-      entry.target.classList.add('animação-para-direita');
-    } else entry.target.classList.add('animação-para-esquerda');
+    elementClasses.remove('esconder');
+
+    elementClasses.contains('slide-direita')
+      ? elementClasses.add('animar-direita')
+      : elementClasses.add('animar-esquerda');
 
     observer.unobserve(entry.target);
   });
 };
 
-const observadorConteúdo = new IntersectionObserver(callbackConteúdo, {
+const projectsObserver = new IntersectionObserver(callbackProjectsObserver, {
   root: null,
   threshold: 0.3,
 });
 
-animar.forEach(function (animação) {
-  observadorConteúdo.observe(animação);
-  animação.classList.add('esconder');
+projects.forEach(animation => {
+  projectsObserver.observe(animation);
+  animation.classList.add('esconder');
 });
 
 // Toggle (add/remove) class 'hidden'
@@ -72,22 +77,65 @@ const btnTheme = document.querySelector('.toggle-modo');
 const lua = document.querySelector('.lua');
 const sol = document.querySelector('.sol');
 
-btnTheme.addEventListener('click', function () {
-  document.body.classList.toggle('modo-claro');
+const theme = localStorage.getItem('theme');
+const bodyThemeClass = document.body.classList;
 
+const toggleLuaSol = () => {
   toggleHideMarkup(lua);
   toggleHideMarkup(sol);
-});
+};
+
+if (theme) {
+  bodyThemeClass.add(theme);
+  toggleLuaSol();
+}
+
+const handleThemeToggle = () => {
+  bodyThemeClass.toggle('modo-claro');
+
+  toggleLuaSol();
+
+  if (bodyThemeClass.contains('modo-claro'))
+    localStorage.setItem('theme', 'modo-claro');
+  else {
+    localStorage.removeItem('theme');
+    document.body.removeAttribute('class');
+  }
+};
+
+btnTheme.addEventListener('click', handleThemeToggle);
 
 ///////////////////// Navbar Mobile //////////////////////
 const mobileNav = document.querySelector('.cabecalho__menu');
-const btnOpenMobileNav = document.querySelector('.cabecalho__menu-mobile');
+const btnOpenMobileMenu = document.querySelector('.cabecalho__menu-mobile');
 const svgOpen = document.querySelector('.abrir-menu');
 const svgClose = document.querySelector('.fechar-menu');
 
-btnOpenMobileNav.addEventListener('click', function () {
+const handleMobileMenu = () => {
   mobileNav.classList.toggle('mobile-abrir');
 
   toggleHideMarkup(svgOpen);
   toggleHideMarkup(svgClose);
+};
+
+btnOpenMobileMenu.addEventListener('click', handleMobileMenu);
+
+///////////////////// Navbar Mobile //////////////////////
+const heroSection = document.getElementById('inicio');
+const header = document.querySelector('.cabecalho');
+const headerHeight = header.getBoundingClientRect().height;
+
+const fixedNav = function (entries) {
+  const [entry] = entries;
+
+  if (!entry.isIntersecting) bodyThemeClass.add('fixed');
+  else bodyThemeClass.remove('fixed');
+};
+
+const heroObserver = new IntersectionObserver(fixedNav, {
+  root: null,
+  threshold: 0,
+  rootMargin: `-${headerHeight}px`,
 });
+
+heroObserver.observe(heroSection);
