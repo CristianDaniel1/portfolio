@@ -99,7 +99,7 @@ const handleThemeToggle = () => {
     localStorage.setItem('theme', 'modo-claro');
   else {
     localStorage.removeItem('theme');
-    document.body.removeAttribute('class');
+    bodyThemeClass.remove('modo-claro');
   }
 };
 
@@ -120,7 +120,7 @@ const handleMobileMenu = () => {
 
 btnOpenMobileMenu.addEventListener('click', handleMobileMenu);
 
-///////////////////// Navbar Mobile //////////////////////
+///////////////////// Header Fixed //////////////////////
 const heroSection = document.getElementById('inicio');
 const header = document.querySelector('.cabecalho');
 const headerHeight = header.getBoundingClientRect().height;

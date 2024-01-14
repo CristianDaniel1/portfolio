@@ -342,7 +342,7 @@ body {
   margin-top: 5rem;
 }
 
-.paragrafo:not(:last-child) {
+.paragrafo {
   margin-bottom: 2rem;
 }
 
@@ -530,7 +530,6 @@ body {
 
 .projetos__informacao {
   max-width: 55rem;
-  padding: 1rem;
 }
 
 .projetos__titulo {
@@ -544,7 +543,6 @@ body {
   color: var(--color-secundary-dark);
   font-size: 1.8rem;
   line-height: 1.5;
-  padding: 1rem;
 }
 
 .projetos__titulo-tecnologias {
@@ -561,11 +559,10 @@ body {
 }
 
 .tecnologias {
-  display: block;
   width: 4rem;
   height: auto;
   margin: 0 0.5rem;
-  transition: 0.4s all;
+  transition: 0.3s all;
 }
 
 .tecnologias:hover {
@@ -716,6 +713,10 @@ body {
   .projetos__informacao,
   .projetos__imagem {
     max-width: 76.5rem;
+  }
+
+  .projetos__imagem {
+    border-radius: 10px 10px 0 0;
   }
 
   .row-reverso {
