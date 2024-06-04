@@ -62,17 +62,17 @@ button {
 /*************/
 html {
   font-size: 62.5%;
-  overflow-x: hidden;
   line-height: 1.5;
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
   font-size: 1.6rem;
   font-family: 'Inter', sans-serif;
   color: var(--color-white);
-  overflow-x: hidden;
   background-color: var(--color-slate);
+  overflow-x: clip;
 }
 
 ::-webkit-scrollbar {
@@ -112,7 +112,8 @@ body {
   width: 100%;
   z-index: 100;
   color: var(--color-slate-3);
-  position: relative;
+  position: sticky;
+  top: 0;
 }
 
 .header-container {
@@ -122,10 +123,9 @@ body {
   width: 100%;
 }
 
-.fixed .header {
-  position: fixed;
-  height: 9rem;
+.fixed.header {
   opacity: 0.9;
+  height: 8rem;
   background-color: var(--color-slate-2);
   transition: 0.3s all;
 }
@@ -191,11 +191,6 @@ body {
   padding-inline: 11rem;
   justify-content: space-between;
   align-items: flex-start;
-}
-
-.fixed .hero {
-  min-height: 85vh;
-  min-height: 85svh;
 }
 
 .hero-title {
@@ -865,6 +860,11 @@ body {
 
   .hero-image {
     display: none;
+  }
+
+  .list-item::before {
+    top: 0.5rem;
+    right: 0.5rem;
   }
 
   .about-container {

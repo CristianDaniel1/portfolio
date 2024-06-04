@@ -84,14 +84,14 @@ navbar.addEventListener('click', handleNavClick);
 const heroSection = document.getElementById('hero');
 const header = document.querySelector('.header');
 
-const headerHeight = header.getBoundingClientRect().height;
-const bodyClass = document.body.classList;
+const headerHeight = heroSection.getBoundingClientRect().height;
+// const bodyClass = document.body.classList;
 
 const fixedNav = function (entries) {
   const [entry] = entries;
 
-  if (!entry.isIntersecting) bodyClass.add('fixed');
-  else bodyClass.remove('fixed');
+  if (!entry.isIntersecting) header.classList.add('fixed');
+  else header.classList.remove('fixed');
 };
 
 const heroObserver = new IntersectionObserver(fixedNav, {
