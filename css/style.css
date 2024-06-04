@@ -114,6 +114,7 @@ body {
   color: var(--color-slate-3);
   position: sticky;
   top: 0;
+  transition: height 0.3s, opacity 0.3s;
 }
 
 .header-container {
@@ -127,7 +128,6 @@ body {
   opacity: 0.9;
   height: 8rem;
   background-color: var(--color-slate-2);
-  transition: 0.3s all;
 }
 
 .header-name {

@@ -81,7 +81,7 @@ btnOpenMobileMenu.addEventListener('click', handleMobileMenu);
 navbar.addEventListener('click', handleNavClick);
 
 ///////////////////// Header Fixed //////////////////////
-const heroSection = document.getElementById('hero');
+const heroSection = document.querySelector('.hero');
 const header = document.querySelector('.header');
 
 const headerHeight = heroSection.getBoundingClientRect().height;
