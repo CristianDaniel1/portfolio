@@ -511,7 +511,7 @@ body {
 
 .project-image {
   object-fit: cover;
-  max-width: 100%;
+  width: 100%;
   transition: 0.3s all;
 }
 
@@ -765,6 +765,10 @@ body {
     margin-right: 1.5rem;
   }
 
+  .projects {
+    padding-inline: 7rem;
+  }
+
   .project-container {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -852,6 +856,10 @@ body {
 
   .about-text {
     width: 100%;
+  }
+
+  .projects {
+    padding-inline: 0rem;
   }
 
   .item-span {
