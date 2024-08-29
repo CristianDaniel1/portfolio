@@ -85,6 +85,10 @@ body {
   border-radius: 3rem;
 }
 
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a82c2c;
+}
+
 .red {
   color: var(--color-red);
 }
@@ -778,6 +782,10 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+  }
+
+  article .paragraph {
+    margin-bottom: 1rem;
   }
 
   .order {
