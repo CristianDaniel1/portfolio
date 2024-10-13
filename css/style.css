@@ -2,7 +2,6 @@
   --color-red: #ef4444;
   --color-red-2: #7f1d1d;
   --color-white: #ffffff;
-  /* --color-slate: #020617; */
   --color-slate: #03081b;
   --color-slate-2: #0f172a;
   --color-slate-3: #cbd5e1;
@@ -205,37 +204,34 @@ body {
 /********************* HERO ***********************/
 .hero {
   display: flex;
-  padding-top: 9rem;
-  padding-bottom: 6rem;
+  padding-block: 9rem;
   padding-inline: 8rem;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: center;
+  gap: 14rem;
+  align-items: center;
 }
 
 .hero-title {
   margin-bottom: 2rem;
   font-weight: 600;
-  padding-top: 7rem;
+  padding-top: 2rem;
   line-height: normal;
+  text-wrap: balance;
 }
 
 .hero-container {
   max-width: 50%;
 }
 
-.hero-title {
-  padding-top: 2rem;
-  text-wrap: balance;
-}
-
 .hero-dev {
-  font-size: 6rem;
+  font-size: 3rem;
+  padding-bottom: 2rem;
+  display: block;
   animation: opacityAnime 0.4s ease-in-out 0.3s backwards;
 }
 
 .hero-name {
   font-size: 6rem;
-  display: block;
   animation: opacityAnime 0.4s ease-in-out 0.7s backwards;
 }
 
@@ -639,14 +635,41 @@ body {
   padding-bottom: 20rem;
 }
 
-.contact-list {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 4rem;
-  gap: 4rem;
+.contact-container {
   border: 1px solid #07346e80;
   border-radius: 3px;
+  padding-inline: 4rem;
+  padding-block: 8rem;
+  text-align: center;
+}
+
+.contact-work-title {
+  font-size: 2.8rem;
+  margin-bottom: 6rem;
+  position: relative;
+}
+
+.contact-work-title::before {
+  content: '';
+  position: absolute;
+  bottom: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8rem;
+  height: 0.3rem;
+  background-color: var(--color-blue-2);
+}
+
+.contact-work {
+  margin-bottom: 4rem;
+  color: var(--color-slate-3);
+}
+
+.contact-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 4rem;
 }
 
 .contact-link {
@@ -656,17 +679,11 @@ body {
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  padding-block: 1.4rem;
-  padding-inline: 1rem;
   transition: all 0.3s;
-  border-radius: 7px;
-  background-color: var(--color-red-2);
-  width: 25rem;
 }
 
 .contact-link:hover {
-  background-color: var(--color-red);
-  color: var(--color-slate);
+  color: var(--color-red);
 }
 
 /******************** FOOTER ************************/
@@ -677,6 +694,7 @@ body {
   justify-content: center;
   background-color: var(--color-slate-2);
   padding: 3rem;
+  padding-block: 6rem;
   gap: 3rem;
   color: var(--color-slate-3);
 }
@@ -713,15 +731,6 @@ body {
     font-size: 1.4rem;
   }
 
-  .hero-dev,
-  .hero-name {
-    font-size: 4rem;
-  }
-
-  .hero {
-    padding-inline: 12rem;
-  }
-
   .hero-image {
     max-width: 27rem;
   }
@@ -746,9 +755,13 @@ body {
     max-width: 90rem;
   }
 
+  .hero-name {
+    font-size: 4rem;
+  }
+
   .hero {
-    gap: 3rem;
     padding-inline: 4rem;
+    justify-content: space-between;
   }
 
   .hero-image {
@@ -889,7 +902,10 @@ body {
     padding: 2rem;
   }
 
-  .hero-dev,
+  .hero-dev {
+    font-size: 2.4rem;
+  }
+
   .hero-name,
   .section-title {
     font-size: 3.2rem;
