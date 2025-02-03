@@ -898,6 +898,14 @@ body {
 }
 
 @media screen and (max-width: 480px) {
+  .fixed.header {
+    height: 6rem;
+  }
+
+  .header-name {
+    font-size: 1.8rem;
+  }
+
   .project-container {
     padding: 2rem;
   }
@@ -909,6 +917,10 @@ body {
   .hero-name,
   .section-title {
     font-size: 3.2rem;
+  }
+
+  .section-title {
+    padding-block: 3rem;
   }
 
   .hero-list {
