@@ -307,7 +307,7 @@ body {
   position: absolute;
   top: 2rem;
   left: 2rem;
-  background-image: linear-gradient(#18181b, 80%, #630e087c);
+  background-image: linear-gradient(#18181b00, 80%, #630e087c);
   width: 100%;
   height: 100%;
   border: 2px solid #7f1d1dbe;
@@ -347,9 +347,8 @@ body {
 }
 
 .about-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   color: var(--color-slate-3);
   gap: 8rem;
   margin-top: 2rem;
@@ -357,7 +356,8 @@ body {
 }
 
 .about-text {
-  width: 60%;
+  margin-left: 4rem;
+  grid-column: span 2;
 }
 
 .about-name {
@@ -386,12 +386,13 @@ body {
 .about-photo {
   max-width: 25rem;
   position: relative;
-  margin-right: 4rem;
+  margin-block: auto;
+  margin-right: 2rem;
 }
 
 .photo {
   width: 100%;
-  object-fit: contain;
+  object-fit: cover;
   overflow: hidden;
 }
 
@@ -410,12 +411,11 @@ body {
 }
 
 .list-courses {
-  padding-top: 3rem;
-  padding-bottom: 6rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
   gap: 2.5rem;
   border-radius: 3px;
+  grid-column: 1 / -1;
 }
 
 .courses-item {
@@ -787,6 +787,10 @@ body {
     height: 2.6rem;
   }
 
+  .about-text {
+    margin-left: 0rem;
+  }
+
   .about-photo {
     max-width: 22rem;
     margin-right: 1.5rem;
@@ -867,15 +871,18 @@ body {
   }
 
   .about-container {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 4rem;
+    grid-template-columns: 1fr;
+    gap: 6rem;
     margin-top: 0rem;
     margin-bottom: 4rem;
   }
 
   .about-text {
-    width: 100%;
+    grid-column: 1;
+  }
+
+  .about-photo {
+    justify-self: center;
   }
 
   .projects {
