@@ -1,65 +1,81 @@
-# Portfólio - Cristian Daniel
+# 🌐 Portfólio - Cristian Daniel
 
-Olá, eu sou Cristian! Estudante de Análise e Desenvolvimento de Sistemas na Fatec Ipiranga e desenvolvedor Full-Stack. Este é o meu portfólio pessoal onde você encontrará detalhes sobre minha trajetória acadêmica, minhas habilidades técnicas e os projetos que desenvolvi até o momento.
+<img src="https://i.imgur.com/5bndmXg.png" alt="Preview do Portfólio" width="100%" />
 
-## Objetivo
+> Bem-vindo(a) ao meu portfólio! Este repositório apresenta a minha experiência, trajetória acadêmica, habilidades técnicas e projetos como desenvolvedor Full-Stack.
 
-O objetivo deste portfólio é apresentar minhas competências e realizações para potenciais empregadores e colaboradores, e facilitar o contato com profissionais da área de tecnologia.
+---
 
-## Tecnologias Utilizadas
+## 🎯 Objetivo
 
-Para a criação deste portfólio, decidi utilizar somente tecnologias vanilla, descritas a seguir:
+O meu objetivo com este portfólio é apresentar minhas experiências, competências e realizações para novos empregadores, colaboradores e pessoas interessadas no meu trabalho. Também para facilitar o contato com profissionais da área de tecnologia.
 
-- HTML
-- CSS
-- JavaScript
+---
 
-## Habilidades
+## 💻 Tecnologias Utilizadas no Portfólio
 
-Aqui estão algumas das habilidades e tecnologias com as quais tenho experiência:
+O site foi desenvolvido utilizando **tecnologias vanilla**, e o motivo é simples: nem tudo precisa ser feito com framework, e pretendo manter o portfólio com vanilla puro. Além disso, foi feito com foco em performance, responsividade e acessibilidade, a seguir, deixo as tecnologias:
 
-#### Front-End
+- **JavaScript**
+- **HTML**
+- **CSS**
 
-- React
-- TypeScript
-- HTML
-- CSS
-- JavaScript
+---
 
-#### Back-End
+## 🚀 Habilidades Técnicas
 
-- Node.js
-- TypeScript
-- Express.js
+Aqui estão algumas das tecnologias e ferramentas que utilizo, organizadas por categoria:
 
-E mais outras presentes no meu [Portfólio](https://cristiandaniel1.github.io/portfolio/).
+| 🧩 Categoria       | 🛠️ Tecnologias                                           |
+| ------------------ | -------------------------------------------------------- |
+| **Front-End**      | React.js, TypeScript, JavaScript, HTML, CSS, TailwindCSS |
+| **Back-End**       | Node.js, Express.js, Spring Boot                         |
+| **Testes**         | Jest                                                     |
+| **Banco de Dados** | PostgreSQL, MongoDB                                      |
+| **DevOps**         | Docker                                                   |
 
-## Estrutura do Portfólio
+Para mais detalhes, acesse meu [portfólio online](https://cristiandaniel1.github.io/portfolio/).
 
-- **Sobre Mim:** Informações sobre minha formação e cursos.
-- **Projetos:** Seção onde apresento meus projetos com uma breve descrição de cada um.
-- **Habilidades:** Lista das minhas habilidades técnicas e ferramentas que utilizo.
-- **Contato:** Meus contatos e links para redes sociais.
+---
 
-## Instruções de Instalação
+## 🗂 Estrutura do Portfólio
 
-Caso alguém queira clonar o repositório e rodar localmente:
+- **Sobre Mim:** Minha formação, cargo atual e trajetória.
+- **Experiência:** Atividades que faço e tecnologias com que já trabalhei.
+- **Projetos:** Lista com meus projetos, tecnologias utilizadas e descrição.
+- **Contato:** links para minhas redes sociais.
 
-1. Clone o repositório:
-   ```sh
-   git clone https://github.com/CristianDaniel1/portfolio.git
-   ```
-2. Navegue até o diretório do projeto:
-   ```sh
-   cd portfolio
-   ```
-3. Abra o arquivo `index.html` no seu navegador.
+---
 
-## Entre em Contato!
+## 🛠 Como rodar localmente
 
-- [LinkedIn](https://www.linkedin.com/in/cristiandaniel1)
-- [Email](mailto:cristiandaniel.1050@gmail.com)
+Caso deseje clonar e rodar o projeto localmente:
 
-## Licença
+```bash
+# Clone o repositório
+git clone https://github.com/CristianDaniel1/portfolio.git
+
+# Acesse a pasta do projeto
+cd portfolio
+
+# Instale as dependências (caso esteja usando um ambiente com build)
+npm install
+
+# Rode o projeto localmente (exemplo com Vite)
+npm run dev
+```
+
+Ou simplesmente abra o arquivo `index.html` no navegador, caso esteja usando a versão estática.
+
+---
+
+## 📬 Entre em Contato
+
+- 🌐 [LinkedIn](https://www.linkedin.com/in/cristiandaniel1)
+- 📧 [Email](mailto:cristiandaniel.1050@gmail.com)
+
+---
+
+## 📄 Licença
 
 Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
