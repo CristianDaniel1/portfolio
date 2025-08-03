@@ -1,55 +1,4 @@
 'use strict';
-///////////////////////////////////////////////////////////
-// Movimento - Sections aparecendo pelo Scroll
-const allSections = document.querySelectorAll('.section');
-
-const callbackSections = function (entries, observer) {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-
-    entry.target.classList.remove('hide-section');
-    observer.unobserve(entry.target);
-  });
-};
-
-const observer = new IntersectionObserver(callbackSections, {
-  root: null,
-  threshold: 0.05,
-});
-
-allSections.forEach(function (section) {
-  observer.observe(section);
-  section.classList.add('hide-section');
-});
-
-////////////////// Animação dos Projetos ////////////////////
-const projects = document.querySelectorAll('.project-container');
-
-const callbackProjectsObserver = function (entries, observer) {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-
-    const elementClasses = entry.target.classList;
-
-    elementClasses.remove('opacity-hidden');
-
-    elementClasses.contains('slide')
-      ? elementClasses.add('slide-right')
-      : elementClasses.add('slide-left');
-
-    observer.unobserve(entry.target);
-  });
-};
-
-const projectsObserver = new IntersectionObserver(callbackProjectsObserver, {
-  root: null,
-  threshold: 0.3,
-});
-
-projects.forEach(animation => {
-  projectsObserver.observe(animation);
-  animation.classList.add('opacity-hidden');
-});
 
 /////////////////// Navbar Mobile //////////////////////
 const navbar = document.querySelector('.navbar-list');
@@ -79,25 +28,3 @@ const handleNavClick = e => {
 
 btnOpenMobileMenu.addEventListener('click', handleMobileMenu);
 navbar.addEventListener('click', handleNavClick);
-
-///////////////////// Header Fixed //////////////////////
-const heroSection = document.querySelector('.hero');
-const header = document.querySelector('.header');
-
-const headerHeight = heroSection.getBoundingClientRect().height;
-// const bodyClass = document.body.classList;
-
-const fixedNav = function (entries) {
-  const [entry] = entries;
-
-  if (!entry.isIntersecting) header.classList.add('fixed');
-  else header.classList.remove('fixed');
-};
-
-const heroObserver = new IntersectionObserver(fixedNav, {
-  root: null,
-  threshold: 0,
-  rootMargin: `-${headerHeight}px`,
-});
-
-heroObserver.observe(heroSection);

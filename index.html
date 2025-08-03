@@ -11,35 +11,34 @@
       name="description"
       content="Portfólio de Cristian Daniel, com a exibição de projetos e habilidades front-end"
     />
-    <title>Portfólio - Cristian Daniel</title>
+    <title>Portfólio de Cristian Daniel - Desenvolvedor Full-Stack</title>
     <link rel="shortcut icon" href="public/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="src/main.css" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
   </head>
   <body>
     <header class="header">
-      <div class="header-container container">
-        <a href="#" class="header-name"
-          ><img
-            src="public/favicon.png"
-            width="40"
-            height="40"
-            alt="Logo vermelho com a letra C de Cristian"
-          />
-          Portfolio</a
-        >
+      <div class="header-container container-2">
+        <a href="#" class="header-name">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            fill="#ffd369"
+            viewBox="0 0 256 256"
+          >
+            <path
+              d="M216,96A88,88,0,1,0,72,163.83V240a8,8,0,0,0,11.58,7.16L128,225l44.43,22.21A8.07,8.07,0,0,0,176,248a8,8,0,0,0,8-8V163.83A87.85,87.85,0,0,0,216,96ZM56,96a72,72,0,1,1,72,72A72.08,72.08,0,0,1,56,96Zm16,0a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"
+            ></path>
+          </svg>
+          <div>Cristian<span class="header-name-span">Dev</span></div>
+        </a>
         <nav class="navbar">
           <ul class="navbar-list">
             <li><a class="navbar-link" href="#">Início</a></li>
             <li><a class="navbar-link" href="#sobre-mim">Sobre Mim</a></li>
+            <li><a class="navbar-link" href="#experiencia">Experiência</a></li>
             <li><a class="navbar-link" href="#projetos">Projetos</a></li>
-            <li><a class="navbar-link" href="#habilidades">Habilidades</a></li>
+
             <li><a class="navbar-link" href="#contato">Contato</a></li>
           </ul>
           <button class="btn-menu" aria-label="abrir e fechar menu">
@@ -82,18 +81,21 @@
       </div>
     </header>
     <main>
-      <section class="hero container" id="hero">
-        <div class="hero-container">
-          <h1 class="hero-title">
-            <span class="hero-dev red">Desenvolvedor Full Stack</span>
-            <span class="hero-name">Cristian Daniel</span>
-          </h1>
-          <p class="hero-description">
-            Bem-vindo! Aqui, apresento os meus projetos, habilidades e a minha
-            trajetória até o presente momento, assim como links de contato
-          </p>
+      <section class="hero" id="hero">
+        <div class="hero-container container padding-y">
+          <div class="hero-content">
+            <h1 class="hero-title">
+              <span class="hero-dev gold">Desenvolvedor Full-Stack</span>
+              <span class="hero-name">Cristian Daniel</span>
+            </h1>
+            <p class="hero-description">
+              Bem-vindo! Aqui, apresento a minha experiência, projetos,
+              habilidades e trajetória até o momento. Sinta-se a vontade para
+              entrar em contato!
+            </p>
+          </div>
           <ul class="hero-list">
-            <li class="list-item purple-link">
+            <li class="list-item">
               <a
                 href="https://github.com/CristianDaniel1"
                 target="_blank"
@@ -113,10 +115,9 @@
                     />
                   </svg>
                 </div>
-                GitHub
               </a>
             </li>
-            <li class="list-item blue-link">
+            <li class="list-item">
               <a
                 href="https://www.linkedin.com/in/cristiandaniel1/"
                 target="_blank"
@@ -135,8 +136,7 @@
                     />
                   </svg>
                 </div>
-                Linkedin</a
-              >
+              </a>
             </li>
             <li class="list-item">
               <a href="mailto:cristiandaniel.1050@gmail.com" class="link"
@@ -171,749 +171,71 @@
                     />
                   </svg>
                 </div>
-                Email</a
-              >
+              </a>
             </li>
           </ul>
         </div>
-        <div class="hero-image">
-          <img
-            class="hero-photo"
-            src="src/assets/cris-foto.jpg"
-            width="300"
-            height="400"
-            alt="foto de cristian daniel"
-          />
-        </div>
       </section>
-      <section class="section container" id="sobre-mim">
-        <h2 class="section-title title-about">
-          Sobre <span class="red">Mim</span>
+
+      <section class="container about padding-y" id="sobre-mim">
+        <h2 class="title about-title">
+          <div class="svg-container">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="36"
+              height="36"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+              <path d="M6 21v-2a4 4 0 0 1 4 -4h4" />
+              <path d="M15 19l2 2l4 -4" />
+            </svg>
+          </div>
+          <span>Sobre mim</span>
         </h2>
         <div class="about-container">
           <div class="about-text">
-            <h3 class="about-name"><span class="red">Cristian</span> Daniel</h3>
-            <p class="paragraph">
-              Para mim, a razão principal de eu ter decidido me tornar um
-              desenvolvedor foi a ideia da criação. Acho incrível desenvolver a
-              capacidade de aplicar uma ideia que eu tive no computador.
-            </p>
-            <p class="paragraph">
-              No momento, estou focado no
-              <span class="red">desenvolvimento Full-Stack</span> com React,
-              Node.js TypeScript, Express.js, Tailwind, e banco de dados como
-              MySQL e MongoDB.
-            </p>
-            <div class="academic">
-              <div class="academic-title blue">
-                <h3>Faculdade de Tecnologia</h3>
-                <div class="svg-container">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="32"
-                    height="32"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                  >
-                    <path
-                      d="M251.76,88.94l-120-64a8,8,0,0,0-7.52,0l-120,64a8,8,0,0,0,0,14.12L32,117.87v48.42a15.91,15.91,0,0,0,4.06,10.65C49.16,191.53,78.51,216,128,216a130,130,0,0,0,48-8.76V240a8,8,0,0,0,16,0V199.51a115.63,115.63,0,0,0,27.94-22.57A15.91,15.91,0,0,0,224,166.29V117.87l27.76-14.81a8,8,0,0,0,0-14.12ZM128,200c-43.27,0-68.72-21.14-80-33.71V126.4l76.24,40.66a8,8,0,0,0,7.52,0L176,143.47v46.34C163.4,195.69,147.52,200,128,200Zm80-33.75a97.83,97.83,0,0,1-16,14.25V134.93l16-8.53ZM188,118.94l-.22-.13-56-29.87a8,8,0,0,0-7.52,14.12L171,128l-43,22.93L25,96,128,41.07,231,96Z"
-                    ></path>
-                  </svg>
-                </div>
-              </div>
+            <div class="about-history">
               <p class="paragraph">
-                Atualmente estou cursando o 4º semestre em Análise e
+                A principal razão de eu ter decidido me tornar um desenvolvedor
+                foi a ideia da criação, acho incrível ter a capacidade de
+                aplicar uma ideia que eu tive em uma tela de um computador.
+              </p>
+              <p class="paragraph">
+                No momento, sou estagiário em
+                <span class="gold">desenvolvimento Full-Stack</span> na
+                Regdrive, e tenho conhecimento de tecnologias como AngularJs,
+                React, Node.js, TypeScript, Spring Boot, Tailwind, e banco de
+                dados como PostgreSQL.
+              </p>
+            </div>
+            <div class="academic">
+              <h3 class="academic-title">Faculdade de Tecnologia</h3>
+              <p>
+                Atualmente estou cursando o 5º semestre em Análise e
                 Desenvolvimento de Sistemas na Fatec Ipiranga. Meus estudos na
                 instituição envolvem
-                <span class="blue"
-                  >C, SQL e Programação Orientada a Objetos com Java.</span
-                >
+                <span>C, SQL, Java e programação web.</span>
               </p>
             </div>
           </div>
           <div class="about-photo">
             <img
               class="photo"
-              src="src/assets/cris.png"
+              src="src/assets/cris-foto.jpg"
               alt="Foto de Cristian Daniel"
               loading="lazy"
             />
           </div>
-          <ul class="list-courses">
-            <li class="courses-item">
-              <h3 class="courses-title">JavaScript</h3>
-              <div class="courses-time">68h</div>
-              <div class="courses-info">Jonas Schmedtmann, Udemy</div>
-            </li>
-            <li class="courses-item">
-              <h3 class="courses-title">React - The Complete Guide</h3>
-              <div class="courses-time">74h</div>
-              <div class="courses-info">Academind - Maximilian S.</div>
-            </li>
-            <li class="courses-item">
-              <h3 class="courses-title">Ciência de Dados com Python</h3>
-              <div class="courses-time">80h</div>
-              <div class="courses-info">Santander, DIO</div>
-            </li>
-            <li class="courses-item">
-              <h3 class="courses-title">Desenvolvimento de Jogos com JS</h3>
-              <div class="courses-time">77h</div>
-              <div class="courses-info">iFood, DIO</div>
-            </li>
-          </ul>
-        </div>
-      </section>
-      <section class="section container" id="projetos">
-        <h2 class="section-title">Meus <span class="red">Projetos</span></h2>
-        <div class="projects">
-          <article class="project-container slide row-reverse">
-            <a
-              href="https://github.com/CristianDaniel1/iart"
-              class="project-link"
-              target="_blank"
-              ><img
-                class="project-image"
-                src="src/assets/iart.png"
-                loading="lazy"
-                alt="Site de imagens geradas por IA"
-                width="520"
-                height="400"
-              />
-            </a>
-            <div class="project-info">
-              <h3 class="project-title">IArt</h3>
-              <p class="paragraph">
-                IArt é um site de divulgação de artes geradas por Inteligência
-                Artificial. Existe uma variedade de categorias imagens e prompts
-                para você se inspirar e criar artes também!
-              </p>
-              <p class="paragraph">
-                Criei uma <span class="red">RestAPI</span> com Node.js para o
-                site, e apliquei meus conhecimentos em
-                <span class="blue">React Router</span>,
-                <span class="blue">TanstackQuery</span>,
-                <span class="blue">Tailwind</span>, entre outros.
-              </p>
-              <ul class="list-tech">
-                <li class="tech-item">
-                  <img
-                    src="src/assets/icons/react-icon.svg"
-                    alt="React icone"
-                    width="20"
-                    height="20"
-                  />React
-                </li>
-                <li class="tech-item">
-                  <img
-                    src="src/assets/icons/ts-icon.svg"
-                    alt="TypeScript icone"
-                    width="20"
-                    height="20"
-                  />TypeScript
-                </li>
-                <li class="tech-item">
-                  <img
-                    src="src/assets/icons/tailwind-icon.svg"
-                    alt="Tailwind icone"
-                    width="20"
-                    height="20"
-                  />Tailwind
-                </li>
-                <li class="tech-item">
-                  <img
-                    src="src/assets/icons/tanstack-query-icon.svg"
-                    width="20"
-                    height="20"
-                    alt="TanstackQuery icone"
-                  />TanstackQuery
-                </li>
-                <li class="tech-item">
-                  <img
-                    src="src/assets/icons/node-icon.svg"
-                    alt="FramerMotion icone"
-                    width="20"
-                    height="20"
-                  />Node.js
-                </li>
-              </ul>
-              <div class="project-links">
-                <div class="project-code purple-link">
-                  <a
-                    href="https://github.com/CristianDaniel1/iart"
-                    target="_blank"
-                    class="link code-link"
-                    >Código
-                    <div class="svg-container">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 512"
-                        width="25"
-                        height="25"
-                      >
-                        <path
-                          stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="32"
-                          d="M160 368L32 256l128-112M352 368l128-112-128-112M304 96l-96 320"
-                        />
-                      </svg>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </article>
-          <article class="project-container">
-            <a
-              href="https://sky-now.vercel.app"
-              class="project-link"
-              target="_blank"
-              ><img
-                class="project-image"
-                src="src/assets/sky-now.png"
-                loading="lazy"
-                alt="App de clima e previsão do tempo"
-                width="520"
-                height="400"
-              />
-            </a>
-            <div class="project-info">
-              <h3 class="project-title">SkyNow</h3>
-              <p class="paragraph">
-                O projeto SkyNow te informa o clima e previsão do tempo! Você
-                pode pesquisar o clima de qualquer local e obter previsões para
-                as próximas 24 horas e para os próximos 5 dias!
-              </p>
-              <p class="paragraph">
-                Para este projeto foi utilizado as
-                <span class="red">APIs de OpenWeatherMap</span>, como Geocoding
-                API, Current Weather, e Forecast. Além disso, utilizei
-                TanstackQuery, Zustand e Recharts.
-              </p>
-              <ul class="list-tech">
-                <li class="tech-item">
-                  <img
-                    src="src/assets/icons/react-icon.svg"
-                    alt="React icone"
-                    width="20"
-                    height="20"
-                  />React
-                </li>
-                <li class="tech-item">
-                  <img
-                    src="src/assets/icons/ts-icon.svg"
-                    alt="TypeScript icone"
-                    width="20"
-                    height="20"
-                  />TypeScript
-                </li>
-                <li class="tech-item">
-                  <img
-                    src="src/assets/icons/tailwind-icon.svg"
-                    alt="Tailwind icone"
-                    width="20"
-                    height="20"
-                  />Tailwind
-                </li>
-                <li class="tech-item">
-                  <img
-                    src="src/assets/icons/tanstack-query-icon.svg"
-                    width="20"
-                    height="20"
-                    alt="TanstackQuery icone"
-                  />TanstackQuery
-                </li>
-              </ul>
-              <div class="project-links">
-                <div class="project-code">
-                  <a
-                    href="https://sky-now.vercel.app"
-                    target="_blank"
-                    class="link code-link"
-                    >Website
-                    <div class="svg-container">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="25"
-                        height="25"
-                        fill="currentColor"
-                        viewBox="0 0 256 256"
-                      >
-                        <path
-                          d="M240,88.23a54.43,54.43,0,0,1-16,37L189.25,160a54.27,54.27,0,0,1-38.63,16h-.05A54.63,54.63,0,0,1,96,119.84a8,8,0,0,1,16,.45A38.62,38.62,0,0,0,150.58,160h0a38.39,38.39,0,0,0,27.31-11.31l34.75-34.75a38.63,38.63,0,0,0-54.63-54.63l-11,11A8,8,0,0,1,135.7,59l11-11A54.65,54.65,0,0,1,224,48,54.86,54.86,0,0,1,240,88.23ZM109,185.66l-11,11A38.41,38.41,0,0,1,70.6,208h0a38.63,38.63,0,0,1-27.29-65.94L78,107.31A38.63,38.63,0,0,1,144,135.71a8,8,0,0,0,16,.45A54.86,54.86,0,0,0,144,96a54.65,54.65,0,0,0-77.27,0L32,130.75A54.62,54.62,0,0,0,70.56,224h0a54.28,54.28,0,0,0,38.64-16l11-11A8,8,0,0,0,109,185.66Z"
-                        ></path>
-                      </svg>
-                    </div>
-                  </a>
-                </div>
-                <div class="project-code purple-link">
-                  <a
-                    href="https://github.com/CristianDaniel1/sky-now"
-                    target="_blank"
-                    class="link code-link"
-                    >Código
-                    <div class="svg-container">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 512"
-                        width="25"
-                        height="25"
-                      >
-                        <path
-                          stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="32"
-                          d="M160 368L32 256l128-112M352 368l128-112-128-112M304 96l-96 320"
-                        />
-                      </svg>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </article>
-          <article class="project-container slide row-reverse">
-            <a
-              href="https://frontend-quiz-cris.vercel.app"
-              class="project-link"
-              target="_blank"
-              ><img
-                class="project-image"
-                src="src/assets/front-end-quiz.png"
-                loading="lazy"
-                alt="Site de quizzes de tecnologias front-end"
-                width="520"
-                height="400"
-              />
-            </a>
-            <div class="project-info">
-              <h3 class="project-title">Front-End Quiz</h3>
-              <p class="paragraph">
-                Front-End Quiz te entrega a chance de por seus conhecimentos das
-                tecnologias front-end a prova. Quizzes de
-                <span class="blue"
-                  >HTML, CSS, JavaScript, React e Tailwind.</span
-                >
-              </p>
-              <p class="paragraph">
-                O meu objetivo com este projeto é testar e melhorar os
-                conhecimentos de desenvolvedores front-end através de quizzes
-                interativos.
-              </p>
-              <ul class="list-tech">
-                <li class="tech-item">
-                  <img
-                    src="src/assets/icons/react-icon.svg"
-                    alt="React icone"
-                    width="20"
-                    height="20"
-                  />React
-                </li>
-                <li class="tech-item">
-                  <img
-                    src="src/assets/icons/ts-icon.svg"
-                    alt="TypeScript icone"
-                    width="20"
-                    height="20"
-                  />TypeScript
-                </li>
-                <li class="tech-item">
-                  <img
-                    src="src/assets/icons/tailwind-icon.svg"
-                    alt="Tailwind icone"
-                    width="20"
-                    height="20"
-                  />Tailwind
-                </li>
-              </ul>
-              <div class="project-links">
-                <div class="project-code">
-                  <a
-                    href="https://frontend-quiz-cris.vercel.app"
-                    target="_blank"
-                    class="link code-link"
-                    >Website
-                    <div class="svg-container">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="25"
-                        height="25"
-                        fill="currentColor"
-                        viewBox="0 0 256 256"
-                      >
-                        <path
-                          d="M240,88.23a54.43,54.43,0,0,1-16,37L189.25,160a54.27,54.27,0,0,1-38.63,16h-.05A54.63,54.63,0,0,1,96,119.84a8,8,0,0,1,16,.45A38.62,38.62,0,0,0,150.58,160h0a38.39,38.39,0,0,0,27.31-11.31l34.75-34.75a38.63,38.63,0,0,0-54.63-54.63l-11,11A8,8,0,0,1,135.7,59l11-11A54.65,54.65,0,0,1,224,48,54.86,54.86,0,0,1,240,88.23ZM109,185.66l-11,11A38.41,38.41,0,0,1,70.6,208h0a38.63,38.63,0,0,1-27.29-65.94L78,107.31A38.63,38.63,0,0,1,144,135.71a8,8,0,0,0,16,.45A54.86,54.86,0,0,0,144,96a54.65,54.65,0,0,0-77.27,0L32,130.75A54.62,54.62,0,0,0,70.56,224h0a54.28,54.28,0,0,0,38.64-16l11-11A8,8,0,0,0,109,185.66Z"
-                        ></path>
-                      </svg>
-                    </div>
-                  </a>
-                </div>
-                <div class="project-code purple-link">
-                  <a
-                    href="https://github.com/CristianDaniel1/front-end-quiz"
-                    target="_blank"
-                    class="link code-link"
-                    >Código
-                    <div class="svg-container">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 512"
-                        width="25"
-                        height="25"
-                      >
-                        <path
-                          stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="32"
-                          d="M160 368L32 256l128-112M352 368l128-112-128-112M304 96l-96 320"
-                        />
-                      </svg>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-container">
-            <a
-              href="https://roweam-clone.vercel.app"
-              class="project-link"
-              target="_blank"
-              ><img
-                class="project-image"
-                src="src/assets/roweam-clone.png"
-                alt="Site de movéis vintage"
-                loading="lazy"
-                width="520"
-                height="400"
-              />
-            </a>
-            <div class="project-info">
-              <h3 class="project-title">Roweam Clone</h3>
-              <p class="paragraph">
-                Roweam é um lugar onde você pode comprar
-                <span class="red">movéis estilo vintage!</span>
-                O design foi feito por NicePeople.
-              </p>
-              <p class="paragraph">
-                Meu propósito com este clone foi aplicar todos os meus
-                conhecimentos de <span class="blue">React</span>,
-                <span class="blue">TypeScript</span> e
-                <span class="blue">Tailwind</span>, buscando a máxima fidelidade
-                ao original.
-              </p>
-              <ul class="list-tech">
-                <li class="tech-item">
-                  <img
-                    src="src/assets/icons/react-icon.svg"
-                    alt="React icone"
-                    width="20"
-                    height="20"
-                  />React
-                </li>
-                <li class="tech-item">
-                  <img
-                    src="src/assets/icons/ts-icon.svg"
-                    alt="TypeScript icone"
-                    width="20"
-                    height="20"
-                  />TypeScript
-                </li>
-                <li class="tech-item">
-                  <img
-                    src="src/assets/icons/tailwind-icon.svg"
-                    alt="Tailwind icone"
-                    width="20"
-                    height="20"
-                  />Tailwind
-                </li>
-                <li class="tech-item">
-                  <img
-                    src="src/assets/icons/framer-motion-icon.png"
-                    alt="FramerMotion icone"
-                    width="20"
-                    height="20"
-                  />FramerMotion
-                </li>
-              </ul>
-              <div class="project-links">
-                <div class="project-code">
-                  <a
-                    href="https://roweam-clone.vercel.app"
-                    target="_blank"
-                    class="link code-link"
-                    >Website
-                    <div class="svg-container">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="25"
-                        height="25"
-                        fill="currentColor"
-                        viewBox="0 0 256 256"
-                      >
-                        <path
-                          d="M240,88.23a54.43,54.43,0,0,1-16,37L189.25,160a54.27,54.27,0,0,1-38.63,16h-.05A54.63,54.63,0,0,1,96,119.84a8,8,0,0,1,16,.45A38.62,38.62,0,0,0,150.58,160h0a38.39,38.39,0,0,0,27.31-11.31l34.75-34.75a38.63,38.63,0,0,0-54.63-54.63l-11,11A8,8,0,0,1,135.7,59l11-11A54.65,54.65,0,0,1,224,48,54.86,54.86,0,0,1,240,88.23ZM109,185.66l-11,11A38.41,38.41,0,0,1,70.6,208h0a38.63,38.63,0,0,1-27.29-65.94L78,107.31A38.63,38.63,0,0,1,144,135.71a8,8,0,0,0,16,.45A54.86,54.86,0,0,0,144,96a54.65,54.65,0,0,0-77.27,0L32,130.75A54.62,54.62,0,0,0,70.56,224h0a54.28,54.28,0,0,0,38.64-16l11-11A8,8,0,0,0,109,185.66Z"
-                        ></path>
-                      </svg>
-                    </div>
-                  </a>
-                </div>
-                <div class="project-code purple-link">
-                  <a
-                    href="https://github.com/CristianDaniel1/roweam-clone"
-                    target="_blank"
-                    class="link code-link"
-                    >Código
-                    <div class="svg-container">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 512"
-                        width="25"
-                        height="25"
-                      >
-                        <path
-                          stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="32"
-                          d="M160 368L32 256l128-112M352 368l128-112-128-112M304 96l-96 320"
-                        />
-                      </svg>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </article>
-          <article class="project-container slide row-reverse">
-            <a
-              href="https://cristiandaniel1.github.io/mr-dice"
-              class="project-link"
-              target="_blank"
-              ><img
-                class="project-image"
-                src="src/assets/mr-dice.png"
-                alt="projeto de jogo de dados"
-                loading="lazy"
-                width="520"
-                height="400"
-              />
-            </a>
-            <div class="project-info">
-              <h3 class="project-title">Mr. Dice</h3>
-              <p class="paragraph">
-                Jogue os dados com o Senhor dos Dados! Jogo para 2 jogadores,
-                onde dependendo do dado, troca de jogador ou soma pontos! Ao
-                mesmo tempo, é exibido mensagens de Mr. Dice para cada interação
-                no jogo.
-              </p>
-              <p class="paragraph">
-                Meu primeiro projeto feito com
-                <span class="blue">HTML</span>, <span class="blue">CSS</span> e
-                <span class="blue">JavaScript.</span> É responsivo.
-              </p>
-              <ul class="list-tech">
-                <li class="tech-item">
-                  <img
-                    src="src/assets/icons/html-icon.svg"
-                    alt="html icone"
-                    width="20"
-                    height="20"
-                  />HTML
-                </li>
-                <li class="tech-item">
-                  <img
-                    src="src/assets/icons/css-icon.svg"
-                    alt="css icone"
-                    width="20"
-                    height="20"
-                  />CSS
-                </li>
-                <li class="tech-item">
-                  <img
-                    src="src/assets/icons/js-icon.svg"
-                    alt="JavaScript icone"
-                    width="20"
-                    height="20"
-                  />JavaScript
-                </li>
-              </ul>
-              <div class="project-links">
-                <div class="project-code">
-                  <a
-                    href="https://cristiandaniel1.github.io/mr-dice"
-                    target="_blank"
-                    class="link code-link"
-                    >Website
-                    <div class="svg-container">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="25"
-                        height="25"
-                        fill="currentColor"
-                        viewBox="0 0 256 256"
-                      >
-                        <path
-                          d="M240,88.23a54.43,54.43,0,0,1-16,37L189.25,160a54.27,54.27,0,0,1-38.63,16h-.05A54.63,54.63,0,0,1,96,119.84a8,8,0,0,1,16,.45A38.62,38.62,0,0,0,150.58,160h0a38.39,38.39,0,0,0,27.31-11.31l34.75-34.75a38.63,38.63,0,0,0-54.63-54.63l-11,11A8,8,0,0,1,135.7,59l11-11A54.65,54.65,0,0,1,224,48,54.86,54.86,0,0,1,240,88.23ZM109,185.66l-11,11A38.41,38.41,0,0,1,70.6,208h0a38.63,38.63,0,0,1-27.29-65.94L78,107.31A38.63,38.63,0,0,1,144,135.71a8,8,0,0,0,16,.45A54.86,54.86,0,0,0,144,96a54.65,54.65,0,0,0-77.27,0L32,130.75A54.62,54.62,0,0,0,70.56,224h0a54.28,54.28,0,0,0,38.64-16l11-11A8,8,0,0,0,109,185.66Z"
-                        ></path>
-                      </svg>
-                    </div>
-                  </a>
-                </div>
-                <div class="project-code purple-link">
-                  <a
-                    href="https://github.com/CristianDaniel1/mr-dice"
-                    class="link code-link"
-                    >Código
-                    <div class="svg-container">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 512"
-                        width="25"
-                        height="25"
-                      >
-                        <path
-                          stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="32"
-                          d="M160 368L32 256l128-112M352 368l128-112-128-112M304 96l-96 320"
-                        />
-                      </svg>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </article>
-          <article class="project-container">
-            <a
-              href="https://cristiandaniel1.github.io/memory-witcher"
-              target="_blank"
-              class="project-link"
-              ><img
-                class="project-image"
-                src="src/assets/memory-witcher.png"
-                loading="lazy"
-                alt="Jogo de memória estilo the witcher"
-                width="520"
-                height="400"
-            /></a>
-            <div class="project-info">
-              <h3 class="project-title">Memory Witcher</h3>
-              <p class="paragraph">
-                Jogo da memória simples com temática do jogo The Witcher!
-                Apliquei alguns novos
-                <span class="red">estilos e animações</span> que aprendi com
-                <span class="blue">CSS</span>.
-              </p>
-              <p class="paragraph">
-                As imagens foram geradas por IA e é responsivo.
-              </p>
-              <ul class="list-tech">
-                <li class="tech-item">
-                  <img
-                    src="src/assets/icons/html-icon.svg"
-                    alt="html icone"
-                    width="20"
-                    height="20"
-                  />HTML
-                </li>
-                <li class="tech-item">
-                  <img
-                    src="src/assets/icons/css-icon.svg"
-                    alt="css icone"
-                    width="20"
-                    height="20"
-                  />CSS
-                </li>
-                <li class="tech-item">
-                  <img
-                    src="src/assets/icons/js-icon.svg"
-                    alt="JavaScript icone"
-                    width="20"
-                    height="20"
-                  />JavaScript
-                </li>
-              </ul>
-              <div class="project-links">
-                <div class="project-code">
-                  <a
-                    href="https://cristiandaniel1.github.io/memory-witcher"
-                    target="_blank"
-                    class="link code-link"
-                    >Website
-                    <div class="svg-container">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="25"
-                        height="25"
-                        fill="currentColor"
-                        viewBox="0 0 256 256"
-                      >
-                        <path
-                          d="M240,88.23a54.43,54.43,0,0,1-16,37L189.25,160a54.27,54.27,0,0,1-38.63,16h-.05A54.63,54.63,0,0,1,96,119.84a8,8,0,0,1,16,.45A38.62,38.62,0,0,0,150.58,160h0a38.39,38.39,0,0,0,27.31-11.31l34.75-34.75a38.63,38.63,0,0,0-54.63-54.63l-11,11A8,8,0,0,1,135.7,59l11-11A54.65,54.65,0,0,1,224,48,54.86,54.86,0,0,1,240,88.23ZM109,185.66l-11,11A38.41,38.41,0,0,1,70.6,208h0a38.63,38.63,0,0,1-27.29-65.94L78,107.31A38.63,38.63,0,0,1,144,135.71a8,8,0,0,0,16,.45A54.86,54.86,0,0,0,144,96a54.65,54.65,0,0,0-77.27,0L32,130.75A54.62,54.62,0,0,0,70.56,224h0a54.28,54.28,0,0,0,38.64-16l11-11A8,8,0,0,0,109,185.66Z"
-                        ></path>
-                      </svg>
-                    </div>
-                  </a>
-                </div>
-                <div class="project-code purple-link">
-                  <a
-                    href="https://github.com/CristianDaniel1/memory-witcher"
-                    target="_blank"
-                    class="link code-link"
-                    >Código
-                    <div class="svg-container">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 512"
-                        width="25"
-                        height="25"
-                      >
-                        <path
-                          stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="32"
-                          d="M160 368L32 256l128-112M352 368l128-112-128-112M304 96l-96 320"
-                        />
-                      </svg>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-      <section class="section container" id="habilidades">
-        <h2 class="section-title">Habilidades</h2>
-        <div class="skills">
-          <div class="skills-item item-span">
-            <div class="skills-title red">
-              <h3>Front End</h3>
-              <div class="svg-container skills-svg">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 512 512"
-                  width="60"
-                  height="60"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="32"
-                    d="M160 368L32 256l128-112M352 368l128-112-128-112M304 96l-96 320"
-                  />
-                </svg>
-              </div>
-            </div>
+          <!-- <h2 class="tech-title">Tecnologias</h2>
+          <div class="skills-item front">
+            <h3 class="skills-title">Front-End</h3>
             <ul class="skills-list">
               <li class="skills-list-item">
                 <img
@@ -957,13 +279,13 @@
               </li>
               <li class="skills-list-item">
                 <img
-                  src="src/assets/icons/sass-icon.svg"
-                  alt="Sass icone"
+                  src="src/assets/icons/angular-icon.svg"
+                  alt="Angular icone"
                   width="60"
                   height="60"
                   class="skills-icon"
                 />
-                <div>Sass</div>
+                <div>Angular</div>
               </li>
 
               <li class="skills-list-item">
@@ -988,24 +310,8 @@
               </li>
             </ul>
           </div>
-          <div class="skills-item">
-            <div class="skills-title blue">
-              <h3>Back End</h3>
-              <div class="svg-container skills-svg">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="60"
-                  height="60"
-                  fill="currentColor"
-                  viewBox="0 0 256 256"
-                  class="skills-icon"
-                >
-                  <path
-                    d="M208,40H48A24,24,0,0,0,24,64V176a24,24,0,0,0,24,24h72v16H96a8,8,0,0,0,0,16h64a8,8,0,0,0,0-16H136V200h72a24,24,0,0,0,24-24V64A24,24,0,0,0,208,40ZM48,56H208a8,8,0,0,1,8,8v80H40V64A8,8,0,0,1,48,56ZM208,184H48a8,8,0,0,1-8-8V160H216v16A8,8,0,0,1,208,184Z"
-                  ></path>
-                </svg>
-              </div>
-            </div>
+          <div class="skills-item back">
+            <h3 class="skills-title">Back-End</h3>
             <ul class="skills-list">
               <li class="skills-list-item">
                 <img
@@ -1029,54 +335,29 @@
               </li>
               <li class="skills-list-item">
                 <img
-                  src="src/assets/icons/python-icon.svg"
-                  alt="Python icone"
+                  src="src/assets/icons/spring-icon.svg"
+                  alt="Spring icone"
                   width="60"
                   height="60"
                   class="skills-icon"
                 />
-                <div>Python</div>
+                <div>Spring Boot</div>
               </li>
-            </ul>
-          </div>
-          <div class="skills-item">
-            <div class="skills-title">
-              <h3>Ferramentas</h3>
-              <div class="svg-container skills-svg">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 512 512"
+              <li class="skills-list-item">
+                <img
+                  src="src/assets/icons/PostgresSQL-icon.svg"
+                  alt="PostgreSQL icone"
                   width="60"
                   height="60"
                   class="skills-icon"
-                >
-                  <path
-                    d="M436.67 184.11a27.17 27.17 0 01-38.3 0l-22.48-22.49a27.15 27.15 0 010-38.29l50.89-50.89a.85.85 0 00-.26-1.38C393.68 57 351.09 64.15 324.05 91c-25.88 25.69-27.35 64.27-17.87 98a27 27 0 01-7.67 27.14l-173 160.76a40.76 40.76 0 1057.57 57.54l162.15-173.3a27 27 0 0126.77-7.7c33.46 8.94 71.49 7.26 97.07-17.94 27.49-27.08 33.42-74.94 20.1-102.33a.85.85 0 00-1.36-.22z"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-miterlimit="10"
-                    stroke-width="32"
-                  />
-                  <path
-                    d="M224 284c-17.48-17-25.49-24.91-31-30.29a18.24 18.24 0 01-3.33-21.35 20.76 20.76 0 013.5-4.62l15.68-15.29a18.66 18.66 0 015.63-3.87 18.11 18.11 0 0120 3.62c5.45 5.29 15.43 15 33.41 32.52M317.07 291.3c40.95 38.1 90.62 83.27 110 99.41a13.46 13.46 0 01.94 19.92L394.63 444a14 14 0 01-20.29-.76c-16.53-19.18-61.09-67.11-99.27-107"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="32"
-                  />
-                  <path
-                    d="M17.34 193.5l29.41-28.74a4.71 4.71 0 013.41-1.35 4.85 4.85 0 013.41 1.35h0a9.86 9.86 0 008.19 2.77c3.83-.42 7.92-1.6 10.57-4.12 6-5.8-.94-17.23 4.34-24.54a207 207 0 0119.78-22.6c6-5.88 29.84-28.32 69.9-44.45A107.31 107.31 0 01206.67 64c22.59 0 40 10 46.26 15.67a89.54 89.54 0 0110.28 11.64 78.92 78.92 0 00-9.21-2.77 68.82 68.82 0 00-20-1.26c-13.33 1.09-29.41 7.26-38 14-13.9 11-19.87 25.72-20.81 44.71-.68 14.12 2.72 22.1 36.1 55.49a6.6 6.6 0 01-.34 9.16l-18.22 18a6.88 6.88 0 01-9.54.09c-21.94-21.94-36.65-33.09-45-38.16s-15.07-6.5-18.3-6.85a30.85 30.85 0 00-18.27 3.87 11.39 11.39 0 00-2.64 2 14.14 14.14 0 00.42 20.08l1.71 1.6a4.63 4.63 0 010 6.64L71.73 246.6a4.71 4.71 0 01-3.41 1.4 4.86 4.86 0 01-3.41-1.35l-47.57-46.43a4.88 4.88 0 010-6.72z"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="32"
-                  />
-                </svg>
-              </div>
-            </div>
+                />
+                <div>PostgresSQL</div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="skills-item tools">
+            <h3 class="skills-title">Ferramentas</h3>
             <ul class="skills-list">
               <li class="skills-list-item">
                 <img
@@ -1126,83 +407,635 @@
                 <div>Vite</div>
               </li>
             </ul>
+          </div> -->
+        </div>
+      </section>
+      <section class="container padding-y" id="experiencia">
+        <h2 class="title">
+          <div class="svg-container">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="36"
+              height="36"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"
+              />
+              <path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2" />
+              <path d="M12 12l0 .01" />
+              <path d="M3 13a20 20 0 0 0 18 0" />
+            </svg>
+          </div>
+          <span>Experiência</span>
+        </h2>
+        <div class="experience-container">
+          <span class="experience-deco" aria-hidden="true"></span>
+          <div class="experience-timeline">
+            <div class="contract-type">Estagiário</div>
+            <div>
+              <h3 class="gold experience-title">Desenvolvedor Full-Stack</h3>
+              <h4 class="company">Regdrive</h4>
+            </div>
+            <div class="experience-date">Jan 2025 - Até o momento</div>
+          </div>
+          <div class="experience-info">
+            <p>
+              Realizo o desenvolvimento de melhorias ou correções de bugs do
+              sistema web da empresa, tanto no front-end quanto no back-end,
+              também faço refatorações com o objetivo de atualizar o sistema
+              para um JavaScript mais moderno.
+            </p>
+            <p>
+              Além disso, também dou suporte aos usuários, e quando reportado
+              algum bug ou solicitado melhorias, eu faço parte da equipe de
+              desenvolvimento.
+            </p>
+            <div>
+              <h5 class="experience-tech-title">Tecnologias usadas</h5>
+              <ul class="experience-tech-list">
+                <li>
+                  <img
+                    src="src/assets/icons/js-icon.svg"
+                    alt="icone do JavaScript"
+                    class="experience-tech"
+                    width="32"
+                    height="32"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="src/assets/icons/angularjs-icon.svg"
+                    alt="icone do AngularJs"
+                    class="experience-tech"
+                    width="32"
+                    height="32"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="src/assets/icons/jquery-icon.svg"
+                    alt="icone do JQuery"
+                    class="experience-tech"
+                    width="32"
+                    height="32"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="src/assets/icons/bootstrap-icon.svg"
+                    alt="icone do Bootstrap"
+                    class="experience-tech"
+                    width="32"
+                    height="32"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="src/assets/icons/node-icon.svg"
+                    alt="icone do Node.js"
+                    class="experience-tech"
+                    width="32"
+                    height="32"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="src/assets/icons/spring-icon.svg"
+                    alt="icone do Spring Boot"
+                    class="experience-tech"
+                    width="32"
+                    height="32"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="src/assets/icons/gitlab-icon.svg"
+                    alt="icone do GitLab"
+                    class="experience-tech"
+                    width="32"
+                    height="32"
+                  />
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
-      <section class="section container" id="contato">
-        <h2 class="section-title">Entre em <span class="red">Contato</span></h2>
-        <div class="contact">
-          <div class="contact-container">
-            <p class="contact-work-title">Vamos trabalhar juntos!</p>
-            <p class="contact-work">
-              Estou à disposição para conversar e tirar dúvidas, envie uma
-              mensagem por email ou linkedin
-            </p>
-            <ul class="contact-list">
-              <li class="contact-list-item">
-                <a
-                  href="mailto:cristiandaniel.1050@gmail.com"
-                  class="contact-link"
-                  ><div class="svg-container">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="36"
-                      height="36"
-                      viewBox="0 0 512 512"
-                    >
-                      <rect
-                        x="48"
-                        y="96"
-                        width="416"
-                        height="320"
-                        rx="40"
-                        ry="40"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="32"
-                      />
-                      <path
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="32"
-                        d="M112 160l144 112 144-112"
-                      />
-                    </svg>
-                  </div>
-                  Email</a
-                >
-              </li>
-              <li class="contact-list-item">
-                <a
-                  href="https://www.linkedin.com/in/cristiandaniel1/"
-                  target="_blank"
-                  class="contact-link"
-                  ><div class="svg-container">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 512 512"
-                      width="36"
-                      height="36"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M444.17 32H70.28C49.85 32 32 46.7 32 66.89v374.72C32 461.91 49.85 480 70.28 480h373.78c20.54 0 35.94-18.21 35.94-38.39V66.89C480.12 46.7 464.6 32 444.17 32zm-273.3 373.43h-64.18V205.88h64.18zM141 175.54h-.46c-20.54 0-33.84-15.29-33.84-34.43 0-19.49 13.65-34.42 34.65-34.42s33.85 14.82 34.31 34.42c-.01 19.14-13.31 34.43-34.66 34.43zm264.43 229.89h-64.18V296.32c0-26.14-9.34-44-32.56-44-17.74 0-28.24 12-32.91 23.69-1.75 4.2-2.22 9.92-2.22 15.76v113.66h-64.18V205.88h64.18v27.77c9.34-13.3 23.93-32.44 57.88-32.44 42.13 0 74 27.77 74 87.64z"
-                      />
-                    </svg>
-                  </div>
-                  Linkedin</a
-                >
-              </li>
-            </ul>
+      <section class="projects-section padding-y" id="projetos">
+        <h2 class="container-2 title">
+          <div class="svg-container">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="36"
+              height="36"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M7 8l-4 4l4 4" />
+              <path d="M17 8l4 4l-4 4" />
+              <path d="M14 4l-4 16" />
+            </svg>
           </div>
+          <span>Projetos</span>
+        </h2>
+        <div class="projects container-2">
+          <article class="project-container">
+            <a
+              href="https://silverhand-store.vercel.app"
+              class="project-link"
+              target="_blank"
+              ><img
+                class="project-image"
+                src="src/assets/silverhand.webp"
+                loading="lazy"
+                alt="SilverHand, e-commerce de guitarras"
+                width="520"
+                height="400"
+              />
+            </a>
+            <div class="project-info">
+              <div>
+                <h3 class="project-title">SilverHand</h3>
+                <ul class="list-tech">
+                  <li class="tech-item">
+                    <div>
+                      <img
+                        src="src/assets/icons/react-icon.svg"
+                        alt="React icone"
+                        width="20"
+                        height="20"
+                        class="tech-icon"
+                      />
+                    </div>
+                    <span>React</span>
+                  </li>
+                  <li class="tech-item">
+                    <div>
+                      <img
+                        src="src/assets/icons/node-icon.svg"
+                        width="20"
+                        height="20"
+                        alt="Node icone"
+                        class="tech-icon"
+                      />
+                    </div>
+                    <span>Node.js</span>
+                  </li>
+                  <li class="tech-item">
+                    <div>
+                      <img
+                        src="src/assets/icons/ts-icon.svg"
+                        alt="TypeScript icone"
+                        width="20"
+                        height="20"
+                        class="tech-icon"
+                      />
+                    </div>
+                    <span>TypeScript</span>
+                  </li>
+                  <li class="tech-item">
+                    <div>
+                      <img
+                        src="src/assets/icons/tailwind-icon.svg"
+                        alt="Tailwind icone"
+                        width="20"
+                        height="20"
+                        class="tech-icon"
+                      />
+                    </div>
+                    <span>Tailwind</span>
+                  </li>
+                  <li class="tech-item">
+                    <div>
+                      <img
+                        src="src/assets/icons/PostgresSQL-icon.svg"
+                        width="20"
+                        height="20"
+                        alt="PostgreSQL icone"
+                        class="tech-icon"
+                      />
+                    </div>
+                    <span>PostgreSQL</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="project-links">
+                <div>
+                  <a
+                    href="https://silverhand-store.vercel.app"
+                    target="_blank"
+                    class="code-link"
+                  >
+                    <div class="svg-container">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M7 8l-4 4l4 4" />
+                        <path d="M17 8l4 4l-4 4" />
+                        <path d="M14 4l-4 16" />
+                      </svg>
+                    </div>
+                    <span>Website</span>
+                  </a>
+                </div>
+                <div>
+                  <a
+                    href="https://github.com/CristianDaniel1/silverhand-fullstack"
+                    target="_blank"
+                    class="code-link"
+                  >
+                    <div class="svg-container">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path
+                          d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+                        />
+                      </svg>
+                    </div>
+                    <span>Código</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="project-container">
+            <a
+              href="https://sky-now.vercel.app"
+              class="project-link"
+              target="_blank"
+              ><img
+                class="project-image"
+                src="src/assets/sky-now.png"
+                loading="lazy"
+                alt="App de clima e previsão do tempo"
+                width="520"
+                height="400"
+              />
+            </a>
+            <div class="project-info">
+              <div>
+                <h3 class="project-title">SkyNow</h3>
+                <ul class="list-tech">
+                  <li class="tech-item">
+                    <div>
+                      <img
+                        src="src/assets/icons/react-icon.svg"
+                        alt="React icone"
+                        width="20"
+                        height="20"
+                        class="tech-icon"
+                      />
+                    </div>
+                    <span>React</span>
+                  </li>
+                  <li class="tech-item">
+                    <div>
+                      <img
+                        src="src/assets/icons/ts-icon.svg"
+                        alt="TypeScript icone"
+                        width="20"
+                        height="20"
+                        class="tech-icon"
+                      />
+                    </div>
+                    <span>TypeScript</span>
+                  </li>
+                  <li class="tech-item">
+                    <div>
+                      <img
+                        src="src/assets/icons/tailwind-icon.svg"
+                        alt="Tailwind icone"
+                        width="20"
+                        height="20"
+                        class="tech-icon"
+                      />
+                    </div>
+                    <span>Tailwind</span>
+                  </li>
+                  <li class="tech-item">
+                    <div>
+                      <img
+                        src="src/assets/icons/tanstack-query-icon.svg"
+                        width="20"
+                        height="20"
+                        alt="TanstackQuery icone"
+                        class="tech-icon"
+                      />
+                    </div>
+                    <span>TanstackQuery</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="project-links">
+                <div>
+                  <a
+                    href="https://sky-now.vercel.app"
+                    target="_blank"
+                    class="code-link"
+                  >
+                    <div class="svg-container">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M7 8l-4 4l4 4" />
+                        <path d="M17 8l4 4l-4 4" />
+                        <path d="M14 4l-4 16" />
+                      </svg>
+                    </div>
+                    <span>Website</span>
+                  </a>
+                </div>
+                <div>
+                  <a
+                    href="https://github.com/CristianDaniel1/sky-now"
+                    target="_blank"
+                    class="code-link"
+                  >
+                    <div class="svg-container">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path
+                          d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+                        />
+                      </svg>
+                    </div>
+                    <span>Código</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="project-container">
+            <a
+              href="https://frontend-quiz-cris.vercel.app"
+              class="project-link"
+              target="_blank"
+              ><img
+                class="project-image"
+                src="src/assets/front-end-quiz.png"
+                loading="lazy"
+                alt="Site de quizzes de tecnologias front-end"
+                width="520"
+                height="400"
+              />
+            </a>
+            <div class="project-info">
+              <div>
+                <h3 class="project-title">Front-End Quiz</h3>
+                <ul class="list-tech">
+                  <li class="tech-item">
+                    <div>
+                      <img
+                        src="src/assets/icons/react-icon.svg"
+                        alt="React icone"
+                        width="20"
+                        height="20"
+                        class="tech-icon"
+                      />
+                    </div>
+                    <span>React</span>
+                  </li>
+                  <li class="tech-item">
+                    <div>
+                      <img
+                        src="src/assets/icons/ts-icon.svg"
+                        alt="TypeScript icone"
+                        width="20"
+                        height="20"
+                        class="tech-icon"
+                      />
+                    </div>
+                    <span>TypeScript</span>
+                  </li>
+                  <li class="tech-item">
+                    <div>
+                      <img
+                        src="src/assets/icons/tailwind-icon.svg"
+                        alt="Tailwind icone"
+                        width="20"
+                        height="20"
+                        class="tech-icon"
+                      />
+                    </div>
+                    <span>Tailwind</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="project-links">
+                <div>
+                  <a
+                    href="https://frontend-quiz-cris.vercel.app"
+                    target="_blank"
+                    class="code-link"
+                  >
+                    <div class="svg-container">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M7 8l-4 4l4 4" />
+                        <path d="M17 8l4 4l-4 4" />
+                        <path d="M14 4l-4 16" />
+                      </svg>
+                    </div>
+                    <span>Website</span>
+                  </a>
+                </div>
+                <div>
+                  <a
+                    href="https://github.com/CristianDaniel1/front-end-quiz"
+                    target="_blank"
+                    class="code-link"
+                    ><div class="svg-container">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path
+                          d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+                        />
+                      </svg>
+                    </div>
+                    <span>Código</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="project-container">
+            <a
+              href="https://roweam-clone.vercel.app"
+              class="project-link"
+              target="_blank"
+              ><img
+                class="project-image"
+                src="src/assets/roweam-clone.png"
+                alt="Site de movéis vintage"
+                loading="lazy"
+                width="520"
+                height="400"
+              />
+            </a>
+            <div class="project-info">
+              <div>
+                <h3 class="project-title">Roweam Clone</h3>
+                <ul class="list-tech">
+                  <li class="tech-item">
+                    <img
+                      src="src/assets/icons/react-icon.svg"
+                      alt="React icone"
+                      width="20"
+                      height="20"
+                    />React
+                  </li>
+                  <li class="tech-item">
+                    <img
+                      src="src/assets/icons/ts-icon.svg"
+                      alt="TypeScript icone"
+                      width="20"
+                      height="20"
+                    />TypeScript
+                  </li>
+                  <li class="tech-item">
+                    <img
+                      src="src/assets/icons/tailwind-icon.svg"
+                      alt="Tailwind icone"
+                      width="20"
+                      height="20"
+                    />Tailwind
+                  </li>
+                  <li class="tech-item">
+                    <img
+                      src="src/assets/icons/framer-motion-icon.png"
+                      alt="FramerMotion icone"
+                      width="20"
+                      height="20"
+                    />FramerMotion
+                  </li>
+                </ul>
+              </div>
+              <div class="project-links">
+                <div>
+                  <a
+                    href="https://roweam-clone.vercel.app"
+                    target="_blank"
+                    class="link code-link"
+                    >Website
+                    <div class="svg-container">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="25"
+                        height="25"
+                        fill="currentColor"
+                        viewBox="0 0 256 256"
+                      >
+                        <path
+                          d="M240,88.23a54.43,54.43,0,0,1-16,37L189.25,160a54.27,54.27,0,0,1-38.63,16h-.05A54.63,54.63,0,0,1,96,119.84a8,8,0,0,1,16,.45A38.62,38.62,0,0,0,150.58,160h0a38.39,38.39,0,0,0,27.31-11.31l34.75-34.75a38.63,38.63,0,0,0-54.63-54.63l-11,11A8,8,0,0,1,135.7,59l11-11A54.65,54.65,0,0,1,224,48,54.86,54.86,0,0,1,240,88.23ZM109,185.66l-11,11A38.41,38.41,0,0,1,70.6,208h0a38.63,38.63,0,0,1-27.29-65.94L78,107.31A38.63,38.63,0,0,1,144,135.71a8,8,0,0,0,16,.45A54.86,54.86,0,0,0,144,96a54.65,54.65,0,0,0-77.27,0L32,130.75A54.62,54.62,0,0,0,70.56,224h0a54.28,54.28,0,0,0,38.64-16l11-11A8,8,0,0,0,109,185.66Z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </a>
+                </div>
+                <div>
+                  <a
+                    href="https://github.com/CristianDaniel1/roweam-clone"
+                    target="_blank"
+                    class="link code-link"
+                    >Código
+                    <div class="svg-container">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"
+                        width="25"
+                        height="25"
+                      >
+                        <path
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="32"
+                          d="M160 368L32 256l128-112M352 368l128-112-128-112M304 96l-96 320"
+                        />
+                      </svg>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
         </div>
+      </section>
+      <section class="padding-y container-2" id="contato">
+        <h2 class="title">Entre em Contato</h2>
       </section>
     </main>
-    <footer class="footer">
+    <footer class="footer padding-y">
       <ul class="footer-links-list">
         <li class="footer-link-item">
           <a
@@ -1282,7 +1115,7 @@
         </li>
       </ul>
       <div class="footer-madeby">
-        Desenvolvido por <span class="red">Cristian Daniel</span>
+        2025. Desenvolvido por <span class="gold">Cristian Daniel</span>
       </div>
     </footer>
     <script src="src/app.js"></script>
