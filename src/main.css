@@ -258,6 +258,7 @@ body {
 
 .hero-dev {
   font-size: 4.2rem;
+  text-wrap: balance;
   display: block;
   font-weight: 400;
   animation: opacityAnime 0.4s ease-in-out 0.3s backwards;
@@ -272,7 +273,7 @@ body {
 
 .hero-description {
   font-size: 2rem;
-  width: 80rem;
+  max-width: 80rem;
   animation: opacityAnime 0.4s ease-in-out 0.7s backwards;
 }
 
@@ -373,6 +374,8 @@ body {
 /******************** EXPERIENCE **********************/
 .experience-title {
   font-size: 2.4rem;
+  text-wrap: balance;
+
   font-weight: 500;
 }
 
@@ -445,6 +448,7 @@ body {
 .experience-tech-list {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 2rem;
 }
 
@@ -459,11 +463,8 @@ body {
   display: grid;
   justify-items: end;
   grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
   gap: 5rem 2rem;
-}
-
-.projects-section {
-  background-color: var(--color-background);
 }
 
 .project-container {
@@ -575,6 +576,7 @@ body {
 .contact {
   display: flex;
   justify-content: space-between;
+  gap: 2rem;
   padding-inline: 10rem;
 }
 
@@ -632,10 +634,14 @@ body {
   body {
     font-size: 1.4rem;
   }
+
+  .projects {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media screen and (max-width: 1024px) {
-  .fixed.header {
+  .header {
     height: 6rem;
   }
 
@@ -643,13 +649,21 @@ body {
     max-width: 90rem;
   }
 
-  .hero-name {
-    font-size: 4rem;
+  .hero-dev {
+    font-size: 3.2rem;
   }
 
-  .hero {
-    padding-inline: 4rem;
-    justify-content: space-between;
+  .hero-name {
+    font-size: 6.4rem;
+  }
+
+  .title {
+    font-size: 2.8rem;
+  }
+
+  .experience-title,
+  .company {
+    font-size: 2rem;
   }
 
   .hero-description {
@@ -661,25 +675,16 @@ body {
     height: 2.6rem;
   }
 
+  .link {
+    padding: 1.5rem;
+  }
+
   .about-text {
-    margin-left: 0rem;
+    grid-column: span 7;
   }
 
   .about-photo {
-    max-width: 22rem;
-    margin-right: 1.5rem;
-  }
-
-  .projects {
-    gap: 6rem 4rem;
-  }
-
-  .project-title {
-    font-size: 2.5rem;
-  }
-
-  .contact {
-    padding-inline: 0;
+    grid-column: span 5;
   }
 }
 
@@ -700,9 +705,9 @@ body {
     transform: translateX(100%);
     display: flex;
     flex-direction: column;
-    background-color: var(--color-slate);
-    gap: 5rem;
-    justify-content: center;
+    background-color: var(--color-background);
+    gap: 3rem;
+    padding-block: 10rem 4rem;
     transition: all 0.4s;
     opacity: 0;
     pointer-events: none;
@@ -717,56 +722,90 @@ body {
   }
 
   .btn-menu {
-    display: block;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     position: relative;
     z-index: 5;
   }
 
+  .hero {
+    padding-top: 5rem;
+  }
+
   .hero-container {
-    max-width: 100%;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .hero-content {
+    gap: 5rem;
+  }
+
+  .hero-list {
+    flex-direction: row;
   }
 
   .about-container {
     grid-template-columns: 1fr;
-    gap: 6rem;
-    margin-top: 0rem;
-    margin-bottom: 4rem;
   }
 
   .about-text {
-    grid-column: 1;
+    grid-column: span 1;
+    padding-right: 0;
+    order: 2;
   }
 
   .about-photo {
-    justify-self: center;
+    grid-column: span 1;
+    max-width: 30rem;
+    margin: 0 auto;
+    order: 1;
+  }
+
+  .experience-container {
+    grid-template-columns: 1fr;
+    padding-inline: 4rem 0;
   }
 
   .projects {
     grid-template-columns: 1fr;
+    padding-inline: 1rem;
   }
 
-  .project-container {
-    max-width: 50rem;
-    margin-inline: auto;
+  .contact {
+    text-align: center;
+    gap: 4rem;
+    flex-direction: column;
+  }
+
+  .contact-title {
+    justify-content: center;
+  }
+
+  .contact-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .contact-link {
+    font-size: 1.4rem;
+    padding-inline: 2rem;
+    padding-block: 1.2rem;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .header-name {
-    font-size: 1.8rem;
-  }
-
   .hero-dev {
     font-size: 2.4rem;
+    margin-bottom: 0.2rem;
   }
 
-  .hero-name,
-  .section-title {
-    font-size: 3.2rem;
-  }
-
-  .section-title {
-    padding-block: 3rem;
+  .hero-name {
+    font-size: 5.2rem;
   }
 
   .hero-list {
@@ -775,10 +814,6 @@ body {
 
   .about-name {
     font-size: 2rem;
-  }
-
-  .project-info {
-    padding-inline: 2rem;
   }
 }
 
