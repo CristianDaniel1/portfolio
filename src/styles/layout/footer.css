@@ -1,0 +1,42 @@
+.footer {
+  padding-block: 3.4rem;
+  border-top: 1px solid var(--line);
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.6rem 3rem;
+}
+
+.footer-madeby {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.footer-link,
+.footer-top {
+  color: var(--accent-text);
+  transition: color 0.25s;
+}
+
+.footer-link:hover,
+.footer-top:hover {
+  color: var(--ink);
+}
+
+.footer-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.footer-top .icon {
+  width: 1.8rem;
+  height: 1.8rem;
+  fill: none;
+}

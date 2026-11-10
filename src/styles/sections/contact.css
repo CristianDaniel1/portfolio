@@ -1,0 +1,19 @@
+.contact {
+  border-top: none;
+}
+
+.contact-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+
+@media screen and (max-width: 480px) {
+  .contact-list li {
+    flex: 1 1 100%;
+  }
+
+  .contact-list .btn {
+    width: 100%;
+  }
+}

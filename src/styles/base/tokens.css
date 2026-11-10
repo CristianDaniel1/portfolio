@@ -1,0 +1,59 @@
+/* ===================== PALETA / TEMAS =====================
+   O tema segue o sistema do visitante, só com CSS:
+   `color-scheme: light dark` ativa os dois esquemas e `light-dark(claro, escuro)`
+   escolhe a cor de cada um. O botão do cabeçalho só guarda uma escolha manual.
+   Claro: azul-marinho + cobalto. Escuro: preto + dourado. */
+:root {
+  color-scheme: light dark;
+
+  --bg: light-dark(#f5f6f8, #101316);
+  --surface: light-dark(#ffffff, #181a1f);
+  --surface-alt: light-dark(#eceff3, #14181c);
+  --ink: light-dark(#0f1c2e, #eeeeee);
+  --text: light-dark(#3d4b5f, #c0c0c0);
+  --line: light-dark(rgba(15, 28, 46, 0.12), rgba(255, 255, 255, 0.09));
+  --line-strong: light-dark(rgba(15, 28, 46, 0.22), rgba(255, 255, 255, 0.18));
+
+  --accent: light-dark(#2f4cdd, #ffd369);
+  --accent-hover: light-dark(#2339b8, #daa52a);
+  --on-accent: light-dark(#ffffff, #101316);
+  --accent-text: light-dark(#2f4cdd, #ffd369);
+  --mark: #ffd369;
+
+  --chip-bg: light-dark(#ffffff, rgba(255, 255, 255, 0.04));
+  --shadow: light-dark(rgba(15, 28, 46, 0.35), rgba(0, 0, 0, 0.7));
+  --header-bg: light-dark(rgba(245, 246, 248, 0.9), rgba(16, 19, 22, 0.9));
+
+  /* seções invertidas (Serviços) */
+  --inv-bg: light-dark(#0f1c2e, #eeeeee);
+  --inv-title: light-dark(#f5f6f8, #101316);
+  --inv-text: light-dark(#b9c4d4, #3b4048);
+  --inv-line: light-dark(rgba(255, 255, 255, 0.2), rgba(16, 19, 22, 0.2));
+
+  /* As fontes (Newsreader e Hanken Grotesk) são carregadas no <head> do index.html */
+  --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-body: 'Hanken Grotesk', 'Inter', system-ui, sans-serif;
+
+  --radius-s: 0.9rem;
+  --radius-m: 1.6rem;
+  --radius-l: 2.4rem;
+
+  --header-h: 7.2rem;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* Escolha manual (botão do cabeçalho): só troca o esquema de cores, as cores
+   continuam vindo de light-dark() acima. */
+:root[data-theme='light'] {
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --header-h: 6.4rem;
+  }
+}

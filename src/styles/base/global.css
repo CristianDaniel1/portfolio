@@ -1,0 +1,63 @@
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-size: 1.7rem;
+  line-height: 1.65;
+  font-family: var(--font-body);
+  color: var(--text);
+  background-color: var(--bg);
+  overflow-x: clip;
+}
+
+section[id] {
+  scroll-margin-top: calc(var(--header-h) - 1px);
+}
+
+::-webkit-scrollbar {
+  width: 0.9rem;
+  background-color: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--accent);
+  border-radius: 3rem;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 0.4rem;
+}
+
+::selection {
+  background-color: var(--accent);
+  color: var(--on-accent);
+}
+
+.skip-link {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 200;
+  padding: 1rem 1.6rem;
+  background-color: var(--accent);
+  color: var(--on-accent);
+  font-weight: 600;
+  border-radius: var(--radius-s);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 1.6rem;
+  }
+}

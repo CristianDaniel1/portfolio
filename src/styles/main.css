@@ -1,0 +1,27 @@
+/* Ponto de entrada do CSS. A ordem importa: base → componentes → layout → seções.
+   O Vite junta todos os @import em um único arquivo no build. */
+
+/* Base */
+@import './base/tokens.css';
+@import './base/reset.css';
+@import './base/global.css';
+@import './base/utilities.css';
+@import './base/animations.css';
+
+/* Componentes reutilizáveis */
+@import './components/section.css';
+@import './components/buttons.css';
+@import './components/chips.css';
+
+/* Layout */
+@import './layout/header.css';
+@import './layout/footer.css';
+
+/* Seções da página */
+@import './sections/hero.css';
+@import './sections/about.css';
+@import './sections/technologies.css';
+@import './sections/experience.css';
+@import './sections/projects.css';
+@import './sections/services.css';
+@import './sections/contact.css';

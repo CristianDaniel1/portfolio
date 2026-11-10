@@ -1,0 +1,32 @@
+/* sprite de ícones: fica no HTML, mas não ocupa espaço */
+.sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 124rem;
+  padding-inline: clamp(2rem, 5vw, 4rem);
+  margin: 0 auto;
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+  flex: none;
+  fill: currentColor;
+}
+
+.mark {
+  font-weight: 600;
+  color: var(--ink);
+  box-shadow: inset 0 -0.5em 0
+    light-dark(rgba(255, 211, 105, 0.6), rgba(255, 211, 105, 0.3));
+}

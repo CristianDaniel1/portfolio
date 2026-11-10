@@ -1,0 +1,826 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f5f6f8" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#101316" media="(prefers-color-scheme: dark)" />
+    <meta name="keywords" content="portfolio, desenvolvedor full-stack, angular, react, node.js, typescript, cristian daniel" />
+    <meta
+      name="description"
+      content="Portfólio de Cristian Daniel, desenvolvedor Full-Stack: experiência, projetos e tecnologias como Angular, React, Node.js, TypeScript e PostgreSQL."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Cristian Daniel, desenvolvedor Full-Stack" />
+    <meta property="og:description" content="Experiência, projetos e tecnologias de Cristian Daniel, desenvolvedor Full-Stack." />
+    <title>Cristian Daniel - Desenvolvedor Full-Stack</title>
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=Hanken+Grotesk:wght@300..800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="/theme-init.js"></script>
+    <link rel="stylesheet" href="/src/styles/main.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Cristian Daniel",
+        "jobTitle": "Desenvolvedor Full-Stack",
+        "sameAs": ["https://github.com/CristianDaniel1", "https://www.linkedin.com/in/cristiandaniel1/"]
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Ícones reutilizáveis (sprite) -->
+    <svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <symbol id="i-logo" viewBox="0 0 256 256">
+        <path
+          d="M216,96A88,88,0,1,0,72,163.83V240a8,8,0,0,0,11.58,7.16L128,225l44.43,22.21A8.07,8.07,0,0,0,176,248a8,8,0,0,0,8-8V163.83A87.85,87.85,0,0,0,216,96ZM56,96a72,72,0,1,1,72,72A72.08,72.08,0,0,1,56,96Zm16,0a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"
+        />
+      </symbol>
+      <symbol id="i-github" viewBox="0 0 512 512">
+        <path
+          d="M256 32C132.3 32 32 134.9 32 261.7c0 101.5 64.2 187.5 153.2 217.9a17.56 17.56 0 003.8.4c8.3 0 11.5-6.1 11.5-11.4 0-5.5-.2-19.9-.3-39.1a102.4 102.4 0 01-22.6 2.7c-43.1 0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1 1.4-14.1h.1c22.5 2 34.3 23.8 34.3 23.8 11.2 19.6 26.2 25.1 39.6 25.1a63 63 0 0025.6-6c2-14.8 7.8-24.9 14.2-30.7-49.7-5.8-102-25.5-102-113.5 0-25.1 8.7-45.6 23-61.6-2.3-5.8-10-29.2 2.2-60.8a18.64 18.64 0 015-.5c8.1 0 26.4 3.1 56.6 24.1a208.21 208.21 0 01112.2 0c30.2-21 48.5-24.1 56.6-24.1a18.64 18.64 0 015 .5c12.2 31.6 4.5 55 2.2 60.8 14.3 16.1 23 36.6 23 61.6 0 88.2-52.4 107.6-102.3 113.3 8 7.1 15.2 21.1 15.2 42.5 0 30.7-.3 55.5-.3 63 0 5.4 3.1 11.5 11.4 11.5a19.35 19.35 0 004-.4C415.9 449.2 480 363.1 480 261.7 480 134.9 379.7 32 256 32z"
+        />
+      </symbol>
+      <symbol id="i-linkedin" viewBox="0 0 512 512">
+        <path
+          d="M444.17 32H70.28C49.85 32 32 46.7 32 66.89v374.72C32 461.91 49.85 480 70.28 480h373.78c20.54 0 35.94-18.21 35.94-38.39V66.89C480.12 46.7 464.6 32 444.17 32zm-273.3 373.43h-64.18V205.88h64.18zM141 175.54h-.46c-20.54 0-33.84-15.29-33.84-34.43 0-19.49 13.65-34.42 34.65-34.42s33.85 14.82 34.31 34.42c-.01 19.14-13.31 34.43-34.66 34.43zm264.43 229.89h-64.18V296.32c0-26.14-9.34-44-32.56-44-17.74 0-28.24 12-32.91 23.69-1.75 4.2-2.22 9.92-2.22 15.76v113.66h-64.18V205.88h64.18v27.77c9.34-13.3 23.93-32.44 57.88-32.44 42.13 0 74 27.77 74 87.64z"
+        />
+      </symbol>
+      <symbol id="i-mail" viewBox="0 0 512 512">
+        <path
+          d="M424 80H88a56.06 56.06 0 00-56 56v240a56.06 56.06 0 0056 56h336a56.06 56.06 0 0056-56V136a56.06 56.06 0 00-56-56zm-14.18 92.63l-144 112a16 16 0 01-19.64 0l-144-112a16 16 0 1119.64-25.26L256 251.73l134.18-104.36a16 16 0 0119.64 25.26z"
+        />
+      </symbol>
+      <symbol id="i-code" viewBox="0 0 24 24">
+        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 8l-4 4l4 4" />
+          <path d="M17 8l4 4l-4 4" />
+          <path d="M14 4l-4 16" />
+        </g>
+      </symbol>
+      <symbol id="i-external" viewBox="0 0 24 24">
+        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 7l-10 10" />
+          <path d="M8 7h9v9" />
+        </g>
+      </symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24">
+        <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </g>
+      </symbol>
+      <symbol id="i-close" viewBox="0 0 24 24">
+        <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 18 18 6M6 6l12 12" />
+        </g>
+      </symbol>
+      <symbol id="i-arrow-up" viewBox="0 0 24 24">
+        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 19V5M5 12l7-7 7 7" />
+        </g>
+      </symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24">
+        <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z" />
+        </g>
+      </symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24">
+        <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="4" />
+          <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+        </g>
+      </symbol>
+      <symbol id="i-express" viewBox="0 0 32 32">
+        <path
+          d="M32 24.795c-1.164.296-1.884.013-2.53-.957l-4.594-6.356-.664-.88-5.365 7.257c-.613.873-1.256 1.253-2.4.944l6.87-9.222-6.396-8.33c1.1-.214 1.86-.105 2.535.88l4.765 6.435 4.8-6.4c.615-.873 1.276-1.205 2.38-.883l-2.48 3.288-3.36 4.375c-.4.5-.345.842.023 1.325L32 24.795zM.008 15.427l.562-2.764C2.1 7.193 8.37 4.92 12.694 8.3c2.527 1.988 3.155 4.8 3.03 7.95H1.48c-.214 5.67 3.867 9.092 9.07 7.346 1.825-.613 2.9-2.042 3.438-3.83.273-.896.725-1.036 1.567-.78-.43 2.236-1.4 4.104-3.45 5.273-3.063 1.75-7.435 1.184-9.735-1.248C1 21.6.434 19.812.18 17.9c-.04-.316-.12-.617-.18-.92q.008-.776.008-1.552zm1.498-.38h12.872c-.084-4.1-2.637-7.012-6.126-7.037-3.83-.03-6.58 2.813-6.746 7.037z"
+        />
+      </symbol>
+    </svg>
+
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="header">
+      <div class="header-container container">
+        <a href="#inicio" class="header-name" aria-label="Cristian Dev, ir para o início">
+          <svg class="icon icon-logo" aria-hidden="true">
+            <use href="#i-logo" />
+          </svg>
+          <span>Cristian<span class="header-name-span">Dev</span></span>
+        </a>
+        <nav class="navbar" aria-label="Navegação principal">
+          <ul class="navbar-list" id="menu">
+            <li><a class="navbar-link" href="#sobre-mim">Sobre mim</a></li>
+            <li><a class="navbar-link" href="#tecnologias">Tecnologias</a></li>
+            <li><a class="navbar-link" href="#experiencia">Experiência</a></li>
+            <li><a class="navbar-link" href="#projetos">Projetos</a></li>
+            <li><a class="navbar-link" href="#servicos">Serviços</a></li>
+            <li>
+              <a class="navbar-link navbar-cta" href="#contato">Contato</a>
+            </li>
+          </ul>
+          <button type="button" class="theme-toggle" aria-label="Alternar entre tema claro e escuro" aria-pressed="false">
+            <svg class="icon icon-moon" aria-hidden="true">
+              <use href="#i-moon" />
+            </svg>
+            <svg class="icon icon-sun" aria-hidden="true">
+              <use href="#i-sun" />
+            </svg>
+          </button>
+          <button type="button" class="btn-menu" aria-label="Abrir e fechar menu" aria-controls="menu" aria-expanded="false">
+            <svg class="icon open-menu" aria-hidden="true">
+              <use href="#i-menu" />
+            </svg>
+            <svg class="icon close-menu hidden" aria-hidden="true">
+              <use href="#i-close" />
+            </svg>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="conteudo">
+      <!-- ============================ HERO ============================ -->
+      <section class="hero" id="inicio">
+        <div class="container">
+          <div class="hero-grid">
+            <div class="hero-content">
+              <p class="hero-role">Desenvolvedor Full-Stack</p>
+              <h1 class="hero-title">
+                <span class="hero-title-line">Olá, sou Cristian</span>
+                <!-- <span class="hero-title-line">Transformo ideias em sistemas que funcionam.</span> -->
+              </h1>
+              <p class="hero-description">
+                Aqui, apresento a minha experiência, projetos, habilidades e trajetória até o momento. Sinta-se à vontade para entrar em
+                contato!
+              </p>
+              <div class="hero-cta">
+                <a class="btn btn-primary" href="#projetos">Ver projetos</a>
+                <a class="btn btn-ghost" href="#contato">Entrar em contato</a>
+                <ul class="hero-list">
+                  <li>
+                    <a
+                      href="https://github.com/CristianDaniel1"
+                      target="_blank"
+                      rel="noopener"
+                      class="social-link"
+                      aria-label="Perfil do GitHub"
+                      ><svg class="icon" aria-hidden="true">
+                        <use href="#i-github" /></svg
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.linkedin.com/in/cristiandaniel1/"
+                      target="_blank"
+                      rel="noopener"
+                      class="social-link"
+                      aria-label="Perfil do LinkedIn"
+                      ><svg class="icon" aria-hidden="true">
+                        <use href="#i-linkedin" /></svg
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="mailto:cristiandaniel.1050@gmail.com" class="social-link" aria-label="Enviar e-mail"
+                      ><svg class="icon" aria-hidden="true">
+                        <use href="#i-mail" /></svg
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Projetos reais em janelas de navegador: ideias que viraram telas -->
+            <figure class="showcase">
+              <div class="showcase-stage">
+                <a
+                  class="window window-back"
+                  href="https://sky-now.vercel.app"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Abrir o site do SkyNow"
+                >
+                  <span class="window-bar" aria-hidden="true">
+                    <span class="window-dots"></span>
+                    <span class="window-url">sky-now.vercel.app</span>
+                  </span>
+                  <img
+                    class="window-shot"
+                    src="/src/assets/sky-now.png"
+                    alt="Tela do SkyNow, app de clima e previsão do tempo"
+                    width="1259"
+                    height="944"
+                  />
+                </a>
+                <a
+                  class="window window-mid"
+                  href="https://roweam-clone.vercel.app"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Abrir o site do Roweam Clone"
+                >
+                  <span class="window-bar" aria-hidden="true">
+                    <span class="window-dots"></span>
+                    <span class="window-url">roweam-clone.vercel.app</span>
+                  </span>
+                  <img
+                    class="window-shot"
+                    src="/src/assets/roweam-clone.png"
+                    alt="Tela do Roweam Clone, site de móveis vintage"
+                    width="1256"
+                    height="942"
+                  />
+                </a>
+                <a
+                  class="window window-front"
+                  href="https://silverhand-store.vercel.app"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Abrir o site do SilverHand"
+                >
+                  <span class="window-bar" aria-hidden="true">
+                    <span class="window-dots"></span>
+                    <span class="window-url">silverhand-store.vercel.app</span>
+                  </span>
+                  <img
+                    class="window-shot"
+                    src="/src/assets/silverhand.webp"
+                    alt="Tela do SilverHand, e-commerce de guitarras"
+                    width="1903"
+                    height="1070"
+                  />
+                </a>
+              </div>
+              <figcaption class="showcase-caption">Projetos em destaque. Clique em uma janela para abrir.</figcaption>
+            </figure>
+          </div>
+
+          <dl class="facts">
+            <div class="fact">
+              <dt>Desde 2025</dt>
+              <dd>Desenvolvendo e mantendo sistemas web em produção</dd>
+            </div>
+            <div class="fact">
+              <dt>Fatec Ipiranga</dt>
+              <dd>Análise e Desenvolvimento de Sistemas, concluído em jun 2026</dd>
+            </div>
+            <div class="fact">
+              <dt>Projetos no GitHub</dt>
+              <dd>Aplicações web do front-end ao banco de dados, com o código aberto</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ========================== SOBRE MIM ========================= -->
+      <section class="section" id="sobre-mim">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title">Sobre mim</h2>
+          </div>
+          <div class="about-grid">
+            <!-- Cartão de perfil -->
+            <aside class="profile-card" aria-label="Perfil">
+              <img
+                class="profile-photo"
+                src="/src/assets/cris-foto.jpg"
+                alt="Foto de Cristian Daniel"
+                width="300"
+                height="400"
+                loading="lazy"
+              />
+              <div class="profile-info">
+                <p class="profile-name">Cristian Daniel</p>
+                <p class="profile-role">Desenvolvedor Full-Stack</p>
+                <ul class="profile-links">
+                  <li>
+                    <a
+                      href="https://github.com/CristianDaniel1"
+                      target="_blank"
+                      rel="noopener"
+                      class="social-link"
+                      aria-label="Perfil do GitHub"
+                      ><svg class="icon" aria-hidden="true">
+                        <use href="#i-github" /></svg
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.linkedin.com/in/cristiandaniel1/"
+                      target="_blank"
+                      rel="noopener"
+                      class="social-link"
+                      aria-label="Perfil do LinkedIn"
+                      ><svg class="icon" aria-hidden="true">
+                        <use href="#i-linkedin" /></svg
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </aside>
+
+            <div class="about-text">
+              <p class="about-lead">
+                A principal razão de eu ter decidido me tornar um desenvolvedor foi a ideia da criação, acho incrível ter a capacidade de
+                aplicar uma ideia que eu tive em uma tela de um computador.
+              </p>
+              <p class="about-more">
+                Sou <strong class="mark">desenvolvedor Full-Stack</strong> e trabalho com desenvolvimento web desde 2025. Tenho experiência
+                com correção de bugs, melhorias e refatoração de sistemas em produção, além de testes automatizados com Playwright e
+                Karma/Jasmine e do uso de IA, como o Claude, como apoio no desenvolvimento.
+              </p>
+
+              <dl class="about-list">
+                <div class="about-item">
+                  <dt>Experiência</dt>
+                  <dd>
+                    <strong>Desenvolvimento web desde 2025</strong>
+                    Os detalhes estão na seção de
+                    <a class="about-link" href="#experiencia">Experiência</a>.
+                  </dd>
+                </div>
+                <div class="about-item">
+                  <dt>Formação</dt>
+                  <dd>
+                    <strong>Análise e Desenvolvimento de Sistemas, Fatec Ipiranga</strong>
+                    Concluído em jun 2026, com estudos em C, SQL, Java e programação web.
+                  </dd>
+                </div>
+                <div class="about-item">
+                  <dt>Principais tecnologias</dt>
+                  <dd>
+                    <strong>React, Angular e Spring Boot</strong>
+                    Do front-end ao back-end.
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================= TECNOLOGIAS ======================== -->
+      <section class="section section-alt" id="tecnologias">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title">Tecnologias</h2>
+            <p class="section-lead">As ferramentas que uso no dia a dia e nos meus projetos.</p>
+          </div>
+          <dl class="stack-list">
+            <div class="stack-row">
+              <dt>Front-end</dt>
+              <dd>
+                <ul class="chips">
+                  <li class="chip"><img src="/src/assets/icons/react-icon.svg" alt="" width="20" height="20" />React</li>
+                  <li class="chip"><img src="/src/assets/icons/ts-icon.svg" alt="" width="20" height="20" />TypeScript</li>
+                  <li class="chip"><img src="/src/assets/icons/js-icon.svg" alt="" width="20" height="20" />JavaScript</li>
+                  <li class="chip"><img src="/src/assets/icons/html-icon.svg" alt="" width="20" height="20" />HTML</li>
+                  <li class="chip"><img src="/src/assets/icons/css-icon.svg" alt="" width="20" height="20" />CSS</li>
+                  <li class="chip"><img src="/src/assets/icons/tailwind-icon.svg" alt="" width="20" height="20" />Tailwind</li>
+                  <li class="chip"><img src="/src/assets/icons/angular-icon.svg" alt="" width="20" height="20" />Angular</li>
+                  <li class="chip"><img src="/src/assets/icons/angularjs-icon.svg" alt="" width="20" height="20" />AngularJs</li>
+                  <li class="chip"><img src="/src/assets/icons/jquery-icon.svg" alt="" width="20" height="20" />jQuery</li>
+                  <li class="chip"><img src="/src/assets/icons/bootstrap-icon.svg" alt="" width="20" height="20" />Bootstrap</li>
+                  <li class="chip"><img src="/src/assets/icons/tanstack-query-icon.svg" alt="" width="20" height="20" />TanStack Query</li>
+                  <li class="chip"><img src="/src/assets/icons/framer-motion-icon.png" alt="" width="20" height="20" />Framer Motion</li>
+                </ul>
+              </dd>
+            </div>
+            <div class="stack-row">
+              <dt>Mobile</dt>
+              <dd>
+                <ul class="chips">
+                  <li class="chip"><img src="/src/assets/icons/react-icon.svg" alt="" width="20" height="20" />React Native</li>
+                </ul>
+              </dd>
+            </div>
+            <div class="stack-row">
+              <dt>Back-end</dt>
+              <dd>
+                <ul class="chips">
+                  <li class="chip"><img src="/src/assets/icons/node-icon.svg" alt="" width="20" height="20" />Node.js</li>
+                  <li class="chip"><img src="/src/assets/icons/nestjs.svg" alt="" width="20" height="20" />NestJS</li>
+                  <li class="chip">
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-express" /></svg
+                    >Express
+                  </li>
+                  <li class="chip"><img src="/src/assets/icons/spring-icon.svg" alt="" width="20" height="20" />Spring Boot</li>
+                </ul>
+              </dd>
+            </div>
+            <div class="stack-row">
+              <dt>Banco de dados</dt>
+              <dd>
+                <ul class="chips">
+                  <li class="chip"><img src="/src/assets/icons/PostgresSQL-icon.svg" alt="" width="20" height="20" />PostgreSQL</li>
+                  <li class="chip"><img src="/src/assets/icons/mongodb-icon-dark.svg" alt="" width="20" height="20" />MongoDB</li>
+                </ul>
+              </dd>
+            </div>
+            <div class="stack-row">
+              <dt>Testes e infraestrutura</dt>
+              <dd>
+                <ul class="chips">
+                  <li class="chip"><img src="/src/assets/icons/playwright.svg" alt="" width="20" height="20" />Playwright</li>
+                  <li class="chip chip-plain">Karma</li>
+                  <li class="chip chip-plain">Jasmine</li>
+                  <li class="chip"><img src="/src/assets/icons/jest.svg" alt="" width="20" height="20" />Jest</li>
+                  <li class="chip"><img src="/src/assets/icons/docker.svg" alt="" width="20" height="20" />Docker</li>
+                </ul>
+              </dd>
+            </div>
+            <div class="stack-row">
+              <dt>Ferramentas</dt>
+              <dd>
+                <ul class="chips">
+                  <li class="chip"><img src="/src/assets/icons/git-icon.svg" alt="" width="20" height="20" />Git</li>
+                  <li class="chip"><img src="/src/assets/icons/gitlab-icon.svg" alt="" width="20" height="20" />GitLab</li>
+                  <li class="chip">
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-github" /></svg
+                    >GitHub
+                  </li>
+                  <li class="chip"><img src="/src/assets/icons/vscode-icon.svg" alt="" width="20" height="20" />VS Code</li>
+                  <li class="chip"><img src="/src/assets/icons/claude-ai-icon.svg" alt="" width="20" height="20" />Claude</li>
+                </ul>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ========================== EXPERIÊNCIA ======================= -->
+      <section class="section" id="experiencia">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title">Experiência</h2>
+            <p class="section-lead">Minha trajetória profissional até aqui.</p>
+          </div>
+
+          <div class="timeline">
+            <article class="job job-current">
+              <div class="job-side">
+                <span class="job-type">Efetivado</span>
+                <h3 class="job-role">Desenvolvedor Front-End Júnior</h3>
+                <h4 class="job-company">LYE Consultoria</h4>
+                <p class="job-date">abr 2026 até o momento</p>
+              </div>
+              <div class="job-main">
+                <div class="prose">
+                  <p>
+                    Desenvolvo melhorias e corrijo bugs no front-end do sistema web da empresa, e faço refatorações com o objetivo de
+                    atualizar o sistema para um JavaScript mais moderno.
+                  </p>
+                  <p>
+                    Também escrevo testes, unitários com Karma e Jasmine e end-to-end com Playwright, e uso o Claude como apoio no
+                    desenvolvimento.
+                  </p>
+                </div>
+                <h5 class="job-tech-title">Tecnologias utilizadas</h5>
+                <ul class="chips">
+                  <li class="chip"><img src="/src/assets/icons/js-icon.svg" alt="" width="20" height="20" />JavaScript</li>
+                  <li class="chip"><img src="/src/assets/icons/angularjs-icon.svg" alt="" width="20" height="20" />AngularJs</li>
+                  <li class="chip"><img src="/src/assets/icons/jquery-icon.svg" alt="" width="20" height="20" />jQuery</li>
+                  <li class="chip"><img src="/src/assets/icons/bootstrap-icon.svg" alt="" width="20" height="20" />Bootstrap</li>
+                  <li class="chip"><img src="/src/assets/icons/playwright.svg" alt="" width="20" height="20" />Playwright</li>
+                  <li class="chip chip-plain">Karma</li>
+                  <li class="chip chip-plain">Jasmine</li>
+                  <li class="chip"><img src="/src/assets/icons/claude-ai-icon.svg" alt="" width="20" height="20" />Claude</li>
+                  <li class="chip"><img src="/src/assets/icons/gitlab-icon.svg" alt="" width="20" height="20" />GitLab</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="job">
+              <div class="job-side">
+                <span class="job-type job-type-past">Estágio</span>
+                <h3 class="job-role">Estagiário Full-Stack</h3>
+                <h4 class="job-company">LYE Consultoria</h4>
+                <p class="job-date">jan 2025 a abr 2026</p>
+              </div>
+              <div class="job-main">
+                <div class="prose">
+                  <p>
+                    Comecei na empresa como estagiário de desenvolvimento Full-Stack, corrigindo bugs, desenvolvendo melhorias no sistema
+                    web e dando suporte aos usuários.
+                  </p>
+                </div>
+                <h5 class="job-tech-title">Tecnologias utilizadas</h5>
+                <ul class="chips">
+                  <li class="chip"><img src="/src/assets/icons/js-icon.svg" alt="" width="20" height="20" />JavaScript</li>
+                  <li class="chip"><img src="/src/assets/icons/angularjs-icon.svg" alt="" width="20" height="20" />AngularJs</li>
+                  <li class="chip"><img src="/src/assets/icons/jquery-icon.svg" alt="" width="20" height="20" />jQuery</li>
+                  <li class="chip"><img src="/src/assets/icons/bootstrap-icon.svg" alt="" width="20" height="20" />Bootstrap</li>
+                  <li class="chip"><img src="/src/assets/icons/node-icon.svg" alt="" width="20" height="20" />Node.js</li>
+                  <li class="chip"><img src="/src/assets/icons/spring-icon.svg" alt="" width="20" height="20" />Spring Boot</li>
+                  <li class="chip"><img src="/src/assets/icons/gitlab-icon.svg" alt="" width="20" height="20" />GitLab</li>
+                </ul>
+              </div>
+            </article>
+            <!-- Para adicionar outra experiência, copie um bloco <article class="job"> e cole aqui. -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================ PROJETOS ======================== -->
+      <section class="section section-alt" id="projetos">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title">Projetos</h2>
+            <div class="filters" role="group" aria-label="Filtrar projetos">
+              <button type="button" class="filter is-active" data-filter="todos" aria-pressed="true">Todos</button>
+              <button type="button" class="filter" data-filter="fullstack" aria-pressed="false">Full-Stack</button>
+              <button type="button" class="filter" data-filter="frontend" aria-pressed="false">Front-End</button>
+            </div>
+          </div>
+
+          <article class="project project-featured" data-kind="fullstack">
+            <a
+              href="https://silverhand-store.vercel.app"
+              class="project-media"
+              target="_blank"
+              rel="noopener"
+              aria-label="Abrir o site do SilverHand"
+            >
+              <img src="/src/assets/silverhand.webp" loading="lazy" alt="SilverHand, e-commerce de guitarras" width="520" height="400" />
+            </a>
+            <div class="project-body">
+              <h3 class="project-title">SilverHand</h3>
+              <p class="project-desc">E-commerce de guitarras feito de ponta a ponta, do front-end ao banco de dados.</p>
+              <ul class="chips chips-small">
+                <li class="chip"><img src="/src/assets/icons/react-icon.svg" alt="" width="18" height="18" />React</li>
+                <li class="chip"><img src="/src/assets/icons/node-icon.svg" alt="" width="18" height="18" />Node.js</li>
+                <li class="chip"><img src="/src/assets/icons/ts-icon.svg" alt="" width="18" height="18" />TypeScript</li>
+                <li class="chip"><img src="/src/assets/icons/tailwind-icon.svg" alt="" width="18" height="18" />Tailwind</li>
+                <li class="chip"><img src="/src/assets/icons/PostgresSQL-icon.svg" alt="" width="18" height="18" />PostgreSQL</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://silverhand-store.vercel.app" target="_blank" rel="noopener" class="btn btn-primary btn-small">
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-external" />
+                  </svg>
+                  Ver site
+                </a>
+                <a
+                  href="https://github.com/CristianDaniel1/silverhand-fullstack"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn-ghost btn-small"
+                >
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-code" />
+                  </svg>
+                  Ver código
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <div class="projects-grid">
+            <article class="project" data-kind="frontend">
+              <a href="https://sky-now.vercel.app" class="project-media" target="_blank" rel="noopener" aria-label="Abrir o site do SkyNow">
+                <img src="/src/assets/sky-now.png" loading="lazy" alt="App de clima e previsão do tempo" width="520" height="400" />
+              </a>
+              <div class="project-body">
+                <h3 class="project-title">SkyNow</h3>
+                <p class="project-desc">App de clima e previsão do tempo.</p>
+                <ul class="chips chips-small">
+                  <li class="chip"><img src="/src/assets/icons/react-icon.svg" alt="" width="18" height="18" />React</li>
+                  <li class="chip"><img src="/src/assets/icons/ts-icon.svg" alt="" width="18" height="18" />TypeScript</li>
+                  <li class="chip"><img src="/src/assets/icons/tailwind-icon.svg" alt="" width="18" height="18" />Tailwind</li>
+                  <li class="chip"><img src="/src/assets/icons/tanstack-query-icon.svg" alt="" width="18" height="18" />TanStack Query</li>
+                </ul>
+                <div class="project-links">
+                  <a href="https://sky-now.vercel.app" target="_blank" rel="noopener" class="btn btn-primary btn-small">
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-external" />
+                    </svg>
+                    Ver site
+                  </a>
+                  <a href="https://github.com/CristianDaniel1/sky-now" target="_blank" rel="noopener" class="btn btn-ghost btn-small">
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-code" />
+                    </svg>
+                    Ver código
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="project" data-kind="frontend">
+              <a
+                href="https://frontend-quiz-cris.vercel.app"
+                class="project-media"
+                target="_blank"
+                rel="noopener"
+                aria-label="Abrir o site do Front-End Quiz"
+              >
+                <img
+                  src="/src/assets/front-end-quiz.png"
+                  loading="lazy"
+                  alt="Site de quizzes de tecnologias front-end"
+                  width="520"
+                  height="400"
+                />
+              </a>
+              <div class="project-body">
+                <h3 class="project-title">Front-End Quiz</h3>
+                <p class="project-desc">Quizzes sobre tecnologias front-end.</p>
+                <ul class="chips chips-small">
+                  <li class="chip"><img src="/src/assets/icons/react-icon.svg" alt="" width="18" height="18" />React</li>
+                  <li class="chip"><img src="/src/assets/icons/ts-icon.svg" alt="" width="18" height="18" />TypeScript</li>
+                  <li class="chip"><img src="/src/assets/icons/tailwind-icon.svg" alt="" width="18" height="18" />Tailwind</li>
+                </ul>
+                <div class="project-links">
+                  <a href="https://frontend-quiz-cris.vercel.app" target="_blank" rel="noopener" class="btn btn-primary btn-small">
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-external" />
+                    </svg>
+                    Ver site
+                  </a>
+                  <a
+                    href="https://github.com/CristianDaniel1/front-end-quiz"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn btn-ghost btn-small"
+                  >
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-code" />
+                    </svg>
+                    Ver código
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="project" data-kind="frontend">
+              <a
+                href="https://roweam-clone.vercel.app"
+                class="project-media"
+                target="_blank"
+                rel="noopener"
+                aria-label="Abrir o site do Roweam Clone"
+              >
+                <img src="/src/assets/roweam-clone.png" loading="lazy" alt="Site de móveis vintage" width="520" height="400" />
+              </a>
+              <div class="project-body">
+                <h3 class="project-title">Roweam Clone</h3>
+                <p class="project-desc">Clone de um site de móveis vintage.</p>
+                <ul class="chips chips-small">
+                  <li class="chip"><img src="/src/assets/icons/react-icon.svg" alt="" width="18" height="18" />React</li>
+                  <li class="chip"><img src="/src/assets/icons/ts-icon.svg" alt="" width="18" height="18" />TypeScript</li>
+                  <li class="chip"><img src="/src/assets/icons/tailwind-icon.svg" alt="" width="18" height="18" />Tailwind</li>
+                  <li class="chip"><img src="/src/assets/icons/framer-motion-icon.png" alt="" width="18" height="18" />Framer Motion</li>
+                </ul>
+                <div class="project-links">
+                  <a href="https://roweam-clone.vercel.app" target="_blank" rel="noopener" class="btn btn-primary btn-small">
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-external" />
+                    </svg>
+                    Ver site
+                  </a>
+                  <a href="https://github.com/CristianDaniel1/roweam-clone" target="_blank" rel="noopener" class="btn btn-ghost btn-small">
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-code" />
+                    </svg>
+                    Ver código
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================ SERVIÇOS ======================== -->
+      <!-- Seção de modelo: ajuste os textos para o que você realmente quer oferecer. -->
+      <section class="section section-invert" id="servicos">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title">O que eu faço</h2>
+            <p class="section-lead">Do layout ao banco de dados, posso ajudar em todas as etapas de um sistema web.</p>
+          </div>
+          <ul class="services">
+            <li class="service">
+              <h3 class="service-title">Interfaces web</h3>
+              <p>Páginas responsivas e acessíveis, do layout ao código, com Angular, React, TypeScript e Tailwind.</p>
+            </li>
+            <li class="service">
+              <h3 class="service-title">APIs e back-end</h3>
+              <p>Servidores e regras de negócio com Node.js, NestJS, Express e Spring Boot.</p>
+            </li>
+            <li class="service">
+              <h3 class="service-title">Banco de dados</h3>
+              <p>Modelagem e consultas em PostgreSQL e MongoDB.</p>
+            </li>
+            <li class="service">
+              <h3 class="service-title">Manutenção e suporte</h3>
+              <p>
+                Correção de bugs, melhorias e refatoração de sistemas existentes, com testes automatizados para evitar que os problemas
+                voltem.
+              </p>
+            </li>
+          </ul>
+
+          <div class="process">
+            <h3 class="process-title">Como eu trabalho</h3>
+            <ol class="process-list">
+              <li class="step">
+                <span class="step-num">1</span>
+                <h4 class="step-title">Entender</h4>
+                <p>Converso para entender o problema e o que precisa ser entregue.</p>
+              </li>
+              <li class="step">
+                <span class="step-num">2</span>
+                <h4 class="step-title">Planejar</h4>
+                <p>Defino as telas, os dados e as tecnologias antes de escrever código.</p>
+              </li>
+              <li class="step">
+                <span class="step-num">3</span>
+                <h4 class="step-title">Desenvolver</h4>
+                <p>Construo em etapas pequenas, com versionamento no Git e revisões.</p>
+              </li>
+              <li class="step">
+                <span class="step-num">4</span>
+                <h4 class="step-title">Entregar</h4>
+                <p>Publico, acompanho o uso e corrijo ou melhoro o que for preciso.</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================== DEPOIMENTOS (modelo) ==================== -->
+      <!-- Para ativar, remova os marcadores de comentário e troque pelos depoimentos reais:
+      <section class="section" id="depoimentos">
+        <div class="container">
+          <div class="section-head"><h2 class="section-title">Depoimentos</h2></div>
+          <figure class="quote">
+            <blockquote>Escreva aqui o depoimento de um colega, professor ou gestor.</blockquote>
+            <figcaption>Nome da pessoa, cargo na empresa</figcaption>
+          </figure>
+        </div>
+      </section>
+      -->
+
+      <!-- ============================ CONTATO ========================= -->
+      <section class="section contact" id="contato">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title">Vamos trabalhar juntos?</h2>
+            <p class="section-lead">Envie um e-mail ou uma mensagem, estou à disposição.</p>
+          </div>
+          <ul class="contact-list">
+            <li>
+              <a href="mailto:cristiandaniel.1050@gmail.com" class="btn btn-primary"
+                ><svg class="icon" aria-hidden="true">
+                  <use href="#i-mail" /></svg
+                >Enviar e-mail</a
+              >
+            </li>
+            <li>
+              <button type="button" class="btn btn-ghost" id="copy-email" data-email="cristiandaniel.1050@gmail.com" aria-live="polite">
+                Copiar e-mail
+              </button>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/cristiandaniel1/" target="_blank" rel="noopener" class="btn btn-ghost"
+                ><svg class="icon" aria-hidden="true">
+                  <use href="#i-linkedin" /></svg
+                >LinkedIn</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/CristianDaniel1" target="_blank" rel="noopener" class="btn btn-ghost"
+                ><svg class="icon" aria-hidden="true">
+                  <use href="#i-github" /></svg
+                >GitHub</a
+              >
+            </li>
+          </ul>
+          <!-- Currículo (opcional): coloque o PDF em public/curriculo.pdf e remova os comentários abaixo.
+          <a href="public/curriculo.pdf" class="btn btn-ghost" download>Baixar currículo</a>
+          -->
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-container">
+        <p class="footer-madeby">
+          <span id="ano">2026</span>. Portfólio desenvolvido por
+          <a href="https://github.com/CristianDaniel1" target="_blank" rel="noopener" class="footer-link">Cristian Daniel</a>
+        </p>
+        <a href="#inicio" class="footer-top">
+          Voltar ao topo
+          <svg class="icon" aria-hidden="true"><use href="#i-arrow-up" /></svg>
+        </a>
+      </div>
+    </footer>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

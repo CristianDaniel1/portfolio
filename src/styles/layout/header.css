@@ -1,0 +1,246 @@
+.header {
+  position: fixed;
+  inset: 0 0 auto;
+  height: var(--header-h);
+  z-index: 100;
+  color: var(--ink);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s;
+}
+
+/* o desfoque fica no pseudo-elemento para não afetar o menu mobile (position: fixed) */
+.header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: var(--header-bg);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+
+.header.is-scrolled {
+  border-bottom-color: var(--line);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.header-name {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-family: var(--font-display);
+  font-size: 2.3rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+
+.icon-logo {
+  width: 2.8rem;
+  height: 2.8rem;
+  color: var(--accent);
+}
+
+.header-name-span {
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text);
+}
+
+/* ---------- Navegação ---------- */
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.navbar-list {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.navbar-link {
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text);
+  transition: color 0.25s;
+}
+
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.2rem;
+  height: 2px;
+  border-radius: 2px;
+  background-color: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s var(--ease);
+}
+
+.navbar-link:hover,
+.navbar-link[aria-current='true'] {
+  color: var(--ink);
+}
+
+.navbar-link:hover::after,
+.navbar-link[aria-current='true']::after {
+  transform: scaleX(1);
+}
+
+/* "Contato" como botão */
+.navbar-cta {
+  padding: 0.9rem 2rem;
+  color: var(--on-accent);
+  background-color: var(--accent);
+  border-radius: 99rem;
+  font-weight: 600;
+  transition: background-color 0.25s;
+}
+
+.navbar-cta::after {
+  display: none;
+}
+
+.navbar-cta:hover,
+.navbar-cta[aria-current='true'] {
+  color: var(--on-accent);
+  background-color: var(--accent-hover);
+}
+
+/* ---------- Botões de tema e menu ---------- */
+.theme-toggle,
+.btn-menu {
+  place-items: center;
+  width: 4.2rem;
+  height: 4.2rem;
+  color: var(--ink);
+  border-radius: 50%;
+}
+
+/* sem JavaScript o botão não funciona, então só aparece quando o tema foi aplicado */
+.theme-toggle {
+  display: none;
+  border: 1px solid var(--line-strong);
+  transition:
+    border-color 0.25s,
+    color 0.25s;
+}
+
+:root[data-theme] .theme-toggle {
+  display: grid;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent-text);
+}
+
+.theme-toggle .icon {
+  fill: none;
+}
+
+:root[data-theme='dark'] .icon-moon,
+:root[data-theme='light'] .icon-sun {
+  display: none;
+}
+
+.btn-menu {
+  display: none;
+}
+
+.btn-menu .icon {
+  width: 3.2rem;
+  height: 3.2rem;
+  fill: none;
+}
+
+@media screen and (max-width: 1100px) {
+  .navbar-list {
+    gap: 2.2rem;
+  }
+}
+
+/* ---------- Menu mobile ---------- */
+@media screen and (max-width: 768px) {
+  .btn-menu {
+    display: grid;
+    position: relative;
+    z-index: 5;
+  }
+
+  .navbar {
+    gap: 0.6rem;
+  }
+
+  .navbar-list {
+    position: fixed;
+    inset: var(--header-h) 0 0 0;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0;
+    padding: 1.6rem clamp(2rem, 5vw, 4rem);
+    background-color: var(--bg);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-1.2rem);
+    transition:
+      opacity 0.3s,
+      transform 0.3s var(--ease),
+      visibility 0.3s;
+  }
+
+  .navbar-list.mobile-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
+  }
+
+  .navbar-list li {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .navbar-link,
+  .navbar-cta {
+    display: block;
+    padding: 1.8rem 0;
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    background: none;
+    border-radius: 0;
+  }
+
+  .navbar-link::after {
+    display: none;
+  }
+
+  .navbar-link[aria-current='true'],
+  .navbar-cta,
+  .navbar-cta:hover,
+  .navbar-cta[aria-current='true'] {
+    color: var(--accent-text);
+    background: none;
+  }
+
+  body.menu-open {
+    overflow: hidden;
+  }
+}
