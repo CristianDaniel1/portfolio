@@ -44,7 +44,7 @@ Aqui estão algumas das tecnologias e ferramentas que utilizo, organizadas por c
 | **Infraestrutura**  | Docker                                                                                        |
 | **Ferramentas**     | Git, GitLab, GitHub, VS Code, Claude                                                          |
 
-Para mais detalhes, acesse meu [portfólio online](https://cristiandaniel1.github.io/portfolio/).
+Para mais detalhes, acesse meu [portfólio online](https://portfolio-cristiandev.vercel.app/).
 
 ---
 
