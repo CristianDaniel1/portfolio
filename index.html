@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" content="#f5f6f8" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#101316" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f4f4f3" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#141414" media="(prefers-color-scheme: dark)" />
     <meta name="keywords" content="portfolio, desenvolvedor full-stack, angular, react, node.js, typescript, cristian daniel" />
     <meta
       name="description"
@@ -17,7 +17,8 @@
     <meta property="og:url" content="https://portfolio-cristiandev.vercel.app/" />
     <link rel="canonical" href="https://portfolio-cristiandev.vercel.app/" />
     <title>Cristian Daniel - Desenvolvedor Full-Stack</title>
-    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="icon" href="/favicon.png" type="image/png" sizes="64x64" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -103,6 +104,18 @@
         <path
           d="M32 24.795c-1.164.296-1.884.013-2.53-.957l-4.594-6.356-.664-.88-5.365 7.257c-.613.873-1.256 1.253-2.4.944l6.87-9.222-6.396-8.33c1.1-.214 1.86-.105 2.535.88l4.765 6.435 4.8-6.4c.615-.873 1.276-1.205 2.38-.883l-2.48 3.288-3.36 4.375c-.4.5-.345.842.023 1.325L32 24.795zM.008 15.427l.562-2.764C2.1 7.193 8.37 4.92 12.694 8.3c2.527 1.988 3.155 4.8 3.03 7.95H1.48c-.214 5.67 3.867 9.092 9.07 7.346 1.825-.613 2.9-2.042 3.438-3.83.273-.896.725-1.036 1.567-.78-.43 2.236-1.4 4.104-3.45 5.273-3.063 1.75-7.435 1.184-9.735-1.248C1 21.6.434 19.812.18 17.9c-.04-.316-.12-.617-.18-.92q.008-.776.008-1.552zm1.498-.38h12.872c-.084-4.1-2.637-7.012-6.126-7.037-3.83-.03-6.58 2.813-6.746 7.037z"
         />
+      </symbol>
+      <symbol id="i-zoom" viewBox="0 0 24 24">
+        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="7" />
+          <path d="M21 21l-4.35-4.35M11 8v6M8 11h6" />
+        </g>
+      </symbol>
+      <symbol id="i-chevron-left" viewBox="0 0 24 24">
+        <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </symbol>
+      <symbol id="i-chevron-right" viewBox="0 0 24 24">
+        <path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
       </symbol>
     </svg>
 
@@ -251,7 +264,7 @@
                     <span class="window-url">github.com/CristianDaniel1/gwent-remake</span>
                   </span>
                   <img
-                    class="window-shot"
+                    class="window-shot window-shot-wide"
                     src="/src/assets/gwent-remake.jpg"
                     alt="Tela do Gwent Remake, partida do jogo de cartas"
                     width="1440"
@@ -295,7 +308,7 @@
                 alt="Foto de Cristian Daniel"
                 width="300"
                 height="400"
-                loading="lazy"
+                loading="lazy" decoding="async"
               />
               <div class="profile-info">
                 <p class="profile-name">Cristian Daniel</p>
@@ -543,245 +556,328 @@
             </div>
           </div>
 
-          <!-- Projeto em destaque: o card grande. Para trocar, mova outro <article> para cá
-               e acrescente a classe "project-featured". -->
-          <article class="project project-featured" data-kind="fullstack">
-            <a
-              href="https://github.com/CristianDaniel1/gwent-remake"
-              class="project-media"
-              target="_blank"
-              rel="noopener"
-              aria-label="Ver o código do Gwent Remake no GitHub"
-            >
-              <img
-                src="/src/assets/gwent-remake.jpg"
-                loading="lazy"
-                alt="Partida do Gwent Remake contra o computador, com uma carta ampliada"
-                width="1440"
-                height="810"
-              />
-            </a>
-            <div class="project-body">
-              <h3 class="project-title">Gwent Remake</h3>
-              <p class="project-desc">
-                Remake do Gwent, o jogo de cartas de The Witcher 3, com partidas contra o computador, multiplayer online com espectadores,
-                replays e histórico de partidas.
-              </p>
-              <ul class="chips chips-small">
-                <li class="chip"><img src="/src/assets/icons/react-icon.svg" alt="" width="18" height="18" />React</li>
-                <li class="chip"><img src="/src/assets/icons/ts-icon.svg" alt="" width="18" height="18" />TypeScript</li>
-                <li class="chip"><img src="/src/assets/icons/nestjs.svg" alt="" width="18" height="18" />NestJS</li>
-                <li class="chip"><img src="/src/assets/icons/PostgresSQL-icon.svg" alt="" width="18" height="18" />PostgreSQL</li>
-                <li class="chip chip-plain">Socket.IO</li>
-                <li class="chip"><img src="/src/assets/icons/playwright.svg" alt="" width="18" height="18" />Playwright</li>
-              </ul>
-              <div class="project-links">
-                <a href="https://github.com/CristianDaniel1/gwent-remake" target="_blank" rel="noopener" class="btn btn-primary btn-small">
-                  <svg class="icon" aria-hidden="true">
-                    <use href="#i-code" />
-                  </svg>
-                  Ver código
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Para adicionar um projeto, copie um <article class="project"> abaixo.
+          <!-- Vitrine: a lista escolhe o projeto mostrado no palco.
+               Para adicionar um projeto:
+               1. copie um <li class="project"> da lista e troque o nome, o tipo e o data-target;
+               2. copie um <article class="vitrine-panel"> e troque o id (igual ao data-target),
+                  as imagens, as miniaturas, o texto e os links.
                data-kind: "fullstack" ou "frontend" (usado pelo filtro).
-               Sem deploy: deixe só o botão "Ver código" e aponte a imagem para o GitHub. -->
-          <div class="projects-grid">
-            <article class="project" data-kind="frontend">
-              <a href="https://devtodev.vercel.app" class="project-media" target="_blank" rel="noopener" aria-label="Abrir o site do Dev to Dev">
-                <img src="/src/assets/dev-to-dev.png" loading="lazy" alt="Página inicial do Dev to Dev, com uma questão de JavaScript" width="1280" height="800" />
-              </a>
-              <div class="project-body">
-                <h3 class="project-title">Dev to Dev</h3>
-                <p class="project-desc">
-                  Quizzes comentados de programação, com revisão espaçada, glossário, trilhas de estudo e uma central de
-                  materiais. Sucessor do Front-End Quiz.
-                </p>
-                <ul class="chips chips-small">
-                  <li class="chip"><img src="/src/assets/icons/angular-icon.svg" alt="" width="18" height="18" />Angular</li>
-                  <li class="chip"><img src="/src/assets/icons/ts-icon.svg" alt="" width="18" height="18" />TypeScript</li>
-                  <li class="chip"><img src="/src/assets/icons/tailwind-icon.svg" alt="" width="18" height="18" />Tailwind</li>
-                  <li class="chip"><img src="/src/assets/icons/playwright.svg" alt="" width="18" height="18" />Playwright</li>
-                </ul>
-                <div class="project-links">
-                  <a href="https://devtodev.vercel.app" target="_blank" rel="noopener" class="btn btn-primary btn-small">
-                    <svg class="icon" aria-hidden="true">
-                      <use href="#i-external" />
-                    </svg>
-                    Ver site
-                  </a>
-                  <a href="https://github.com/CristianDaniel1/dev-to-dev" target="_blank" rel="noopener" class="btn btn-ghost btn-small">
-                    <svg class="icon" aria-hidden="true">
-                      <use href="#i-code" />
-                    </svg>
-                    Ver código
-                  </a>
+               O primeiro projeto da lista é o que aparece ao abrir a página. -->
+          <div class="vitrine" data-vitrine>
+            <ul class="vitrine-list" aria-label="Escolha um projeto">
+              <li class="project" data-kind="fullstack">
+                <button type="button" class="vitrine-tab" data-target="vp-gwent" aria-controls="vp-gwent" aria-pressed="true">
+                  <span class="vitrine-tab-title">Gwent Remake</span>
+                  <span class="vitrine-tab-kind">Full-Stack</span>
+                </button>
+              </li>
+              <li class="project" data-kind="frontend">
+                <button type="button" class="vitrine-tab" data-target="vp-devtodev" aria-controls="vp-devtodev" aria-pressed="false">
+                  <span class="vitrine-tab-title">Dev to Dev</span>
+                  <span class="vitrine-tab-kind">Front-End</span>
+                </button>
+              </li>
+              <li class="project" data-kind="fullstack">
+                <button type="button" class="vitrine-tab" data-target="vp-silverhand" aria-controls="vp-silverhand" aria-pressed="false">
+                  <span class="vitrine-tab-title">SilverHand</span>
+                  <span class="vitrine-tab-kind">Full-Stack</span>
+                </button>
+              </li>
+              <li class="project" data-kind="frontend">
+                <button type="button" class="vitrine-tab" data-target="vp-skynow" aria-controls="vp-skynow" aria-pressed="false">
+                  <span class="vitrine-tab-title">SkyNow</span>
+                  <span class="vitrine-tab-kind">Front-End</span>
+                </button>
+              </li>
+              <li class="project" data-kind="frontend">
+                <button type="button" class="vitrine-tab" data-target="vp-pura" aria-controls="vp-pura" aria-pressed="false">
+                  <span class="vitrine-tab-title">Pura Armonía</span>
+                  <span class="vitrine-tab-kind">Front-End</span>
+                </button>
+              </li>
+              <li class="project" data-kind="frontend">
+                <button type="button" class="vitrine-tab" data-target="vp-roweam" aria-controls="vp-roweam" aria-pressed="false">
+                  <span class="vitrine-tab-title">Roweam Clone</span>
+                  <span class="vitrine-tab-kind">Front-End</span>
+                </button>
+              </li>
+            </ul>
+
+            <div class="vitrine-stage">
+              <!-- Gwent Remake -->
+              <article class="vitrine-panel vitrine-panel-wide is-active" id="vp-gwent">
+                <div class="vitrine-window" data-gallery>
+                  <span class="window-bar" aria-hidden="true">
+                    <span class="window-dots"></span>
+                    <span class="window-url">github.com/CristianDaniel1/gwent-remake</span>
+                  </span>
+                  <button type="button" class="vitrine-shots" aria-label="Ampliar as imagens do Gwent Remake">
+                    <span class="vitrine-shot vitrine-cover is-active">
+                      <img src="/src/assets/gwent-remake.jpg" alt="Gwent Remake: partida contra o computador" width="1440" height="810" loading="lazy" decoding="async" />
+                      <span class="vitrine-cover-caption" aria-hidden="true"><span class="vitrine-cover-kind">Full-Stack</span><span class="vitrine-cover-name">Gwent Remake</span></span>
+                    </span>
+                    <img class="vitrine-shot" src="/src/assets/projects/gwent-deck.jpg" alt="Gwent Remake: montador de baralho" width="1440" height="810" loading="lazy" decoding="async" />
+                    <img class="vitrine-shot" src="/src/assets/projects/gwent-cards.jpg" alt="Gwent Remake: detalhes das cartas da mão" width="1440" height="810" loading="lazy" decoding="async" />
+                    <span class="vitrine-zoom-hint" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-zoom" /></svg>Ampliar</span>
+                  </button>
+                  <span class="vitrine-progress" aria-hidden="true"></span>
                 </div>
-              </div>
-            </article>
-            <article class="project" data-kind="fullstack">
-              <a
-                href="https://silverhand-store.vercel.app"
-                class="project-media"
-                target="_blank"
-                rel="noopener"
-                aria-label="Abrir o site do SilverHand"
-              >
-                <img
-                  src="/src/assets/silverhand.webp"
-                  loading="lazy"
-                  alt="SilverHand, e-commerce de guitarras"
-                  width="1903"
-                  height="1070"
-                />
-              </a>
-              <div class="project-body">
-                <h3 class="project-title">SilverHand</h3>
-                <p class="project-desc">E-commerce de guitarras feito de ponta a ponta, do front-end ao banco de dados.</p>
-                <ul class="chips chips-small">
-                  <li class="chip"><img src="/src/assets/icons/react-icon.svg" alt="" width="18" height="18" />React</li>
-                  <li class="chip"><img src="/src/assets/icons/node-icon.svg" alt="" width="18" height="18" />Node.js</li>
-                  <li class="chip"><img src="/src/assets/icons/ts-icon.svg" alt="" width="18" height="18" />TypeScript</li>
-                  <li class="chip"><img src="/src/assets/icons/tailwind-icon.svg" alt="" width="18" height="18" />Tailwind</li>
-                  <li class="chip"><img src="/src/assets/icons/PostgresSQL-icon.svg" alt="" width="18" height="18" />PostgreSQL</li>
-                </ul>
-                <div class="project-links">
-                  <a href="https://silverhand-store.vercel.app" target="_blank" rel="noopener" class="btn btn-primary btn-small">
-                    <svg class="icon" aria-hidden="true">
-                      <use href="#i-external" />
-                    </svg>
-                    Ver site
-                  </a>
-                  <a
-                    href="https://github.com/CristianDaniel1/silverhand-fullstack"
-                    target="_blank"
-                    rel="noopener"
-                    class="btn btn-ghost btn-small"
-                  >
-                    <svg class="icon" aria-hidden="true">
-                      <use href="#i-code" />
-                    </svg>
-                    Ver código
-                  </a>
+                <div class="vitrine-thumbs">
+                  <button type="button" class="vitrine-thumb is-active" aria-label="Mostrar partida contra o computador"><img src="/src/assets/projects/thumbs/gwent-remake.jpg" alt="" width="480" height="270" decoding="async" loading="lazy" /></button>
+                  <button type="button" class="vitrine-thumb" aria-label="Mostrar montador de baralho"><img src="/src/assets/projects/thumbs/gwent-deck.jpg" alt="" width="480" height="270" decoding="async" loading="lazy" /></button>
+                  <button type="button" class="vitrine-thumb" aria-label="Mostrar detalhes das cartas"><img src="/src/assets/projects/thumbs/gwent-cards.jpg" alt="" width="480" height="270" decoding="async" loading="lazy" /></button>
                 </div>
-              </div>
-            </article>
-            <article class="project" data-kind="frontend">
-              <a href="https://sky-now.vercel.app" class="project-media" target="_blank" rel="noopener" aria-label="Abrir o site do SkyNow">
-                <img
-                  src="/src/assets/sky-now.png"
-                  loading="lazy"
-                  alt="SkyNow, app de clima e previsão do tempo"
-                  width="1280"
-                  height="800"
-                />
-              </a>
-              <div class="project-body">
-                <h3 class="project-title">SkyNow</h3>
-                <p class="project-desc">
-                  App de clima com previsão para 5 dias, qualidade do ar e favoritos. Pode ser instalado (PWA) e funciona offline.
-                </p>
-                <ul class="chips chips-small">
-                  <li class="chip"><img src="/src/assets/icons/react-icon.svg" alt="" width="18" height="18" />React</li>
-                  <li class="chip"><img src="/src/assets/icons/ts-icon.svg" alt="" width="18" height="18" />TypeScript</li>
-                  <li class="chip"><img src="/src/assets/icons/tailwind-icon.svg" alt="" width="18" height="18" />Tailwind</li>
-                  <li class="chip"><img src="/src/assets/icons/tanstack-query-icon.svg" alt="" width="18" height="18" />TanStack Query</li>
-                </ul>
-                <div class="project-links">
-                  <a href="https://sky-now.vercel.app" target="_blank" rel="noopener" class="btn btn-primary btn-small">
-                    <svg class="icon" aria-hidden="true">
-                      <use href="#i-external" />
-                    </svg>
-                    Ver site
-                  </a>
-                  <a href="https://github.com/CristianDaniel1/sky-now" target="_blank" rel="noopener" class="btn btn-ghost btn-small">
-                    <svg class="icon" aria-hidden="true">
-                      <use href="#i-code" />
-                    </svg>
-                    Ver código
-                  </a>
+                <div class="vitrine-info">
+                  <h3 class="vitrine-title visually-hidden">Gwent Remake</h3>
+                  <p class="vitrine-desc">
+                    Remake do Gwent, o jogo de cartas de The Witcher 3, com partidas contra o computador, multiplayer online com
+                    espectadores, replays e histórico de partidas.
+                  </p>
+                  <ul class="chips chips-small">
+                    <li class="chip"><img src="/src/assets/icons/react-icon.svg" alt="" width="18" height="18" />React</li>
+                    <li class="chip"><img src="/src/assets/icons/ts-icon.svg" alt="" width="18" height="18" />TypeScript</li>
+                    <li class="chip"><img src="/src/assets/icons/nestjs.svg" alt="" width="18" height="18" />NestJS</li>
+                    <li class="chip"><img src="/src/assets/icons/PostgresSQL-icon.svg" alt="" width="18" height="18" />PostgreSQL</li>
+                    <li class="chip chip-plain">Socket.IO</li>
+                    <li class="chip"><img src="/src/assets/icons/playwright.svg" alt="" width="18" height="18" />Playwright</li>
+                  </ul>
+                  <div class="project-links">
+                    <a href="https://github.com/CristianDaniel1/gwent-remake" target="_blank" rel="noopener" class="btn btn-primary btn-small">
+                      <svg class="icon" aria-hidden="true"><use href="#i-code" /></svg>
+                      Ver código
+                    </a>
+                  </div>
                 </div>
-              </div>
-            </article>
-            <article class="project" data-kind="frontend">
-              <a
-                href="https://github.com/CristianDaniel1/pura-armonia"
-                class="project-media"
-                target="_blank"
-                rel="noopener"
-                aria-label="Ver o código do Pura Armonía no GitHub"
-              >
-                <img
-                  src="/src/assets/pura-armonia.jpg"
-                  loading="lazy"
-                  alt="Página inicial do site da banda Pura Armonía"
-                  width="1440"
-                  height="900"
-                />
-              </a>
-              <div class="project-body">
-                <h3 class="project-title">Pura Armonía</h3>
-                <p class="project-desc">
-                  Site bilíngue de uma banda de cumbia boliviana de São Paulo, com videoclipes, galeria e contato pelo WhatsApp.
-                </p>
-                <ul class="chips chips-small">
-                  <li class="chip"><img src="/src/assets/icons/angular-icon.svg" alt="" width="18" height="18" />Angular</li>
-                  <li class="chip"><img src="/src/assets/icons/ts-icon.svg" alt="" width="18" height="18" />TypeScript</li>
-                  <li class="chip"><img src="/src/assets/icons/tailwind-icon.svg" alt="" width="18" height="18" />Tailwind</li>
-                </ul>
-                <div class="project-links">
-                  <a
-                    href="https://github.com/CristianDaniel1/pura-armonia"
-                    target="_blank"
-                    rel="noopener"
-                    class="btn btn-primary btn-small"
-                  >
-                    <svg class="icon" aria-hidden="true">
-                      <use href="#i-code" />
-                    </svg>
-                    Ver código
-                  </a>
+              </article>
+
+              <!-- Dev to Dev -->
+              <article class="vitrine-panel" id="vp-devtodev">
+                <div class="vitrine-window" data-gallery>
+                  <span class="window-bar" aria-hidden="true">
+                    <span class="window-dots"></span>
+                    <span class="window-url">devtodev.vercel.app</span>
+                  </span>
+                  <button type="button" class="vitrine-shots" aria-label="Ampliar as imagens do Dev to Dev">
+                    <span class="vitrine-shot vitrine-cover is-active">
+                      <img src="/src/assets/dev-to-dev.png" alt="Dev to Dev: página inicial" width="1280" height="800" loading="lazy" decoding="async" />
+                      <span class="vitrine-cover-caption" aria-hidden="true"><span class="vitrine-cover-kind">Front-End</span><span class="vitrine-cover-name">Dev to Dev</span></span>
+                    </span>
+                    <img class="vitrine-shot" src="/src/assets/projects/devtodev-quiz.jpg" alt="Dev to Dev: questão respondida com a explicação" width="1280" height="800" loading="lazy" decoding="async" />
+                    <img class="vitrine-shot" src="/src/assets/projects/devtodev-trilha.jpg" alt="Dev to Dev: trilha de estudo" width="1280" height="800" loading="lazy" decoding="async" />
+                    <span class="vitrine-zoom-hint" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-zoom" /></svg>Ampliar</span>
+                  </button>
+                  <span class="vitrine-progress" aria-hidden="true"></span>
                 </div>
-              </div>
-            </article>
-            <article class="project" data-kind="frontend">
-              <a
-                href="https://roweam-clone.vercel.app"
-                class="project-media"
-                target="_blank"
-                rel="noopener"
-                aria-label="Abrir o site do Roweam Clone"
-              >
-                <img src="/src/assets/roweam-clone.png" loading="lazy" alt="Site de móveis vintage" width="520" height="400" />
-              </a>
-              <div class="project-body">
-                <h3 class="project-title">Roweam Clone</h3>
-                <p class="project-desc">Clone de um site de móveis vintage.</p>
-                <ul class="chips chips-small">
-                  <li class="chip"><img src="/src/assets/icons/react-icon.svg" alt="" width="18" height="18" />React</li>
-                  <li class="chip"><img src="/src/assets/icons/ts-icon.svg" alt="" width="18" height="18" />TypeScript</li>
-                  <li class="chip"><img src="/src/assets/icons/tailwind-icon.svg" alt="" width="18" height="18" />Tailwind</li>
-                  <li class="chip"><img src="/src/assets/icons/framer-motion-icon.png" alt="" width="18" height="18" />Framer Motion</li>
-                </ul>
-                <div class="project-links">
-                  <a href="https://roweam-clone.vercel.app" target="_blank" rel="noopener" class="btn btn-primary btn-small">
-                    <svg class="icon" aria-hidden="true">
-                      <use href="#i-external" />
-                    </svg>
-                    Ver site
-                  </a>
-                  <a href="https://github.com/CristianDaniel1/roweam-clone" target="_blank" rel="noopener" class="btn btn-ghost btn-small">
-                    <svg class="icon" aria-hidden="true">
-                      <use href="#i-code" />
-                    </svg>
-                    Ver código
-                  </a>
+                <div class="vitrine-thumbs">
+                  <button type="button" class="vitrine-thumb is-active" aria-label="Mostrar página inicial"><img src="/src/assets/projects/thumbs/dev-to-dev.jpg" alt="" width="480" height="300" decoding="async" loading="lazy" /></button>
+                  <button type="button" class="vitrine-thumb" aria-label="Mostrar questão respondida"><img src="/src/assets/projects/thumbs/devtodev-quiz.jpg" alt="" width="480" height="300" decoding="async" loading="lazy" /></button>
+                  <button type="button" class="vitrine-thumb" aria-label="Mostrar trilha de estudo"><img src="/src/assets/projects/thumbs/devtodev-trilha.jpg" alt="" width="480" height="300" decoding="async" loading="lazy" /></button>
                 </div>
-              </div>
-            </article>
+                <div class="vitrine-info">
+                  <h3 class="vitrine-title visually-hidden">Dev to Dev</h3>
+                  <p class="vitrine-desc">
+                    Quizzes comentados de programação, com revisão espaçada, glossário, trilhas de estudo e uma central de materiais.
+                    Sucessor do Front-End Quiz.
+                  </p>
+                  <ul class="chips chips-small">
+                    <li class="chip"><img src="/src/assets/icons/angular-icon.svg" alt="" width="18" height="18" />Angular</li>
+                    <li class="chip"><img src="/src/assets/icons/ts-icon.svg" alt="" width="18" height="18" />TypeScript</li>
+                    <li class="chip"><img src="/src/assets/icons/tailwind-icon.svg" alt="" width="18" height="18" />Tailwind</li>
+                    <li class="chip"><img src="/src/assets/icons/playwright.svg" alt="" width="18" height="18" />Playwright</li>
+                  </ul>
+                  <div class="project-links">
+                    <a href="https://devtodev.vercel.app" target="_blank" rel="noopener" class="btn btn-primary btn-small">
+                      <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg>
+                      Ver site
+                    </a>
+                    <a href="https://github.com/CristianDaniel1/dev-to-dev" target="_blank" rel="noopener" class="btn btn-ghost btn-small">
+                      <svg class="icon" aria-hidden="true"><use href="#i-code" /></svg>
+                      Ver código
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- SilverHand -->
+              <article class="vitrine-panel" id="vp-silverhand">
+                <div class="vitrine-window" data-gallery>
+                  <span class="window-bar" aria-hidden="true">
+                    <span class="window-dots"></span>
+                    <span class="window-url">silverhand-store.vercel.app</span>
+                  </span>
+                  <button type="button" class="vitrine-shots" aria-label="Ampliar as imagens do SilverHand">
+                    <span class="vitrine-shot vitrine-cover is-active">
+                      <img src="/src/assets/silverhand.webp" alt="SilverHand: página inicial" width="1903" height="1070" loading="lazy" decoding="async" />
+                      <span class="vitrine-cover-caption" aria-hidden="true"><span class="vitrine-cover-kind">Full-Stack</span><span class="vitrine-cover-name">SilverHand</span></span>
+                    </span>
+                    <img class="vitrine-shot" src="/src/assets/projects/silverhand-produto.jpg" alt="SilverHand: página de um produto" width="1280" height="800" loading="lazy" decoding="async" />
+                    <img class="vitrine-shot" src="/src/assets/projects/silverhand-cadastro.jpg" alt="SilverHand: cadastro de cliente" width="1280" height="800" loading="lazy" decoding="async" />
+                    <span class="vitrine-zoom-hint" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-zoom" /></svg>Ampliar</span>
+                  </button>
+                  <span class="vitrine-progress" aria-hidden="true"></span>
+                </div>
+                <div class="vitrine-thumbs">
+                  <button type="button" class="vitrine-thumb is-active" aria-label="Mostrar página inicial"><img src="/src/assets/projects/thumbs/silverhand.jpg" alt="" width="480" height="270" decoding="async" loading="lazy" /></button>
+                  <button type="button" class="vitrine-thumb" aria-label="Mostrar página de produto"><img src="/src/assets/projects/thumbs/silverhand-produto.jpg" alt="" width="480" height="300" decoding="async" loading="lazy" /></button>
+                  <button type="button" class="vitrine-thumb" aria-label="Mostrar cadastro de cliente"><img src="/src/assets/projects/thumbs/silverhand-cadastro.jpg" alt="" width="480" height="300" decoding="async" loading="lazy" /></button>
+                </div>
+                <div class="vitrine-info">
+                  <h3 class="vitrine-title visually-hidden">SilverHand</h3>
+                  <p class="vitrine-desc">E-commerce de guitarras feito de ponta a ponta, do front-end ao banco de dados.</p>
+                  <ul class="chips chips-small">
+                    <li class="chip"><img src="/src/assets/icons/react-icon.svg" alt="" width="18" height="18" />React</li>
+                    <li class="chip"><img src="/src/assets/icons/node-icon.svg" alt="" width="18" height="18" />Node.js</li>
+                    <li class="chip"><img src="/src/assets/icons/ts-icon.svg" alt="" width="18" height="18" />TypeScript</li>
+                    <li class="chip"><img src="/src/assets/icons/tailwind-icon.svg" alt="" width="18" height="18" />Tailwind</li>
+                    <li class="chip"><img src="/src/assets/icons/PostgresSQL-icon.svg" alt="" width="18" height="18" />PostgreSQL</li>
+                  </ul>
+                  <div class="project-links">
+                    <a href="https://silverhand-store.vercel.app" target="_blank" rel="noopener" class="btn btn-primary btn-small">
+                      <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg>
+                      Ver site
+                    </a>
+                    <a href="https://github.com/CristianDaniel1/silverhand-fullstack" target="_blank" rel="noopener" class="btn btn-ghost btn-small">
+                      <svg class="icon" aria-hidden="true"><use href="#i-code" /></svg>
+                      Ver código
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- SkyNow -->
+              <article class="vitrine-panel" id="vp-skynow">
+                <div class="vitrine-window" data-gallery>
+                  <span class="window-bar" aria-hidden="true">
+                    <span class="window-dots"></span>
+                    <span class="window-url">sky-now.vercel.app</span>
+                  </span>
+                  <button type="button" class="vitrine-shots" aria-label="Ampliar as imagens do SkyNow">
+                    <span class="vitrine-shot vitrine-cover is-active">
+                      <img src="/src/assets/sky-now.png" alt="SkyNow: clima de hoje" width="1280" height="800" loading="lazy" decoding="async" />
+                      <span class="vitrine-cover-caption" aria-hidden="true"><span class="vitrine-cover-kind">Front-End</span><span class="vitrine-cover-name">SkyNow</span></span>
+                    </span>
+                    <img class="vitrine-shot" src="/src/assets/projects/skynow-escuro.jpg" alt="SkyNow: tema escuro" width="1280" height="800" loading="lazy" decoding="async" />
+                    <img class="vitrine-shot" src="/src/assets/projects/skynow-previsao.jpg" alt="SkyNow: previsão das próximas horas" width="1280" height="800" loading="lazy" decoding="async" />
+                    <span class="vitrine-zoom-hint" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-zoom" /></svg>Ampliar</span>
+                  </button>
+                  <span class="vitrine-progress" aria-hidden="true"></span>
+                </div>
+                <div class="vitrine-thumbs">
+                  <button type="button" class="vitrine-thumb is-active" aria-label="Mostrar clima de hoje"><img src="/src/assets/projects/thumbs/sky-now.jpg" alt="" width="480" height="300" decoding="async" loading="lazy" /></button>
+                  <button type="button" class="vitrine-thumb" aria-label="Mostrar tema escuro"><img src="/src/assets/projects/thumbs/skynow-escuro.jpg" alt="" width="480" height="300" decoding="async" loading="lazy" /></button>
+                  <button type="button" class="vitrine-thumb" aria-label="Mostrar previsão das próximas horas"><img src="/src/assets/projects/thumbs/skynow-previsao.jpg" alt="" width="480" height="300" decoding="async" loading="lazy" /></button>
+                </div>
+                <div class="vitrine-info">
+                  <h3 class="vitrine-title visually-hidden">SkyNow</h3>
+                  <p class="vitrine-desc">
+                    App de clima com previsão para 5 dias, qualidade do ar e favoritos. Pode ser instalado (PWA) e funciona offline.
+                  </p>
+                  <ul class="chips chips-small">
+                    <li class="chip"><img src="/src/assets/icons/react-icon.svg" alt="" width="18" height="18" />React</li>
+                    <li class="chip"><img src="/src/assets/icons/ts-icon.svg" alt="" width="18" height="18" />TypeScript</li>
+                    <li class="chip"><img src="/src/assets/icons/tailwind-icon.svg" alt="" width="18" height="18" />Tailwind</li>
+                    <li class="chip"><img src="/src/assets/icons/tanstack-query-icon.svg" alt="" width="18" height="18" />TanStack Query</li>
+                  </ul>
+                  <div class="project-links">
+                    <a href="https://sky-now.vercel.app" target="_blank" rel="noopener" class="btn btn-primary btn-small">
+                      <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg>
+                      Ver site
+                    </a>
+                    <a href="https://github.com/CristianDaniel1/sky-now" target="_blank" rel="noopener" class="btn btn-ghost btn-small">
+                      <svg class="icon" aria-hidden="true"><use href="#i-code" /></svg>
+                      Ver código
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Pura Armonía -->
+              <article class="vitrine-panel" id="vp-pura">
+                <div class="vitrine-window" data-gallery>
+                  <span class="window-bar" aria-hidden="true">
+                    <span class="window-dots"></span>
+                    <span class="window-url">github.com/CristianDaniel1/pura-armonia</span>
+                  </span>
+                  <button type="button" class="vitrine-shots" aria-label="Ampliar as imagens do Pura Armonía">
+                    <span class="vitrine-shot vitrine-cover is-active">
+                      <img src="/src/assets/pura-armonia.jpg" alt="Pura Armonía: página inicial" width="1440" height="900" loading="lazy" decoding="async" />
+                      <span class="vitrine-cover-caption" aria-hidden="true"><span class="vitrine-cover-kind">Front-End</span><span class="vitrine-cover-name">Pura Armonía</span></span>
+                    </span>
+                    <img class="vitrine-shot" src="/src/assets/projects/pura-galeria.jpg" alt="Pura Armonía: galeria de fotos" width="1280" height="800" loading="lazy" decoding="async" />
+                    <img class="vitrine-shot" src="/src/assets/projects/pura-eventos.jpg" alt="Pura Armonía: tipos de evento" width="1280" height="800" loading="lazy" decoding="async" />
+                    <span class="vitrine-zoom-hint" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-zoom" /></svg>Ampliar</span>
+                  </button>
+                  <span class="vitrine-progress" aria-hidden="true"></span>
+                </div>
+                <div class="vitrine-thumbs">
+                  <button type="button" class="vitrine-thumb is-active" aria-label="Mostrar página inicial"><img src="/src/assets/projects/thumbs/pura-armonia.jpg" alt="" width="480" height="300" decoding="async" loading="lazy" /></button>
+                  <button type="button" class="vitrine-thumb" aria-label="Mostrar galeria de fotos"><img src="/src/assets/projects/thumbs/pura-galeria.jpg" alt="" width="480" height="300" decoding="async" loading="lazy" /></button>
+                  <button type="button" class="vitrine-thumb" aria-label="Mostrar tipos de evento"><img src="/src/assets/projects/thumbs/pura-eventos.jpg" alt="" width="480" height="300" decoding="async" loading="lazy" /></button>
+                </div>
+                <div class="vitrine-info">
+                  <h3 class="vitrine-title visually-hidden">Pura Armonía</h3>
+                  <p class="vitrine-desc">
+                    Site bilíngue de uma banda de cumbia boliviana de São Paulo, com videoclipes, galeria e contato pelo WhatsApp.
+                  </p>
+                  <ul class="chips chips-small">
+                    <li class="chip"><img src="/src/assets/icons/angular-icon.svg" alt="" width="18" height="18" />Angular</li>
+                    <li class="chip"><img src="/src/assets/icons/ts-icon.svg" alt="" width="18" height="18" />TypeScript</li>
+                    <li class="chip"><img src="/src/assets/icons/tailwind-icon.svg" alt="" width="18" height="18" />Tailwind</li>
+                  </ul>
+                  <div class="project-links">
+                    <a href="https://github.com/CristianDaniel1/pura-armonia" target="_blank" rel="noopener" class="btn btn-primary btn-small">
+                      <svg class="icon" aria-hidden="true"><use href="#i-code" /></svg>
+                      Ver código
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Roweam Clone -->
+              <article class="vitrine-panel" id="vp-roweam">
+                <div class="vitrine-window" data-gallery>
+                  <span class="window-bar" aria-hidden="true">
+                    <span class="window-dots"></span>
+                    <span class="window-url">roweam-clone.vercel.app</span>
+                  </span>
+                  <button type="button" class="vitrine-shots" aria-label="Ampliar as imagens do Roweam Clone">
+                    <span class="vitrine-shot vitrine-cover is-active">
+                      <img src="/src/assets/roweam-clone.png" alt="Roweam Clone: página inicial" width="1256" height="942" loading="lazy" decoding="async" />
+                      <span class="vitrine-cover-caption" aria-hidden="true"><span class="vitrine-cover-kind">Front-End</span><span class="vitrine-cover-name">Roweam Clone</span></span>
+                    </span>
+                    <img class="vitrine-shot" src="/src/assets/projects/roweam-loja.jpg" alt="Roweam Clone: loja" width="1280" height="800" loading="lazy" decoding="async" />
+                    <img class="vitrine-shot" src="/src/assets/projects/roweam-produto.jpg" alt="Roweam Clone: produto e carrinho" width="1280" height="800" loading="lazy" decoding="async" />
+                    <span class="vitrine-zoom-hint" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-zoom" /></svg>Ampliar</span>
+                  </button>
+                  <span class="vitrine-progress" aria-hidden="true"></span>
+                </div>
+                <div class="vitrine-thumbs">
+                  <button type="button" class="vitrine-thumb is-active" aria-label="Mostrar página inicial"><img src="/src/assets/projects/thumbs/roweam-clone.jpg" alt="" width="480" height="360" decoding="async" loading="lazy" /></button>
+                  <button type="button" class="vitrine-thumb" aria-label="Mostrar loja"><img src="/src/assets/projects/thumbs/roweam-loja.jpg" alt="" width="480" height="300" decoding="async" loading="lazy" /></button>
+                  <button type="button" class="vitrine-thumb" aria-label="Mostrar produto e carrinho"><img src="/src/assets/projects/thumbs/roweam-produto.jpg" alt="" width="480" height="300" decoding="async" loading="lazy" /></button>
+                </div>
+                <div class="vitrine-info">
+                  <h3 class="vitrine-title visually-hidden">Roweam Clone</h3>
+                  <p class="vitrine-desc">Clone de um site de móveis vintage.</p>
+                  <ul class="chips chips-small">
+                    <li class="chip"><img src="/src/assets/icons/react-icon.svg" alt="" width="18" height="18" />React</li>
+                    <li class="chip"><img src="/src/assets/icons/ts-icon.svg" alt="" width="18" height="18" />TypeScript</li>
+                    <li class="chip"><img src="/src/assets/icons/tailwind-icon.svg" alt="" width="18" height="18" />Tailwind</li>
+                    <li class="chip"><img src="/src/assets/icons/framer-motion-icon.png" alt="" width="18" height="18" />Framer Motion</li>
+                  </ul>
+                  <div class="project-links">
+                    <a href="https://roweam-clone.vercel.app" target="_blank" rel="noopener" class="btn btn-primary btn-small">
+                      <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg>
+                      Ver site
+                    </a>
+                    <a href="https://github.com/CristianDaniel1/roweam-clone" target="_blank" rel="noopener" class="btn btn-ghost btn-small">
+                      <svg class="icon" aria-hidden="true"><use href="#i-code" /></svg>
+                      Ver código
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
           </div>
         </div>
       </section>
@@ -911,6 +1007,34 @@
         </a>
       </div>
     </footer>
+
+    <!-- Imagens ampliadas dos projetos (preenchida pelo src/js/modules/lightbox.js) -->
+    <dialog class="lightbox" aria-labelledby="lightbox-title">
+      <div class="lightbox-inner">
+        <div class="lightbox-head">
+          <p class="lightbox-title" id="lightbox-title"></p>
+          <p class="lightbox-count" aria-live="polite"></p>
+          <button type="button" class="lightbox-close" aria-label="Fechar">
+            <svg class="icon" aria-hidden="true"><use href="#i-close" /></svg>
+          </button>
+        </div>
+        <div class="lightbox-stage">
+          <button type="button" class="lightbox-nav lightbox-prev" aria-label="Imagem anterior">
+            <svg class="icon" aria-hidden="true"><use href="#i-chevron-left" /></svg>
+          </button>
+          <div class="lightbox-viewport">
+            <div class="lightbox-track"></div>
+          </div>
+          <button type="button" class="lightbox-nav lightbox-next" aria-label="Próxima imagem">
+            <svg class="icon" aria-hidden="true"><use href="#i-chevron-right" /></svg>
+          </button>
+        </div>
+        <div class="lightbox-foot">
+          <p class="lightbox-caption"></p>
+          <div class="lightbox-links project-links"></div>
+        </div>
+      </div>
+    </dialog>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

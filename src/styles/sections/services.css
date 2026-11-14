@@ -70,7 +70,7 @@
   margin-bottom: 1.6rem;
   font-weight: 700;
   font-size: 1.45rem;
-  color: #101316;
+  color: var(--on-mark);
   background-color: var(--mark);
   border-radius: 50%;
 }

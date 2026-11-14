@@ -1,0 +1,200 @@
+/* Imagens ampliadas dos projetos: janela em tela cheia com as imagens inteiras,
+   navegação entre elas (setas, teclado ou arrastar) e os links do projeto.
+
+   Desempenho: só opacity e transform são animados (a GPU faz sozinha, sem redesenhar a
+   página). O fundo é uma cor sólida quase opaca: um desfoque (backdrop-filter) em tela
+   cheia seria recalculado a cada quadro e deixava a abertura e o deslize travando. */
+.lightbox {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  padding: clamp(1.6rem, 3vw, 3.2rem);
+  color: #ededec;
+  background: none;
+  border: none;
+}
+
+.lightbox::backdrop {
+  background-color: rgba(10, 9, 9, 0.94);
+}
+
+.lightbox[open]::backdrop {
+  animation: fade 0.3s ease;
+}
+
+/* entrada: o conteúdo aparece e sobe um pouco */
+.lightbox[open] .lightbox-inner {
+  animation: lightbox-in 0.4s var(--ease);
+}
+
+@keyframes lightbox-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 2rem, 0);
+  }
+}
+
+body.lightbox-open {
+  overflow: hidden;
+}
+
+.lightbox-inner {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: 1.6rem;
+  height: 100%;
+  max-width: 140rem;
+  margin: 0 auto;
+}
+
+/* ---------- Topo: título, contador e fechar ---------- */
+.lightbox-head {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.lightbox-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 2.6vw, 3.2rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.lightbox-count {
+  margin-right: auto;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--mark);
+}
+
+.lightbox-close,
+.lightbox-nav {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 4.6rem;
+  height: 4.6rem;
+  color: #ededec;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 50%;
+  transition:
+    background-color 0.25s,
+    border-color 0.25s,
+    opacity 0.25s;
+}
+
+.lightbox-close:hover,
+.lightbox-nav:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.lightbox-close .icon,
+.lightbox-nav .icon {
+  width: 2.2rem;
+  height: 2.2rem;
+  fill: none;
+}
+
+.lightbox-nav:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+/* ---------- Imagens ---------- */
+.lightbox-stage {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1.6rem;
+  min-height: 0;
+}
+
+.lightbox-viewport {
+  height: 100%;
+  overflow: hidden;
+  touch-action: pan-y;
+}
+
+/* as imagens ficam lado a lado; a trilha desliza para mostrar a escolhida */
+.lightbox-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s var(--ease);
+  /* camada própria na GPU: deslizar não redesenha as imagens */
+  will-change: transform;
+}
+
+.lightbox-slide {
+  display: grid;
+  place-items: center;
+  flex: 0 0 100%;
+  height: 100%;
+  padding-inline: 0.4rem;
+}
+
+/* a imagem aparece inteira, sem cortes */
+.lightbox-slide img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: var(--radius-s);
+  /* sombra curta: sombras grandes custam caro para desenhar em imagens grandes */
+  box-shadow: 0 1.2rem 3rem -1.6rem rgba(0, 0, 0, 0.7);
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* ---------- Rodapé: legenda e links ---------- */
+.lightbox-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem 2.4rem;
+}
+
+.lightbox-caption {
+  font-size: 1.5rem;
+  color: #b4b2b1;
+}
+
+/* no fundo escuro do lightbox, o botão de contorno precisa de cores claras */
+.lightbox .btn-ghost {
+  color: #ededec;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.lightbox .btn-ghost:hover {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+  .lightbox-stage {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* no celular, as setas ficam sobre a imagem e o gesto de arrastar faz o resto */
+  .lightbox-nav {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    width: 4rem;
+    height: 4rem;
+    background-color: rgba(10, 9, 9, 0.6);
+    translate: 0 -50%;
+  }
+
+  .lightbox-prev {
+    left: 2rem;
+  }
+
+  .lightbox-next {
+    right: 2rem;
+  }
+}

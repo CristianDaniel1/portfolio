@@ -240,6 +240,11 @@
   object-position: top;
 }
 
+/* imagens 16:9 (ex.: Gwent Remake) aparecem inteiras, sem cortar as laterais */
+.window-shot-wide {
+  aspect-ratio: 16 / 9;
+}
+
 .showcase-caption {
   max-width: 38ch;
   margin-top: 2.2rem;

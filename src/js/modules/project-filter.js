@@ -24,5 +24,8 @@ export const initProjectFilter = () => {
     for (const card of cards) {
       card.hidden = filter !== SHOW_ALL && card.dataset.kind !== filter;
     }
+
+    // avisa quem depende dos projetos visíveis (ex.: a vitrine troca o projeto escolhido)
+    document.dispatchEvent(new CustomEvent('projects:filter', { detail: { filter } }));
   });
 };

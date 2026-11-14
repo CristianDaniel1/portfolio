@@ -12,6 +12,7 @@
 @import './components/section.css';
 @import './components/buttons.css';
 @import './components/chips.css';
+@import './components/lightbox.css';
 
 /* Layout */
 @import './layout/header.css';
@@ -23,5 +24,7 @@
 @import './sections/technologies.css';
 @import './sections/experience.css';
 @import './sections/projects.css';
+@import './sections/projects-vitrine.css';
 @import './sections/services.css';
 @import './sections/contact.css';
+

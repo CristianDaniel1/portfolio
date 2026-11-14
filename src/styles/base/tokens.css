@@ -2,33 +2,43 @@
    O tema segue o sistema do visitante, só com CSS:
    `color-scheme: light dark` ativa os dois esquemas e `light-dark(claro, escuro)`
    escolhe a cor de cada um. O botão do cabeçalho só guarda uma escolha manual.
-   Claro: azul-marinho + cobalto. Escuro: preto + dourado. */
+
+   Vinho como cor principal (botões, links, destaques com texto) e o dourado como
+   secundária, só nos detalhes (grifo, números, brilhos, barra da vitrine): em texto
+   sobre o fundo claro o dourado não teria contraste.
+   Fundos neutros: cinza-claro sem tom azul ou vermelho no claro, carbono no escuro.
+   Se mudar as cores de fundo, atualize também os <meta name="theme-color"> do index.html
+   e, se mudar o vinho, o public/favicon.svg (e o favicon.png gerado a partir dele). */
 :root {
   color-scheme: light dark;
 
-  --bg: light-dark(#f5f6f8, #101316);
-  --surface: light-dark(#ffffff, #181a1f);
-  --surface-alt: light-dark(#eceff3, #14181c);
-  --ink: light-dark(#0f1c2e, #eeeeee);
-  --text: light-dark(#3d4b5f, #c0c0c0);
-  --line: light-dark(rgba(15, 28, 46, 0.12), rgba(255, 255, 255, 0.09));
-  --line-strong: light-dark(rgba(15, 28, 46, 0.22), rgba(255, 255, 255, 0.18));
+  --bg: light-dark(#f4f4f3, #141414);
+  --surface: light-dark(#ffffff, #1d1d1d);
+  --surface-alt: light-dark(#eaeae8, #181818);
+  --ink: light-dark(#1c1b1b, #ededec);
+  --text: light-dark(#4d4b4b, #b4b2b1);
+  --line: light-dark(rgba(28, 27, 27, 0.12), rgba(255, 255, 255, 0.09));
+  --line-strong: light-dark(rgba(28, 27, 27, 0.24), rgba(255, 255, 255, 0.18));
 
-  --accent: light-dark(#2f4cdd, #ffd369);
-  --accent-hover: light-dark(#2339b8, #daa52a);
-  --on-accent: light-dark(#ffffff, #101316);
-  --accent-text: light-dark(#2f4cdd, #ffd369);
+  /* vinho (principal) */
+  --accent: light-dark(#8e2b3b, #b03a4f);
+  --accent-hover: light-dark(#74202f, #c4475c);
+  --on-accent: #ffffff;
+  --accent-text: light-dark(#8e2b3b, #e8899a);
+
+  /* dourado (secundária) */
   --mark: #ffd369;
+  --on-mark: #1c1b1b;
 
   --chip-bg: light-dark(#ffffff, rgba(255, 255, 255, 0.04));
-  --shadow: light-dark(rgba(15, 28, 46, 0.35), rgba(0, 0, 0, 0.7));
-  --header-bg: light-dark(rgba(245, 246, 248, 0.9), rgba(16, 19, 22, 0.9));
+  --shadow: light-dark(rgba(28, 27, 27, 0.3), rgba(0, 0, 0, 0.7));
+  --header-bg: light-dark(rgba(244, 244, 243, 0.9), rgba(20, 20, 20, 0.9));
 
-  /* seções invertidas (Serviços) */
-  --inv-bg: light-dark(#0f1c2e, #eeeeee);
-  --inv-title: light-dark(#f5f6f8, #101316);
-  --inv-text: light-dark(#b9c4d4, #3b4048);
-  --inv-line: light-dark(rgba(255, 255, 255, 0.2), rgba(16, 19, 22, 0.2));
+  /* seções invertidas (Serviços): carbono no claro, clara no escuro */
+  --inv-bg: light-dark(#1c1b1b, #ededec);
+  --inv-title: light-dark(#f4f4f3, #141414);
+  --inv-text: light-dark(#bdbab9, #4a4848);
+  --inv-line: light-dark(rgba(255, 255, 255, 0.18), rgba(20, 20, 20, 0.2));
 
   /* As fontes (Newsreader e Hanken Grotesk) são carregadas no <head> do index.html */
   --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;

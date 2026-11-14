@@ -1,0 +1,412 @@
+/* ===== Projetos, versão A: Vitrine =====
+   Lista de projetos à esquerda; à direita, o projeto escolhido numa janela de navegador
+   com as imagens passando sozinhas (barra de progresso) e miniaturas para trocar. */
+.vitrine {
+  display: grid;
+  grid-template-columns: minmax(0, 3.6fr) minmax(0, 8.4fr);
+  align-items: start;
+  gap: clamp(2.4rem, 4vw, 5.6rem);
+}
+
+/* ---------- Lista de projetos ---------- */
+.vitrine-list {
+  position: sticky;
+  top: calc(var(--header-h) + 2.4rem);
+  border-top: 1px solid var(--line-strong);
+}
+
+.vitrine-tab {
+  position: relative;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.4rem 1.6rem;
+  padding: 1.8rem 0.4rem 1.8rem 1.8rem;
+  text-align: left;
+  color: var(--text);
+  border-bottom: 1px solid var(--line);
+  transition: color 0.3s;
+}
+
+/* barra de destaque que cresce no item escolhido */
+.vitrine-tab::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 1.4rem;
+  bottom: 1.4rem;
+  width: 3px;
+  border-radius: 3px;
+  background-color: var(--accent);
+  transform: scaleY(0);
+  transition: transform 0.4s var(--ease);
+}
+
+.vitrine-tab-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 2.2vw, 2.6rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  transition: translate 0.4s var(--ease);
+}
+
+.vitrine-tab-kind {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.vitrine-tab:hover,
+.vitrine-tab[aria-pressed='true'] {
+  color: var(--ink);
+}
+
+.vitrine-tab:hover .vitrine-tab-title {
+  translate: 0.4rem 0;
+}
+
+.vitrine-tab[aria-pressed='true']::before {
+  transform: scaleY(1);
+}
+
+/* ---------- Palco ---------- */
+.vitrine-panel {
+  display: none;
+}
+
+.vitrine-panel.is-active {
+  display: block;
+}
+
+/* Entrada do projeto: a moldura da janela é igual em todos os projetos, então fica
+   parada; só a imagem dentro dela aparece com fade, por cima da imagem do projeto
+   anterior (o JS a coloca como fundo durante a troca). Animar a janela inteira (ou
+   movê-la e escalá-la, com os cantos arredondados recortando as imagens) fazia o palco
+   "apagar e acender" e as bordas piscarem. O texto, que não tem recorte, pode subir. */
+.vitrine-panel.is-active .vitrine-shot {
+  animation: vitrine-shot-in 0.45s ease;
+}
+
+/* só o "from": cada imagem termina na própria opacidade (a ativa em 1, as outras em 0) */
+@keyframes vitrine-shot-in {
+  from {
+    opacity: 0;
+  }
+}
+
+.vitrine-panel.is-active .vitrine-thumbs,
+.vitrine-panel.is-active .vitrine-info {
+  animation: rise 0.6s var(--ease) 0.08s backwards;
+}
+
+.vitrine-window {
+  position: relative;
+  overflow: hidden;
+  /* camada própria: o recorte arredondado é feito uma vez, não a cada quadro */
+  isolation: isolate;
+  transform: translateZ(0);
+  background-color: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-m);
+  box-shadow: 0 2.4rem 4.8rem -2.8rem var(--shadow);
+}
+
+/* a área das imagens é um botão: clicar amplia (veja lightbox.css) */
+.vitrine-shots {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  cursor: zoom-in;
+  /* durante a troca de projeto, recebe a imagem anterior como fundo (veja o JS).
+     Ajustada pela largura, ela mantém a mesma escala mesmo quando o palco muda de
+     formato (16:9 do Gwent para 16:10 dos outros), sem dar um "salto" de zoom. */
+  background-position: top center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+/* projetos com imagens 16:9 (ex.: Gwent Remake): o palco segue o formato delas,
+   assim as laterais não são cortadas */
+.vitrine-panel-wide .vitrine-shots,
+.vitrine-panel-wide .vitrine-thumb img {
+  aspect-ratio: 16 / 9;
+}
+
+.vitrine-shot {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  opacity: 0;
+  /* troca só com fade: escalar a imagem junto com o fade causava serrilhado nas bordas */
+  transition: opacity 0.7s ease;
+}
+
+.vitrine-shot.is-active {
+  opacity: 1;
+}
+
+/* ---------- Capa: a primeira imagem, com degradê e o nome do projeto ---------- */
+.vitrine-cover {
+  overflow: hidden;
+}
+
+.vitrine-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* zoom lento enquanto a capa está na tela, numa camada própria (GPU) */
+.vitrine-cover.is-active img {
+  animation: vitrine-cover-zoom 9s ease-out forwards;
+  will-change: scale;
+  backface-visibility: hidden;
+}
+
+@keyframes vitrine-cover-zoom {
+  from {
+    scale: 1;
+  }
+  to {
+    scale: 1.07;
+  }
+}
+
+.vitrine-cover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(14, 12, 12, 0.95) 0%,
+    rgba(14, 12, 12, 0.78) 26%,
+    rgba(14, 12, 12, 0.35) 48%,
+    rgba(14, 12, 12, 0) 70%
+  );
+}
+
+.vitrine-cover-caption {
+  position: absolute;
+  left: clamp(2rem, 3.4vw, 4rem);
+  right: clamp(2rem, 3.4vw, 4rem);
+  bottom: clamp(1.8rem, 3vw, 3.6rem);
+  z-index: 1;
+  display: grid;
+  gap: 0.6rem;
+  text-align: left;
+  color: #ffffff;
+  text-shadow: 0 0.2rem 1.6rem rgba(0, 0, 0, 0.6);
+}
+
+.vitrine-cover.is-active .vitrine-cover-caption {
+  animation: rise 0.9s var(--ease) 0.25s backwards;
+}
+
+.vitrine-cover-kind {
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--mark);
+}
+
+.vitrine-cover-name {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 4.6vw, 6rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  text-wrap: balance;
+}
+
+/* ---------- Dica "Ampliar" ---------- */
+.vitrine-zoom-hint {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1.2rem 0.6rem 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: rgba(14, 12, 12, 0.7);
+  border-radius: 99rem;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  translate: 0 -0.6rem;
+  transition:
+    opacity 0.3s,
+    translate 0.3s var(--ease);
+}
+
+.vitrine-zoom-hint .icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  fill: none;
+}
+
+.vitrine-shots:hover .vitrine-zoom-hint,
+.vitrine-shots:focus-visible .vitrine-zoom-hint {
+  opacity: 1;
+  translate: 0 0;
+}
+
+/* em telas de toque não há hover: a dica fica sempre visível */
+@media (hover: none) {
+  .vitrine-zoom-hint {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+.vitrine-shots:focus-visible {
+  outline-offset: -4px;
+}
+
+/* barra dourada que enche enquanto a imagem está na tela */
+.vitrine-progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  height: 3px;
+  background-color: var(--mark);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.vitrine-progress.is-playing {
+  animation: vitrine-progress var(--duration, 5s) linear forwards;
+}
+
+@keyframes vitrine-progress {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* ---------- Miniaturas ---------- */
+.vitrine-thumbs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+  margin-top: 1.4rem;
+}
+
+.vitrine-thumb {
+  overflow: hidden;
+  border: 2px solid transparent;
+  border-radius: var(--radius-s);
+  opacity: 0.55;
+  transition:
+    opacity 0.3s,
+    border-color 0.3s;
+}
+
+.vitrine-thumb img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top;
+}
+
+.vitrine-thumb:hover {
+  opacity: 0.9;
+}
+
+.vitrine-thumb.is-active {
+  opacity: 1;
+  border-color: var(--accent);
+}
+
+/* ---------- Informações ---------- */
+/* o nome do projeto já aparece na lista e na capa; aqui ele fica só para leitores de tela */
+.vitrine-info {
+  display: grid;
+  gap: 1.6rem;
+  margin-top: 2.4rem;
+}
+
+.vitrine-title {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 3.6vw, 4.4rem);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  color: var(--ink);
+}
+
+.vitrine-desc {
+  max-width: 60ch;
+  font-size: 1.7rem;
+  line-height: 1.6;
+}
+
+.vitrine-info .project-links {
+  margin-top: 0.8rem;
+}
+
+/* ---------- Responsivo: a lista vira uma faixa rolável acima do palco ---------- */
+@media screen and (max-width: 900px) {
+  .vitrine {
+    grid-template-columns: 1fr;
+  }
+
+  .vitrine-list {
+    position: static;
+    display: flex;
+    gap: 0.8rem;
+    overflow-x: auto;
+    padding-bottom: 0.4rem;
+    border-top: none;
+    scrollbar-width: none;
+  }
+
+  .vitrine-list li {
+    flex: none;
+  }
+
+  .vitrine-tab {
+    padding: 0.9rem 1.8rem;
+    border: 1px solid var(--line-strong);
+    border-radius: 99rem;
+  }
+
+  .vitrine-tab::before,
+  .vitrine-tab-kind {
+    display: none;
+  }
+
+  .vitrine-tab-title {
+    font-family: var(--font-body);
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0;
+  }
+
+  .vitrine-tab[aria-pressed='true'] {
+    color: var(--on-accent);
+    background-color: var(--accent);
+    border-color: var(--accent);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .vitrine-thumbs {
+    gap: 0.8rem;
+  }
+}
