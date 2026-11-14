@@ -216,46 +216,46 @@
                     class="window-shot"
                     src="/src/assets/sky-now.png"
                     alt="Tela do SkyNow, app de clima e previsão do tempo"
-                    width="1259"
-                    height="944"
+                    width="1280"
+                    height="800"
                   />
                 </a>
                 <a
                   class="window window-mid"
-                  href="https://roweam-clone.vercel.app"
+                  href="https://devtodev.vercel.app"
                   target="_blank"
                   rel="noopener"
-                  aria-label="Abrir o site do Roweam Clone"
+                  aria-label="Abrir o site do Dev to Dev"
                 >
                   <span class="window-bar" aria-hidden="true">
                     <span class="window-dots"></span>
-                    <span class="window-url">roweam-clone.vercel.app</span>
+                    <span class="window-url">devtodev.vercel.app</span>
                   </span>
                   <img
                     class="window-shot"
-                    src="/src/assets/roweam-clone.png"
-                    alt="Tela do Roweam Clone, site de móveis vintage"
-                    width="1256"
-                    height="942"
+                    src="/src/assets/dev-to-dev.png"
+                    alt="Tela do Dev to Dev, site de quizzes comentados de programação"
+                    width="1280"
+                    height="800"
                   />
                 </a>
                 <a
                   class="window window-front"
-                  href="https://silverhand-store.vercel.app"
+                  href="https://github.com/CristianDaniel1/gwent-remake"
                   target="_blank"
                   rel="noopener"
-                  aria-label="Abrir o site do SilverHand"
+                  aria-label="Ver o código do Gwent Remake no GitHub"
                 >
                   <span class="window-bar" aria-hidden="true">
                     <span class="window-dots"></span>
-                    <span class="window-url">silverhand-store.vercel.app</span>
+                    <span class="window-url">github.com/CristianDaniel1/gwent-remake</span>
                   </span>
                   <img
                     class="window-shot"
-                    src="/src/assets/silverhand.webp"
-                    alt="Tela do SilverHand, e-commerce de guitarras"
-                    width="1903"
-                    height="1070"
+                    src="/src/assets/gwent-remake.jpg"
+                    alt="Tela do Gwent Remake, partida do jogo de cartas"
+                    width="1440"
+                    height="810"
                   />
                 </a>
               </div>
@@ -543,39 +543,40 @@
             </div>
           </div>
 
+          <!-- Projeto em destaque: o card grande. Para trocar, mova outro <article> para cá
+               e acrescente a classe "project-featured". -->
           <article class="project project-featured" data-kind="fullstack">
             <a
-              href="https://silverhand-store.vercel.app"
+              href="https://github.com/CristianDaniel1/gwent-remake"
               class="project-media"
               target="_blank"
               rel="noopener"
-              aria-label="Abrir o site do SilverHand"
+              aria-label="Ver o código do Gwent Remake no GitHub"
             >
-              <img src="/src/assets/silverhand.webp" loading="lazy" alt="SilverHand, e-commerce de guitarras" width="520" height="400" />
+              <img
+                src="/src/assets/gwent-remake.jpg"
+                loading="lazy"
+                alt="Partida do Gwent Remake contra o computador, com uma carta ampliada"
+                width="1440"
+                height="810"
+              />
             </a>
             <div class="project-body">
-              <h3 class="project-title">SilverHand</h3>
-              <p class="project-desc">E-commerce de guitarras feito de ponta a ponta, do front-end ao banco de dados.</p>
+              <h3 class="project-title">Gwent Remake</h3>
+              <p class="project-desc">
+                Remake do Gwent, o jogo de cartas de The Witcher 3, com partidas contra o computador, multiplayer online com espectadores,
+                replays e histórico de partidas.
+              </p>
               <ul class="chips chips-small">
                 <li class="chip"><img src="/src/assets/icons/react-icon.svg" alt="" width="18" height="18" />React</li>
-                <li class="chip"><img src="/src/assets/icons/node-icon.svg" alt="" width="18" height="18" />Node.js</li>
                 <li class="chip"><img src="/src/assets/icons/ts-icon.svg" alt="" width="18" height="18" />TypeScript</li>
-                <li class="chip"><img src="/src/assets/icons/tailwind-icon.svg" alt="" width="18" height="18" />Tailwind</li>
+                <li class="chip"><img src="/src/assets/icons/nestjs.svg" alt="" width="18" height="18" />NestJS</li>
                 <li class="chip"><img src="/src/assets/icons/PostgresSQL-icon.svg" alt="" width="18" height="18" />PostgreSQL</li>
+                <li class="chip chip-plain">Socket.IO</li>
+                <li class="chip"><img src="/src/assets/icons/playwright.svg" alt="" width="18" height="18" />Playwright</li>
               </ul>
               <div class="project-links">
-                <a href="https://silverhand-store.vercel.app" target="_blank" rel="noopener" class="btn btn-primary btn-small">
-                  <svg class="icon" aria-hidden="true">
-                    <use href="#i-external" />
-                  </svg>
-                  Ver site
-                </a>
-                <a
-                  href="https://github.com/CristianDaniel1/silverhand-fullstack"
-                  target="_blank"
-                  rel="noopener"
-                  class="btn btn-ghost btn-small"
-                >
+                <a href="https://github.com/CristianDaniel1/gwent-remake" target="_blank" rel="noopener" class="btn btn-primary btn-small">
                   <svg class="icon" aria-hidden="true">
                     <use href="#i-code" />
                   </svg>
@@ -585,14 +586,104 @@
             </div>
           </article>
 
+          <!-- Para adicionar um projeto, copie um <article class="project"> abaixo.
+               data-kind: "fullstack" ou "frontend" (usado pelo filtro).
+               Sem deploy: deixe só o botão "Ver código" e aponte a imagem para o GitHub. -->
           <div class="projects-grid">
             <article class="project" data-kind="frontend">
+              <a href="https://devtodev.vercel.app" class="project-media" target="_blank" rel="noopener" aria-label="Abrir o site do Dev to Dev">
+                <img src="/src/assets/dev-to-dev.png" loading="lazy" alt="Página inicial do Dev to Dev, com uma questão de JavaScript" width="1280" height="800" />
+              </a>
+              <div class="project-body">
+                <h3 class="project-title">Dev to Dev</h3>
+                <p class="project-desc">
+                  Quizzes comentados de programação, com revisão espaçada, glossário, trilhas de estudo e uma central de
+                  materiais. Sucessor do Front-End Quiz.
+                </p>
+                <ul class="chips chips-small">
+                  <li class="chip"><img src="/src/assets/icons/angular-icon.svg" alt="" width="18" height="18" />Angular</li>
+                  <li class="chip"><img src="/src/assets/icons/ts-icon.svg" alt="" width="18" height="18" />TypeScript</li>
+                  <li class="chip"><img src="/src/assets/icons/tailwind-icon.svg" alt="" width="18" height="18" />Tailwind</li>
+                  <li class="chip"><img src="/src/assets/icons/playwright.svg" alt="" width="18" height="18" />Playwright</li>
+                </ul>
+                <div class="project-links">
+                  <a href="https://devtodev.vercel.app" target="_blank" rel="noopener" class="btn btn-primary btn-small">
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-external" />
+                    </svg>
+                    Ver site
+                  </a>
+                  <a href="https://github.com/CristianDaniel1/dev-to-dev" target="_blank" rel="noopener" class="btn btn-ghost btn-small">
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-code" />
+                    </svg>
+                    Ver código
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="project" data-kind="fullstack">
+              <a
+                href="https://silverhand-store.vercel.app"
+                class="project-media"
+                target="_blank"
+                rel="noopener"
+                aria-label="Abrir o site do SilverHand"
+              >
+                <img
+                  src="/src/assets/silverhand.webp"
+                  loading="lazy"
+                  alt="SilverHand, e-commerce de guitarras"
+                  width="1903"
+                  height="1070"
+                />
+              </a>
+              <div class="project-body">
+                <h3 class="project-title">SilverHand</h3>
+                <p class="project-desc">E-commerce de guitarras feito de ponta a ponta, do front-end ao banco de dados.</p>
+                <ul class="chips chips-small">
+                  <li class="chip"><img src="/src/assets/icons/react-icon.svg" alt="" width="18" height="18" />React</li>
+                  <li class="chip"><img src="/src/assets/icons/node-icon.svg" alt="" width="18" height="18" />Node.js</li>
+                  <li class="chip"><img src="/src/assets/icons/ts-icon.svg" alt="" width="18" height="18" />TypeScript</li>
+                  <li class="chip"><img src="/src/assets/icons/tailwind-icon.svg" alt="" width="18" height="18" />Tailwind</li>
+                  <li class="chip"><img src="/src/assets/icons/PostgresSQL-icon.svg" alt="" width="18" height="18" />PostgreSQL</li>
+                </ul>
+                <div class="project-links">
+                  <a href="https://silverhand-store.vercel.app" target="_blank" rel="noopener" class="btn btn-primary btn-small">
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-external" />
+                    </svg>
+                    Ver site
+                  </a>
+                  <a
+                    href="https://github.com/CristianDaniel1/silverhand-fullstack"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn btn-ghost btn-small"
+                  >
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-code" />
+                    </svg>
+                    Ver código
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="project" data-kind="frontend">
               <a href="https://sky-now.vercel.app" class="project-media" target="_blank" rel="noopener" aria-label="Abrir o site do SkyNow">
-                <img src="/src/assets/sky-now.png" loading="lazy" alt="App de clima e previsão do tempo" width="520" height="400" />
+                <img
+                  src="/src/assets/sky-now.png"
+                  loading="lazy"
+                  alt="SkyNow, app de clima e previsão do tempo"
+                  width="1280"
+                  height="800"
+                />
               </a>
               <div class="project-body">
                 <h3 class="project-title">SkyNow</h3>
-                <p class="project-desc">App de clima e previsão do tempo.</p>
+                <p class="project-desc">
+                  App de clima com previsão para 5 dias, qualidade do ar e favoritos. Pode ser instalado (PWA) e funciona offline.
+                </p>
                 <ul class="chips chips-small">
                   <li class="chip"><img src="/src/assets/icons/react-icon.svg" alt="" width="18" height="18" />React</li>
                   <li class="chip"><img src="/src/assets/icons/ts-icon.svg" alt="" width="18" height="18" />TypeScript</li>
@@ -617,40 +708,36 @@
             </article>
             <article class="project" data-kind="frontend">
               <a
-                href="https://frontend-quiz-cris.vercel.app"
+                href="https://github.com/CristianDaniel1/pura-armonia"
                 class="project-media"
                 target="_blank"
                 rel="noopener"
-                aria-label="Abrir o site do Front-End Quiz"
+                aria-label="Ver o código do Pura Armonía no GitHub"
               >
                 <img
-                  src="/src/assets/front-end-quiz.png"
+                  src="/src/assets/pura-armonia.jpg"
                   loading="lazy"
-                  alt="Site de quizzes de tecnologias front-end"
-                  width="520"
-                  height="400"
+                  alt="Página inicial do site da banda Pura Armonía"
+                  width="1440"
+                  height="900"
                 />
               </a>
               <div class="project-body">
-                <h3 class="project-title">Front-End Quiz</h3>
-                <p class="project-desc">Quizzes sobre tecnologias front-end.</p>
+                <h3 class="project-title">Pura Armonía</h3>
+                <p class="project-desc">
+                  Site bilíngue de uma banda de cumbia boliviana de São Paulo, com videoclipes, galeria e contato pelo WhatsApp.
+                </p>
                 <ul class="chips chips-small">
-                  <li class="chip"><img src="/src/assets/icons/react-icon.svg" alt="" width="18" height="18" />React</li>
+                  <li class="chip"><img src="/src/assets/icons/angular-icon.svg" alt="" width="18" height="18" />Angular</li>
                   <li class="chip"><img src="/src/assets/icons/ts-icon.svg" alt="" width="18" height="18" />TypeScript</li>
                   <li class="chip"><img src="/src/assets/icons/tailwind-icon.svg" alt="" width="18" height="18" />Tailwind</li>
                 </ul>
                 <div class="project-links">
-                  <a href="https://frontend-quiz-cris.vercel.app" target="_blank" rel="noopener" class="btn btn-primary btn-small">
-                    <svg class="icon" aria-hidden="true">
-                      <use href="#i-external" />
-                    </svg>
-                    Ver site
-                  </a>
                   <a
-                    href="https://github.com/CristianDaniel1/front-end-quiz"
+                    href="https://github.com/CristianDaniel1/pura-armonia"
                     target="_blank"
                     rel="noopener"
-                    class="btn btn-ghost btn-small"
+                    class="btn btn-primary btn-small"
                   >
                     <svg class="icon" aria-hidden="true">
                       <use href="#i-code" />
