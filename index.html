@@ -15,16 +15,18 @@
     <meta property="og:title" content="Cristian Daniel, desenvolvedor Full-Stack" />
     <meta property="og:description" content="Experiência, projetos e tecnologias de Cristian Daniel, desenvolvedor Full-Stack." />
     <meta property="og:url" content="https://portfolio-cristiandev.vercel.app/" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Cristian Daniel" />
+    <!-- imagem de prévia ao compartilhar o link (LinkedIn, WhatsApp, X...) -->
+    <meta property="og:image" content="https://portfolio-cristiandev.vercel.app/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Página inicial do portfólio de Cristian Daniel, desenvolvedor Full-Stack" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="https://portfolio-cristiandev.vercel.app/" />
     <title>Cristian Daniel - Desenvolvedor Full-Stack</title>
     <link rel="icon" href="/favicon.png" type="image/png" sizes="64x64" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=Hanken+Grotesk:wght@300..800&display=swap"
-      rel="stylesheet"
-    />
     <script src="/theme-init.js"></script>
     <link rel="stylesheet" href="/src/styles/main.css" />
     <script type="application/ld+json">
@@ -117,13 +119,19 @@
       <symbol id="i-chevron-right" viewBox="0 0 24 24">
         <path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
       </symbol>
+      <symbol id="i-pause" viewBox="0 0 24 24">
+        <path d="M8 5v14M16 5v14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" />
+      </symbol>
+      <symbol id="i-play" viewBox="0 0 24 24">
+        <path d="M8 5.5v13l10.5-6.5z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+      </symbol>
     </svg>
 
     <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
     <header class="header">
       <div class="header-container container">
-        <a href="#inicio" class="header-name" aria-label="Cristian Dev, ir para o início">
+        <a href="#inicio" class="header-name">
           <svg class="icon icon-logo" aria-hidden="true">
             <use href="#i-logo" />
           </svg>
@@ -219,7 +227,7 @@
                   href="https://sky-now.vercel.app"
                   target="_blank"
                   rel="noopener"
-                  aria-label="Abrir o site do SkyNow"
+                  aria-label="sky-now.vercel.app: abrir o site do SkyNow"
                 >
                   <span class="window-bar" aria-hidden="true">
                     <span class="window-dots"></span>
@@ -227,7 +235,9 @@
                   </span>
                   <img
                     class="window-shot"
-                    src="/src/assets/sky-now.png"
+                    src="/src/assets/sky-now.webp"
+                    srcset="/src/assets/hero/sky-now-480.webp 480w, /src/assets/hero/sky-now-800.webp 800w"
+                    sizes="(max-width: 960px) 64vw, 340px"
                     alt="Tela do SkyNow, app de clima e previsão do tempo"
                     width="1280"
                     height="800"
@@ -238,7 +248,7 @@
                   href="https://devtodev.vercel.app"
                   target="_blank"
                   rel="noopener"
-                  aria-label="Abrir o site do Dev to Dev"
+                  aria-label="devtodev.vercel.app: abrir o site do Dev to Dev"
                 >
                   <span class="window-bar" aria-hidden="true">
                     <span class="window-dots"></span>
@@ -246,7 +256,9 @@
                   </span>
                   <img
                     class="window-shot"
-                    src="/src/assets/dev-to-dev.png"
+                    src="/src/assets/dev-to-dev.webp"
+                    srcset="/src/assets/hero/dev-to-dev-480.webp 480w, /src/assets/hero/dev-to-dev-800.webp 800w"
+                    sizes="(max-width: 960px) 62vw, 330px"
                     alt="Tela do Dev to Dev, site de quizzes comentados de programação"
                     width="1280"
                     height="800"
@@ -257,7 +269,7 @@
                   href="https://github.com/CristianDaniel1/gwent-remake"
                   target="_blank"
                   rel="noopener"
-                  aria-label="Ver o código do Gwent Remake no GitHub"
+                  aria-label="github.com/CristianDaniel1/gwent-remake: ver o código do Gwent Remake"
                 >
                   <span class="window-bar" aria-hidden="true">
                     <span class="window-dots"></span>
@@ -265,7 +277,10 @@
                   </span>
                   <img
                     class="window-shot window-shot-wide"
-                    src="/src/assets/gwent-remake.jpg"
+                    src="/src/assets/gwent-remake.webp"
+                    srcset="/src/assets/hero/gwent-remake-480.webp 480w, /src/assets/hero/gwent-remake-800.webp 800w"
+                    sizes="(max-width: 960px) 76vw, 400px"
+                    fetchpriority="high"
                     alt="Tela do Gwent Remake, partida do jogo de cartas"
                     width="1440"
                     height="810"
@@ -604,6 +619,12 @@
             </ul>
 
             <div class="vitrine-stage">
+              <!-- pausa a troca automática das imagens (aparece só com JavaScript) -->
+              <button type="button" class="vitrine-autoplay" data-autoplay-toggle data-state="playing">
+                <svg class="icon icon-pause" aria-hidden="true"><use href="#i-pause" /></svg>
+                <svg class="icon icon-play" aria-hidden="true"><use href="#i-play" /></svg>
+                <span class="vitrine-autoplay-label">Pausar imagens</span>
+              </button>
               <!-- Gwent Remake -->
               <article class="vitrine-panel vitrine-panel-wide is-active" id="vp-gwent">
                 <div class="vitrine-window" data-gallery>
@@ -611,21 +632,23 @@
                     <span class="window-dots"></span>
                     <span class="window-url">github.com/CristianDaniel1/gwent-remake</span>
                   </span>
-                  <button type="button" class="vitrine-shots" aria-label="Ampliar as imagens do Gwent Remake">
+                  <div class="vitrine-shots">
                     <span class="vitrine-shot vitrine-cover is-active">
-                      <img src="/src/assets/gwent-remake.jpg" alt="Gwent Remake: partida contra o computador" width="1440" height="810" loading="lazy" decoding="async" />
+                      <img src="/src/assets/gwent-remake.webp" alt="Gwent Remake: partida contra o computador" width="1440" height="810" loading="lazy" decoding="async" />
                       <span class="vitrine-cover-caption" aria-hidden="true"><span class="vitrine-cover-kind">Full-Stack</span><span class="vitrine-cover-name">Gwent Remake</span></span>
                     </span>
-                    <img class="vitrine-shot" src="/src/assets/projects/gwent-deck.jpg" alt="Gwent Remake: montador de baralho" width="1440" height="810" loading="lazy" decoding="async" />
-                    <img class="vitrine-shot" src="/src/assets/projects/gwent-cards.jpg" alt="Gwent Remake: detalhes das cartas da mão" width="1440" height="810" loading="lazy" decoding="async" />
-                    <span class="vitrine-zoom-hint" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-zoom" /></svg>Ampliar</span>
-                  </button>
+                    <img class="vitrine-shot" src="/src/assets/projects/gwent-deck.webp" alt="Gwent Remake: montador de baralho" width="1440" height="810" loading="lazy" decoding="async" />
+                    <img class="vitrine-shot" src="/src/assets/projects/gwent-cards.webp" alt="Gwent Remake: detalhes das cartas da mão" width="1440" height="810" loading="lazy" decoding="async" />
+                    <button type="button" class="vitrine-zoom" aria-label="Ampliar as imagens do Gwent Remake">
+                      <span class="vitrine-zoom-hint" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-zoom" /></svg>Ampliar</span>
+                    </button>
+                  </div>
                   <span class="vitrine-progress" aria-hidden="true"></span>
                 </div>
                 <div class="vitrine-thumbs">
-                  <button type="button" class="vitrine-thumb is-active" aria-label="Mostrar partida contra o computador"><img src="/src/assets/projects/thumbs/gwent-remake.jpg" alt="" width="480" height="270" decoding="async" loading="lazy" /></button>
-                  <button type="button" class="vitrine-thumb" aria-label="Mostrar montador de baralho"><img src="/src/assets/projects/thumbs/gwent-deck.jpg" alt="" width="480" height="270" decoding="async" loading="lazy" /></button>
-                  <button type="button" class="vitrine-thumb" aria-label="Mostrar detalhes das cartas"><img src="/src/assets/projects/thumbs/gwent-cards.jpg" alt="" width="480" height="270" decoding="async" loading="lazy" /></button>
+                  <button type="button" class="vitrine-thumb is-active" aria-label="Mostrar partida contra o computador"><img src="/src/assets/projects/thumbs/gwent-remake.webp" alt="" width="480" height="270" decoding="async" loading="lazy" /></button>
+                  <button type="button" class="vitrine-thumb" aria-label="Mostrar montador de baralho"><img src="/src/assets/projects/thumbs/gwent-deck.webp" alt="" width="480" height="270" decoding="async" loading="lazy" /></button>
+                  <button type="button" class="vitrine-thumb" aria-label="Mostrar detalhes das cartas"><img src="/src/assets/projects/thumbs/gwent-cards.webp" alt="" width="480" height="270" decoding="async" loading="lazy" /></button>
                 </div>
                 <div class="vitrine-info">
                   <h3 class="vitrine-title visually-hidden">Gwent Remake</h3>
@@ -657,21 +680,23 @@
                     <span class="window-dots"></span>
                     <span class="window-url">devtodev.vercel.app</span>
                   </span>
-                  <button type="button" class="vitrine-shots" aria-label="Ampliar as imagens do Dev to Dev">
+                  <div class="vitrine-shots">
                     <span class="vitrine-shot vitrine-cover is-active">
-                      <img src="/src/assets/dev-to-dev.png" alt="Dev to Dev: página inicial" width="1280" height="800" loading="lazy" decoding="async" />
+                      <img src="/src/assets/dev-to-dev.webp" alt="Dev to Dev: página inicial" width="1280" height="800" loading="lazy" decoding="async" />
                       <span class="vitrine-cover-caption" aria-hidden="true"><span class="vitrine-cover-kind">Front-End</span><span class="vitrine-cover-name">Dev to Dev</span></span>
                     </span>
-                    <img class="vitrine-shot" src="/src/assets/projects/devtodev-quiz.jpg" alt="Dev to Dev: questão respondida com a explicação" width="1280" height="800" loading="lazy" decoding="async" />
-                    <img class="vitrine-shot" src="/src/assets/projects/devtodev-trilha.jpg" alt="Dev to Dev: trilha de estudo" width="1280" height="800" loading="lazy" decoding="async" />
-                    <span class="vitrine-zoom-hint" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-zoom" /></svg>Ampliar</span>
-                  </button>
+                    <img class="vitrine-shot" src="/src/assets/projects/devtodev-quiz.webp" alt="Dev to Dev: questão respondida com a explicação" width="1280" height="800" loading="lazy" decoding="async" />
+                    <img class="vitrine-shot" src="/src/assets/projects/devtodev-trilha.webp" alt="Dev to Dev: trilha de estudo" width="1280" height="800" loading="lazy" decoding="async" />
+                    <button type="button" class="vitrine-zoom" aria-label="Ampliar as imagens do Dev to Dev">
+                      <span class="vitrine-zoom-hint" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-zoom" /></svg>Ampliar</span>
+                    </button>
+                  </div>
                   <span class="vitrine-progress" aria-hidden="true"></span>
                 </div>
                 <div class="vitrine-thumbs">
-                  <button type="button" class="vitrine-thumb is-active" aria-label="Mostrar página inicial"><img src="/src/assets/projects/thumbs/dev-to-dev.jpg" alt="" width="480" height="300" decoding="async" loading="lazy" /></button>
-                  <button type="button" class="vitrine-thumb" aria-label="Mostrar questão respondida"><img src="/src/assets/projects/thumbs/devtodev-quiz.jpg" alt="" width="480" height="300" decoding="async" loading="lazy" /></button>
-                  <button type="button" class="vitrine-thumb" aria-label="Mostrar trilha de estudo"><img src="/src/assets/projects/thumbs/devtodev-trilha.jpg" alt="" width="480" height="300" decoding="async" loading="lazy" /></button>
+                  <button type="button" class="vitrine-thumb is-active" aria-label="Mostrar página inicial"><img src="/src/assets/projects/thumbs/dev-to-dev.webp" alt="" width="480" height="300" decoding="async" loading="lazy" /></button>
+                  <button type="button" class="vitrine-thumb" aria-label="Mostrar questão respondida"><img src="/src/assets/projects/thumbs/devtodev-quiz.webp" alt="" width="480" height="300" decoding="async" loading="lazy" /></button>
+                  <button type="button" class="vitrine-thumb" aria-label="Mostrar trilha de estudo"><img src="/src/assets/projects/thumbs/devtodev-trilha.webp" alt="" width="480" height="300" decoding="async" loading="lazy" /></button>
                 </div>
                 <div class="vitrine-info">
                   <h3 class="vitrine-title visually-hidden">Dev to Dev</h3>
@@ -705,21 +730,23 @@
                     <span class="window-dots"></span>
                     <span class="window-url">silverhand-store.vercel.app</span>
                   </span>
-                  <button type="button" class="vitrine-shots" aria-label="Ampliar as imagens do SilverHand">
+                  <div class="vitrine-shots">
                     <span class="vitrine-shot vitrine-cover is-active">
                       <img src="/src/assets/silverhand.webp" alt="SilverHand: página inicial" width="1903" height="1070" loading="lazy" decoding="async" />
                       <span class="vitrine-cover-caption" aria-hidden="true"><span class="vitrine-cover-kind">Full-Stack</span><span class="vitrine-cover-name">SilverHand</span></span>
                     </span>
-                    <img class="vitrine-shot" src="/src/assets/projects/silverhand-produto.jpg" alt="SilverHand: página de um produto" width="1280" height="800" loading="lazy" decoding="async" />
-                    <img class="vitrine-shot" src="/src/assets/projects/silverhand-cadastro.jpg" alt="SilverHand: cadastro de cliente" width="1280" height="800" loading="lazy" decoding="async" />
-                    <span class="vitrine-zoom-hint" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-zoom" /></svg>Ampliar</span>
-                  </button>
+                    <img class="vitrine-shot" src="/src/assets/projects/silverhand-produto.webp" alt="SilverHand: página de um produto" width="1280" height="800" loading="lazy" decoding="async" />
+                    <img class="vitrine-shot" src="/src/assets/projects/silverhand-cadastro.webp" alt="SilverHand: cadastro de cliente" width="1280" height="800" loading="lazy" decoding="async" />
+                    <button type="button" class="vitrine-zoom" aria-label="Ampliar as imagens do SilverHand">
+                      <span class="vitrine-zoom-hint" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-zoom" /></svg>Ampliar</span>
+                    </button>
+                  </div>
                   <span class="vitrine-progress" aria-hidden="true"></span>
                 </div>
                 <div class="vitrine-thumbs">
-                  <button type="button" class="vitrine-thumb is-active" aria-label="Mostrar página inicial"><img src="/src/assets/projects/thumbs/silverhand.jpg" alt="" width="480" height="270" decoding="async" loading="lazy" /></button>
-                  <button type="button" class="vitrine-thumb" aria-label="Mostrar página de produto"><img src="/src/assets/projects/thumbs/silverhand-produto.jpg" alt="" width="480" height="300" decoding="async" loading="lazy" /></button>
-                  <button type="button" class="vitrine-thumb" aria-label="Mostrar cadastro de cliente"><img src="/src/assets/projects/thumbs/silverhand-cadastro.jpg" alt="" width="480" height="300" decoding="async" loading="lazy" /></button>
+                  <button type="button" class="vitrine-thumb is-active" aria-label="Mostrar página inicial"><img src="/src/assets/projects/thumbs/silverhand.webp" alt="" width="480" height="270" decoding="async" loading="lazy" /></button>
+                  <button type="button" class="vitrine-thumb" aria-label="Mostrar página de produto"><img src="/src/assets/projects/thumbs/silverhand-produto.webp" alt="" width="480" height="300" decoding="async" loading="lazy" /></button>
+                  <button type="button" class="vitrine-thumb" aria-label="Mostrar cadastro de cliente"><img src="/src/assets/projects/thumbs/silverhand-cadastro.webp" alt="" width="480" height="300" decoding="async" loading="lazy" /></button>
                 </div>
                 <div class="vitrine-info">
                   <h3 class="vitrine-title visually-hidden">SilverHand</h3>
@@ -751,21 +778,23 @@
                     <span class="window-dots"></span>
                     <span class="window-url">sky-now.vercel.app</span>
                   </span>
-                  <button type="button" class="vitrine-shots" aria-label="Ampliar as imagens do SkyNow">
+                  <div class="vitrine-shots">
                     <span class="vitrine-shot vitrine-cover is-active">
-                      <img src="/src/assets/sky-now.png" alt="SkyNow: clima de hoje" width="1280" height="800" loading="lazy" decoding="async" />
+                      <img src="/src/assets/sky-now.webp" alt="SkyNow: clima de hoje" width="1280" height="800" loading="lazy" decoding="async" />
                       <span class="vitrine-cover-caption" aria-hidden="true"><span class="vitrine-cover-kind">Front-End</span><span class="vitrine-cover-name">SkyNow</span></span>
                     </span>
-                    <img class="vitrine-shot" src="/src/assets/projects/skynow-escuro.jpg" alt="SkyNow: tema escuro" width="1280" height="800" loading="lazy" decoding="async" />
-                    <img class="vitrine-shot" src="/src/assets/projects/skynow-previsao.jpg" alt="SkyNow: previsão das próximas horas" width="1280" height="800" loading="lazy" decoding="async" />
-                    <span class="vitrine-zoom-hint" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-zoom" /></svg>Ampliar</span>
-                  </button>
+                    <img class="vitrine-shot" src="/src/assets/projects/skynow-escuro.webp" alt="SkyNow: tema escuro" width="1280" height="800" loading="lazy" decoding="async" />
+                    <img class="vitrine-shot" src="/src/assets/projects/skynow-previsao.webp" alt="SkyNow: previsão das próximas horas" width="1280" height="800" loading="lazy" decoding="async" />
+                    <button type="button" class="vitrine-zoom" aria-label="Ampliar as imagens do SkyNow">
+                      <span class="vitrine-zoom-hint" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-zoom" /></svg>Ampliar</span>
+                    </button>
+                  </div>
                   <span class="vitrine-progress" aria-hidden="true"></span>
                 </div>
                 <div class="vitrine-thumbs">
-                  <button type="button" class="vitrine-thumb is-active" aria-label="Mostrar clima de hoje"><img src="/src/assets/projects/thumbs/sky-now.jpg" alt="" width="480" height="300" decoding="async" loading="lazy" /></button>
-                  <button type="button" class="vitrine-thumb" aria-label="Mostrar tema escuro"><img src="/src/assets/projects/thumbs/skynow-escuro.jpg" alt="" width="480" height="300" decoding="async" loading="lazy" /></button>
-                  <button type="button" class="vitrine-thumb" aria-label="Mostrar previsão das próximas horas"><img src="/src/assets/projects/thumbs/skynow-previsao.jpg" alt="" width="480" height="300" decoding="async" loading="lazy" /></button>
+                  <button type="button" class="vitrine-thumb is-active" aria-label="Mostrar clima de hoje"><img src="/src/assets/projects/thumbs/sky-now.webp" alt="" width="480" height="300" decoding="async" loading="lazy" /></button>
+                  <button type="button" class="vitrine-thumb" aria-label="Mostrar tema escuro"><img src="/src/assets/projects/thumbs/skynow-escuro.webp" alt="" width="480" height="300" decoding="async" loading="lazy" /></button>
+                  <button type="button" class="vitrine-thumb" aria-label="Mostrar previsão das próximas horas"><img src="/src/assets/projects/thumbs/skynow-previsao.webp" alt="" width="480" height="300" decoding="async" loading="lazy" /></button>
                 </div>
                 <div class="vitrine-info">
                   <h3 class="vitrine-title visually-hidden">SkyNow</h3>
@@ -798,21 +827,23 @@
                     <span class="window-dots"></span>
                     <span class="window-url">github.com/CristianDaniel1/pura-armonia</span>
                   </span>
-                  <button type="button" class="vitrine-shots" aria-label="Ampliar as imagens do Pura Armonía">
+                  <div class="vitrine-shots">
                     <span class="vitrine-shot vitrine-cover is-active">
-                      <img src="/src/assets/pura-armonia.jpg" alt="Pura Armonía: página inicial" width="1440" height="900" loading="lazy" decoding="async" />
+                      <img src="/src/assets/pura-armonia.webp" alt="Pura Armonía: página inicial" width="1440" height="900" loading="lazy" decoding="async" />
                       <span class="vitrine-cover-caption" aria-hidden="true"><span class="vitrine-cover-kind">Front-End</span><span class="vitrine-cover-name">Pura Armonía</span></span>
                     </span>
-                    <img class="vitrine-shot" src="/src/assets/projects/pura-galeria.jpg" alt="Pura Armonía: galeria de fotos" width="1280" height="800" loading="lazy" decoding="async" />
-                    <img class="vitrine-shot" src="/src/assets/projects/pura-eventos.jpg" alt="Pura Armonía: tipos de evento" width="1280" height="800" loading="lazy" decoding="async" />
-                    <span class="vitrine-zoom-hint" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-zoom" /></svg>Ampliar</span>
-                  </button>
+                    <img class="vitrine-shot" src="/src/assets/projects/pura-galeria.webp" alt="Pura Armonía: galeria de fotos" width="1280" height="800" loading="lazy" decoding="async" />
+                    <img class="vitrine-shot" src="/src/assets/projects/pura-eventos.webp" alt="Pura Armonía: tipos de evento" width="1280" height="800" loading="lazy" decoding="async" />
+                    <button type="button" class="vitrine-zoom" aria-label="Ampliar as imagens do Pura Armonía">
+                      <span class="vitrine-zoom-hint" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-zoom" /></svg>Ampliar</span>
+                    </button>
+                  </div>
                   <span class="vitrine-progress" aria-hidden="true"></span>
                 </div>
                 <div class="vitrine-thumbs">
-                  <button type="button" class="vitrine-thumb is-active" aria-label="Mostrar página inicial"><img src="/src/assets/projects/thumbs/pura-armonia.jpg" alt="" width="480" height="300" decoding="async" loading="lazy" /></button>
-                  <button type="button" class="vitrine-thumb" aria-label="Mostrar galeria de fotos"><img src="/src/assets/projects/thumbs/pura-galeria.jpg" alt="" width="480" height="300" decoding="async" loading="lazy" /></button>
-                  <button type="button" class="vitrine-thumb" aria-label="Mostrar tipos de evento"><img src="/src/assets/projects/thumbs/pura-eventos.jpg" alt="" width="480" height="300" decoding="async" loading="lazy" /></button>
+                  <button type="button" class="vitrine-thumb is-active" aria-label="Mostrar página inicial"><img src="/src/assets/projects/thumbs/pura-armonia.webp" alt="" width="480" height="300" decoding="async" loading="lazy" /></button>
+                  <button type="button" class="vitrine-thumb" aria-label="Mostrar galeria de fotos"><img src="/src/assets/projects/thumbs/pura-galeria.webp" alt="" width="480" height="300" decoding="async" loading="lazy" /></button>
+                  <button type="button" class="vitrine-thumb" aria-label="Mostrar tipos de evento"><img src="/src/assets/projects/thumbs/pura-eventos.webp" alt="" width="480" height="300" decoding="async" loading="lazy" /></button>
                 </div>
                 <div class="vitrine-info">
                   <h3 class="vitrine-title visually-hidden">Pura Armonía</h3>
@@ -840,21 +871,23 @@
                     <span class="window-dots"></span>
                     <span class="window-url">roweam-clone.vercel.app</span>
                   </span>
-                  <button type="button" class="vitrine-shots" aria-label="Ampliar as imagens do Roweam Clone">
+                  <div class="vitrine-shots">
                     <span class="vitrine-shot vitrine-cover is-active">
-                      <img src="/src/assets/roweam-clone.png" alt="Roweam Clone: página inicial" width="1256" height="942" loading="lazy" decoding="async" />
+                      <img src="/src/assets/roweam-clone.webp" alt="Roweam Clone: página inicial" width="1256" height="942" loading="lazy" decoding="async" />
                       <span class="vitrine-cover-caption" aria-hidden="true"><span class="vitrine-cover-kind">Front-End</span><span class="vitrine-cover-name">Roweam Clone</span></span>
                     </span>
-                    <img class="vitrine-shot" src="/src/assets/projects/roweam-loja.jpg" alt="Roweam Clone: loja" width="1280" height="800" loading="lazy" decoding="async" />
-                    <img class="vitrine-shot" src="/src/assets/projects/roweam-produto.jpg" alt="Roweam Clone: produto e carrinho" width="1280" height="800" loading="lazy" decoding="async" />
-                    <span class="vitrine-zoom-hint" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-zoom" /></svg>Ampliar</span>
-                  </button>
+                    <img class="vitrine-shot" src="/src/assets/projects/roweam-loja.webp" alt="Roweam Clone: loja" width="1280" height="800" loading="lazy" decoding="async" />
+                    <img class="vitrine-shot" src="/src/assets/projects/roweam-produto.webp" alt="Roweam Clone: produto e carrinho" width="1280" height="800" loading="lazy" decoding="async" />
+                    <button type="button" class="vitrine-zoom" aria-label="Ampliar as imagens do Roweam Clone">
+                      <span class="vitrine-zoom-hint" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-zoom" /></svg>Ampliar</span>
+                    </button>
+                  </div>
                   <span class="vitrine-progress" aria-hidden="true"></span>
                 </div>
                 <div class="vitrine-thumbs">
-                  <button type="button" class="vitrine-thumb is-active" aria-label="Mostrar página inicial"><img src="/src/assets/projects/thumbs/roweam-clone.jpg" alt="" width="480" height="360" decoding="async" loading="lazy" /></button>
-                  <button type="button" class="vitrine-thumb" aria-label="Mostrar loja"><img src="/src/assets/projects/thumbs/roweam-loja.jpg" alt="" width="480" height="300" decoding="async" loading="lazy" /></button>
-                  <button type="button" class="vitrine-thumb" aria-label="Mostrar produto e carrinho"><img src="/src/assets/projects/thumbs/roweam-produto.jpg" alt="" width="480" height="300" decoding="async" loading="lazy" /></button>
+                  <button type="button" class="vitrine-thumb is-active" aria-label="Mostrar página inicial"><img src="/src/assets/projects/thumbs/roweam-clone.webp" alt="" width="480" height="360" decoding="async" loading="lazy" /></button>
+                  <button type="button" class="vitrine-thumb" aria-label="Mostrar loja"><img src="/src/assets/projects/thumbs/roweam-loja.webp" alt="" width="480" height="300" decoding="async" loading="lazy" /></button>
+                  <button type="button" class="vitrine-thumb" aria-label="Mostrar produto e carrinho"><img src="/src/assets/projects/thumbs/roweam-produto.webp" alt="" width="480" height="300" decoding="async" loading="lazy" /></button>
                 </div>
                 <div class="vitrine-info">
                   <h3 class="vitrine-title visually-hidden">Roweam Clone</h3>

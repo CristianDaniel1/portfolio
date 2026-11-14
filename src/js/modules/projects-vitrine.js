@@ -15,12 +15,14 @@ export const initProjectsVitrine = () => {
   const tabs = [...vitrine.querySelectorAll('.vitrine-tab')];
   const panels = [...vitrine.querySelectorAll('.vitrine-panel')];
   const stage = vitrine.querySelector('.vitrine-stage');
+  const autoplayBtn = vitrine.querySelector('[data-autoplay-toggle]');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   let activePanel = panels.find(panel => panel.classList.contains('is-active')) ?? panels[0];
   let timer;
   let inView = false;
-  let paused = false;
+  let paused = false; // pausa temporária: mouse ou foco no palco
+  let stoppedByUser = false; // pausa pelo botão "Pausar imagens"
   let lightboxOpen = false;
   let switchId = 0;
 
@@ -30,7 +32,7 @@ export const initProjectsVitrine = () => {
   // a capa é um <span> com a imagem dentro; as outras imagens são o próprio <img>
   const imageOf = shot => (shot.tagName === 'IMG' ? shot : shot.querySelector('img'));
 
-  const canPlay = () => inView && !paused && !lightboxOpen && !reduceMotion.matches;
+  const canPlay = () => inView && !paused && !stoppedByUser && !lightboxOpen && !reduceMotion.matches;
 
   const restartProgress = () => {
     const bar = activePanel.querySelector('.vitrine-progress');
@@ -54,7 +56,11 @@ export const initProjectsVitrine = () => {
 
   const showShot = index => {
     shotsOf(activePanel).forEach((shot, i) => shot.classList.toggle('is-active', i === index));
-    thumbsOf(activePanel).forEach((thumb, i) => thumb.classList.toggle('is-active', i === index));
+    thumbsOf(activePanel).forEach((thumb, i) => {
+      thumb.classList.toggle('is-active', i === index);
+      // leitores de tela anunciam qual miniatura está selecionada
+      thumb.setAttribute('aria-pressed', String(i === index));
+    });
   };
 
   // As imagens usam loading="lazy"; as de projetos escondidos só carregariam ao aparecer,
@@ -139,7 +145,7 @@ export const initProjectsVitrine = () => {
   };
 
   stage.addEventListener('click', ({ target }) => {
-    if (target.closest('.vitrine-shots')) {
+    if (target.closest('.vitrine-zoom')) {
       openZoom();
       return;
     }
@@ -178,5 +184,17 @@ export const initProjectsVitrine = () => {
 
   reduceMotion.addEventListener('change', schedule);
 
+  // botão para pausar a troca automática (WCAG 2.2.2: conteúdo que se move sozinho por
+  // mais de 5 segundos precisa de um controle para pausar)
+  autoplayBtn?.addEventListener('click', () => {
+    stoppedByUser = !stoppedByUser;
+    autoplayBtn.dataset.state = stoppedByUser ? 'paused' : 'playing';
+    autoplayBtn.querySelector('.vitrine-autoplay-label').textContent = stoppedByUser
+      ? 'Retomar imagens'
+      : 'Pausar imagens';
+    schedule();
+  });
+
   vitrine.style.setProperty('--duration', `${AUTOPLAY_MS}ms`);
+  showShot(currentIndex(activePanel));
 };

@@ -73,6 +73,62 @@
 }
 
 /* ---------- Palco ---------- */
+.vitrine-stage {
+  position: relative;
+}
+
+/* botão de pausar/retomar a troca automática, na barra da janela */
+.vitrine-autoplay {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  z-index: 3;
+  display: none;
+  align-items: center;
+  gap: 0.6rem;
+  height: 3.2rem;
+  padding-inline: 0.8rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text);
+  border-radius: var(--radius-s);
+  transition: color 0.25s;
+}
+
+/* só aparece com JavaScript (sem ele, nada troca sozinho) */
+:root[data-theme] .vitrine-autoplay {
+  display: inline-flex;
+}
+
+.vitrine-autoplay:hover {
+  color: var(--ink);
+}
+
+.vitrine-autoplay .icon {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.vitrine-autoplay[data-state='playing'] .icon-play,
+.vitrine-autoplay[data-state='paused'] .icon-pause {
+  display: none;
+}
+
+/* abre espaço na barra para o botão não ficar por cima do endereço */
+.vitrine-window .window-bar {
+  padding-right: 15rem;
+}
+
+/* com "reduzir movimento" não há troca automática, então o botão some */
+@media (prefers-reduced-motion: reduce) {
+  :root[data-theme] .vitrine-autoplay {
+    display: none;
+  }
+
+  .vitrine-window .window-bar {
+    padding-right: 1.2rem;
+  }
+}
 .vitrine-panel {
   display: none;
 }
@@ -114,14 +170,13 @@
   box-shadow: 0 2.4rem 4.8rem -2.8rem var(--shadow);
 }
 
-/* a área das imagens é um botão: clicar amplia (veja lightbox.css) */
+/* área das imagens; o botão .vitrine-zoom cobre toda ela e abre o lightbox */
 .vitrine-shots {
   position: relative;
   display: block;
   width: 100%;
   aspect-ratio: 16 / 10;
   overflow: hidden;
-  cursor: zoom-in;
   /* durante a troca de projeto, recebe a imagem anterior como fundo (veja o JS).
      Ajustada pela largura, ela mantém a mesma escala mesmo quando o palco muda de
      formato (16:9 do Gwent para 16:10 dos outros), sem dar um "salto" de zoom. */
@@ -228,6 +283,20 @@
   text-wrap: balance;
 }
 
+/* ---------- Botão de ampliar ----------
+   Uma camada transparente sobre as imagens. Fica fora do texto da capa para que o nome
+   lido por leitores de tela comece pelo texto visível ("Ampliar"). */
+.vitrine-zoom {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  cursor: zoom-in;
+}
+
+.vitrine-zoom:focus-visible {
+  outline-offset: -4px;
+}
+
 /* ---------- Dica "Ampliar" ---------- */
 .vitrine-zoom-hint {
   position: absolute;
@@ -241,10 +310,10 @@
   font-size: 1.3rem;
   font-weight: 600;
   color: #ffffff;
-  background-color: rgba(14, 12, 12, 0.7);
+  /* fundo sólido: um desfoque aqui seria recalculado a cada quadro, já que a imagem
+     embaixo está sempre animando */
+  background-color: rgba(14, 12, 12, 0.82);
   border-radius: 99rem;
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
   opacity: 0;
   translate: 0 -0.6rem;
   transition:
@@ -258,8 +327,8 @@
   fill: none;
 }
 
-.vitrine-shots:hover .vitrine-zoom-hint,
-.vitrine-shots:focus-visible .vitrine-zoom-hint {
+.vitrine-zoom:hover .vitrine-zoom-hint,
+.vitrine-zoom:focus-visible .vitrine-zoom-hint {
   opacity: 1;
   translate: 0 0;
 }
@@ -270,10 +339,6 @@
     opacity: 1;
     translate: 0 0;
   }
-}
-
-.vitrine-shots:focus-visible {
-  outline-offset: -4px;
 }
 
 /* barra dourada que enche enquanto a imagem está na tela */

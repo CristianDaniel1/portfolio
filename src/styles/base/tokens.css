@@ -40,9 +40,9 @@
   --inv-text: light-dark(#bdbab9, #4a4848);
   --inv-line: light-dark(rgba(255, 255, 255, 0.18), rgba(20, 20, 20, 0.2));
 
-  /* As fontes (Newsreader e Hanken Grotesk) são carregadas no <head> do index.html */
-  --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
-  --font-body: 'Hanken Grotesk', 'Inter', system-ui, sans-serif;
+  /* As fontes (Newsreader e Hanken Grotesk) são importadas no início do main.css */
+  --font-display: 'Newsreader Variable', Georgia, 'Times New Roman', serif;
+  --font-body: 'Hanken Grotesk Variable', 'Inter', system-ui, sans-serif;
 
   --radius-s: 0.9rem;
   --radius-m: 1.6rem;

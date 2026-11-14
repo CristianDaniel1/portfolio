@@ -27,6 +27,12 @@
   color: var(--ink);
 }
 
+/* link dentro de uma frase: sublinhado, para não depender só da cor */
+.footer-link {
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
+
 .footer-top {
   display: inline-flex;
   align-items: center;

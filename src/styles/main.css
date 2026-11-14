@@ -1,6 +1,13 @@
 /* Ponto de entrada do CSS. A ordem importa: base → componentes → layout → seções.
    O Vite junta todos os @import em um único arquivo no build. */
 
+/* Fontes (hospedadas no próprio site, via @fontsource: sem depender do Google Fonts,
+   que bloqueava a primeira pintura). O unicode-range de cada arquivo faz o navegador
+   baixar só o alfabeto usado (latino). */
+@import '@fontsource-variable/newsreader/opsz.css';
+@import '@fontsource-variable/newsreader/opsz-italic.css';
+@import '@fontsource-variable/hanken-grotesk/index.css';
+
 /* Base */
 @import './base/tokens.css';
 @import './base/reset.css';
