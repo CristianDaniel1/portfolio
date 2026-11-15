@@ -37,8 +37,8 @@
 
 .job-type {
   display: inline-block;
-  padding: 0.3rem 1.2rem;
-  font-size: 1.4rem;
+  padding: 0.2rem 1.1rem;
+  font-size: 1.3rem;
   font-weight: 600;
   line-height: 1.5;
   color: var(--accent-text);
@@ -52,7 +52,7 @@
 }
 
 .job-role {
-  margin-top: 1.6rem;
+  margin-top: 0;
   font-family: var(--font-display);
   font-size: clamp(2.6rem, 2.8vw, 3.2rem);
   font-weight: 500;
@@ -69,7 +69,11 @@
 }
 
 .job-date {
-  margin-top: 0.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1rem;
+  margin-top: 0.8rem;
   font-size: 1.5rem;
 }
 

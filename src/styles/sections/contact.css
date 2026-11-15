@@ -2,18 +2,116 @@
   border-top: none;
 }
 
-.contact-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.2rem;
+/* canais de contato: uma linha por canal, o endereço é o link */
+.channels {
+  max-width: 88rem;
+  border-top: 1px solid var(--line);
 }
 
-@media screen and (max-width: 480px) {
-  .contact-list li {
-    flex: 1 1 100%;
+.channel {
+  position: relative;
+  display: grid;
+  grid-template-columns: 12rem minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.6rem clamp(2rem, 3vw, 3.2rem);
+  min-height: 8.4rem;
+  padding-block: 1.8rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.channel-label {
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.channel-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  justify-self: start;
+  max-width: 100%;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 2.6vw, 2.8rem);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  color: var(--ink);
+  transition: color 0.25s;
+}
+
+.channel-link span {
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  transition: text-decoration-color 0.25s;
+}
+
+.channel-link .icon {
+  flex: none;
+  width: 0.7em;
+  height: 0.7em;
+  color: var(--accent-text);
+  transition: transform 0.35s var(--ease);
+}
+
+/* a linha inteira é clicável pelo link */
+.channel-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.channel-action {
+  position: relative;
+  z-index: 1;
+}
+
+.channel:hover .channel-link {
+  color: var(--accent-text);
+}
+
+.channel:hover .channel-link span {
+  text-decoration-color: var(--accent);
+}
+
+.channel:hover .channel-link .icon {
+  transform: translate(0.12em, -0.12em);
+}
+
+.channel-link:focus-visible {
+  outline: none;
+}
+
+.channel:has(.channel-link:focus-visible) {
+  outline: 2px solid var(--accent);
+  outline-offset: 0.4rem;
+  border-radius: 0.4rem;
+}
+
+@media screen and (max-width: 600px) {
+  .channel {
+    grid-template-columns: minmax(0, 1fr) auto;
+    min-height: 0;
   }
 
-  .contact-list .btn {
-    width: 100%;
+  .channel-label {
+    grid-column: 1 / -1;
+    font-size: 1.3rem;
+  }
+
+  .channel-link {
+    font-size: clamp(1.7rem, 4.8vw, 2rem);
+  }
+
+  /* no celular o botão de copiar vai para baixo do endereço */
+  .channel:has(.channel-action) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .channel-action {
+    justify-self: start;
   }
 }

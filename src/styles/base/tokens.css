@@ -34,12 +34,6 @@
   --shadow: light-dark(rgba(28, 27, 27, 0.3), rgba(0, 0, 0, 0.7));
   --header-bg: light-dark(rgba(244, 244, 243, 0.9), rgba(20, 20, 20, 0.9));
 
-  /* seções invertidas (Serviços): carbono no claro, clara no escuro */
-  --inv-bg: light-dark(#1c1b1b, #ededec);
-  --inv-title: light-dark(#f4f4f3, #141414);
-  --inv-text: light-dark(#bdbab9, #4a4848);
-  --inv-line: light-dark(rgba(255, 255, 255, 0.18), rgba(20, 20, 20, 0.2));
-
   /* As fontes (Newsreader e Hanken Grotesk) são importadas no início do main.css */
   --font-display: 'Newsreader Variable', Georgia, 'Times New Roman', serif;
   --font-body: 'Hanken Grotesk Variable', 'Inter', system-ui, sans-serif;
