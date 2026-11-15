@@ -82,6 +82,16 @@ export const initHeroShowcase = () => {
 
   pause?.addEventListener('click', () => setAuto(!show.classList.contains('is-auto')));
 
+  // no celular a pausa vai para a barra de endereço, para sobrar espaço aos nomes nas abas
+  const address = show.querySelector('.hs-address');
+  const bar = pause?.parentElement;
+  const small = window.matchMedia('(max-width: 600px)');
+  const placePause = () => {
+    if (pause && address && bar) (small.matches ? address : bar).append(pause);
+  };
+  small.addEventListener('change', placePause);
+  placePause();
+
   syncLinks();
 
   if (slides.length > 1 && !REDUCED.matches) {

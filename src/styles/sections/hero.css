@@ -41,7 +41,7 @@
 
 .hero-description {
   max-width: 62ch;
-  margin-top: 0.4rem;
+  margin-top: 1.4rem; /* espaço para a seta sob "tela ao servidor" */
   font-size: clamp(1.65rem, 1.3vw, 1.8rem);
   line-height: 1.65;
 }
@@ -80,7 +80,7 @@
   border-color: var(--accent);
 }
 
-/* ---------- Traço feito à mão: marca-texto no nome e círculo em "servidor" ---------- */
+/* ---------- Traço feito à mão: marca-texto no nome e traço sob "tela ao servidor" ---------- */
 .scribble {
   position: relative;
   display: inline-block;
@@ -122,28 +122,28 @@
 .scribble-marker path {
   stroke: light-dark(color-mix(in srgb, var(--mark) 80%, transparent), color-mix(in srgb, var(--mark) 42%, transparent));
   stroke-width: 0.19em;
+  --d: 0.6s;
+  animation-duration: 0.8s;
 }
 
-.scribble-loop svg {
-  left: -0.4em;
-  top: -0.4em;
-  width: calc(100% + 0.8em);
-  height: calc(100% + 0.8em);
+/* seta escrita: sai de baixo da "tela" e aponta para o "servidor" (o percurso da frase) */
+.scribble-arrow svg {
+  left: 0;
+  top: calc(100% - 0.05em);
+  width: 100%;
+  height: 0.55em;
 }
 
-.hero-role .scribble-loop {
-  margin-left: 0.3em;
-}
-
-.scribble-loop path {
-  stroke: var(--accent);
+.scribble-arrow path {
+  stroke: var(--accent-text);
   stroke-width: 2;
-  --d: 1.3s;
+  --d: 1.4s;
+  animation-duration: 1.1s;
 }
 
 /* ---------- Vitrine: projetos anotados numa janela com abas ---------- */
 .showcase {
-  --t0: 1.1s; /* atraso das notas na abertura da página */
+  --t0: 2.4s; /* as notas entram depois da seta escrita */
   position: relative;
   isolation: isolate;
   margin-top: clamp(3.6rem, 4.4vw, 5rem);
@@ -181,8 +181,8 @@
   box-shadow: 0 3rem 6rem -3rem var(--shadow);
 }
 
-/* barra de abas, como num navegador */
-.hs-bar {
+/* barra de abas, como num navegador (.window-bar.hs-bar vence a altura fixa de .window-bar) */
+.window-bar.hs-bar {
   height: auto;
   align-items: flex-end;
   gap: 0.8rem;
@@ -192,7 +192,7 @@
 
 .hs-bar .window-dots {
   align-self: center;
-  margin-right: 1.6rem;
+  margin-right: 3.2rem; /* os outros dois pontos são sombras de 1,2 e 2,4rem: a margem precisa cobri-los */
 }
 
 .hs-tabs {
@@ -202,24 +202,27 @@
   gap: 0.4rem;
 }
 
-/* abas inativas têm fundo próprio, para parecerem clicáveis */
+/* abas como num navegador: as inativas ficam soltas na barra (separadas por um traço fino)
+   e a ativa desce até a barra de endereço, cobrindo a borda, para parecer a mesma peça */
 .hs-tab {
   position: relative;
   display: flex;
   align-items: baseline;
   gap: 0.6rem;
   min-width: 0;
-  min-height: 4rem;
-  padding: 1rem 1.6rem;
-  overflow: hidden;
+  --tab-h: 3.6rem;
+  min-height: var(--tab-h);
+  margin-bottom: 0.4rem;
+  padding: 0.8rem 1.6rem;
+  overflow: hidden; /* os cantos arredondados cortam o traço de cima */
   font-size: 1.4rem;
   font-weight: 600;
   line-height: 1.3;
   white-space: nowrap;
   color: var(--text);
-  background-color: color-mix(in srgb, var(--ink) 5%, transparent);
+  background: none;
   border: 0;
-  border-radius: 0.8rem 0.8rem 0 0;
+  border-radius: 0.8rem;
   cursor: pointer;
   transition:
     color 0.25s,
@@ -227,6 +230,7 @@
 }
 
 .hs-tab span {
+  min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -237,17 +241,41 @@
   color: var(--text);
 }
 
-.hs-tab:hover {
+/* traço que separa as abas inativas (some ao lado da ativa e no hover) */
+.hs-tab + .hs-tab::before {
+  content: '';
+  position: absolute;
+  top: 25%;
+  left: 0;
+  width: 1px;
+  height: 50%;
+  background-color: var(--line-strong);
+  transition: opacity 0.2s;
+}
+
+.hs-tab[aria-pressed='true']::before,
+.hs-tab[aria-pressed='true'] + .hs-tab::before,
+.hs-tab:hover::before,
+.hs-tab:hover + .hs-tab::before {
+  opacity: 0;
+}
+
+.hs-tab:not([aria-pressed='true']):hover {
   color: var(--ink);
-  background-color: color-mix(in srgb, var(--ink) 9%, transparent);
+  background-color: color-mix(in srgb, var(--ink) 7%, transparent);
 }
 
 .hs-tab[aria-pressed='true'] {
+  z-index: 1;
+  min-height: calc(var(--tab-h) + 0.4rem + 1px);
+  margin-bottom: -1px;
+  padding-bottom: calc(0.8rem + 0.4rem + 1px);
   color: var(--ink);
   background-color: var(--surface);
+  border-radius: 0.8rem 0.8rem 0 0;
 }
 
-/* traço no topo da aba ativa; na troca automática, ele mostra o tempo até a próxima */
+/* traço no topo da aba ativa (os cantos da aba o arredondam); na troca automática, ele mostra o tempo até a próxima */
 .hs-tab::after {
   content: '';
   position: absolute;
@@ -713,7 +741,26 @@
 }
 
 /* ---------- Responsivo ---------- */
-@media screen and (max-width: 768px) {
+
+/* telas de toque: abas, pausa e barra de endereço com alvo de pelo menos 44px */
+@media (pointer: coarse) {
+  .hs-tab {
+    --tab-h: 4.4rem;
+  }
+
+  .hs-pause {
+    width: 4.4rem;
+    height: 4.4rem;
+  }
+
+  .hs-site,
+  .hs-code {
+    min-height: 4.4rem;
+  }
+}
+
+/* até 1000px o nome ocupa a linha toda e os botões descem para baixo do texto */
+@media screen and (max-width: 1000px) {
   .hero-head {
     grid-template-columns: minmax(0, 1fr);
     grid-template-areas:
@@ -726,7 +773,9 @@
     padding-bottom: 0;
     margin-top: 0.8rem;
   }
+}
 
+@media screen and (max-width: 768px) {
   .showcase::before {
     inset: -3rem -2rem 3rem;
   }
@@ -757,18 +806,19 @@
   .hs-tab {
     flex: 1 1 auto;
     justify-content: center;
-    min-height: 4.4rem;
+    align-items: center; /* texto no meio da aba mais alta do celular */
+    --tab-h: 4.4rem;
     padding: 0.8rem 0.6rem;
     font-size: 1.2rem;
   }
 
-  .hs-pause {
-    width: 3rem;
-    height: 3rem;
+  .hs-address {
+    gap: 0.6rem;
+    padding-inline: 0.8rem 0.6rem;
   }
 
-  .hs-address {
-    padding-inline: 0.8rem;
+  .hs-address .hs-pause {
+    margin-bottom: 0;
   }
 
   .hs-site {

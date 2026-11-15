@@ -70,6 +70,7 @@
   position: relative;
   display: inline-block;
   padding: 0.5rem 0;
+  white-space: nowrap;
   font-size: 1.5rem;
   font-weight: 500;
   color: var(--text);
@@ -173,8 +174,8 @@
   }
 }
 
-/* ---------- Menu mobile ---------- */
-@media screen and (max-width: 768px) {
+/* ---------- Menu mobile (até 900px: abaixo disso os links não cabem numa linha) ---------- */
+@media screen and (max-width: 900px) {
   .btn-menu {
     display: grid;
     position: relative;
