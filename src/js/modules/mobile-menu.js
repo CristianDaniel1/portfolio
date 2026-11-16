@@ -1,28 +1,29 @@
-const MOBILE_QUERY = '(max-width: 1080px)';
+const MOBILE_QUERY = '(max-width: 900px)';
 
 export const initMobileMenu = () => {
-  const toggleBtn = document.querySelector('.menu-btn');
-  const menu = document.getElementById(toggleBtn?.getAttribute('aria-controls'));
+  const menu = document.querySelector('.navbar-list');
+  const toggleBtn = document.querySelector('.btn-menu');
+  const iconOpen = toggleBtn?.querySelector('.open-menu');
+  const iconClose = toggleBtn?.querySelector('.close-menu');
 
-  if (!toggleBtn || !menu) return;
+  if (!menu || !toggleBtn || !iconOpen || !iconClose) return;
 
-  const background = document.querySelectorAll('main, footer');
   let isOpen = false;
 
   const setMenu = open => {
     isOpen = open;
-    menu.classList.toggle('is-open', open);
+    menu.classList.toggle('mobile-open', open);
+    iconOpen.classList.toggle('hidden', open);
+    iconClose.classList.toggle('hidden', !open);
     toggleBtn.setAttribute('aria-expanded', String(open));
-    toggleBtn.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
     document.body.classList.toggle('menu-open', open);
-    background.forEach(el => (el.inert = open));
   };
 
   toggleBtn.addEventListener('click', () => setMenu(!isOpen));
 
   // fecha ao escolher um link
   menu.addEventListener('click', ({ target }) => {
-    if (isOpen && target.closest('a')) setMenu(false);
+    if (isOpen && target.closest('.navbar-link')) setMenu(false);
   });
 
   // fecha com Esc e devolve o foco ao botão

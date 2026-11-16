@@ -2,9 +2,9 @@ const SHOW_ALL = 'todos';
 
 export const initProjectFilter = () => {
   const group = document.querySelector('.filters');
-  const items = document.querySelectorAll('#projetos [data-kind]');
+  const cards = document.querySelectorAll('.project[data-kind]');
 
-  if (!group || !items.length) return;
+  if (!group || !cards.length) return;
 
   const buttons = group.querySelectorAll('.filter');
 
@@ -16,11 +16,13 @@ export const initProjectFilter = () => {
     const { filter } = selectedBtn.dataset;
 
     for (const btn of buttons) {
-      btn.setAttribute('aria-pressed', String(btn === selectedBtn));
+      const isActive = btn === selectedBtn;
+      btn.classList.toggle('is-active', isActive);
+      btn.setAttribute('aria-pressed', String(isActive));
     }
 
-    for (const item of items) {
-      item.hidden = filter !== SHOW_ALL && !item.dataset.kind.split(' ').includes(filter);
+    for (const card of cards) {
+      card.hidden = filter !== SHOW_ALL && card.dataset.kind !== filter;
     }
   });
 };

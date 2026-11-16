@@ -1,13 +1,13 @@
-// Marca no cabeçalho e no menu do celular o link da seção que está no meio da tela
+// Marca no menu o link da seção que está no meio da tela
 export const initActiveLink = () => {
-  const links = [...document.querySelectorAll('.nav-link, .header-cta, .drawer-link')];
+  const links = [...document.querySelectorAll('.navbar-link')];
   const sections = document.querySelectorAll('main section[id]');
 
   if (!links.length || !sections.length) return;
 
   const setActive = id => {
     for (const link of links) {
-      if (link.hash === `#${id}`) link.setAttribute('aria-current', 'location');
+      if (link.hash === `#${id}`) link.setAttribute('aria-current', 'true');
       else link.removeAttribute('aria-current');
     }
   };
@@ -18,7 +18,7 @@ export const initActiveLink = () => {
         if (isIntersecting) setActive(target.id);
       }
     },
-    { rootMargin: '-45% 0px -50% 0px' },
+    { rootMargin: '-40% 0px -55% 0px' },
   );
 
   sections.forEach(section => observer.observe(section));

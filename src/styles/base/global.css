@@ -1,62 +1,54 @@
 html {
+  font-size: 62.5%;
   scroll-behavior: smooth;
   overflow-x: clip;
   -webkit-text-size-adjust: 100%;
-  scrollbar-color: var(--accent) var(--bg);
-  scrollbar-width: thin;
 }
 
 body {
-  font-family: var(--sans);
-  font-size: 1rem;
+  font-size: 1.7rem;
   line-height: 1.65;
+  font-family: var(--font-body);
   color: var(--text);
   background-color: var(--bg);
   overflow-x: clip;
-  -webkit-font-smoothing: antialiased;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  color: var(--ink);
-  text-wrap: balance;
+section[id] {
+  scroll-margin-top: calc(var(--header-h) - 1px);
 }
 
-p {
-  text-wrap: pretty;
+::-webkit-scrollbar {
+  width: 0.9rem;
+  background-color: var(--bg);
 }
 
-strong {
-  color: var(--ink);
-  font-weight: 600;
-}
-
-section[id],
-[id^='p-'] {
-  scroll-margin-top: var(--top-h);
-}
-
-::selection {
-  background-color: var(--ink);
-  color: var(--bg);
+::-webkit-scrollbar-thumb {
+  background-color: var(--accent);
+  border-radius: 3rem;
 }
 
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
+  border-radius: 0.4rem;
+}
+
+::selection {
+  background-color: var(--accent);
+  color: var(--on-accent);
 }
 
 .skip-link {
   position: fixed;
   top: 1rem;
   left: 1rem;
-  z-index: 300;
-  padding: 0.75rem 1rem;
-  font-weight: 600;
+  z-index: 200;
+  padding: 1rem 1.6rem;
   background-color: var(--accent);
-  color: var(--bg);
+  color: var(--on-accent);
+  font-weight: 600;
+  border-radius: var(--radius-s);
   transform: translateY(-200%);
 }
 
@@ -64,15 +56,8 @@ section[id],
   transform: none;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 1.6rem;
   }
 }
