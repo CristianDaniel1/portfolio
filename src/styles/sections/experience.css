@@ -1,10 +1,12 @@
 /* Linha do tempo: cada cargo tem, à esquerda, um ponto vinho alinhado com
-   o selo; a linha liga um ponto ao próximo e, no último cargo, desce até o
-   fim dele e some aos poucos. */
+   a primeira linha do cargo; a linha liga um ponto ao próximo e, no último
+   cargo, desce até o fim dele e some aos poucos. */
 .timeline {
   --rail: 5.6rem; /* espaço reservado para o ponto e a linha */
   --dot: 1.8rem;
-  --dot-top: 0.55rem;
+  --role-size: clamp(2.6rem, 2.8vw, 3.2rem);
+  --role-line: calc(var(--role-size) * 1.12); /* altura da 1ª linha do cargo */
+  --dot-top: calc((var(--role-line) - var(--dot)) / 2);
   --rail-line: 2px;
   --gap: clamp(4rem, 6vw, 6.5rem);
 
@@ -77,9 +79,8 @@
 }
 
 .job-role {
-  margin-top: 1.6rem;
   font-family: var(--font-display);
-  font-size: clamp(2.6rem, 2.8vw, 3.2rem);
+  font-size: var(--role-size);
   font-weight: 500;
   letter-spacing: -0.03em;
   line-height: 1.12;
@@ -93,9 +94,22 @@
   color: var(--accent-text);
 }
 
+/* data + tipo de vínculo na mesma linha, abaixo da empresa */
+.job-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1.2rem;
+  margin-top: 1rem;
+}
+
 .job-date {
-  margin-top: 0.6rem;
   font-size: 1.5rem;
+}
+
+/* a 1ª linha da descrição fica centralizada com a 1ª linha do cargo */
+.job-main {
+  padding-top: max(0px, (var(--role-line) - 1.75rem * 1.7) / 2);
 }
 
 .job-tech-title {
@@ -108,6 +122,10 @@
 @media screen and (max-width: 960px) {
   .job {
     grid-template-columns: 1fr;
+  }
+
+  .job-main {
+    padding-top: 0;
   }
 }
 
