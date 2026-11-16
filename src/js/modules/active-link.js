@@ -1,4 +1,3 @@
-// Marca no menu o link da seção que está no meio da tela
 export const initActiveLink = () => {
   const links = [...document.querySelectorAll('.navbar-link')];
   const sections = document.querySelectorAll('main section[id]');

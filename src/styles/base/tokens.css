@@ -1,14 +1,3 @@
-/* ===================== PALETA / TEMAS =====================
-   O tema segue o sistema do visitante, só com CSS:
-   `color-scheme: light dark` ativa os dois esquemas e `light-dark(claro, escuro)`
-   escolhe a cor de cada um. O botão do cabeçalho só guarda uma escolha manual.
-
-   Vinho como cor principal (botões, links, destaques com texto) e o dourado como
-   secundária, só nos detalhes (grifo, números, brilhos, barra da vitrine): em texto
-   sobre o fundo claro o dourado não teria contraste.
-   Fundos neutros: cinza-claro sem tom azul ou vermelho no claro, carbono no escuro.
-   Se mudar as cores de fundo, atualize também os <meta name="theme-color"> do index.html
-   e, se mudar o vinho, o public/favicon.svg (e o favicon.png gerado a partir dele). */
 :root {
   color-scheme: light dark;
 
@@ -34,12 +23,6 @@
   --shadow: light-dark(rgba(28, 27, 27, 0.3), rgba(0, 0, 0, 0.7));
   --header-bg: light-dark(rgba(244, 244, 243, 0.9), rgba(20, 20, 20, 0.9));
 
-  /* seções invertidas (Serviços): carbono no claro, clara no escuro */
-  --inv-bg: light-dark(#1c1b1b, #ededec);
-  --inv-title: light-dark(#f4f4f3, #141414);
-  --inv-text: light-dark(#bdbab9, #4a4848);
-  --inv-line: light-dark(rgba(255, 255, 255, 0.18), rgba(20, 20, 20, 0.2));
-
   /* As fontes (Newsreader e Hanken Grotesk) são importadas no início do main.css */
   --font-display: 'Newsreader Variable', Georgia, 'Times New Roman', serif;
   --font-body: 'Hanken Grotesk Variable', 'Inter', system-ui, sans-serif;
@@ -52,8 +35,6 @@
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
-/* Escolha manual (botão do cabeçalho): só troca o esquema de cores, as cores
-   continuam vindo de light-dark() acima. */
 :root[data-theme='light'] {
   color-scheme: light;
 }

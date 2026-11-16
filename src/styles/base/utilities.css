@@ -1,4 +1,3 @@
-/* sprite de ícones: fica no HTML, mas não ocupa espaço */
 .sprite {
   position: absolute;
   width: 0;
@@ -10,7 +9,6 @@
   display: none;
 }
 
-/* some da tela, mas continua sendo lido por leitores de tela */
 .visually-hidden {
   position: absolute;
   width: 1px;

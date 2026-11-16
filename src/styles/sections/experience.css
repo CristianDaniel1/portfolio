@@ -1,6 +1,15 @@
+/* Linha do tempo: cada cargo tem, à esquerda, um ponto vinho alinhado com
+   o selo; a linha liga um ponto ao próximo e, no último cargo, desce até o
+   fim dele e some aos poucos. */
 .timeline {
+  --rail: 5.6rem; /* espaço reservado para o ponto e a linha */
+  --dot: 1.8rem;
+  --dot-top: 0.55rem;
+  --line: 2px;
+  --gap: clamp(4rem, 6vw, 6.5rem);
+
   display: grid;
-  gap: clamp(4rem, 6vw, 6.5rem);
+  gap: var(--gap);
 }
 
 .job {
@@ -8,31 +17,47 @@
   display: grid;
   grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
   gap: 2.4rem clamp(3rem, 6vw, 8rem);
-  padding-top: 3.6rem;
-  border-top: 1px solid var(--line-strong);
+  padding-left: var(--rail);
 }
 
-/* ponto da linha do tempo */
 .job::before {
   content: '';
   position: absolute;
-  top: -0.8rem;
+  top: var(--dot-top);
   left: 0;
-  width: 1.5rem;
-  height: 1.5rem;
+  z-index: 1;
+  width: var(--dot);
+  height: var(--dot);
   border-radius: 50%;
-  background-color: var(--bg);
-  border: 2px solid var(--line-strong);
-}
-
-.section-alt .job::before {
-  background-color: var(--surface-alt);
-}
-
-.job-current::before {
   background-color: var(--accent);
-  border-color: var(--accent);
-  box-shadow: 0 0 0 0.6rem color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+.job::after {
+  content: '';
+  position: absolute;
+  top: calc(var(--dot-top) + var(--dot) / 2);
+  bottom: 0;
+  left: calc(var(--dot) / 2 - var(--line) / 2);
+  width: var(--line);
+  background-color: var(--line-strong);
+}
+
+/* cargo atual "aceso"; os anteriores ficam com o ponto apagado */
+.job-current::before {
+  box-shadow: 0 0 0 0.5rem color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+.job:not(.job-current)::before {
+  background-color: color-mix(in srgb, var(--text) 35%, var(--bg));
+}
+
+/* desce pelo espaço entre os cargos até o ponto do próximo */
+.job:not(:last-child)::after {
+  bottom: calc(-1 * var(--gap) - var(--dot-top) - var(--dot) / 2);
+}
+
+.job:last-child::after {
+  background: linear-gradient(var(--line-strong) 60%, transparent);
 }
 
 .job-type {
@@ -85,3 +110,8 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .timeline {
+    --rail: 3.2rem;
+  }}

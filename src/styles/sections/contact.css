@@ -1,7 +1,3 @@
-.contact {
-  border-top: none;
-}
-
 .contact-list {
   display: flex;
   flex-wrap: wrap;

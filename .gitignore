@@ -25,7 +25,3 @@ dist-ssr
 
 .claude
 skills-lock.json
-
-# Contexto de design local (Impeccable)
-PRODUCT.md
-.impeccable/

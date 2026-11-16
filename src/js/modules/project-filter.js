@@ -8,7 +8,6 @@ export const initProjectFilter = () => {
 
   const buttons = group.querySelectorAll('.filter');
 
-  // um único listener no grupo (delegação de eventos)
   group.addEventListener('click', ({ target }) => {
     const selectedBtn = target.closest('.filter');
     if (!selectedBtn) return;

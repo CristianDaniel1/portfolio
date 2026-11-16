@@ -1,6 +1,5 @@
 const SCROLL_THRESHOLD = 8;
 
-// Mostra a borda do cabeçalho depois que a página começa a rolar
 export const initHeaderScroll = () => {
   const header = document.querySelector('.header');
   if (!header) return;

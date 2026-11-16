@@ -54,7 +54,6 @@ Para mais detalhes, acesse meu [portfólio online](https://portfolio-cristiandev
 - **Tecnologias:** ferramentas que uso, organizadas por categoria.
 - **Experiência:** minha trajetória profissional e as tecnologias de cada cargo.
 - **Projetos:** projetos em destaque, com filtro por tipo, links para o site e para o código.
-- **Serviços:** o que faço e como trabalho.
 - **Contato:** e-mail e redes sociais.
 
 ---
