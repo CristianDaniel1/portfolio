@@ -1,106 +1,45 @@
-/* ===================== SERVIÇOS =====================
-   Faixa em vinho profundo, igual nos dois temas: não inverte quando o
-   visitante troca entre claro e escuro. As camadas seguem a ordem de um
-   sistema (tela → API → banco) e a linha que as liga se desenha com a rolagem. */
-.section-band {
-  --band-bg: #2a0f16;
-  --band-ink: #f7efef;
-  --band-text: #dcc6ca;
-  --band-line: rgb(247 239 239 / 0.14);
-
-  background-color: var(--band-bg);
-  color: var(--band-text);
+/* Seção invertida: fundo escuro no tema claro e vice-versa */
+.section-invert {
+  background-color: var(--inv-bg);
+  color: var(--inv-text);
   border-top: none;
 }
 
-.section-band .section-title,
-.section-band .layer-title,
-.section-band .process-title,
-.section-band .step-title {
-  color: var(--band-ink);
+.section-invert .section-title,
+.section-invert .service-title,
+.section-invert .process-title,
+.section-invert .step-title {
+  color: var(--inv-title);
 }
 
-.section-band :focus-visible {
-  outline-color: var(--mark);
-}
-
-.section-band ::selection {
-  background-color: var(--mark);
-  color: var(--on-mark);
-}
-
-/* ---------- camadas ---------- */
-.layers {
-  position: relative;
-  border-top: 1px solid var(--band-line);
-}
-
-.layer {
+.services {
   display: grid;
-  grid-template-columns: 4.4rem minmax(0, 1.1fr) minmax(0, 1.3fr) minmax(0, 1fr);
-  align-items: baseline;
-  gap: 1.2rem clamp(2rem, 4vw, 4.8rem);
-  padding-block: clamp(2.6rem, 3.4vw, 3.6rem);
-  border-bottom: 1px solid var(--band-line);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 clamp(4rem, 8vw, 10rem);
 }
 
-/* ícone de pilha: a barra acesa mostra em que camada o serviço fica */
-.layer-glyph {
-  display: grid;
-  gap: 0.35rem;
-  width: 3.2rem;
-  align-self: center;
+.service {
+  padding-block: 2.8rem 3.2rem;
+  border-top: 1px solid var(--inv-line);
 }
 
-.layer-glyph i {
-  display: block;
-  height: 0.6rem;
-  border-radius: 0.2rem;
-  border: 1px solid color-mix(in srgb, var(--band-ink) 40%, transparent);
-  transition: background-color 0.4s var(--ease);
-}
-
-.layer:nth-child(1) .layer-glyph i:nth-child(1),
-.layer:nth-child(2) .layer-glyph i:nth-child(2),
-.layer:nth-child(3) .layer-glyph i:nth-child(3) {
-  background-color: var(--mark);
-  border-color: var(--mark);
-}
-
-/* manutenção cuida das três camadas */
-.layer-care .layer-glyph i {
-  border-style: dashed;
-  border-color: var(--mark);
-}
-
-.layer-title {
+.service-title {
+  margin-bottom: 0.9rem;
   font-family: var(--font-display);
-  font-size: clamp(2.6rem, 2.8vw, 3.4rem);
+  font-size: 2.8rem;
   font-weight: 500;
   letter-spacing: -0.02em;
-  line-height: 1.1;
+  line-height: 1.15;
 }
 
-.layer-text {
+.service p {
   max-width: 44ch;
   font-size: 1.65rem;
-  line-height: 1.6;
 }
 
-.layer-stack {
-  font-size: 1.45rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  color: var(--band-ink);
-}
-
-.layer:hover .layer-glyph i {
-  border-color: var(--mark);
-}
-
-/* ---------- como eu trabalho ---------- */
+/* ---------- Como eu trabalho ---------- */
 .process {
-  margin-top: clamp(6rem, 9vw, 9rem);
+  margin-top: clamp(5rem, 8vw, 8rem);
 }
 
 .process-title {
@@ -112,42 +51,28 @@
 }
 
 .process-list {
-  position: relative;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 3rem;
   margin-top: 3.4rem;
 }
 
-/* trilho que liga as etapas */
-.process-list::before {
-  content: '';
-  position: absolute;
-  top: 1.7rem;
-  left: 1.7rem;
-  right: 0;
-  height: 2px;
-  background-color: color-mix(in srgb, var(--mark) 70%, transparent);
-  transform-origin: left center;
-}
-
 .step {
-  position: relative;
+  padding-top: 2.2rem;
+  border-top: 2px solid var(--inv-title);
 }
 
 .step-num {
-  position: relative;
   display: grid;
   place-items: center;
   width: 3.4rem;
   height: 3.4rem;
-  margin-bottom: 1.8rem;
+  margin-bottom: 1.6rem;
   font-weight: 700;
   font-size: 1.45rem;
   color: var(--on-mark);
   background-color: var(--mark);
   border-radius: 50%;
-  box-shadow: 0 0 0 0.6rem var(--band-bg);
 }
 
 .step-title {
@@ -160,80 +85,25 @@
 }
 
 .step p {
-  max-width: 30ch;
   font-size: 1.55rem;
   line-height: 1.6;
 }
 
-/* ---------- movimento: o trilho se desenha conforme a rolagem ---------- */
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .process-list::before {
-      animation: draw-x linear both;
-      animation-timeline: view();
-      animation-range: entry 30% cover 45%;
-    }
-
-    .step {
-      animation: rise linear both;
-      animation-timeline: view();
-      animation-range: entry 10% cover 35%;
-    }
-
-    .layer {
-      animation: layer-in linear both;
-      animation-timeline: view();
-      animation-range: entry 0% cover 30%;
-    }
-
-    @keyframes draw-x {
-      from {
-        transform: scaleX(0);
-      }
-    }
-
-    @keyframes layer-in {
-      from {
-        opacity: 0.2;
-        transform: translateY(2rem);
-      }
-    }
-  }
-}
-
-/* ---------- responsivo ---------- */
 @media screen and (max-width: 1100px) {
-  .layer {
-    grid-template-columns: 4.4rem minmax(0, 1fr) minmax(0, 1.2fr);
-  }
-
-  .layer-stack {
-    grid-column: 3;
-  }
-
   .process-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 4rem 3rem;
   }
+}
 
-  .process-list::before {
-    display: none;
+@media screen and (max-width: 820px) {
+  .services {
+    grid-template-columns: 1fr;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .layer {
-    grid-template-columns: 4.4rem minmax(0, 1fr);
-    gap: 1rem 1.6rem;
-  }
-
-  .layer-text,
-  .layer-stack {
-    grid-column: 2;
-  }
-
   .process-list {
     grid-template-columns: 1fr;
-    gap: 3.2rem;
   }
 }

@@ -1,60 +1,81 @@
 .hero {
-  padding-top: calc(var(--header-h) + clamp(2.4rem, 4vw, 4.8rem));
-  padding-bottom: clamp(5rem, 7vw, 8rem);
+  padding-top: calc(var(--header-h) + clamp(4rem, 7vw, 8rem));
+  padding-bottom: clamp(4rem, 6vw, 7rem);
 }
 
-/* ---------- Topo compacto ----------
-   Nome e botões na mesma linha; abaixo, o cargo e a descrição.
-   Poucas linhas de texto, para a janela de projetos subir e aparecer inteira. */
-.hero-head {
+.hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  grid-template-areas:
-    'title cta'
-    'intro intro';
-  align-items: end;
-  gap: clamp(1.6rem, 2vw, 2.2rem) clamp(3rem, 5vw, 6rem);
+  grid-template-columns: minmax(0, 6.5fr) minmax(0, 5.5fr);
+  align-items: center;
+  gap: clamp(4rem, 6vw, 8rem);
 }
 
-.hero-intro {
-  grid-area: intro;
-}
-
-.hero-title {
-  grid-area: title;
-  font-family: var(--font-display);
-  font-size: clamp(4.4rem, 6vw, 8rem);
-  font-weight: 500;
-  letter-spacing: -0.035em;
-  line-height: 1.02;
-  color: var(--ink);
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .hero-role {
-  font-family: var(--font-display);
-  font-size: clamp(2.2rem, 2.2vw, 2.8rem);
-  font-weight: 500;
-  letter-spacing: -0.015em;
-  line-height: 1.3;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: clamp(2rem, 3vw, 2.8rem);
+  font-size: 1.6rem;
+  font-weight: 600;
   color: var(--ink);
 }
 
-.hero-description {
-  max-width: 62ch;
-  margin-top: 1.4rem; /* espaço para a seta sob "tela ao servidor" */
-  font-size: clamp(1.65rem, 1.3vw, 1.8rem);
-  line-height: 1.65;
+/* ponto de "no ar": indica o cargo atual */
+.hero-role::before {
+  content: '';
+  flex: none;
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  background-color: var(--accent);
+  box-shadow: 0 0 0 0.5rem color-mix(in srgb, var(--accent) 18%, transparent);
 }
 
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(3.6rem, 5vw, 6.6rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.04;
+  color: var(--ink);
+}
+
+/* saudação e frase em linhas separadas */
+.hero-title-line {
+  display: block;
+  text-wrap: balance;
+}
+
+.hero-description {
+  max-width: 48ch;
+  margin-top: clamp(2.4rem, 3vw, 3.2rem);
+  font-size: clamp(1.7rem, 1.4vw, 1.85rem);
+  line-height: 1.7;
+}
+
+/* botões e redes sociais na mesma linha */
 .hero-cta {
-  grid-area: cta;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 1.2rem;
-  padding-bottom: 1rem;
+  margin-top: 3.4rem;
 }
 
-/* botões redondos de perfil (usados também em Sobre mim) */
+.hero-list {
+  display: flex;
+  gap: 0.8rem;
+  margin-left: 0.4rem;
+  padding-left: 1.6rem;
+  border-left: 1px solid var(--line-strong);
+}
+
 .social-link {
   display: grid;
   place-items: center;
@@ -80,597 +101,101 @@
   border-color: var(--accent);
 }
 
-/* ---------- Traço feito à mão: marca-texto no nome e traço sob "tela ao servidor" ---------- */
-.scribble {
-  position: relative;
-  display: inline-block;
-  isolation: isolate;
-  white-space: nowrap;
-}
-
-.scribble svg {
-  position: absolute;
-  overflow: visible;
-  pointer-events: none;
-}
-
-.scribble path {
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  vector-effect: non-scaling-stroke;
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  animation: scribble 0.9s var(--ease) forwards;
-  animation-delay: var(--d, 0.8s);
-}
-
-@keyframes scribble {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-.scribble-marker svg {
-  z-index: -1;
-  left: -0.06em;
-  bottom: 0.04em;
-  width: calc(100% + 0.12em);
-  height: 0.42em;
-}
-
-.scribble-marker path {
-  stroke: light-dark(color-mix(in srgb, var(--mark) 80%, transparent), color-mix(in srgb, var(--mark) 42%, transparent));
-  stroke-width: 0.19em;
-  --d: 0.6s;
-  animation-duration: 0.8s;
-}
-
-/* seta escrita: sai de baixo da "tela" e aponta para o "servidor" (o percurso da frase) */
-.scribble-arrow svg {
-  left: 0;
-  top: calc(100% - 0.05em);
-  width: 100%;
-  height: 0.55em;
-}
-
-.scribble-arrow path {
-  stroke: var(--accent-text);
-  stroke-width: 2;
-  --d: 1.4s;
-  animation-duration: 1.1s;
-}
-
-/* ---------- Vitrine: projetos anotados numa janela com abas ---------- */
+/* ---------- Vitrine: projetos reais em janelas de navegador ---------- */
 .showcase {
-  --t0: 2.4s; /* as notas entram depois da seta escrita */
   position: relative;
   isolation: isolate;
-  margin-top: clamp(3.6rem, 4.4vw, 5rem);
+  margin: 0;
 }
 
-/* depois da primeira troca de aba, as notas entram logo */
-.showcase.is-switched {
-  --t0: 0.2s;
-}
-
-/* brilho na cor de destaque + grade de pontos, só atrás da janela */
+/* fundo da coluna: brilho na cor de destaque + grade de pontos que some nas bordas */
 .showcase::before {
   content: '';
   position: absolute;
-  inset: -4rem 6% 4rem;
+  inset: -5rem -4rem -3rem -5rem;
   z-index: -1;
   background-image:
-    radial-gradient(closest-side at 78% 18%, color-mix(in srgb, var(--accent) 38%, transparent), transparent),
-    radial-gradient(closest-side at 22% 86%, color-mix(in srgb, var(--mark) 34%, transparent), transparent),
-    radial-gradient(circle, color-mix(in srgb, var(--ink) 40%, transparent) 1.3px, transparent 1.9px);
+    radial-gradient(
+      closest-side at 72% 22%,
+      color-mix(in srgb, var(--accent) 40%, transparent),
+      transparent
+    ),
+    radial-gradient(
+      closest-side at 28% 82%,
+      color-mix(in srgb, var(--mark) 36%, transparent),
+      transparent
+    ),
+    radial-gradient(
+      circle,
+      color-mix(in srgb, var(--ink) 45%, transparent) 1.3px,
+      transparent 1.9px
+    );
   background-size:
     auto,
     auto,
     2.4rem 2.4rem;
-  -webkit-mask-image: radial-gradient(ellipse 60% 70% at 50% 50%, #000 35%, transparent 100%);
-  mask-image: radial-gradient(ellipse 60% 70% at 50% 50%, #000 35%, transparent 100%);
+  -webkit-mask-image: radial-gradient(
+    ellipse 75% 72% at 55% 48%,
+    #000 40%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 75% 72% at 55% 48%,
+    #000 40%,
+    transparent 100%
+  );
 }
 
-.hs-window {
-  width: min(100%, 84rem);
-  margin-inline: auto;
+/* área onde as janelas ficam sobrepostas, em cascata */
+.showcase-stage {
+  position: relative;
+  aspect-ratio: 1 / 1.02;
+}
+
+.window {
+  position: absolute;
+  display: block;
+  overflow: hidden;
   background-color: var(--surface);
   border: 1px solid var(--line-strong);
   border-radius: var(--radius-m);
-  box-shadow: 0 3rem 6rem -3rem var(--shadow);
-}
-
-/* barra de abas, como num navegador (.window-bar.hs-bar vence a altura fixa de .window-bar) */
-.window-bar.hs-bar {
-  height: auto;
-  align-items: flex-end;
-  gap: 0.8rem;
-  padding: 0.8rem 0.8rem 0 1.2rem;
-  border-radius: var(--radius-m) var(--radius-m) 0 0;
-}
-
-.hs-bar .window-dots {
-  align-self: center;
-  margin-right: 3.2rem; /* os outros dois pontos são sombras de 1,2 e 2,4rem: a margem precisa cobri-los */
-}
-
-.hs-tabs {
-  display: flex;
-  flex: 1;
-  min-width: 0;
-  gap: 0.4rem;
-}
-
-/* abas como num navegador: as inativas ficam soltas na barra (separadas por um traço fino)
-   e a ativa desce até a barra de endereço, cobrindo a borda, para parecer a mesma peça */
-.hs-tab {
-  position: relative;
-  display: flex;
-  align-items: baseline;
-  gap: 0.6rem;
-  min-width: 0;
-  --tab-h: 3.6rem;
-  min-height: var(--tab-h);
-  margin-bottom: 0.4rem;
-  padding: 0.8rem 1.6rem;
-  overflow: hidden; /* os cantos arredondados cortam o traço de cima */
-  font-size: 1.4rem;
-  font-weight: 600;
-  line-height: 1.3;
-  white-space: nowrap;
-  color: var(--text);
-  background: none;
-  border: 0;
-  border-radius: 0.8rem;
-  cursor: pointer;
   transition:
-    color 0.25s,
-    background-color 0.25s;
+    transform 0.4s var(--ease),
+    box-shadow 0.4s var(--ease);
 }
 
-.hs-tab span {
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.hs-tab-kind {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: var(--text);
-}
-
-/* traço que separa as abas inativas (some ao lado da ativa e no hover) */
-.hs-tab + .hs-tab::before {
-  content: '';
-  position: absolute;
-  top: 25%;
-  left: 0;
-  width: 1px;
-  height: 50%;
-  background-color: var(--line-strong);
-  transition: opacity 0.2s;
-}
-
-.hs-tab[aria-pressed='true']::before,
-.hs-tab[aria-pressed='true'] + .hs-tab::before,
-.hs-tab:hover::before,
-.hs-tab:hover + .hs-tab::before {
-  opacity: 0;
-}
-
-.hs-tab:not([aria-pressed='true']):hover {
-  color: var(--ink);
-  background-color: color-mix(in srgb, var(--ink) 7%, transparent);
-}
-
-.hs-tab[aria-pressed='true'] {
-  z-index: 1;
-  min-height: calc(var(--tab-h) + 0.4rem + 1px);
-  margin-bottom: -1px;
-  padding-bottom: calc(0.8rem + 0.4rem + 1px);
-  color: var(--ink);
-  background-color: var(--surface);
-  border-radius: 0.8rem 0.8rem 0 0;
-}
-
-/* traço no topo da aba ativa (os cantos da aba o arredondam); na troca automática, ele mostra o tempo até a próxima */
-.hs-tab::after {
-  content: '';
-  position: absolute;
+.window-back {
   top: 0;
+  left: 36%;
+  width: 64%;
+  z-index: 1;
+  box-shadow: 0 0.8rem 2rem -1.6rem var(--shadow);
+}
+
+.window-mid {
+  top: 24%;
   left: 0;
-  right: 0;
-  height: 3px;
-  background-color: var(--accent);
-  transform: scaleX(0);
-  transform-origin: left center;
+  width: 62%;
+  z-index: 2;
+  box-shadow: 0 1.6rem 3rem -1.8rem var(--shadow);
 }
 
-.hs-tab[aria-pressed='true']::after {
-  transform: scaleX(1);
+.window-front {
+  top: 49%;
+  left: 24%;
+  width: 76%;
+  z-index: 3;
+  box-shadow: 0 2.4rem 4rem -1.8rem var(--shadow);
 }
 
-.showcase.is-auto .hs-tab[aria-pressed='true']::after {
-  animation: hs-progress 8s linear;
+/* a janela sob o mouse (ou o foco) sobe para a frente */
+.window:hover,
+.window:focus-visible {
+  z-index: 4;
+  transform: translateY(-0.8rem);
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--line-strong));
 }
 
-.showcase.is-auto:is(:hover, :focus-within, .is-offscreen) .hs-tab[aria-pressed='true']::after {
-  animation-play-state: paused;
-}
-
-@keyframes hs-progress {
-  from {
-    transform: scaleX(0);
-  }
-}
-
-/* pausar / retomar a troca automática */
-.hs-pause {
-  flex: none;
-  align-self: center;
-  display: grid;
-  place-items: center;
-  width: 3.2rem;
-  height: 3.2rem;
-  margin-bottom: 0.4rem;
-  color: var(--text);
-  background: none;
-  border: 1px solid var(--line-strong);
-  border-radius: 50%;
-  cursor: pointer;
-  transition:
-    color 0.25s,
-    border-color 0.25s;
-}
-
-.hs-pause:hover {
-  color: var(--ink);
-  border-color: var(--ink);
-}
-
-.hs-pause .icon {
-  width: 1.4rem;
-  height: 1.4rem;
-}
-
-.hs-pause[data-state='playing'] .icon-play,
-.hs-pause[data-state='paused'] .icon-pause {
-  display: none;
-}
-
-/* barra de endereço: o endereço é o link do site; "Código" leva ao repositório */
-.hs-address {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 0.7rem 1rem 0.7rem 1.2rem;
-  border-bottom: 1px solid var(--line);
-}
-
-.hs-site {
-  display: flex;
-  flex: 1;
-  align-items: center;
-  gap: 0.8rem;
-  min-width: 0;
-  padding: 0.5rem 1.2rem;
-  font-size: 1.3rem;
-  line-height: 1.4;
-  color: var(--text);
-  background-color: var(--bg);
-  border-radius: 99rem;
-  transition: color 0.25s;
-}
-
-.hs-site span {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.hs-site .icon {
-  flex: none;
-  width: 1.2rem;
-  height: 1.2rem;
-  color: var(--accent-text);
-}
-
-.hs-site:hover {
-  color: var(--ink);
-}
-
-.hs-site:hover span {
-  text-decoration: underline;
-  text-decoration-color: var(--accent);
-  text-underline-offset: 0.2em;
-}
-
-.hs-code {
-  display: inline-flex;
-  flex: none;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 0.5rem 1.2rem;
-  font-size: 1.3rem;
-  font-weight: 600;
-  line-height: 1.4;
-  color: var(--ink);
-  border: 1px solid var(--line-strong);
-  border-radius: 99rem;
-  transition:
-    color 0.25s,
-    background-color 0.25s,
-    border-color 0.25s;
-}
-
-.hs-code[hidden] {
-  display: none;
-}
-
-.hs-code .icon {
-  width: 1.4rem;
-  height: 1.4rem;
-}
-
-.hs-code:hover {
-  color: var(--on-accent);
-  background-color: var(--accent);
-  border-color: var(--accent);
-}
-
-.hs-slide {
-  position: relative;
-  margin: 0;
-}
-
-.hs-slide:not(.is-active) {
-  display: none;
-}
-
-.hs-shot {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  object-position: top;
-}
-
-.showcase.is-switched .hs-slide.is-active .hs-shot {
-  animation: hs-swap 0.6s var(--ease);
-}
-
-@keyframes hs-swap {
-  from {
-    opacity: 0;
-    filter: blur(0.6rem);
-  }
-}
-
-/* ---------- Notas ----------
-   Só em telas largas (≥1180px): um ponto no centro de uma parte real da tela e uma linha
-   até a etiqueta na margem (data-side). Em telas menores, a imagem fica limpa, só com as abas. */
-.hs-notes {
-  display: none;
-}
-
-@media screen and (min-width: 1180px) {
-  .hs-window {
-    width: min(84rem, 100% - 38rem);
-  }
-
-  /* a imagem fecha a janela: cantos de baixo arredondados */
-  .hs-shot {
-    border-radius: 0 0 var(--radius-m) var(--radius-m);
-  }
-
-  .hs-notes {
-    position: absolute;
-    inset: 0;
-    display: block;
-    pointer-events: none;
-  }
-
-  /* cada nota vai do ponto até a margem */
-  .hs-note {
-    --out: 1.6rem; /* quanto a linha passa da borda da imagem */
-    position: absolute;
-    top: calc(var(--y) * 100%);
-    height: 0;
-  }
-
-  .hs-note[data-side='left'] {
-    left: 0;
-    width: calc(var(--x) * 100%);
-  }
-
-  .hs-note[data-side='right'] {
-    left: calc(var(--x) * 100%);
-    right: 0;
-  }
-
-  .hs-note:nth-child(2) {
-    --n: 1;
-  }
-
-  .hs-note:nth-child(3) {
-    --n: 2;
-  }
-
-  .hs-note:nth-child(4) {
-    --n: 3;
-  }
-
-  .hs-note:nth-child(5) {
-    --n: 4;
-  }
-
-  /* ponto */
-  .hs-note::before {
-    content: '';
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    width: 1.2rem;
-    height: 1.2rem;
-    background-color: #fff;
-    border: 3px solid var(--accent);
-    border-radius: 50%;
-    box-shadow: 0 0 0 0.4rem color-mix(in srgb, var(--accent) 30%, transparent);
-    transform: translate(-50%, -50%);
-    animation: fade 0.4s ease backwards;
-    animation-delay: calc(var(--t0) + var(--n, 0) * 0.15s);
-  }
-
-  .hs-note[data-side='left']::before {
-    left: 100%;
-  }
-
-  /* linha do ponto até fora da imagem: vinho por cima dela, tom do texto na margem */
-  .hs-note::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    width: calc(100% + var(--out));
-    height: 1.5px;
-    filter: drop-shadow(0 0 1px rgb(255 255 255 / 0.9));
-    translate: 0 -50%;
-    animation: hs-line 0.5s var(--ease) backwards;
-    animation-delay: calc(var(--t0) + 0.1s + var(--n, 0) * 0.15s);
-  }
-
-  .hs-note[data-side='left']::after {
-    left: calc(-1 * var(--out));
-    transform-origin: right center;
-    background: linear-gradient(90deg, color-mix(in srgb, var(--ink) 50%, transparent) 0 var(--out), var(--accent) var(--out));
-  }
-
-  .hs-note[data-side='right']::after {
-    left: 0;
-    transform-origin: left center;
-    background: linear-gradient(270deg, color-mix(in srgb, var(--ink) 50%, transparent) 0 var(--out), var(--accent) var(--out));
-  }
-
-  /* etiqueta na margem: o que se vê na tela + o detalhe */
-  .hs-label {
-    position: absolute;
-    top: 0;
-    display: grid;
-    width: 15rem;
-    font-size: 1.45rem;
-    line-height: 1.45;
-    color: var(--text);
-    translate: 0 -50%;
-    animation: hs-label 0.6s var(--ease) backwards;
-    animation-delay: calc(var(--t0) + 0.35s + var(--n, 0) * 0.15s);
-  }
-
-  .hs-label b {
-    font-family: var(--font-display);
-    font-size: 2rem;
-    font-weight: 500;
-    line-height: 1.2;
-    letter-spacing: -0.01em;
-    color: var(--ink);
-  }
-
-  .hs-note[data-side='left'] .hs-label {
-    right: calc(100% + var(--out) + 1.2rem);
-    text-align: right;
-  }
-
-  .hs-note[data-side='right'] .hs-label {
-    left: calc(100% + var(--out) + 1.2rem);
-  }
-}
-
-@keyframes hs-label {
-  from {
-    opacity: 0;
-    filter: blur(0.3rem);
-  }
-}
-
-@keyframes hs-line {
-  from {
-    transform: scaleX(0);
-  }
-}
-
-/* ---------- Fatos e perfis, sob a janela ---------- */
-.hero-facts {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.6rem 3.2rem;
-  width: min(100%, 84rem);
-  margin: 2.4rem auto 0;
-}
-
-.hero-facts-list {
-  display: grid;
-  gap: 0.2rem;
-}
-
-.hero-facts-list div {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.2rem 0.8rem;
-  font-size: 1.45rem;
-  line-height: 1.5;
-}
-
-.hero-facts-list dt {
-  font-family: var(--font-display);
-  font-size: 1.8rem;
-  font-weight: 500;
-  color: var(--ink);
-}
-
-.hero-profiles {
-  display: flex;
-  gap: 0.8rem;
-}
-
-.hero-profiles a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.7rem;
-  min-height: 4.4rem;
-  padding: 0 1.4rem;
-  font-size: 1.45rem;
-  font-weight: 600;
-  color: var(--ink);
-  border: 1px solid var(--line-strong);
-  border-radius: 99rem;
-  transition:
-    color 0.25s,
-    background-color 0.25s,
-    border-color 0.25s;
-}
-
-.hero-profiles .icon {
-  width: 1.8rem;
-  height: 1.8rem;
-}
-
-.hero-profiles a:hover {
-  color: var(--on-accent);
-  background-color: var(--accent);
-  border-color: var(--accent);
-}
-
-@media screen and (min-width: 1180px) {
-  .hero-facts {
-    width: min(84rem, 100% - 38rem);
-  }
-}
-
-/* barra e endereço também usados nas janelas da seção Projetos */
 .window-bar {
   display: flex;
   align-items: center;
@@ -708,121 +233,146 @@
   border-radius: 99rem;
 }
 
+.window-shot {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* imagens 16:9 (ex.: Gwent Remake) aparecem inteiras, sem cortar as laterais */
+.window-shot-wide {
+  aspect-ratio: 16 / 9;
+}
+
+.showcase-caption {
+  max-width: 38ch;
+  margin-top: 2.2rem;
+  font-size: 1.5rem;
+  line-height: 1.55;
+}
+
+/* ---------- Faixa de fatos abaixo do hero ---------- */
+.facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: clamp(4.4rem, 7vw, 8rem);
+  border-top: 1px solid var(--line-strong);
+}
+
+.fact {
+  padding: 2.6rem 3rem 0 0;
+}
+
+.fact + .fact {
+  padding-left: 3rem;
+  border-left: 1px solid var(--line);
+}
+
+.fact dt {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.fact dd {
+  margin-top: 0.6rem;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
 /* ---------- Animação de entrada ----------
-   Uma sequência ao carregar: o texto sobe, a janela cai, os traços e as notas aparecem. */
-.hero-title,
-.hero-intro,
-.hero-cta {
+   Uma única sequência ao carregar: o texto sobe e as janelas caem em cascata.
+   Os keyframes ficam em base/animations.css */
+.hero-content > * {
   animation: rise 0.8s var(--ease) backwards;
 }
 
-.hero-title {
+.hero-content > :nth-child(1) {
   animation-delay: 100ms;
 }
 
-.hero-intro {
-  animation-delay: 220ms;
+.hero-content > :nth-child(2) {
+  animation-delay: 200ms;
 }
 
-.hero-cta {
-  animation-delay: 320ms;
+.hero-content > :nth-child(3) {
+  animation-delay: 300ms;
 }
 
-.hs-window {
-  animation: drop 0.8s var(--ease) 350ms backwards;
+.hero-content > :nth-child(4) {
+  animation-delay: 400ms;
 }
 
 .showcase::before {
   animation: fade 1.4s ease 300ms backwards;
 }
 
-.hero-facts {
+.window {
+  animation: drop 0.8s var(--ease) backwards;
+}
+
+.window-back {
+  animation-delay: 250ms;
+}
+
+.window-mid {
+  animation-delay: 400ms;
+}
+
+.window-front {
+  animation-delay: 550ms;
+}
+
+.showcase-caption,
+.facts {
   animation: rise 0.8s var(--ease) 700ms backwards;
 }
 
 /* ---------- Responsivo ---------- */
-
-/* telas de toque: abas, pausa e barra de endereço com alvo de pelo menos 44px */
-@media (pointer: coarse) {
-  .hs-tab {
-    --tab-h: 4.4rem;
+@media screen and (max-width: 960px) {
+  /* mais espaço entre o texto e a vitrine, que tem o fundo de pontos */
+  .hero-grid {
+    grid-template-columns: 1fr;
+    row-gap: 7rem;
   }
 
-  .hs-pause {
-    width: 4.4rem;
-    height: 4.4rem;
+  .facts {
+    grid-template-columns: 1fr;
   }
 
-  .hs-site,
-  .hs-code {
-    min-height: 4.4rem;
-  }
-}
-
-/* até 1000px o nome ocupa a linha toda e os botões descem para baixo do texto */
-@media screen and (max-width: 1000px) {
-  .hero-head {
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-areas:
-      'title'
-      'intro'
-      'cta';
+  .fact,
+  .fact + .fact {
+    padding: 2rem 0;
+    border-left: none;
   }
 
-  .hero-cta {
-    padding-bottom: 0;
-    margin-top: 0.8rem;
+  .fact + .fact {
+    border-top: 1px solid var(--line);
   }
 }
 
 @media screen and (max-width: 768px) {
+  /* o fundo da coluna não pode passar da largura da tela */
   .showcase::before {
-    inset: -3rem -2rem 3rem;
+    inset: -3rem -2rem -2rem -2rem;
   }
 
   .window-url {
     display: none;
   }
-
-  .hs-tab-kind {
-    display: none;
-  }
 }
 
+/* os ícones já não cabem na linha dos botões: vão para baixo, sem o divisor */
 @media screen and (max-width: 600px) {
-  .hs-bar {
-    gap: 0.4rem;
-    padding-inline: 0.4rem;
-  }
-
-  .hs-bar .window-dots {
-    display: none;
-  }
-
-  .hs-tabs {
-    gap: 0.2rem;
-  }
-
-  .hs-tab {
-    flex: 1 1 auto;
-    justify-content: center;
-    align-items: center; /* texto no meio da aba mais alta do celular */
-    --tab-h: 4.4rem;
-    padding: 0.8rem 0.6rem;
-    font-size: 1.2rem;
-  }
-
-  .hs-address {
-    gap: 0.6rem;
-    padding-inline: 0.8rem 0.6rem;
-  }
-
-  .hs-address .hs-pause {
-    margin-bottom: 0;
-  }
-
-  .hs-site {
-    font-size: 1.2rem;
+  .hero-list {
+    flex-basis: 100%;
+    margin: 1.2rem 0 0;
+    padding-left: 0;
+    border-left: none;
   }
 }
 
