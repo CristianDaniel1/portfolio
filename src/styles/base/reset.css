@@ -6,15 +6,19 @@
   box-sizing: border-box;
 }
 
-li {
+ul,
+ol {
   list-style: none;
 }
 
 img,
-input,
-button,
-textarea {
+svg {
   display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
 }
 
 a {
@@ -22,22 +26,19 @@ a {
   text-decoration: none;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-input,
-button,
-textarea {
-  background: none;
-  border: none;
+button {
   font: inherit;
   color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
 }
 
-button {
-  cursor: pointer;
+h1,
+h2,
+h3,
+h4 {
+  font-weight: inherit;
 }
 
 [hidden] {

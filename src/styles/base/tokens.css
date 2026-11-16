@@ -1,69 +1,64 @@
 /* ===================== PALETA / TEMAS =====================
-   O tema segue o sistema do visitante, só com CSS:
-   `color-scheme: light dark` ativa os dois esquemas e `light-dark(claro, escuro)`
-   escolhe a cor de cada um. O botão do cabeçalho só guarda uma escolha manual.
-
-   Vinho como cor principal (botões, links, destaques com texto) e o dourado como
-   secundária, só nos detalhes (grifo, números, brilhos, barra da vitrine): em texto
-   sobre o fundo claro o dourado não teria contraste.
-   Fundos neutros: cinza-claro sem tom azul ou vermelho no claro, carbono no escuro.
-   Se mudar as cores de fundo, atualize também os <meta name="theme-color"> do index.html
-   e, se mudar o vinho, o public/favicon.svg (e o favicon.png gerado a partir dele). */
+   Ateliê: neutros quentes de papel, tinta escura e o vinho como acento.
+   O tema segue o sistema do visitante só com CSS: `color-scheme: light dark`
+   ativa os dois esquemas e `light-dark(claro, escuro)` escolhe a cor de cada um.
+   O botão do cabeçalho só guarda uma escolha manual (data-theme no <html>). */
 :root {
   color-scheme: light dark;
 
-  --bg: light-dark(#f4f4f3, #141414);
-  --surface: light-dark(#ffffff, #1d1d1d);
-  --surface-alt: light-dark(#eaeae8, #181818);
-  --ink: light-dark(#1c1b1b, #ededec);
-  --text: light-dark(#4d4b4b, #b4b2b1);
-  --line: light-dark(rgba(28, 27, 27, 0.12), rgba(255, 255, 255, 0.09));
-  --line-strong: light-dark(rgba(28, 27, 27, 0.24), rgba(255, 255, 255, 0.18));
+  /* superfícies */
+  --bg: light-dark(#f4f0ea, #1a1815);
+  --sand: light-dark(#ebe4da, #221f1b);
+  --blush: light-dark(#f0e8e1, #26221e);
+  --wall: light-dark(#d6ccbf, #2c2823);
+  --mat: light-dark(#fbf9f6, #3a352f);
 
-  /* vinho (principal) */
-  --accent: light-dark(#8e2b3b, #b03a4f);
-  --accent-hover: light-dark(#74202f, #c4475c);
-  --on-accent: #ffffff;
-  --accent-text: light-dark(#8e2b3b, #e8899a);
+  /* texto e linhas */
+  --ink: light-dark(#2a2521, #ece6dd);
+  --text: light-dark(#6b625a, #b3aa9f);
+  --text-on-wall: light-dark(#564d45, #b3aa9f);
+  --line: light-dark(rgba(42, 37, 33, 0.14), rgba(236, 230, 221, 0.12));
+  --line-strong: light-dark(rgba(42, 37, 33, 0.32), rgba(236, 230, 221, 0.28));
 
-  /* dourado (secundária) */
-  --mark: #ffd369;
-  --on-mark: #1c1b1b;
+  /* vinho: acento em texto e, mais profundo, como superfície (igual nos dois temas) */
+  --accent: light-dark(#8e2b3b, #d98a97);
+  --wine-field: #7a2434;
+  --wine-wall: #6c1f2d;
+  --linen: #f4ece4;
 
-  --chip-bg: light-dark(#ffffff, rgba(255, 255, 255, 0.04));
-  --shadow: light-dark(rgba(28, 27, 27, 0.3), rgba(0, 0, 0, 0.7));
-  --header-bg: light-dark(rgba(244, 244, 243, 0.9), rgba(20, 20, 20, 0.9));
+  /* camadas da stack: claro (interface) → profundo (dados) */
+  --layer-1: #dcb3a6;
+  --layer-2: #b04a5b;
+  --layer-3: #7a2434;
 
-  /* seções invertidas (Serviços): carbono no claro, clara no escuro */
-  --inv-bg: light-dark(#1c1b1b, #ededec);
-  --inv-title: light-dark(#f4f4f3, #141414);
-  --inv-text: light-dark(#bdbab9, #4a4848);
-  --inv-line: light-dark(rgba(255, 255, 255, 0.18), rgba(20, 20, 20, 0.2));
+  /* sombra e luz dos quadros na parede */
+  --shadow-c: light-dark(rgba(70, 52, 36, 0.32), rgba(0, 0, 0, 0.6));
+  --glow: light-dark(rgba(255, 255, 255, 0.3), rgba(255, 240, 220, 0.05));
+  --print-shadow:
+    0 1px 1px rgba(70, 52, 36, 0.08), 0 14px 28px -14px var(--shadow-c), 22px 34px 60px -26px var(--shadow-c);
+  --print-shadow-lift:
+    0 1px 1px rgba(70, 52, 36, 0.08), 0 22px 36px -16px var(--shadow-c), 30px 46px 70px -28px var(--shadow-c);
 
   /* As fontes (Newsreader e Hanken Grotesk) são importadas no início do main.css */
-  --font-display: 'Newsreader Variable', Georgia, 'Times New Roman', serif;
-  --font-body: 'Hanken Grotesk Variable', 'Inter', system-ui, sans-serif;
+  --serif: 'Newsreader Variable', Georgia, 'Times New Roman', serif;
+  --sans: 'Hanken Grotesk Variable', system-ui, sans-serif;
 
-  --radius-s: 0.9rem;
-  --radius-m: 1.6rem;
-  --radius-l: 2.4rem;
+  /* medidas */
+  --max: 92rem;
+  --gutter: clamp(1.25rem, 4vw, 3.5rem);
+  --top-h: 4.5rem;
+  /* recuo que alinha uma faixa de borda a borda com o conteúdo do .container */
+  --edge: max(var(--gutter), (100vw - var(--max)) / 2 + var(--gutter));
 
-  --header-h: 7.2rem;
-  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-io: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur: 0.9s;
 }
 
-/* Escolha manual (botão do cabeçalho): só troca o esquema de cores, as cores
-   continuam vindo de light-dark() acima. */
 :root[data-theme='light'] {
   color-scheme: light;
 }
 
 :root[data-theme='dark'] {
   color-scheme: dark;
-}
-
-@media screen and (max-width: 768px) {
-  :root {
-    --header-h: 6.4rem;
-  }
 }

@@ -1,50 +1,26 @@
 .section {
-  padding-block: clamp(7rem, 10vw, 12rem);
-  border-top: 1px solid var(--line);
+  padding-block: clamp(5rem, 10vw, 8rem);
 }
 
-.section-alt {
-  background-color: var(--surface-alt);
+.section-sand {
+  background-color: var(--sand);
 }
 
-/* Cabeçalho de seção: título + texto de apoio/filtros ao lado */
-.section-head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 2rem 6rem;
-  margin-bottom: clamp(3.6rem, 5vw, 6rem);
-}
-
+/* título de seção: serifa leve, com a palavra em itálico vinho */
 .section-title {
-  font-family: var(--font-display);
-  font-size: clamp(3.4rem, 4vw, 5rem);
-  font-weight: 500;
-  letter-spacing: -0.025em;
-  line-height: 1.05;
+  font-family: var(--serif);
+  font-size: clamp(2.5rem, 5vw, 4.25rem);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.02em;
   color: var(--ink);
-  text-wrap: balance;
 }
 
+/* texto de apoio em serifa, ao lado ou abaixo do título */
 .section-lead {
-  max-width: 38ch;
-  font-size: 1.7rem;
-  line-height: 1.55;
-}
-
-.prose p {
-  max-width: 62ch;
-  font-size: 1.75rem;
-  line-height: 1.7;
-}
-
-.prose p + p {
-  margin-top: 1.6rem;
-}
-
-@media screen and (max-width: 768px) {
-  .prose p {
-    font-size: 1.65rem;
-  }
+  font-family: var(--serif);
+  font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+  font-weight: 300;
+  line-height: 1.3;
+  color: var(--ink);
 }

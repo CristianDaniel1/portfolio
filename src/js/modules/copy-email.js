@@ -1,17 +1,19 @@
 const FEEDBACK_DURATION = 2000;
 
+// Copia o e-mail e avisa no próprio botão (o rótulo é uma região aria-live)
 export const initCopyEmail = () => {
   const button = document.querySelector('#copy-email');
-  if (!button) return;
+  const label = button?.querySelector('.copy-label');
+  if (!button || !label) return;
 
-  const defaultLabel = button.textContent.trim();
+  const defaultLabel = label.textContent.trim();
   let resetTimer;
 
   const showFeedback = message => {
-    button.textContent = message;
+    label.textContent = message;
     clearTimeout(resetTimer);
     resetTimer = setTimeout(() => {
-      button.textContent = defaultLabel;
+      label.textContent = defaultLabel;
     }, FEEDBACK_DURATION);
   };
 

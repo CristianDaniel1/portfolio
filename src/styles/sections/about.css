@@ -1,172 +1,78 @@
-.about-grid {
+.about-inner {
   display: grid;
-  grid-template-columns: 30rem minmax(0, 1fr);
-  align-items: start;
-  gap: 4rem clamp(4rem, 7vw, 9rem);
+  grid-template-columns: minmax(12rem, 22rem) minmax(0, 38rem);
+  align-items: center;
+  justify-content: center;
+  gap: clamp(3rem, 8vw, 8rem);
 }
 
-/* ---------- Cartão de perfil ---------- */
-.profile-card {
-  padding: 1.2rem;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-l);
+/* foto emoldurada como os quadros da parede */
+.portrait-frame {
+  padding: clamp(0.7rem, 5%, 1.2rem);
 }
 
-.profile-photo {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  object-position: top;
-  border-radius: calc(var(--radius-l) - 1.2rem);
-}
-
-.profile-info {
-  padding: 2rem 1.2rem 1.2rem;
-}
-
-.profile-name {
-  font-family: var(--font-display);
-  font-size: 2.6rem;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-  color: var(--ink);
-}
-
-.profile-role {
-  margin-top: 0.6rem;
-  font-size: 1.5rem;
-  font-weight: 600;
-  line-height: 1.4;
-  color: var(--accent-text);
-}
-
-.profile-links {
-  display: flex;
-  gap: 0.8rem;
-  margin-top: 2rem;
-}
-
-.profile-links .social-link {
-  width: 4.2rem;
-  height: 4.2rem;
-}
-
-.profile-links .social-link .icon {
-  width: 1.9rem;
-  height: 1.9rem;
-}
-
-/* ---------- Texto ---------- */
-.about-text {
-  max-width: 68rem;
+.portrait-img {
+  aspect-ratio: 3 / 4;
+  object-position: center 25%;
 }
 
 .about-lead {
-  max-width: 44ch;
-  font-family: var(--font-display);
-  font-size: clamp(2.1rem, 2vw, 2.5rem);
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  line-height: 1.4;
+  margin-top: 1.75rem;
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 2.6vw, 2.125rem);
+  font-weight: 300;
+  line-height: 1.3;
   color: var(--ink);
-  text-wrap: pretty;
 }
 
-.about-more {
-  max-width: 62ch;
-  margin-top: 2rem;
-  font-size: 1.7rem;
-  line-height: 1.7;
-}
-
-/* ---------- Hoje / Formação / Fora do trabalho ---------- */
-.about-list {
-  margin-top: 4rem;
-  border-bottom: 1px solid var(--line);
-}
-
-.about-item {
+.facts {
   display: grid;
-  grid-template-columns: 16rem minmax(0, 1fr);
-  gap: 0.6rem 3rem;
-  padding-block: 2rem;
-  border-top: 1px solid var(--line);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem 2.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--line-strong);
 }
 
-.about-item dt {
-  font-size: 1.5rem;
-  font-weight: 600;
-  line-height: 1.5;
-  color: var(--text);
+.about-body {
+  margin-top: 1.25rem;
 }
 
-.about-item dd {
-  font-size: 1.6rem;
-  line-height: 1.6;
+.facts {
+  margin-top: 2.25rem;
 }
 
-.about-item strong {
+.fact-label {
+  margin-bottom: 0.5rem;
+}
+
+.fact-text {
+  font-size: 0.9375rem;
+  color: var(--ink);
+}
+
+.fact-title {
   display: block;
   margin-bottom: 0.3rem;
-  font-family: var(--font-display);
-  font-size: 2.1rem;
-  font-weight: 500;
-  letter-spacing: -0.015em;
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 400;
   line-height: 1.25;
-  color: var(--ink);
 }
 
-.about-link {
-  color: var(--accent-text);
-  text-decoration: underline;
-  text-underline-offset: 0.3rem;
-}
-
-.about-link:hover {
-  color: var(--ink);
-}
-
-/* ---------- Responsivo ---------- */
-@media screen and (max-width: 960px) {
-  .about-grid {
+@media (max-width: 900px) {
+  .about-inner {
     grid-template-columns: 1fr;
   }
 
-  /* o cartão vira horizontal: foto ao lado das informações */
-  .profile-card {
-    display: flex;
-    align-items: center;
-    gap: 1.2rem;
-    max-width: 48rem;
-  }
-
-  .profile-photo {
-    width: 13rem;
-    flex: none;
-  }
-
-  .profile-info {
-    padding: 1.2rem;
+  .portrait {
+    width: 100%;
+    max-width: 16rem;
+    margin-inline: auto;
   }
 }
 
-@media screen and (max-width: 768px) {
-  .about-more {
-    font-size: 1.65rem;
-  }
-}
-
-@media screen and (max-width: 560px) {
-  .about-item {
+@media (max-width: 600px) {
+  .facts {
     grid-template-columns: 1fr;
-  }
-
-  .profile-photo {
-    width: 10rem;
-  }
-
-  .profile-name {
-    font-size: 2.2rem;
   }
 }

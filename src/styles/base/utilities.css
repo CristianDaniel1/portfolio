@@ -1,13 +1,8 @@
-/* sprite de ícones: fica no HTML, mas não ocupa espaço */
 .sprite {
   position: absolute;
   width: 0;
   height: 0;
   overflow: hidden;
-}
-
-.hidden {
-  display: none;
 }
 
 /* some da tela, mas continua sendo lido por leitores de tela */
@@ -22,21 +17,63 @@
 
 .container {
   width: 100%;
-  max-width: 124rem;
-  padding-inline: clamp(2rem, 5vw, 4rem);
-  margin: 0 auto;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
 }
 
 .icon {
-  width: 2rem;
-  height: 2rem;
+  width: 1.25em;
+  height: 1.25em;
   flex: none;
   fill: currentColor;
 }
 
-.mark {
-  font-weight: 600;
-  color: var(--ink);
-  box-shadow: inset 0 -0.5em 0
-    light-dark(color-mix(in srgb, var(--mark) 60%, transparent), color-mix(in srgb, var(--mark) 30%, transparent));
+/* rótulo em caixa-alta espaçada */
+.caps {
+  font-family: var(--sans);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+/* parede taupe com uma luz suave vinda do alto */
+.wall {
+  background: var(--wall) radial-gradient(ellipse 80% 70% at 15% 0%, var(--glow), transparent 70%);
+}
+
+/* superfície vinho: tudo que fica sobre ela troca os próprios tokens */
+.on-wine {
+  --ink: var(--linen);
+  --text: rgba(244, 236, 228, 0.76);
+  --line: rgba(244, 236, 228, 0.2);
+  --line-strong: rgba(244, 236, 228, 0.45);
+  --accent: #efc5b6;
+  --mat: #f7f2ec;
+  --shadow-c: rgba(30, 6, 12, 0.55);
+  --glow: rgba(255, 220, 210, 0.12);
+
+  background-color: var(--wine-field);
+  color: var(--text);
+}
+
+.on-wine.wall {
+  background: var(--wine-wall) radial-gradient(ellipse 80% 70% at 15% 0%, var(--glow), transparent 70%);
+}
+
+.on-wine ::selection {
+  background-color: var(--linen);
+  color: var(--wine-field);
+}
+
+.on-wine :focus-visible {
+  outline-color: var(--linen);
+}
+
+/* palavra de destaque em itálico vinho, dentro de títulos e assinaturas */
+.accent-italic {
+  font-style: italic;
+  color: var(--accent);
 }

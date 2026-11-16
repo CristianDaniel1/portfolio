@@ -1,26 +1,143 @@
-.stack-row {
-  display: grid;
-  grid-template-columns: minmax(0, 3fr) minmax(0, 9fr);
-  gap: 1.2rem 3rem;
-  padding-block: 2.6rem;
-  border-top: 1px solid var(--line);
+.stack-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem 3rem;
 }
 
-.stack-row:last-child {
-  border-bottom: 1px solid var(--line);
-}
-
-.stack-row dt {
-  font-family: var(--font-display);
-  font-size: 2.3rem;
-  font-weight: 500;
-  letter-spacing: -0.015em;
-  line-height: 1.2;
+.stack-lead {
+  max-width: 38ch;
   color: var(--ink);
 }
 
-@media screen and (max-width: 960px) {
-  .stack-row {
+.strata {
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.stratum {
+  --ink: #2a2521;
+  --text: #5b3a33;
+
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(8rem, 11rem) minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 0.5rem 2rem;
+  padding: clamp(1.4rem, 2.6vw, 2.1rem) clamp(1.25rem, 3vw, 2.5rem);
+  color: var(--ink);
+}
+
+.stratum::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.07);
+  opacity: 0;
+  transition: opacity 0.5s var(--ease-out);
+  pointer-events: none;
+}
+
+.stratum:hover::after {
+  opacity: 1;
+}
+
+.stratum-name {
+  font-family: var(--serif);
+  font-size: clamp(1.75rem, 2.6vw, 2.25rem);
+  font-weight: 300;
+  line-height: 1;
+  color: var(--ink);
+  transition: transform 0.7s var(--ease-out);
+}
+
+.stratum:hover .stratum-name {
+  transform: translateX(0.4rem);
+}
+
+.stratum-1 {
+  background-color: var(--layer-1);
+}
+
+.stratum-2 {
+  --ink: var(--linen);
+  --text: var(--linen);
+
+  background-color: var(--layer-2);
+}
+
+.stratum-3 {
+  --ink: var(--linen);
+  --text: rgba(244, 236, 228, 0.78);
+
+  background-color: var(--layer-3);
+}
+
+.stratum-2 ::selection,
+.stratum-3 ::selection {
+  background-color: var(--linen);
+  color: var(--layer-3);
+}
+
+.stratum-base {
+  --ink: light-dark(#2a2521, #ece6dd);
+  --text: light-dark(#4f4740, #c4bbb0);
+
+  margin-top: 0.6rem;
+  background: repeating-linear-gradient(135deg, var(--line) 0 1px, transparent 1px 10px);
+  box-shadow: inset 0 0 0 1px var(--line-strong);
+}
+
+.stratum-base::after {
+  background-color: var(--blush);
+}
+
+.stratum-base .stratum-name,
+.stratum-base .stratum-techs,
+.stratum-base .stratum-used {
+  position: relative;
+  z-index: 1;
+}
+
+.stratum-techs {
+  font-size: 1.0625rem;
+  color: var(--ink);
+}
+
+.stratum-techs .dot {
+  margin-inline: 0.2em;
+  opacity: 0.45;
+}
+
+.stratum-used {
+  text-align: right;
+  color: var(--text);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .stratum[data-reveal] {
+    transition-delay: calc(var(--i, 0) * 140ms);
+  }
+}
+
+@media (max-width: 1100px) {
+  .stratum {
+    grid-template-columns: minmax(7rem, 9rem) minmax(0, 1fr);
+  }
+
+  .stratum-used {
+    grid-column: 2;
+    text-align: left;
+  }
+}
+
+@media (max-width: 600px) {
+  .stratum {
     grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+
+  .stratum-used {
+    grid-column: auto;
   }
 }
