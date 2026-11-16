@@ -25,6 +25,10 @@
   margin: 0 auto;
 }
 
+.nowrap {
+  white-space: nowrap;
+}
+
 .icon {
   width: 2rem;
   height: 2rem;

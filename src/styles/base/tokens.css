@@ -23,8 +23,7 @@
   --shadow: light-dark(rgba(28, 27, 27, 0.3), rgba(0, 0, 0, 0.7));
   --header-bg: light-dark(rgba(244, 244, 243, 0.9), rgba(20, 20, 20, 0.9));
 
-  /* As fontes (Newsreader e Hanken Grotesk) são importadas no início do main.css */
-  --font-display: 'Newsreader Variable', Georgia, 'Times New Roman', serif;
+  --font-display: 'Instrument Sans Variable', 'Hanken Grotesk Variable', system-ui, sans-serif;
   --font-body: 'Hanken Grotesk Variable', 'Inter', system-ui, sans-serif;
 
   --radius-s: 0.9rem;

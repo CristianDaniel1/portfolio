@@ -13,7 +13,12 @@
   transition:
     background-color 0.25s,
     color 0.25s,
-    border-color 0.25s;
+    border-color 0.25s,
+    transform 0.15s;
+}
+
+.btn:active {
+  transform: translateY(1px);
 }
 
 .btn-primary {
