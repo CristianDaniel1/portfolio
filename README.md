@@ -1,18 +1,10 @@
-# 🌐 Portfólio - Cristian Daniel
+[![Página inicial do portfólio no modo claro, em desktop](docs/preview.png)](https://portfolio-cristiandev.vercel.app/)
 
-<img src="docs/preview.png" alt="Preview do Portfólio" width="100%" />
+Bem-vindo(a) ao meu portfólio! Este repositório apresenta a minha experiência, formação, habilidades técnicas e projetos como desenvolvedor Full-Stack.
 
-> Bem-vindo(a) ao meu portfólio! Este repositório apresenta a minha experiência, formação, habilidades técnicas e projetos como desenvolvedor Full-Stack.
+🔗 **Acesse:** [portfolio-cristiandev.vercel.app](https://portfolio-cristiandev.vercel.app/)
 
----
-
-## 🎯 Objetivo
-
-O meu objetivo com este portfólio é apresentar minhas experiências, competências e realizações para novos empregadores, colaboradores e pessoas interessadas no meu trabalho. Também para facilitar o contato com profissionais da área de tecnologia.
-
----
-
-## 💻 Tecnologias Utilizadas no Portfólio
+## Tecnologias Utilizadas no Portfólio
 
 O site foi desenvolvido com **tecnologias vanilla**, e o motivo é simples: nem tudo precisa ser feito com framework, e pretendo manter o portfólio com vanilla puro. O **Vite** é usado apenas como ferramenta de desenvolvimento e build. Além disso, foi feito com foco em performance, responsividade e acessibilidade.
 
@@ -20,6 +12,7 @@ O site foi desenvolvido com **tecnologias vanilla**, e o motivo é simples: nem 
 - **CSS** (dividido em arquivos por base, componentes, layout e seções)
 - **JavaScript** (módulos ES, um por funcionalidade)
 - **Vite**
+- **Fontsource** (fontes Instrument Sans e Hanken Grotesk hospedadas no próprio site)
 
 Recursos do site:
 
@@ -30,40 +23,43 @@ Recursos do site:
 
 ---
 
-## 🚀 Habilidades Técnicas
+## Habilidades Técnicas
 
 Aqui estão algumas das tecnologias e ferramentas que utilizo, organizadas por categoria:
 
-| 🧩 Categoria        | 🛠️ Tecnologias                                                                                |
-| ------------------- | --------------------------------------------------------------------------------------------- |
-| **Front-End**       | React, Angular, AngularJs, TypeScript, JavaScript, HTML, CSS, Tailwind, jQuery, Bootstrap, TanStack Query, Framer Motion |
-| **Mobile**          | React Native                                                                                  |
-| **Back-End**        | Node.js, NestJS, Express, Spring Boot                                                         |
-| **Banco de Dados**  | PostgreSQL, MongoDB                                                                           |
-| **Testes**          | Playwright, Karma, Jasmine, Jest                                                              |
-| **Infraestrutura**  | Docker                                                                                        |
-| **Ferramentas**     | Git, GitLab, GitHub, VS Code, Claude                                                          |
+| Categoria          | Tecnologias                                                                                                              |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| **Front-End**      | React, Angular, AngularJS, TypeScript, JavaScript, HTML, CSS, Tailwind, jQuery, Bootstrap, TanStack Query, Framer Motion |
+| **Mobile**         | React Native                                                                                                             |
+| **Back-End**       | Node.js, NestJS, Express, Spring Boot, Socket.IO                                                                         |
+| **Banco de Dados** | PostgreSQL, MongoDB                                                                                                      |
+| **Testes**         | Playwright, Karma, Jasmine, Jest                                                                                         |
+| **Infraestrutura** | Docker                                                                                                                   |
+| **Ferramentas**    | Git, GitLab, GitHub, VS Code, Claude                                                                                     |
 
 Para mais detalhes, acesse meu [portfólio online](https://portfolio-cristiandev.vercel.app/).
 
 ---
 
-## 🗂 Estrutura do Portfólio
+## Estrutura do Portfólio
 
 - **Sobre Mim:** quem sou, formação e principais tecnologias.
 - **Tecnologias:** ferramentas que uso, organizadas por categoria.
-- **Experiência:** minha trajetória profissional e as tecnologias de cada cargo.
-- **Projetos:** projetos em destaque, com filtro por tipo, links para o site e para o código.
+- **Experiência:** linha do tempo da minha trajetória profissional, com as tecnologias de cada cargo.
+- **Projetos:** projetos com imagem, tecnologias, filtro por tipo e links para o site e para o código.
 - **Contato:** e-mail e redes sociais.
 
 ---
 
-## 📁 Estrutura do Código
+## Estrutura do Código
 
 ```
 ├── index.html
 ├── public/
-│   ├── favicon.png
+│   ├── favicon.svg / .png
+│   ├── og-image.jpg       # imagem de prévia ao compartilhar o link
+│   ├── robots.txt
+│   ├── sitemap.xml
 │   └── theme-init.js      # aplica o tema antes da primeira pintura
 ├── docs/                  # imagens do README
 └── src/
@@ -82,7 +78,7 @@ Para mais detalhes, acesse meu [portfólio online](https://portfolio-cristiandev
 
 ---
 
-## 🛠 Como rodar localmente
+## Como rodar localmente
 
 É necessário ter o [Node.js](https://nodejs.org/) instalado.
 
@@ -108,13 +104,14 @@ npm run preview
 
 ---
 
-## 📬 Entre em Contato
+## Entre em Contato
 
 - 🌐 [LinkedIn](https://www.linkedin.com/in/cristiandaniel1)
+- 💻 [GitHub](https://github.com/CristianDaniel1)
 - 📧 [Email](mailto:cristiandaniel.1050@gmail.com)
 
 ---
 
-## 📄 Licença
+## Licença
 
 Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
