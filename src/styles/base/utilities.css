@@ -20,7 +20,7 @@
 
 .container {
   width: 100%;
-  max-width: 114rem;
+  max-width: 120rem;
   padding-inline: clamp(2rem, 5vw, 4rem);
   margin: 0 auto;
 }
